@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        Debug.Log(rb);
     }
     void Update()
     {
@@ -30,8 +31,17 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
-        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce (movement * speed);
+        //if (transform.rotation.eulerAngles.y > 80 && transform.rotation.eulerAngles.y < 100)
+        if (moveVertical > 0)
+        {
+            //Vector3 movement = new Vector3(0.0f, 0.0f, moveVertical);
+            Vector3 boatRotation = transform.rotation.eulerAngles;
+            Debug.Log(boatRotation.y);
+            //Vector3 movementLock = new Vector3(1, 0.0f, 0.0f);
+            rb.AddForce(-transform.right * speed, ForceMode.Force);
+            //rb.AddForce(moveVertical * speed,0,0);
+        }
+        transform.Rotate(0, moveHorizontal, 0);
         //using this for movement now, think it might be better in the long term, might.
     }
     void Fire()
