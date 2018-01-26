@@ -449,8 +449,9 @@ GameObject:
   - component: {fileID: 1031698039}
   - component: {fileID: 1031698038}
   - component: {fileID: 1031698042}
+  - component: {fileID: 1031698043}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: ShipCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,6 +535,19 @@ MonoBehaviour:
   offsetPosition: {x: 25, y: 12, z: 0}
   offsetPositionSpace: 1
   lookAt: 1
+--- !u!114 &1031698043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031698037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3a6926c9c232c4d8c76b48c4ca4df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShipCamera: {fileID: 1031698040}
+  PlayerCamera: {fileID: 1763270530}
 --- !u!1001 &1399503829
 Prefab:
   m_ObjectHideFlags: 0
