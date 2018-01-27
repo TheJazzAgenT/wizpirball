@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float speed;
+    public float turnSpeed;
     private Rigidbody rb;
 
     void Start ()
@@ -34,15 +35,13 @@ public class PlayerMovement : MonoBehaviour
         //if (transform.rotation.eulerAngles.y > 80 && transform.rotation.eulerAngles.y < 100)
         if (moveVertical > 0)
         {
-            //Vector3 movement = new Vector3(0.0f, 0.0f, moveVertical);
             Vector3 boatRotation = transform.rotation.eulerAngles;
-            Debug.Log(boatRotation.y);
-            //Vector3 movementLock = new Vector3(1, 0.0f, 0.0f);
+            //Debug.Log(boatRotation.y);
             rb.AddForce(-transform.right * speed, ForceMode.Force);
-            //rb.AddForce(moveVertical * speed,0,0);
         }
-        transform.Rotate(0, moveHorizontal, 0);
-        //using this for movement now, think it might be better in the long term, might.
+        //transform.Rotate(0, moveHorizontal, 0);
+        Debug.Log(transform.forward);
+        rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
     }
     void Fire()
     {
