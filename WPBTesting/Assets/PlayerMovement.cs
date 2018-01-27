@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(FloatObjectScript))]
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public float speed;
-    public float turnSpeed;
+    public float speed = 0.02f;
+    public float steerSpeed = 1.0f;
+    public float movementThreshold = 10.0f;
+    public Vector3 COM;
+
     private Rigidbody rb;
+    private Transform m_COM;
+    float verticalInput;
+    float movementFactor;
+    float horizontalInput;
+    float steerFactor;
 
     void Start ()
     {
@@ -17,8 +26,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        //var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        //var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
+        Balance();
+        Movement();
+        Steer();
 
         //transform.Rotate(0, x, 0);
         //transform.Translate(0, 0, z);
@@ -28,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             Fire();
         }
     }
-    void FixedUpdate ()
+    /*void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
@@ -42,6 +52,30 @@ public class PlayerMovement : MonoBehaviour
         //transform.Rotate(0, moveHorizontal, 0);
         Debug.Log(transform.forward);
         rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
+    }*/
+
+    void Balance()
+    {
+        if (!m_COM)
+        {
+            m_COM = new GameObject("COM").transform;
+            m_COM.SetParent(transform);
+        }
+        m_COM.position = COM + transform.position;
+        rb.centerOfMass = m_COM.position;
+    }
+
+    void Movement()
+    {
+        verticalInput = Input.GetAxis("Vertical");
+        movementFactor = Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold);
+        transform.Translate(0.0f, 0.0f, movementFactor * speed);
+    }
+    void Steer()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        steerFactor = Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold);
+        transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
     void Fire()
     {
