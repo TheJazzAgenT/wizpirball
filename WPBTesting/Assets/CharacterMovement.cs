@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             verticalInput = Input.GetAxis("Vertical");
             horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(verticalInput * speed, 0.0f, horizontalInput * speed);
+            transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
         }
     }
 }
