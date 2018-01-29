@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof(FloatObjectScript))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerShipMovement : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 1.0f;
     public float movementThreshold = 10.0f;
@@ -27,8 +28,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Balance();
-        Movement();
-        Steer();
+        if (ShipCamera.enabled)
+        {
+            Movement();
+            Steer();
+        }
+        
 
         //transform.Rotate(0, x, 0);
         //transform.Translate(0, 0, z);
