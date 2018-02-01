@@ -11,13 +11,16 @@ public class PlayerShipMovement : MonoBehaviour
     public float speed = 0.02f;
     public float steerSpeed = 1.0f;
     public float movementThreshold = 10.0f;
+    public float maxSpeed = 5;
+    public float maxTurnSpeed = 5;
+    public float steerThreshold = 5.0f;
     public Vector3 COM;
 
     private Rigidbody rb;
     private Transform m_COM;
     float verticalInput;
-    float movementFactor;
-    float horizontalInput;
+    float movementFactor = 0;
+    float horizontalInput = 0;
     float steerFactor;
 
     void Start ()
@@ -27,7 +30,7 @@ public class PlayerShipMovement : MonoBehaviour
     }
     void Update()
     {
-        Balance();
+        //Balance();
         if (ShipCamera.enabled)
         {
             Movement();
@@ -73,13 +76,13 @@ public class PlayerShipMovement : MonoBehaviour
     void Movement()
     {
         verticalInput = Input.GetAxis("Vertical");
-        movementFactor = Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold);
+        movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), 0, maxSpeed);
         transform.Translate(0.0f, 0.0f, movementFactor * speed);
     }
     void Steer()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        steerFactor = Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold);
+        steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold), 0, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
     void Fire()
