@@ -6,9 +6,11 @@ public class CharacterMovement : MonoBehaviour {
 
     public Camera PlayerCamera;
     public float speed = 0.02f;
+    public GameObject spawnPoint;
 
     float verticalInput;
     float horizontalInput;
+    bool canRespawn = true;
     Animator anim;
 
     private void Start()
@@ -31,5 +33,18 @@ public class CharacterMovement : MonoBehaviour {
                 anim.SetTrigger("StoppedRunning");
             }
         }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.transform.tag == "WATER" && canRespawn)
+        {
+            canRespawn = false;
+            Invoke("respawnPlayer", 5);
+        }
+    }
+    void respawnPlayer()
+    {
+        this.transform.position = spawnPoint.transform.position;
+        canRespawn = true;
     }
 }
