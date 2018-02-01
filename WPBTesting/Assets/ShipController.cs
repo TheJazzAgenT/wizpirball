@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(FloatObjectScript))]
-public class ShipMovement : MonoBehaviour
+[RequireComponent(typeof(FloatObjectScript))]
+public class ShipController : MonoBehaviour
 {
     public Camera ShipCamera;
     public float speed = 0.02f;
@@ -21,7 +21,7 @@ public class ShipMovement : MonoBehaviour
     float horizontalInput;
     float steerFactor;
 
-    void Start ()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
@@ -31,8 +31,8 @@ public class ShipMovement : MonoBehaviour
         Balance();
         if (ShipCamera.enabled)
         {
-            Movement();
             Steer();
+            Movement();
         }
     }
     /*void FixedUpdate ()
@@ -71,7 +71,7 @@ public class ShipMovement : MonoBehaviour
     void Steer()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold), -maxTurnSpeed, maxTurnSpeed);
+        steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / movementThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
 }
