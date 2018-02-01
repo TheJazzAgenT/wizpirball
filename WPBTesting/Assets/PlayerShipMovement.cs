@@ -5,12 +5,13 @@ using UnityEngine;
 [RequireComponent (typeof(FloatObjectScript))]
 public class ShipMovement : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
     public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 1.0f;
     public float movementThreshold = 10.0f;
+    public float maxSpeed = 5;
+    public float maxTurnSpeed = 5;
+    public float steerThreshold = 5.0f;
     public Vector3 COM;
 
     private Rigidbody rb;
@@ -32,14 +33,6 @@ public class ShipMovement : MonoBehaviour
         {
             Movement();
             Steer();
-        }
-
-        //transform.Rotate(0, x, 0);
-        //transform.Translate(0, 0, z);
-        //commenting out to try and use a different control method.
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Fire();
         }
     }
     /*void FixedUpdate ()
@@ -72,28 +65,13 @@ public class ShipMovement : MonoBehaviour
     void Movement()
     {
         verticalInput = Input.GetAxis("Vertical");
-        movementFactor = Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold);
+        movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), -maxSpeed, maxSpeed);
         transform.Translate(0.0f, 0.0f, movementFactor * speed);
     }
     void Steer()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        steerFactor = Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold);
+        steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
-    }
-    void Fire()
-    {
-        // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
-
-        // not destroying bullet yet, letting it go free
-        // Destroy the bullet after 2 seconds
-        // Destroy(bullet, 2.0f);
     }
 }
