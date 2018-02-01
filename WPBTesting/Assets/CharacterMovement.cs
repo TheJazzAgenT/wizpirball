@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour {
     public Camera PlayerCamera;
     public float speed = 0.02f;
     public GameObject spawnPoint;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
 
     float verticalInput;
     float horizontalInput;
@@ -18,6 +20,16 @@ public class CharacterMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
     // Update is called once per frame
+    private void Update()
+    {
+        if (PlayerCamera.enabled)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Fire();
+            }
+        }
+    }
     void FixedUpdate () {
         if (PlayerCamera.enabled)
         {
@@ -32,6 +44,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 anim.SetTrigger("StoppedRunning");
             }
+            
         }
     }
     void OnTriggerEnter(Collider col)
@@ -46,5 +59,20 @@ public class CharacterMovement : MonoBehaviour {
     {
         this.transform.position = spawnPoint.transform.position;
         canRespawn = true;
+    }
+    void Fire()
+    {
+        // Create the Bullet from the Bullet Prefab
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = this.transform.forward * 6;
+
+        // not destroying bullet yet, letting it go free
+        // Destroy the bullet after 2 seconds
+        // Destroy(bullet, 2.0f);
     }
 }

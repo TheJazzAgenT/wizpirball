@@ -391,36 +391,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3301cbc97725a343bb224867e9c12da, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &921711109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1633547261299960, guid: db2f10d29a905384c860013dfcaef893,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 921711110}
-  m_Layer: 0
-  m_Name: Bullet Spawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &921711110
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4425607265185268, guid: db2f10d29a905384c860013dfcaef893,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 921711109}
-  m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 6.09, y: -13.769999, z: 13.42}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children: []
-  m_Father: {fileID: 1782870246}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1 &1031698037
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
-  bulletSpawn: {fileID: 921711110}
+  bulletSpawn: {fileID: 0}
   ShipCamera: {fileID: 1031698040}
   speed: 0.5
   steerSpeed: 1
@@ -676,6 +646,10 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b766ca831d572ab46b903cc52b0f834b, type: 3}
+--- !u!4 &1288137943 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400012, guid: f3301cbc97725a343bb224867e9c12da, type: 3}
+  m_PrefabInternal: {fileID: 684295751}
 --- !u!1001 &1399503829
 Prefab:
   m_ObjectHideFlags: 0
@@ -946,6 +920,9 @@ MonoBehaviour:
   PlayerCamera: {fileID: 1763270530}
   speed: 0.05
   spawnPoint: {fileID: 1928091940}
+  bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
+    type: 2}
+  bulletSpawn: {fileID: 1288137943}
 --- !u!64 &1782870248
 MeshCollider:
   m_ObjectHideFlags: 0

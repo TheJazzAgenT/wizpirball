@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent (typeof(FloatObjectScript))]
 public class PlayerShipMovement : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
     public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 1.0f;
@@ -41,10 +39,6 @@ public class PlayerShipMovement : MonoBehaviour
         //transform.Rotate(0, x, 0);
         //transform.Translate(0, 0, z);
         //commenting out to try and use a different control method.
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Fire();
-        }
     }
     /*void FixedUpdate ()
     {
@@ -84,20 +78,5 @@ public class PlayerShipMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput * verticalInput, Time.deltaTime / movementThreshold), 0, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
-    }
-    void Fire()
-    {
-        // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
-
-        // not destroying bullet yet, letting it go free
-        // Destroy the bullet after 2 seconds
-        // Destroy(bullet, 2.0f);
     }
 }
