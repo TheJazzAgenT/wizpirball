@@ -405,9 +405,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ba749553eb3d82a499044587bf57909e, type: 3}
 --- !u!65 &65473364357187860
@@ -498,6 +498,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 0}
   speed: 0.02
+  spawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
 --- !u!114 &114979748552420048
 MonoBehaviour:
   m_ObjectHideFlags: 1
