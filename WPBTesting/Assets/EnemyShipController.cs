@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(FloatObjectScript))]
-public class ShipController : MonoBehaviour
-{
+public class EnemyShipController : MonoBehaviour {
+
     public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 1.0f;
@@ -22,8 +22,9 @@ public class ShipController : MonoBehaviour
     float movementFactor;
     float horizontalInput;
     float steerFactor;
-
-    void Start()
+     
+    //added all this in case we need it for the ai of the enemy ship.
+   /* void Start()
     {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
@@ -37,7 +38,7 @@ public class ShipController : MonoBehaviour
             Movement();
         }
     }
-    /*void FixedUpdate ()
+    void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
@@ -51,7 +52,7 @@ public class ShipController : MonoBehaviour
         //transform.Rotate(0, moveHorizontal, 0);
         Debug.Log(transform.forward);
         rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
-    }*/
+    }
 
     void Balance()
     {
@@ -76,4 +77,5 @@ public class ShipController : MonoBehaviour
         steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / movementThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
+    */
 }
