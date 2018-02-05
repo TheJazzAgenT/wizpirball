@@ -949,6 +949,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
   bulletSpawn: {fileID: 1288137943}
+  turnSpeed: 10
 --- !u!64 &1782870248
 MeshCollider:
   m_ObjectHideFlags: 0
