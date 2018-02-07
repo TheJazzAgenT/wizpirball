@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(FloatObjectScript))]
 public class EnemyShipController : MonoBehaviour {
 
-    public Camera ShipCamera;
-    public float speed = 0.02f;
+    public float speed = 0.5f;
     public float steerSpeed = 1.0f;
     public float movementThreshold = 10.0f;
-    public float maxSpeed = 5;
-    public float maxTurnSpeed = 5;
-    public float steerThreshold = 5.0f;
+    public float maxSpeed = 1;
+    public float maxTurnSpeed = 1;
+    public float steerThreshold = 10.0f;
     public float health = 100;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
+    public GameObject PlayerShip;
 
     private Rigidbody rb;
     private Transform m_COM;
@@ -23,22 +23,28 @@ public class EnemyShipController : MonoBehaviour {
     float horizontalInput;
     float steerFactor;
      
-    //added all this in case we need it for the ai of the enemy ship.
-   /* void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
     }
     void Update()
     {
-        Balance();
-        if (ShipCamera.enabled)
+        //Balance();
+        float angle1 = Vector3.Angle(transform.position - PlayerShip.transform.position, transform.right);
+        float angle2 = Vector3.Angle(transform.position - PlayerShip.transform.position, -transform.right);
+        if (angle1 > angle2)
         {
-            Steer();
-            Movement();
+            horizontalInput = 1;
         }
+        else
+        {
+            horizontalInput = -1;
+        }
+        verticalInput = 1;
+        SteerAndMove();
     }
-    void FixedUpdate ()
+    /*void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
@@ -52,7 +58,7 @@ public class EnemyShipController : MonoBehaviour {
         //transform.Rotate(0, moveHorizontal, 0);
         Debug.Log(transform.forward);
         rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
-    }
+    }*/
 
     void Balance()
     {
@@ -65,17 +71,14 @@ public class EnemyShipController : MonoBehaviour {
         rb.centerOfMass = m_COM.position;
     }
 
-    void Movement()
+    void SteerAndMove()
     {
-        verticalInput = Input.GetAxis("Vertical");
-        movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), -maxSpeed, maxSpeed);
+        //verticalInput = 1;
+        movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), 0, maxSpeed);
         transform.Translate(0.0f, 0.0f, movementFactor * speed);
-    }
-    void Steer()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
+
+        //horizontalInput = 1;
         steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / movementThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
-    */
 }
