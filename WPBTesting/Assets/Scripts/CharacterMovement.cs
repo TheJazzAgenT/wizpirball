@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour {
         if (PlayerCamera.enabled)
         {
             // Generate a plane that intersects the transform's position with an upwards normal.
-            Plane playerPlane = new Plane(Vector3.up, transform.position);
+            /*Plane playerPlane = new Plane(Vector3.up, transform.position);
 
             // Generate a ray from the cursor position
             Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
@@ -59,7 +59,7 @@ public class CharacterMovement : MonoBehaviour {
                 //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
                 transform.rotation = targetRotation;
 
-            }
+            }*/
 
             verticalInput = Input.GetAxis("Vertical");
             horizontalInput = Input.GetAxis("Horizontal");

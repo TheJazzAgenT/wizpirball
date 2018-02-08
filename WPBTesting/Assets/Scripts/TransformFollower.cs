@@ -40,7 +40,7 @@ public class TransformFollower : MonoBehaviour
             transform.position = target.position + offsetPosition;
         }
 
-        // compute rotation
+        //compute rotation
         if (lookAt)
         {
             transform.LookAt(target);
