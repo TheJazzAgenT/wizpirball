@@ -125,7 +125,7 @@ BoxCollider:
   m_GameObject: {fileID: 6393721}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 7.8327227, y: 19.871925, z: 23.46238}
   m_Center: {x: 0.000056624413, y: 5.196107, z: 3.4497738}
@@ -180,6 +180,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!64 &6393729
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6393721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: b15e01a5a95c2814ebdd4cbd7b7f6577, type: 3}
 --- !u!1 &29617731
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,8 +973,11 @@ GameObject:
   - component: {fileID: 1033831654}
   - component: {fileID: 1033831653}
   - component: {fileID: 1033831651}
-  - component: {fileID: 1033831657}
   - component: {fileID: 1033831652}
+  - component: {fileID: 1033831657}
+  - component: {fileID: 1033831660}
+  - component: {fileID: 1033831659}
+  - component: {fileID: 1033831658}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Player
@@ -1067,8 +1084,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.1605244, y: 5.2272434, z: 18.073465}
-  m_Center: {x: -0.044652462, y: -2.1360464, z: 0.70673656}
+  m_Size: {x: 6.1605244, y: 5.2272434, z: 19.000298}
+  m_Center: {x: -0.044652462, y: -2.1360464, z: 1.1701527}
 --- !u!33 &1033831656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1090,7 +1107,43 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: b766ca831d572ab46b903cc52b0f834b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b15e01a5a95c2814ebdd4cbd7b7f6577, type: 3}
+--- !u!65 &1033831658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033831650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.212761, y: 2.6678991, z: 4.9135513}
+  m_Center: {x: 0.0246315, y: 1.877327, z: -5.91638}
+--- !u!65 &1033831659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033831650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7899208, y: 17.058788, z: 0.7314391}
+  m_Center: {x: 0.0069789886, y: 3.7895374, z: 3.1641366}
+--- !u!65 &1033831660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033831650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8327675, y: 19.9803, z: 0.5184665}
+  m_Center: {x: 0.1863079, y: 5.2502956, z: -2.3485982}
 --- !u!1 &1142265522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1278,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef54bea364af364086f5e719cc171e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1174831053 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100068, guid: f3301cbc97725a343bb224867e9c12da, type: 3}
+  m_PrefabInternal: {fileID: 684295751}
+--- !u!64 &1174831055
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174831053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: f3301cbc97725a343bb224867e9c12da, type: 3}
 --- !u!1 &1266316871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,18 +2131,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &1782870250
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1782870244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.437492, y: 9.202414, z: 4.3944674}
-  m_Center: {x: -0.22939593, y: 0.7253313, z: -0.24869859}
 --- !u!114 &1782870251
 MonoBehaviour:
   m_ObjectHideFlags: 0
