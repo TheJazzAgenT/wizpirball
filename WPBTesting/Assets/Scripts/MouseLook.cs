@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    public Camera PlayerCamera;
     public float mouseSensitivity = 100.0f;
     public float clampAngle = 80.0f;
     public bool useX, useY;
@@ -26,20 +27,23 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = -Input.GetAxis("Mouse Y");
-
-        if (useY)
+        if (PlayerCamera.enabled)
         {
-            rotY += mouseX * mouseSensitivity * Time.deltaTime;
-        }
-        if (useX)
-        {
-            rotX += mouseY * mouseSensitivity * Time.deltaTime;
-            rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
-        }
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = -Input.GetAxis("Mouse Y");
 
-        Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
-        transform.rotation = localRotation;
+            if (useY)
+            {
+                rotY += mouseX * mouseSensitivity * Time.deltaTime;
+            }
+            if (useX)
+            {
+                rotX += mouseY * mouseSensitivity * Time.deltaTime;
+                rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+            }
+
+            Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
+            transform.rotation = localRotation;
+        }
     }
 }

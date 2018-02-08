@@ -189,9 +189,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b15e01a5a95c2814ebdd4cbd7b7f6577, type: 3}
 --- !u!1 &29617731
@@ -1291,9 +1291,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f3301cbc97725a343bb224867e9c12da, type: 3}
 --- !u!1 &1266316871
@@ -2047,16 +2047,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1782870246}
+  PlayerCamera: {fileID: 1763270530}
   offSetLookAt: {x: 0, y: 0, z: 0}
   offSetPosition: {x: 0, y: 0.1, z: -0.2}
   MinMaxRotationX:
-    min: -90
-    max: 90
+    min: -30
+    max: 30
   MinMaxRotationY:
     min: 0
     max: 0
   MinMaxCameraDistance:
-    min: 3
+    min: 0
     max: 3
   angleX: -10
   angleY: 0
@@ -2076,6 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dec33686d42f6c4c9da26adb14b55b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 1763270530}
   mouseSensitivity: 100
   clampAngle: 80
   useX: 0

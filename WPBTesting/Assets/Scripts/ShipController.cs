@@ -27,6 +27,7 @@ public class ShipController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
+        Cursor.visible = false;
     }
     void Update()
     {
