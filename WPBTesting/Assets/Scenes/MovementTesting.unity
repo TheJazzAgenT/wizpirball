@@ -610,7 +610,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!4 &430799311 stripped
 Transform:
@@ -636,7 +636,7 @@ MonoBehaviour:
   steerThreshold: 10
   health: 100
   damage: 20
-  COM: {x: -0.12, y: -15.128, z: -15.161}
+  COM: {x: 0.28, y: -10, z: -3.8}
 --- !u!1 &641852229
 GameObject:
   m_ObjectHideFlags: 0
