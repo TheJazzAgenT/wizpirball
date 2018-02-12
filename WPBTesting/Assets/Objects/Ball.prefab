@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 135833053535583510}
   - component: {fileID: 23821710675555604}
   - component: {fileID: 54148688161999152}
+  - component: {fileID: 114599629220521672}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114599629220521672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518674168084194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79134d6a58a343045996dfab4b637577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!135 &135833053535583510
 SphereCollider:
   m_ObjectHideFlags: 1
