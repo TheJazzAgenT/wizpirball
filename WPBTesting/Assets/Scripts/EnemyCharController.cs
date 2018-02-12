@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour {
+public class EnemyCharController : MonoBehaviour
+{
 
     public Camera PlayerCamera;
     public float speed = 0.02f;
@@ -31,13 +32,14 @@ public class CharacterMovement : MonoBehaviour {
             }
         }
     }
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
         if (PlayerCamera.enabled)
         {
             verticalInput = Input.GetAxis("Vertical");
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
-            if (verticalInput != 0 || horizontalInput !=0)
+            if (verticalInput != 0 || horizontalInput != 0)
             {
                 anim.SetTrigger("isMoving");
             }
@@ -45,7 +47,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 //anim.SetTrigger("");
             }
-            
+
         }
     }
     void OnTriggerEnter(Collider col)
