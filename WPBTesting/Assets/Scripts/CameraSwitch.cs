@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraSwitch : MonoBehaviour {
     public Camera ShipCamera;
     public Camera PlayerCamera;
+    public Camera TestCamera;
 
     // Use this for initialization
     void Start () {
@@ -24,19 +25,29 @@ public class CameraSwitch : MonoBehaviour {
                 ShowShipView();
             }
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ShowTestView();
+        }
     }
 
     public void ShowPlayerView()
     {
         ShipCamera.enabled = false;
+        TestCamera.enabled = false;
         PlayerCamera.enabled = true;
     }
 
     public void ShowShipView()
     {
         ShipCamera.enabled = true;
+        TestCamera.enabled = false;
         PlayerCamera.enabled = false;
     }
-
-
+    public void ShowTestView()
+    {
+        ShipCamera.enabled = false;
+        PlayerCamera.enabled = false;
+        TestCamera.enabled = true;
+    }
 }
