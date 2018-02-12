@@ -59,7 +59,7 @@ public class CameraController : MonoBehaviour
             Quaternion upRotation = Quaternion.LookRotation(new Vector3(target.forward.x, 0f, target.forward.z)) * Quaternion.Euler(0f, this.angleY, 0f);
             transform.position = target.position + Vector3.Scale(upRotation * normal, new Vector3(1, this.angleX/25, 1)) * this.cameraDistance;
             transform.rotation = Quaternion.LookRotation((target.position + offSetLookAt) - transform.position) * Quaternion.Euler(this.angleX, 0f, 0f);
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
         }
     }
 }

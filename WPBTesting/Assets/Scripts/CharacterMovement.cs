@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public Camera PlayerCamera;
     public float speed = 0.02f;
+    public float BulletSpeed = 6.0f;
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -71,7 +72,7 @@ public class CharacterMovement : MonoBehaviour {
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = this.transform.forward * 6;
+        bullet.GetComponent<Rigidbody>().velocity = this.transform.forward * BulletSpeed;
 
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds

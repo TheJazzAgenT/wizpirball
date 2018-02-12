@@ -59,6 +59,7 @@ public class UIManager : MonoBehaviour {
         {
             g.SetActive(true);
         }
+        Cursor.visible = true;
     }
 
     //hides objects with ShowOnPause tag
@@ -68,5 +69,6 @@ public class UIManager : MonoBehaviour {
         {
             g.SetActive(false);
         }
+        Cursor.visible = false;
     }
 }
