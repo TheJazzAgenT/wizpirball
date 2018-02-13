@@ -37,5 +37,9 @@ public class BulletTrigger : MonoBehaviour
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }
+        if (col.gameObject.tag == "WATER")
+        {
+            Destroy(gameObject);
+        }
     }
 }
