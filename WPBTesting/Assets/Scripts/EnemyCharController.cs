@@ -5,27 +5,22 @@ using UnityEngine.AI;
 
 public class EnemyCharController : MonoBehaviour
 { 
-    public Transform target;
     public GameObject spawnPoint;
-    Vector3 destination;
-    NavMeshAgent agent;
+    public Transform farEnd;
+    public Transform nearEnd;
+    private float secondsForOneLength = 10f;
     bool canRespawn = true;
 
     void Start()
     {
-        // Cache agent component and destination
-        agent = GetComponent<NavMeshAgent>();
-        destination = agent.destination;
     }
 
     void Update()
     {
-        // Update destination if the target moves one unit
-        if (Vector3.Distance(destination, target.position) > 1.0f)
-        {
-            destination = target.position;
-            agent.destination = destination;
-        }
+        transform.position = Vector3.Lerp(nearEnd.position, farEnd.position,
+          Mathf.SmoothStep(0f, 1f,
+            Mathf.PingPong(Time.time / secondsForOneLength, 1f)
+         ));
     }
     void OnTriggerEnter(Collider col)
     {
