@@ -13,6 +13,7 @@ public class EnemyShipController : MonoBehaviour {
     public float steerThreshold = 10.0f;
     static public int maxhealth = 100;
     static public int curhealth = 100;
+    public bool alive;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
     public GameObject PlayerShip;
@@ -29,6 +30,7 @@ public class EnemyShipController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
         curhealth = maxhealth;
+        alive = true;
     }
     void Update()
     {
@@ -46,12 +48,13 @@ public class EnemyShipController : MonoBehaviour {
         verticalInput = 1;
         if(Time.timeScale == 1)
         {
-            SteerAndMove();
+            //SteerAndMove();
         }
         
         if (curhealth < 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            alive = false;
         }
     }
     /*void FixedUpdate ()

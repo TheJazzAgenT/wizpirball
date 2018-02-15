@@ -8,6 +8,9 @@ TagManager:
   - ShowOnPause
   - Enemy
   - Bullet
+  - PlayerShip
+  - ShowOnDeath
+  - ShowOnWin
   layers:
   - Default
   - TransparentFX

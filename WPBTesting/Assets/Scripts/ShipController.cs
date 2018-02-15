@@ -12,7 +12,9 @@ public class ShipController : MonoBehaviour
     public float maxSpeed = 5;
     public float maxTurnSpeed = 5;
     public float steerThreshold = 5.0f;
-    public float health = 100;
+    static public int maxHealth = 100;
+    static public int curHealth = 100;
+    public bool alive;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
 
@@ -28,6 +30,8 @@ public class ShipController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
         Cursor.visible = false;
+        curHealth = maxHealth;
+        alive = true;
     }
     void Update()
     {
@@ -36,6 +40,11 @@ public class ShipController : MonoBehaviour
         {
             Steer();
             Movement();
+        }
+        if (curHealth < 1)
+        {
+            //Destroy(gameObject);//breaks stuff if kept in
+            alive = false;
         }
     }
     /*void FixedUpdate ()
@@ -76,5 +85,9 @@ public class ShipController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / steerThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
+    }
+    public void TakeDamage(int amount)
+    {
+        curHealth -= amount;
     }
 }
