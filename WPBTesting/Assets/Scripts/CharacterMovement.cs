@@ -11,9 +11,11 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float turnSpeed = 50;
+    public float batDelay = 2.0f;
 
     float verticalInput;
     float horizontalInput;
+    float timestamp;
     bool canRespawn = true;
     Animator anim;
 
@@ -26,8 +28,9 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (PlayerCamera.enabled)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time >= timestamp)
             {
+                timestamp = Time.time + batDelay;
                 anim.SetTrigger("isHitting");
                 Invoke("Fire", 0.8f);
             }
