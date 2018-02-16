@@ -28,7 +28,8 @@ public class CharacterMovement : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Fire();
+                anim.SetTrigger("isHitting");
+                Invoke("Fire", 0.8f);
             }
         }
     }
@@ -66,7 +67,6 @@ public class CharacterMovement : MonoBehaviour {
     void Fire()
     {
         // Create the Bullet from the Bullet Prefab
-        anim.SetTrigger("isHitting");
         var bullet = (GameObject)Instantiate(
             bulletPrefab,
             bulletSpawn.position,
