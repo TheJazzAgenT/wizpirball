@@ -15,7 +15,7 @@ public class EnemyCharController : MonoBehaviour
     private float secondsForOneLength = 10f;
     bool canRespawn = true;
     float timer = 0.0f;
-    float shootDelay = 1.0f;
+    float shootDelay = 5.0f;
 
     void Start()
     {
