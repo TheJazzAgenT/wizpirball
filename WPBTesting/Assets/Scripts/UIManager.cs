@@ -27,6 +27,14 @@ public class UIManager : MonoBehaviour {
             shipController = GameObject.FindGameObjectWithTag("PlayerShip").GetComponent<ShipController>();
             enemyController = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyShipController>();
         }
+        if(shipController == null)
+        {
+            Debug.Log("issue with player controller");
+        }
+        if(enemyController == null)
+        {
+            Debug.Log("issue with enemyController");
+        }
     }
 
     // Update is called once per frame

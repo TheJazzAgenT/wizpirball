@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTrigger : MonoBehaviour
-{
+public class EnemyBulletTrigger : MonoBehaviour {
     public int damage = 20;
 
     // Use this for initialization
@@ -20,22 +19,6 @@ public class BulletTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Enemy")
-        {
-            
-            //Destroy(col.gameObject);
-            //add an explosion or something
-            EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
-            //if exists
-            if(curhealth != null)
-            {
-                curhealth.TakeDamage(damage);
-            }
-
-            //destroy the projectile that just caused the trigger collision
-            Destroy(gameObject);
-        }
         if (col.gameObject.tag == "PlayerShip")
         {
 
