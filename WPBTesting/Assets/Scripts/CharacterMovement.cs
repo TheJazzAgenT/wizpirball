@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public AudioClip batSound;
     public float turnSpeed = 50;
     public float batDelay = 2.0f;
 
@@ -18,6 +19,12 @@ public class CharacterMovement : MonoBehaviour {
     float timestamp;
     bool canRespawn = true;
     Animator anim;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -69,6 +76,7 @@ public class CharacterMovement : MonoBehaviour {
     }
     void Fire()
     {
+        audioSource.PlayOneShot(batSound, 1.0f);
         // Create the Bullet from the Bullet Prefab
         var bullet = (GameObject)Instantiate(
             bulletPrefab,

@@ -17,6 +17,7 @@ public class ShipController : MonoBehaviour
     public bool alive;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
+    public AudioClip crashSound;
 
     private Rigidbody rb;
     private Transform m_COM;
@@ -24,6 +25,12 @@ public class ShipController : MonoBehaviour
     float movementFactor;
     float horizontalInput;
     float steerFactor;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -47,21 +54,6 @@ public class ShipController : MonoBehaviour
             alive = false;
         }
     }
-    /*void FixedUpdate ()
-    {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
-        //if (transform.rotation.eulerAngles.y > 80 && transform.rotation.eulerAngles.y < 100)
-        if (moveVertical > 0)
-        {
-            Vector3 boatRotation = transform.rotation.eulerAngles;
-            //Debug.Log(boatRotation.y);
-            rb.AddForce(-transform.right * speed, ForceMode.Force);
-        }
-        //transform.Rotate(0, moveHorizontal, 0);
-        Debug.Log(transform.forward);
-        rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
-    }*/
 
     void Balance()
     {
@@ -89,5 +81,13 @@ public class ShipController : MonoBehaviour
     public void TakeDamage(int amount)
     {
         curHealth -= amount;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag != "WATER")
+        {
+            audioSource.PlayOneShot(crashSound);
+        }
     }
 }
