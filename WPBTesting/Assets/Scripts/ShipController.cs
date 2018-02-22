@@ -42,7 +42,6 @@ public class ShipController : MonoBehaviour
     }
     void Update()
     {
-        //Balance();
         if (ShipCamera.enabled)
         {
             verticalInput = Input.GetAxis("Vertical");
@@ -50,6 +49,7 @@ public class ShipController : MonoBehaviour
         }
         Steer();
         Movement();
+        //Balance();
         if (curHealth < 1)
         {
             //Destroy(gameObject);//breaks stuff if kept in

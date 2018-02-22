@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShipCamera: {fileID: 1031698040}
-  speed: 0.2
+  speed: 0.4
   steerSpeed: 0.7
   movementThreshold: 15
   maxSpeed: 1
