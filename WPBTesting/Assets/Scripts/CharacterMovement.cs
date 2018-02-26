@@ -13,7 +13,6 @@ public class CharacterMovement : MonoBehaviour {
     public AudioClip batSound;
     public float turnSpeed = 50;
     public float batDelay = 2.0f;
-    public GameObject[] Bullets;
 
     float verticalInput;
     float horizontalInput;
@@ -43,22 +42,6 @@ public class CharacterMovement : MonoBehaviour {
                 Invoke("Fire", 0.8f);
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
-        {
-            bulletPrefab = Bullets[0];
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time >= timestamp)
-        {
-            bulletPrefab = Bullets[1];
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time >= timestamp)
-        {
-            bulletPrefab = Bullets[2];
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && Time.time >= timestamp)
-        {
-            bulletPrefab = Bullets[3];
-        }
     }
     void FixedUpdate () {
         if (PlayerCamera.enabled)
@@ -74,6 +57,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 //anim.SetTrigger("");
             }
+            
         }
     }
     void OnTriggerEnter(Collider col)

@@ -48,7 +48,7 @@ public class EnemyShipController : MonoBehaviour {
         verticalInput = 1;
         if(Time.timeScale == 1)
         {
-            //SteerAndMove();
+            SteerAndMove();
         }
         
         if (curhealth < 1)
@@ -56,7 +56,6 @@ public class EnemyShipController : MonoBehaviour {
             //Destroy(gameObject);
             alive = false;
         }
-        Debug.Log("ship health is " + curhealth);
     }
     /*void FixedUpdate ()
     {
