@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(FloatObjectScript))]
 public class ShipController : MonoBehaviour
 {
+	
     public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 0.7f;
@@ -12,8 +13,14 @@ public class ShipController : MonoBehaviour
     public float maxSpeed = 5;
     public float maxTurnSpeed = 5;
     public float steerThreshold = 5.0f;
-    static public int maxHealth = 100;
+    
+	[SerializeField]
+	private BarScript bar;
+
+	static public int maxHealth = 100;
+	[SerializeField]
     static public int curHealth = 100;
+
     public bool alive;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
@@ -81,6 +88,7 @@ public class ShipController : MonoBehaviour
     public void TakeDamage(int amount)
     {
         curHealth -= amount;
+		bar.fillAmount = curHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
