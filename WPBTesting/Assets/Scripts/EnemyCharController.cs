@@ -27,7 +27,7 @@ public class EnemyCharController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= shootDelay)
         {
-            //Fire();
+            Fire();
             timer = 0;
         }
         // AI Paces between nearEnd and farEnd

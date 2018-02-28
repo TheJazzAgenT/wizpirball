@@ -804,6 +804,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 862f65ecf32340645a11760db53f23df, type: 3}
+    - target: {fileID: 3300000, guid: 862f65ecf32340645a11760db53f23df, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 862f65ecf32340645a11760db53f23df, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 862f65ecf32340645a11760db53f23df, type: 3}
   m_IsPrefabParent: 0
@@ -869,7 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShipCamera: {fileID: 1031698040}
-  speed: 0.4
+  speed: 0.5
   steerSpeed: 0.7
   movementThreshold: 15
   maxSpeed: 1
@@ -4229,6 +4233,7 @@ MonoBehaviour:
   batSound: {fileID: 0}
   turnSpeed: 10
   batDelay: 2
+  Bullets: []
 --- !u!64 &1782870248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5394,6 +5399,11 @@ MonoBehaviour:
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   turnSpeed: 10
   batDelay: 2
+  Bullets:
+  - {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541, type: 2}
+  - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
+  - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
+  - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
 --- !u!114 &2143342617
 MonoBehaviour:
   m_ObjectHideFlags: 0
