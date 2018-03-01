@@ -56,7 +56,7 @@ public class ShipController : MonoBehaviour
         }
         Steer();
         Movement();
-        //Balance();
+        Balance();
         if (curHealth < 1)
         {
             //Destroy(gameObject);//breaks stuff if kept in

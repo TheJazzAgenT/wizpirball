@@ -56,6 +56,7 @@ public class EnemyShipController : MonoBehaviour {
             //Destroy(gameObject);
             alive = false;
         }
+        Debug.Log("ship health is " + curhealth);
     }
     /*void FixedUpdate ()
     {
