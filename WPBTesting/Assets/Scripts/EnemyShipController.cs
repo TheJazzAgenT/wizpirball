@@ -24,6 +24,8 @@ public class EnemyShipController : MonoBehaviour {
     float movementFactor;
     float horizontalInput;
     float steerFactor;
+	[SerializeField]
+	private BarScriptEnemy BarE;
      
     void Start()
     {
@@ -99,5 +101,6 @@ public class EnemyShipController : MonoBehaviour {
     public void TakeDamage( int amount)
     {
         curhealth -= amount;
+		BarE.fillAmountE = curhealth;
     }
 }
