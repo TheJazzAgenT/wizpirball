@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(FloatObjectScript))]
 public class ShipController : MonoBehaviour
 {
+	
     public Camera ShipCamera;
     public float speed = 0.02f;
     public float steerSpeed = 0.7f;
@@ -12,11 +13,18 @@ public class ShipController : MonoBehaviour
     public float maxSpeed = 5;
     public float maxTurnSpeed = 5;
     public float steerThreshold = 5.0f;
-    static public int maxHealth = 100;
+    
+	[SerializeField]
+	private BarScript bar;
+
+	static public int maxHealth = 100;
+	[SerializeField]
     static public int curHealth = 100;
+
     public bool alive;
     public float damage = 20;//not sure if this should be here or in player controller, just leaving this here though
     public Vector3 COM;
+    public AudioClip crashSound;
 
     private Rigidbody rb;
     private Transform m_COM;
@@ -24,6 +32,12 @@ public class ShipController : MonoBehaviour
     float movementFactor;
     float horizontalInput;
     float steerFactor;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -35,33 +49,20 @@ public class ShipController : MonoBehaviour
     }
     void Update()
     {
-        //Balance();
         if (ShipCamera.enabled)
         {
-            Steer();
-            Movement();
+            verticalInput = Input.GetAxis("Vertical");
+            horizontalInput = Input.GetAxis("Horizontal");
         }
+        Steer();
+        Movement();
+        Balance();
         if (curHealth < 1)
         {
             //Destroy(gameObject);//breaks stuff if kept in
             alive = false;
         }
     }
-    /*void FixedUpdate ()
-    {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
-        //if (transform.rotation.eulerAngles.y > 80 && transform.rotation.eulerAngles.y < 100)
-        if (moveVertical > 0)
-        {
-            Vector3 boatRotation = transform.rotation.eulerAngles;
-            //Debug.Log(boatRotation.y);
-            rb.AddForce(-transform.right * speed, ForceMode.Force);
-        }
-        //transform.Rotate(0, moveHorizontal, 0);
-        Debug.Log(transform.forward);
-        rb.AddTorque(transform.up * turnSpeed * moveHorizontal);
-    }*/
 
     void Balance()
     {
@@ -76,18 +77,25 @@ public class ShipController : MonoBehaviour
 
     void Movement()
     {
-        verticalInput = Input.GetAxis("Vertical");
         movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), 0, maxSpeed);
         transform.Translate(0.0f, 0.0f, movementFactor * speed);
     }
     void Steer()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
         steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / steerThreshold), -maxTurnSpeed, maxTurnSpeed);
         transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
     }
     public void TakeDamage(int amount)
     {
         curHealth -= amount;
+		bar.fillAmount = curHealth;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag != "WATER")
+        {
+            audioSource.PlayOneShot(crashSound);
+        }
     }
 }

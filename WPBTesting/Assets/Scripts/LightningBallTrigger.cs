@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallTrigger : MonoBehaviour
-{
-
-    public int intialDamage = 10;
-    public int tickDamage = 5;
-
+public class LightningBallTrigger : MonoBehaviour {
+    public int intialDamage = 13;
+    public float slow = 0.0f;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
-    public int applyDamageNTimes = 5;
+    public int applyDamageNTimes = 3;
+    public float oSpeed;
+
+    private bool delied = false;
+
     private int appliedTimes = 0;
 
     private bool test = false;
@@ -40,43 +41,39 @@ public class FireBallTrigger : MonoBehaviour
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                IEnumerator Coroutine = CastDamage(curhealth);
-                StartCoroutine(Coroutine);
+                oSpeed = curhealth.maxSpeed;
+                StartCoroutine(CastDamage(curhealth));
+                curhealth.maxSpeed = oSpeed;
             }
 
-            Destory(5.0f);
+
             //destroy the projectile that just caused the trigger collision
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
-            Destory(5.0f);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
-        GetComponent<FireBallTrigger>().enabled = false;
     }
 
     IEnumerator CastDamage(EnemyShipController damageable)
     {
-        while (true)
+        if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
         {
-            yield return new WaitForSeconds(applyEveryNSeconds);
-            if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
+            test = true;
+            if (!delied)
             {
-                test = true;
-                damageable.TakeDamage(tickDamage);
-                appliedTimes++;
-                test = false;
+                yield return new WaitForSeconds(delayBeforeCasting);
+                delied = true;
             }
+            else
+            {
+                yield return new WaitForSeconds(applyEveryNSeconds);
+                damageable.maxSpeed = slow;
+            }
+            appliedTimes++;
+            test = false;
+        }
+    }
 
-        }
-    }
-    IEnumerator Destory(float Delay)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(Delay);
-            Destroy(gameObject);
-        }
-    }
 }

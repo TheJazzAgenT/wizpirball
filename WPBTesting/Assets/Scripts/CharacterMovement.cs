@@ -10,14 +10,22 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public AudioClip batSound;
     public float turnSpeed = 50;
     public float batDelay = 2.0f;
+    public GameObject[] Bullets;
 
     float verticalInput;
     float horizontalInput;
     float timestamp;
     bool canRespawn = true;
     Animator anim;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -35,6 +43,22 @@ public class CharacterMovement : MonoBehaviour {
                 Invoke("Fire", 0.8f);
             }
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
+        {
+            bulletPrefab = Bullets[0];
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time >= timestamp)
+        {
+            bulletPrefab = Bullets[1];
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time >= timestamp)
+        {
+            bulletPrefab = Bullets[2];
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4) && Time.time >= timestamp)
+        {
+            bulletPrefab = Bullets[3];
+        }
     }
     void FixedUpdate () {
         if (PlayerCamera.enabled)
@@ -50,7 +74,6 @@ public class CharacterMovement : MonoBehaviour {
             {
                 //anim.SetTrigger("");
             }
-            
         }
     }
     void OnTriggerEnter(Collider col)
@@ -69,6 +92,7 @@ public class CharacterMovement : MonoBehaviour {
     }
     void Fire()
     {
+        audioSource.PlayOneShot(batSound, 1.0f);
         // Create the Bullet from the Bullet Prefab
         var bullet = (GameObject)Instantiate(
             bulletPrefab,
