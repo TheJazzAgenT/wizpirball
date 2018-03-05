@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8125,6 +8125,7 @@ MonoBehaviour:
   turnSpeed: 10
   batDelay: 2
   Bullets: []
+  aimer: {x: 0, y: 0, z: 0}
 --- !u!64 &1782870248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9472,6 +9473,7 @@ MonoBehaviour:
   - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
+  aimer: {x: -382, y: 0, z: 107}
 --- !u!114 &2143342617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9528,7 +9530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c08cd9cac206f4b848388ffdf1c764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 50
+  aimer: {x: -383, y: 7, z: 102}
   angle: 45
   resolution: 10
 --- !u!4 &2143342621 stripped

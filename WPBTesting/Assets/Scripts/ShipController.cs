@@ -43,7 +43,7 @@ public class ShipController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Debug.Log(rb);
-        Cursor.visible = false;
+        Cursor.visible = true;
         curHealth = maxHealth;
         alive = true;
     }

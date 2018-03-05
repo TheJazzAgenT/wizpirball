@@ -14,6 +14,8 @@ public class CharacterMovement : MonoBehaviour {
     public float turnSpeed = 50;
     public float batDelay = 2.0f;
     public GameObject[] Bullets;
+    //TEMP
+    public Vector3 aimer;
 
     float verticalInput;
     float horizontalInput;
@@ -100,8 +102,8 @@ public class CharacterMovement : MonoBehaviour {
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = new Vector3(this.transform.forward.x, PlayerCamera.transform.forward.y + 0.5f, this.transform.forward.z) * BulletSpeed;
-
+        //bullet.GetComponent<Rigidbody>().velocity = new Vector3(this.transform.forward.x, PlayerCamera.transform.forward.y + 0.5f, this.transform.forward.z) * BulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds
         // Destroy(bullet, 2.0f);
