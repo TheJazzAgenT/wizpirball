@@ -30,7 +30,7 @@ public class ShipFixedPathing : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (transform.position.x == to.position.x && transform.position.z == to.position.z)
         {
             Debug.Log("=========hit waypoint==========");
@@ -44,11 +44,6 @@ public class ShipFixedPathing : MonoBehaviour {
         timer += Time.deltaTime;
 
         transform.position = Vector3.Lerp(from.position, to.position, timer / secondsForOneLength);
-        /*Quaternion newRotation = Quaternion.LookRotation(future.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, timer / secondsForOneLength);*/
-        //transform.LookAt(to);
-
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, to.rotation, rotateSpeed);
 
         if (timer > secondsForOneLength * rotationSpeed)
         {
@@ -58,9 +53,6 @@ public class ShipFixedPathing : MonoBehaviour {
                 needsRotationStorage = false;
             }
             transform.rotation = Quaternion.RotateTowards(transform.rotation, to.rotation, Quaternion.Angle(rotationStore, to.rotation)/((secondsForOneLength * (1 - rotationSpeed)) / Time.deltaTime));
-            /*Vector3 direction = future.position - transform.position;
-            Quaternion toRotation = Quaternion.FromToRotation(transform.forward, direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 0.1f * Time.time);*/
         }
 
         if (timer >= secondsForOneLength)

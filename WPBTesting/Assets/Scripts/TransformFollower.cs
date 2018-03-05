@@ -16,7 +16,7 @@ public class TransformFollower : MonoBehaviour
     [SerializeField]
     private bool lookAt = true;
 
-    private void Update()
+    private void FixedUpdate()
     {
         Refresh();
     }
