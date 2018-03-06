@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
-    public Camera PlayerCamera;
+    //public Camera PlayerCamera;
     public float speed = 0.02f;
-    public float BulletSpeed = 6.0f;
+    //public float BulletSpeed = 6.0f;
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public Transform batAimer;
     public AudioClip batSound;
-    public float turnSpeed = 50;
+    //public float turnSpeed = 50;
     public float batDelay = 2.0f;
     public GameObject[] Bullets;
     //TEMP
-    public Vector3 aimer;
+    //public Vector3 aimer;
 
     float verticalInput;
     float horizontalInput;
@@ -96,8 +97,8 @@ public class CharacterMovement : MonoBehaviour {
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        //bullet.GetComponent<Rigidbody>().velocity = new Vector3(this.transform.forward.x, PlayerCamera.transform.forward.y + 0.5f, this.transform.forward.z) * BulletSpeed;
-        bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
+        bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed;
+        //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds
         // Destroy(bullet, 2.0f);
