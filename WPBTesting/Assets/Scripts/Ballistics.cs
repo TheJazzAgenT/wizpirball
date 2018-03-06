@@ -30,6 +30,20 @@ public class Ballistics : MonoBehaviour
 
     void Update()
     {
+        // this creates a horizontal plane passing through this object's center
+        Plane plane = new Plane(Vector3.up, transform.position);
+        // create a ray from the mousePosition
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // plane.Raycast returns the distance from the ray start to the hit point
+        float distance = 0.0f;
+        if (plane.Raycast(ray, out distance))
+        {
+            // some point of the plane was hit - get its coordinates
+            Vector3 hitPoint = ray.GetPoint(distance);
+            // use the hitPoint to aim your cannon
+            targetObj.position = hitPoint;
+        }
+
         RotateGun();
         DrawTrajectoryPath();
     }
