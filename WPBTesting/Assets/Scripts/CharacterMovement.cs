@@ -44,19 +44,19 @@ public class CharacterMovement : MonoBehaviour {
             anim.SetTrigger("isHitting");
             Invoke("Fire", fireDelay);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             bulletPrefab = Bullets[0];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time >= timestamp)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             bulletPrefab = Bullets[1];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time >= timestamp)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             bulletPrefab = Bullets[2];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && Time.time >= timestamp)
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             bulletPrefab = Bullets[3];
         }
