@@ -18,6 +18,7 @@ public class CharacterMovement : MonoBehaviour {
     //TEMP
     //public Vector3 aimer;
 
+    private float fireDelay = 0.8f;
     float verticalInput;
     float horizontalInput;
     float timestamp;
@@ -41,7 +42,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             timestamp = Time.time + batDelay;
             anim.SetTrigger("isHitting");
-            Invoke("Fire", 0.8f);
+            Invoke("Fire", fireDelay);
         }
         if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
         {

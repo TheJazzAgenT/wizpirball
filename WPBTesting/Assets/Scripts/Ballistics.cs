@@ -24,14 +24,13 @@ public class Ballistics : MonoBehaviour
         //Or a more precise to get a more accurate result
         //But lower is not always better because of rounding errors
         h = Time.fixedDeltaTime * 1f;
-        gunObj.rotation = transform.rotation;
+        //gunObj.rotation = transform.rotation;
         lineRenderer = GetComponent<LineRenderer>();
     }
 
     void Update()
     {
         RotateGun();
-
         DrawTrajectoryPath();
     }
 
