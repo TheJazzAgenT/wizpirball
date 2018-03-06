@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(FloatObjectScript))]
 public class ShipController : MonoBehaviour
 {
 	
@@ -54,9 +53,7 @@ public class ShipController : MonoBehaviour
             verticalInput = Input.GetAxis("Vertical");
             horizontalInput = Input.GetAxis("Horizontal");
         }
-        Steer();
-        Movement();
-        Balance();
+
         if (curHealth < 1)
         {
             //Destroy(gameObject);//breaks stuff if kept in
@@ -64,27 +61,6 @@ public class ShipController : MonoBehaviour
         }
     }
 
-    void Balance()
-    {
-        if (!m_COM)
-        {
-            m_COM = new GameObject("COM").transform;
-            m_COM.SetParent(transform);
-        }
-        m_COM.position = COM + transform.position;
-        rb.centerOfMass = m_COM.position;
-    }
-
-    void Movement()
-    {
-        movementFactor = Mathf.Clamp(Mathf.Lerp(movementFactor, verticalInput, Time.deltaTime / movementThreshold), 0, maxSpeed);
-        transform.Translate(0.0f, 0.0f, movementFactor * speed);
-    }
-    void Steer()
-    {
-        steerFactor = Mathf.Clamp(Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime / steerThreshold), -maxTurnSpeed, maxTurnSpeed);
-        transform.Rotate(0.0f, steerFactor * steerSpeed, 0.0f);
-    }
     public void TakeDamage(int amount)
     {
         curHealth -= amount;

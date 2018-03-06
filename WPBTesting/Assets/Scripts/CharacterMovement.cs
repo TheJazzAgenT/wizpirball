@@ -36,14 +36,11 @@ public class CharacterMovement : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        if (PlayerCamera.enabled)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= timestamp)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && Time.time >= timestamp)
-            {
-                timestamp = Time.time + batDelay;
-                anim.SetTrigger("isHitting");
-                Invoke("Fire", 0.8f);
-            }
+            timestamp = Time.time + batDelay;
+            anim.SetTrigger("isHitting");
+            Invoke("Fire", 0.8f);
         }
         if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
         {
@@ -63,19 +60,16 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
     void FixedUpdate () {
-        if (PlayerCamera.enabled)
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
+        if (verticalInput != 0 || horizontalInput !=0)
         {
-            verticalInput = Input.GetAxis("Vertical");
-            horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
-            if (verticalInput != 0 || horizontalInput !=0)
-            {
-                anim.SetTrigger("isMoving");
-            }
-            else
-            {
-                //anim.SetTrigger("");
-            }
+            anim.SetTrigger("isMoving");
+        }
+        else
+        {
+            //anim.SetTrigger("");
         }
     }
     void OnTriggerEnter(Collider col)
