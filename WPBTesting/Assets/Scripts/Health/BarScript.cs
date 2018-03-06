@@ -21,7 +21,7 @@ public class BarScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		HandleBar ();
+		this.HandleBar();
 	}
 
 	private void HandleBar()

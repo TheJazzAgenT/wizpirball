@@ -31,10 +31,7 @@ public class EnemyCharController : MonoBehaviour
             timer = 0;
         }
         // AI Paces between nearEnd and farEnd
-        transform.position = Vector3.Lerp(nearEnd.position, farEnd.position,
-          Mathf.SmoothStep(0f, 1f,
-            Mathf.PingPong(Time.time / secondsForOneLength, 1f)
-         ));
+        transform.position = Vector3.Lerp(nearEnd.position, farEnd.position, Mathf.SmoothStep(0f, 1f, Mathf.PingPong(Time.time / secondsForOneLength, 1f)));
         
     }
     void OnTriggerEnter(Collider col)

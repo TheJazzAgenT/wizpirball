@@ -24,6 +24,8 @@ public class EnemyShipController : MonoBehaviour {
     float movementFactor;
     float horizontalInput;
     float steerFactor;
+	[SerializeField]
+	private BarScriptEnemy BarE;
      
     void Start()
     {
@@ -56,7 +58,7 @@ public class EnemyShipController : MonoBehaviour {
             //Destroy(gameObject);
             alive = false;
         }
-        Debug.Log("ship health is " + curhealth);
+        //Debug.Log("ship health is " + curhealth);
     }
     /*void FixedUpdate ()
     {
@@ -99,5 +101,6 @@ public class EnemyShipController : MonoBehaviour {
     public void TakeDamage( int amount)
     {
         curhealth -= amount;
+		BarE.fillAmountE = curhealth;
     }
 }

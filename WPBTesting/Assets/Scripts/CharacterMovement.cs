@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
-    public Camera PlayerCamera;
+    //public Camera PlayerCamera;
     public float speed = 0.02f;
-    public float BulletSpeed = 6.0f;
+    //public float BulletSpeed = 6.0f;
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public Transform batAimer;
     public AudioClip batSound;
-    public float turnSpeed = 50;
+    //public float turnSpeed = 50;
     public float batDelay = 2.0f;
     public GameObject[] Bullets;
+    //TEMP
+    //public Vector3 aimer;
 
+    private float fireDelay = 0.8f;
     float verticalInput;
     float horizontalInput;
     float timestamp;
@@ -34,14 +38,11 @@ public class CharacterMovement : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        if (PlayerCamera.enabled)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= timestamp)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && Time.time >= timestamp)
-            {
-                timestamp = Time.time + batDelay;
-                anim.SetTrigger("isHitting");
-                Invoke("Fire", 0.8f);
-            }
+            timestamp = Time.time + batDelay;
+            anim.SetTrigger("isHitting");
+            Invoke("Fire", fireDelay);
         }
         if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time >= timestamp)
         {
@@ -61,19 +62,16 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
     void FixedUpdate () {
-        if (PlayerCamera.enabled)
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
+        if (verticalInput != 0 || horizontalInput !=0)
         {
-            verticalInput = Input.GetAxis("Vertical");
-            horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
-            if (verticalInput != 0 || horizontalInput !=0)
-            {
-                anim.SetTrigger("isMoving");
-            }
-            else
-            {
-                //anim.SetTrigger("");
-            }
+            anim.SetTrigger("isMoving");
+        }
+        else
+        {
+            //anim.SetTrigger("");
         }
     }
     void OnTriggerEnter(Collider col)
@@ -100,8 +98,8 @@ public class CharacterMovement : MonoBehaviour {
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = new Vector3(this.transform.forward.x, PlayerCamera.transform.forward.y + 0.5f, this.transform.forward.z) * BulletSpeed;
-
+        bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed;
+        //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds
         // Destroy(bullet, 2.0f);
