@@ -19,6 +19,8 @@ public class CharacterMovement : MonoBehaviour {
     //public Vector3 aimer;
 
     private float fireDelay = 0.8f;
+    [SerializeField]
+    private GameObject myShip;
     float verticalInput;
     float horizontalInput;
     float timestamp;
@@ -98,7 +100,8 @@ public class CharacterMovement : MonoBehaviour {
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed;
+        Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+        bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
         //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds

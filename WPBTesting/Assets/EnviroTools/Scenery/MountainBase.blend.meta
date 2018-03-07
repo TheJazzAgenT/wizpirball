@@ -67,6 +67,16 @@ ModelImporter:
     4300014: LandscapeSandBank_006
     4300016: LandscapeSandBank_005
     4300018: LandscapeSandBank_004
+    6400000: Landscape_010
+    6400002: Landscape_Mountain
+    6400004: LandscapeSandBank_000
+    6400006: LandscapeSandBank_001
+    6400008: LandscapeSandBank_002
+    6400010: LandscapeSandBank_003
+    6400012: LandscapeSandBank_004
+    6400014: LandscapeSandBank_005
+    6400016: LandscapeSandBank_006
+    6400018: LandscapeSandBank_007
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -101,7 +111,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

@@ -31,7 +31,7 @@ public class Ballistics : MonoBehaviour
     void Update()
     {
         // this creates a horizontal plane passing through this object's center
-        Plane plane = new Plane(Vector3.up, transform.position);
+        Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.3333f, 0.0f));
         // create a ray from the mousePosition
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // plane.Raycast returns the distance from the ray start to the hit point

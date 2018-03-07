@@ -14,9 +14,23 @@ public class ShipFixedPathing : MonoBehaviour {
     private Quaternion rotationStore;
     private float timer = 0.0f;
 
+	//health
+
+	[SerializeField]
+	private BarScript bar;
+
+	static public int maxHealth = 100;
+	[SerializeField]
+	static public int curHealth = 100;
+
+	//end of health
+
     // Use this for initialization
     void Start () {
-        curWaypoint = 0;
+		//health
+		curHealth = maxHealth;
+        //end of health
+		curWaypoint = 0;
         from = waypoints[curWaypoint];
         to = waypoints[(curWaypoint + 1) % waypoints.Length];
         future = waypoints[(curWaypoint + 2) % waypoints.Length];
@@ -60,4 +74,27 @@ public class ShipFixedPathing : MonoBehaviour {
             timer = 0.0f;
         }
     }
+	//health and damage
+	public void TakeDamage(int amount)
+	{
+		curHealth -= amount;
+		bar.fillAmount = curHealth;
+	}
+
+    public Vector3 getShipVelocity()
+    {
+        float dist = Vector3.Distance(to.position, from.position);
+        float boatSpeed = dist / secondsForOneLength;
+        Vector3 boatVel = (to.position - from.position).normalized * boatSpeed;
+        return boatVel;
+    }
+
+	/*private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.transform.tag != "WATER")
+		{
+			audioSource.PlayOneShot(crashSound);
+		}
+	}*/
+	//health and damage end
 }
