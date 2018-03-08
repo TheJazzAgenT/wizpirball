@@ -26,6 +26,7 @@ public class CharacterMovement : MonoBehaviour {
     float timestamp;
     bool canRespawn = true;
     Animator anim;
+    Animator legsAnim;
     private AudioSource audioSource;
 
     private void Awake()
@@ -36,6 +37,7 @@ public class CharacterMovement : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        legsAnim = GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     private void Update()
@@ -71,12 +73,14 @@ public class CharacterMovement : MonoBehaviour {
         transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
         if (verticalInput != 0 || horizontalInput !=0)
         {
+            legsAnim.SetTrigger("Moving");
             anim.SetBool("Moving", true);
             anim.SetBool("Idle", false);
 
         }
         else
         {
+            legsAnim.SetTrigger("Stopping");
             anim.SetBool("Idle", true);
             anim.SetBool("Moving", false);
         }
