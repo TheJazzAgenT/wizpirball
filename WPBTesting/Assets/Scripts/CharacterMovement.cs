@@ -43,7 +43,9 @@ public class CharacterMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= timestamp)
         {
             timestamp = Time.time + batDelay;
-            anim.SetTrigger("isHitting");
+            anim.SetBool("Moving", false);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Hitting", true);
             Invoke("Fire", fireDelay);
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -69,11 +71,14 @@ public class CharacterMovement : MonoBehaviour {
         transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
         if (verticalInput != 0 || horizontalInput !=0)
         {
-            anim.SetTrigger("isMoving");
+            anim.SetBool("Moving", true);
+            anim.SetBool("Idle", false);
+
         }
         else
         {
-            //anim.SetTrigger("");
+            anim.SetBool("Idle", true);
+            anim.SetBool("Moving", false);
         }
     }
     void OnTriggerEnter(Collider col)
@@ -102,6 +107,7 @@ public class CharacterMovement : MonoBehaviour {
         // Add velocity to the bullet
         Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
+        anim.SetBool("Hitting", false);
         //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
         // not destroying bullet yet, letting it go free
         // Destroy the bullet after 2 seconds

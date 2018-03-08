@@ -1500,6 +1500,10 @@ Prefab:
       propertyPath: m_Name
       value: Player_Char(torso)
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e588571305432df4c885629a68874d95, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
   m_IsPrefabParent: 0
