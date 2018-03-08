@@ -38,6 +38,8 @@ public class CharacterMovement : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         legsAnim = GetComponentInChildren<Animator>();
+		//anim.SetBool("Idle", true);
+        anim.SetBool("Moving", false);
     }
     // Update is called once per frame
     private void Update()
@@ -71,7 +73,7 @@ public class CharacterMovement : MonoBehaviour {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
-        if (verticalInput != 0 || horizontalInput !=0)
+        if (verticalInput != 0 || horizontalInput != 0)
         {
             legsAnim.SetTrigger("Moving");
             anim.SetBool("Moving", true);
@@ -80,8 +82,8 @@ public class CharacterMovement : MonoBehaviour {
         }
         else
         {
-            legsAnim.SetTrigger("Stopping");
-            anim.SetBool("Idle", true);
+            //legsAnim.SetTrigger("Stopping");
+            //anim.SetBool("Idle", true);
             anim.SetBool("Moving", false);
         }
     }
