@@ -8,22 +8,22 @@ public class EnemyShipController : MonoBehaviour {
     static public int maxhealth = 100;
     static public int curhealth = 100;
     public bool alive;
-    public Vector3 COM;
-    public GameObject PlayerShip;
+    //public Vector3 COM;
+    //public GameObject PlayerShip;
 
-    private Rigidbody rb;
-    private Transform m_COM;
-    float verticalInput;
-    float movementFactor;
-    float horizontalInput;
-    float steerFactor;
+    //private Rigidbody rb;
+    //private Transform m_COM;
+    //float verticalInput;
+    //float movementFactor;
+    //float horizontalInput;
+    //float steerFactor;
 	[SerializeField]
 	private BarScriptEnemy BarE;
      
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        Debug.Log(rb);
+        //rb = GetComponent<Rigidbody>();
+        //Debug.Log(rb);
         curhealth = maxhealth;
         alive = true;
     }
@@ -54,7 +54,7 @@ public class EnemyShipController : MonoBehaviour {
         //Debug.Log("ship health is " + curhealth);
     }
     
-    void Balance()
+    /*void Balance()
     {
         if (!m_COM)
         {
@@ -63,7 +63,7 @@ public class EnemyShipController : MonoBehaviour {
         }
         m_COM.position = COM + transform.position;
         rb.centerOfMass = m_COM.position;
-    }
+    }*/
 
     public void TakeDamage( int amount)
     {
