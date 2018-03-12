@@ -5,7 +5,7 @@ using UnityEngine;
 public class IceBallTrigger : MonoBehaviour {
 
     public int intialDamage = 5;
-    public float slow = 0.15f;
+    public float slow = 30.0f;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
@@ -34,30 +34,34 @@ public class IceBallTrigger : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
-
+            Debug.Log("Ice Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
+            ShipFixedPathing target = col.GetComponent<ShipFixedPathing>();
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                oSpeed = curhealth.maxSpeed;
-                StartCoroutine(CastDamage(curhealth));
-                curhealth.maxSpeed = oSpeed;
+                oSpeed = target.secondsForOneLength;
+                StartCoroutine(CastDamage(target));
+                target.secondsForOneLength = oSpeed;
             }
 
 
+            Destory(5.0f);
             //destroy the projectile that just caused the trigger collision
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
-            Destroy(gameObject);
+            Debug.Log("Ice Collide water");
+            Destory(5.0f);
+            //Destroy(gameObject);
         }
     }
 
-    IEnumerator CastDamage(EnemyShipController damageable)
+    IEnumerator CastDamage(ShipFixedPathing damageable)
     {
         if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
         {
@@ -70,12 +74,19 @@ public class IceBallTrigger : MonoBehaviour {
             else
             {
                 yield return new WaitForSeconds(applyEveryNSeconds);
-                damageable.maxSpeed = slow;
+                damageable.secondsForOneLength = slow;
             }
             appliedTimes++;
             test = false;
         }
     }
-
+    IEnumerator Destory(float Delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Delay);
+            Destroy(gameObject);
+        }
+    }
 }
 

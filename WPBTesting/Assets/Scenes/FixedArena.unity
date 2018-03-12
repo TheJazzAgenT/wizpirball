@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   farEnd: {fileID: 1543421667}
   nearEnd: {fileID: 1679323265}
   playerShip: {fileID: 1249634867}
+  stunned: 0
 --- !u!114 &7898285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,6 +2090,7 @@ MonoBehaviour:
   - {fileID: 202221309}
   - {fileID: 1512132540}
   rotationSpeed: 0.7
+  secondsForOneLength: 10
   bar: {fileID: 107607615}
 --- !u!82 &1249634870
 AudioSource:
@@ -3028,6 +3030,18 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b15e01a5a95c2814ebdd4cbd7b7f6577, type: 3}
   m_PrefabInternal: {fileID: 1662789051}
+--- !u!65 &1565169395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565169394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.8327227, y: 19.871925, z: 23.46238}
+  m_Center: {x: 0.000056624413, y: 5.196107, z: 3.4497738}
 --- !u!114 &1565169397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,6 +3061,7 @@ MonoBehaviour:
   - {fileID: 755082817}
   - {fileID: 1052927095}
   rotationSpeed: 0.7
+  secondsForOneLength: 10
   bar: {fileID: 1251520967}
 --- !u!54 &1565169398
 Rigidbody:

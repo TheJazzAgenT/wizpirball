@@ -14,6 +14,7 @@ public class EnemyCharController : MonoBehaviour
     private float secondsForOneLength = 5f;
     float timer = 0.0f;
     float shootDelay = 5.0f;
+    public bool stunned = false;
 
     void Start()
     {
@@ -26,8 +27,12 @@ public class EnemyCharController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= shootDelay)
         {
-            Fire();
-            timer = 0;
+            if (!stunned)
+            {
+                Fire();
+                timer = 0;
+            }
+           
         }
         // AI Paces between nearEnd and farEnd
         transform.position = Vector3.Lerp(nearEnd.position, farEnd.position, Mathf.SmoothStep(0f, 1f, Mathf.PingPong(Time.time / secondsForOneLength, 1f)));
