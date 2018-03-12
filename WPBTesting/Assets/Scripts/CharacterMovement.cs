@@ -92,7 +92,7 @@ public class CharacterMovement : MonoBehaviour {
         if (col.transform.tag == "WATER" && canRespawn)
         {
             canRespawn = false;
-            Invoke("respawnPlayer", 5);
+            Invoke("respawnPlayer", 4);
         }
     }
     void respawnPlayer()
