@@ -9,7 +9,7 @@ public class ShipFixedPathing : MonoBehaviour {
     private int curWaypoint;
     private Transform from;
     private Transform to;
-    private Transform future;
+    private Transform future;//console thinks this is not used, it is.
     private bool needsRotationStorage;
     private Quaternion rotationStore;
     private float timer = 0.0f;

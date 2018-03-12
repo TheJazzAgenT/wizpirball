@@ -15,7 +15,7 @@ public class IceBallTrigger : MonoBehaviour {
     private bool delied = false;
 
     private int appliedTimes = 0;
-
+    private IEnumerator coroutine;
     private bool test = false;
     // Use this for initialization
     void Start()
@@ -55,8 +55,10 @@ public class IceBallTrigger : MonoBehaviour {
         }
         if (col.gameObject.tag == "WATER")
         {
+
             Debug.Log("Ice Collide water");
-            Destory(5.0f);
+            coroutine = Destory(5.0f);
+            StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
     }
@@ -80,12 +82,16 @@ public class IceBallTrigger : MonoBehaviour {
             test = false;
         }
     }
-    IEnumerator Destory(float Delay)
+    private IEnumerator Destory(float Delay)
     {
-        while (true)
+        Debug.Log("entered Destory");
+        bool alphaBool = true;
+        while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
+            Debug.Log("Waited for " + Delay + " seconds");
             Destroy(gameObject);
+            alphaBool = false;
         }
     }
 }

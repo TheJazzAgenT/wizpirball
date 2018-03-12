@@ -13,7 +13,7 @@ public class FireBallTrigger : MonoBehaviour
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 5;
     private int appliedTimes = 0;
-
+    private IEnumerator coroutine;
     private bool test = false;
     // Use this for initialization
     void Start()
@@ -50,8 +50,10 @@ public class FireBallTrigger : MonoBehaviour
         }
         if (col.gameObject.tag == "WATER")
         {
+
             Debug.Log("fire Collide water");
-            Destory(5.0f);
+            coroutine = Destory(5.0f);
+            StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
         GetComponent<FireBallTrigger>().enabled = false;
@@ -72,12 +74,16 @@ public class FireBallTrigger : MonoBehaviour
 
         }
     }
-    IEnumerator Destory(float Delay)
+    private IEnumerator Destory(float Delay)
     {
-        while (true)
+        Debug.Log("entered Destory");
+        bool alphaBool = true;
+        while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
+            Debug.Log("Waited for " + Delay + " seconds");
             Destroy(gameObject);
+            alphaBool = false;
         }
     }
 }

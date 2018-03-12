@@ -27,9 +27,7 @@ public class ShipController : MonoBehaviour
 
     private Rigidbody rb;
     private Transform m_COM;
-    float verticalInput;
     float movementFactor;
-    float horizontalInput;
     float steerFactor;
     private AudioSource audioSource;
 
@@ -50,8 +48,7 @@ public class ShipController : MonoBehaviour
     {
         if (ShipCamera.enabled)
         {
-            verticalInput = Input.GetAxis("Vertical");
-            horizontalInput = Input.GetAxis("Horizontal");
+            //left over code, might remove later
         }
 
         if (curHealth < 1)
