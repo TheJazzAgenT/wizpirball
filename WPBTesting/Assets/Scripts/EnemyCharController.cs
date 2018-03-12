@@ -11,9 +11,11 @@ public class EnemyCharController : MonoBehaviour
     public Transform farEnd;
     public Transform nearEnd;
     public GameObject playerShip;
+    [SerializeField]
+    private GameObject myShip;
     private float secondsForOneLength = 5f;
     float timer = 0.0f;
-    float shootDelay = 5.0f;
+    float shootDelay = 2.0f;
     public bool stunned = false;
 
     void Start()
@@ -48,8 +50,9 @@ public class EnemyCharController : MonoBehaviour
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
+        Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         Vector3 aimDirection = -(transform.position - playerShip.transform.position);
-        bullet.GetComponent<Rigidbody>().velocity = new Vector3(aimDirection.x, aimDirection.y + Random.Range(2.0f, 10.0f), aimDirection.z + Random.Range(1.0f, 10.0f)) * BulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + Random.Range(2.0f, 10.0f), aimDirection.z + Random.Range(1.0f, 10.0f)) * BulletSpeed) + boatVelocity;
         //bullet.GetComponent<Rigidbody>().velocity = playerShip.transform.position * BulletSpeed;
 
         // not destroying bullet yet, letting it go free

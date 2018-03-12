@@ -101,7 +101,7 @@ public class CharacterMovement : MonoBehaviour {
         this.transform.rotation = spawnPoint.transform.rotation;
         canRespawn = true;
     }
-    void Fire()
+    public void Fire()
     {
         audioSource.PlayOneShot(batSound, 1.0f);
         // Create the Bullet from the Bullet Prefab

@@ -166,7 +166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_Name
-      value: Player_Char(torso)
+      value: ENEMY_pwizardballer
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_Controller
@@ -201,6 +201,7 @@ MonoBehaviour:
   farEnd: {fileID: 1543421667}
   nearEnd: {fileID: 1679323265}
   playerShip: {fileID: 1249634867}
+  myShip: {fileID: 1565169394}
   stunned: 0
 --- !u!114 &7898285
 MonoBehaviour:
@@ -356,7 +357,7 @@ GameObject:
   - component: {fileID: 60095960}
   - component: {fileID: 60095961}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CounterHitRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88efb2aec5459c64fafc058cf756d456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacter: {fileID: 850153288}
 --- !u!1 &107607613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,7 +3192,7 @@ BoxCollider:
   m_GameObject: {fileID: 1565169394}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 7.8327227, y: 19.871925, z: 23.46238}
   m_Center: {x: 0.000056624413, y: 5.196107, z: 3.4497738}
