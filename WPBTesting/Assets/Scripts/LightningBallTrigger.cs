@@ -9,7 +9,7 @@ public class LightningBallTrigger : MonoBehaviour {
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 3;
-    public float oSpeed;
+    public float oSpeed;// originally speed of the ship
 
     private bool delied = false;
 
@@ -33,46 +33,52 @@ public class LightningBallTrigger : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
-
+            Debug.Log("lightning Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
+            EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                oSpeed = curhealth.maxSpeed;
-                StartCoroutine(CastDamage(curhealth));
-                curhealth.maxSpeed = oSpeed;
+                IEnumerator Coroutine = CastDamage(target);
+                StartCoroutine(Coroutine);
             }
 
-
+            Destory(5.0f);
             //destroy the projectile that just caused the trigger collision
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
-            Destroy(gameObject);
+            Debug.Log("lightning Collide water");
+            Destory(5.0f);
         }
+        GetComponent<LightningBallTrigger>().enabled = false;
     }
 
-    IEnumerator CastDamage(EnemyShipController damageable)
+    IEnumerator CastDamage(EnemyCharController damageable)
     {
-        if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
+        while (true)
         {
-            test = true;
-            if (!delied)
+            yield return new WaitForSeconds(applyEveryNSeconds);
+            if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
-                yield return new WaitForSeconds(delayBeforeCasting);
-                delied = true;
+                test = true;
+                damageable.stunned = true;
+                appliedTimes++;
+                test = false;
             }
-            else
-            {
-                yield return new WaitForSeconds(applyEveryNSeconds);
-                damageable.maxSpeed = slow;
-            }
-            appliedTimes++;
-            test = false;
+
+        }
+    }
+    IEnumerator Destory(float Delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Delay);
+            Destroy(gameObject);
         }
     }
 

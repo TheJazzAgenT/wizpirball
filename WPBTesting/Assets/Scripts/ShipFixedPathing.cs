@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipFixedPathing : MonoBehaviour {
     public Transform[] waypoints;
     public float rotationSpeed;
-    private float secondsForOneLength = 10f;
+    public float secondsForOneLength = 10f;
     private int curWaypoint;
     private Transform from;
     private Transform to;
