@@ -207,7 +207,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 150.96008
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -215,7 +215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -113.12999
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_LocalRotation.x
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1518674168084194, guid: abb88023fa9741840ab2753d81fa3073,
     type: 2}
-  bulletSpawn: {fileID: 7898288}
-  BulletSpeed: 1
+  bulletSpawn: {fileID: 1846891213}
+  BulletSpeed: 0.5
   farEnd: {fileID: 1543421667}
   nearEnd: {fileID: 1679323265}
   playerShip: {fileID: 1249634867}
@@ -325,15 +325,11 @@ Rigidbody:
   m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!4 &7898288 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400038, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
-  m_PrefabInternal: {fileID: 7898281}
 --- !u!1 &28026541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,6 +5405,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bd6f73df54b9d246af7c4ec08476900, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1846891213 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400040, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
+  m_PrefabInternal: {fileID: 7898281}
 --- !u!1 &1860289561
 GameObject:
   m_ObjectHideFlags: 0

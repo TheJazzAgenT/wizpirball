@@ -12,7 +12,7 @@ public class Ballistics : MonoBehaviour
     //Sniper rifle
     //public static float bulletSpeed = 850f;
     //Test
-    public static float bulletSpeed = 100.0f;
+    public static float bulletSpeed = 50.0f;
 
     //The step size
     static float h;
