@@ -53,7 +53,6 @@ public class BulletTrigger : MonoBehaviour
         }
         if (col.gameObject.tag == "WATER")
         {
-            Debug.Log("destroyed by water");
             Destroy(gameObject);
         }
     }

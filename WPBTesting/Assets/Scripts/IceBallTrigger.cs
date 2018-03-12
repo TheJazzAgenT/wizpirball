@@ -11,8 +11,11 @@ public class IceBallTrigger : MonoBehaviour {
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 10;
     public float oSpeed;
-    private int appliedTimes = 0;
 
+    private bool delied = false;
+
+    private int appliedTimes = 0;
+    private IEnumerator coroutine;
     private bool test = false;
     // Use this for initialization
     void Start()
@@ -31,6 +34,7 @@ public class IceBallTrigger : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
+            Debug.Log("Ice Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
@@ -44,45 +48,50 @@ public class IceBallTrigger : MonoBehaviour {
                 target.secondsForOneLength = oSpeed;
             }
 
-            Destory(10.0f);
+
+            Destory(5.0f);
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
+
             Debug.Log("Ice Collide water");
-            Destory(5.0f);
+            coroutine = Destory(5.0f);
+            StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
-        GetComponent<IceBallTrigger>().enabled = false;
     }
 
     IEnumerator CastDamage(ShipFixedPathing damageable)
     {
-        while (true)
+        if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
         {
-            yield return new WaitForSeconds(applyEveryNSeconds);
-            if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
+            test = true;
+            if (!delied)
             {
-                test = true;
+                yield return new WaitForSeconds(delayBeforeCasting);
+                delied = true;
+            }
+            else
+            {
+                yield return new WaitForSeconds(applyEveryNSeconds);
                 damageable.secondsForOneLength = slow;
-                appliedTimes++;
-                test = false;
             }
-            if(appliedTimes >= applyDamageNTimes)
-            {
-                damageable.secondsForOneLength = oSpeed;
-                break;
-            }
+            appliedTimes++;
+            test = false;
         }
     }
-    
-    IEnumerator Destory(float Delay)
+    private IEnumerator Destory(float Delay)
     {
-        while (true)
+        Debug.Log("entered Destory");
+        bool alphaBool = true;
+        while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
+            Debug.Log("Waited for " + Delay + " seconds");
             Destroy(gameObject);
+            alphaBool = false;
         }
     }
 }
