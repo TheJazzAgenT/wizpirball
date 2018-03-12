@@ -10,11 +10,7 @@ public class LightningBallTrigger : MonoBehaviour {
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 3;
     public float oSpeed;// originally speed of the ship
-
-    private bool delied = false;
-
     private int appliedTimes = 0;
-
     private bool test = false;
     // Use this for initialization
     void Start()
@@ -33,7 +29,6 @@ public class LightningBallTrigger : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
-            Debug.Log("lightning Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
@@ -44,6 +39,7 @@ public class LightningBallTrigger : MonoBehaviour {
                 curhealth.TakeDamage(intialDamage);
                 IEnumerator Coroutine = CastDamage(target);
                 StartCoroutine(Coroutine);
+                target.stunned = false;
             }
 
             Destory(5.0f);
@@ -52,7 +48,7 @@ public class LightningBallTrigger : MonoBehaviour {
         }
         if (col.gameObject.tag == "WATER")
         {
-            Debug.Log("lightning Collide water");
+            Debug.Log("Lightning Collide water");
             Destory(5.0f);
         }
         GetComponent<LightningBallTrigger>().enabled = false;
@@ -70,7 +66,11 @@ public class LightningBallTrigger : MonoBehaviour {
                 appliedTimes++;
                 test = false;
             }
-
+            if (appliedTimes >= applyDamageNTimes)
+            {
+                damageable.stunned = false;
+                break;
+            }
         }
     }
     IEnumerator Destory(float Delay)

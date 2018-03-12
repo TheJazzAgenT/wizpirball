@@ -175,13 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0d5dda31377684bbb2d5073b26a7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intialDamage: 10
-  slow: 0.15
+  intialDamage: 5
+  slow: 30
   ignoreCaster: 1
   delayBeforeCasting: 0
   applyEveryNSeconds: 1
-  applyDamageNTimes: 1
-  oSpeed: 0
+  applyDamageNTimes: 10
+  oSpeed: 10
 --- !u!135 &135184928511470856
 SphereCollider:
   m_ObjectHideFlags: 1

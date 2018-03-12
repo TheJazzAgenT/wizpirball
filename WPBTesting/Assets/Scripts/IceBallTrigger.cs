@@ -11,9 +11,6 @@ public class IceBallTrigger : MonoBehaviour {
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 10;
     public float oSpeed;
-
-    private bool delied = false;
-
     private int appliedTimes = 0;
 
     private bool test = false;
@@ -34,7 +31,6 @@ public class IceBallTrigger : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
-            Debug.Log("Ice Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
@@ -48,8 +44,7 @@ public class IceBallTrigger : MonoBehaviour {
                 target.secondsForOneLength = oSpeed;
             }
 
-
-            Destory(5.0f);
+            Destory(10.0f);
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
@@ -59,27 +54,29 @@ public class IceBallTrigger : MonoBehaviour {
             Destory(5.0f);
             //Destroy(gameObject);
         }
+        GetComponent<IceBallTrigger>().enabled = false;
     }
 
     IEnumerator CastDamage(ShipFixedPathing damageable)
     {
-        if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
+        while (true)
         {
-            test = true;
-            if (!delied)
+            yield return new WaitForSeconds(applyEveryNSeconds);
+            if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
-                yield return new WaitForSeconds(delayBeforeCasting);
-                delied = true;
-            }
-            else
-            {
-                yield return new WaitForSeconds(applyEveryNSeconds);
+                test = true;
                 damageable.secondsForOneLength = slow;
+                appliedTimes++;
+                test = false;
             }
-            appliedTimes++;
-            test = false;
+            if(appliedTimes >= applyDamageNTimes)
+            {
+                damageable.secondsForOneLength = oSpeed;
+                break;
+            }
         }
     }
+    
     IEnumerator Destory(float Delay)
     {
         while (true)
