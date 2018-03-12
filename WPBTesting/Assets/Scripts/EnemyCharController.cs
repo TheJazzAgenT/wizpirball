@@ -36,7 +36,7 @@ public class EnemyCharController : MonoBehaviour
             }
            
         }
-        BulletSpeed = Vector3.Distance(transform.position, playerShip.transform.position)/100f;
+        BulletSpeed = Vector3.Distance(transform.position, playerShip.transform.position)/150f;
         // AI Paces between nearEnd and farEnd
         transform.position = Vector3.Lerp(nearEnd.position, farEnd.position, Mathf.SmoothStep(0f, 1f, Mathf.PingPong(Time.time / secondsForOneLength, 1f)));
         
@@ -53,8 +53,8 @@ public class EnemyCharController : MonoBehaviour
         // Add velocity to the bullet
         Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         Vector3 aimDirection = playerShip.transform.position - transform.position;
-        //bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + Random.Range(10.0f, 20.0f), aimDirection.z + Random.Range(1.0f, 10.0f)) * BulletSpeed) + boatVelocity;
-        bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + 15, aimDirection.z * BulletSpeed)) + boatVelocity;
+        bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + Random.Range(10.0f, 20.0f), aimDirection.z + Random.Range(-10.0f, 10.0f)) * BulletSpeed) + boatVelocity;
+        //bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + 15, aimDirection.z * BulletSpeed)) + boatVelocity;
         //bullet.GetComponent<Rigidbody>().velocity = playerShip.transform.position * BulletSpeed;
 
         // not destroying bullet yet, letting it go free
