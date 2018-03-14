@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CounterHit : MonoBehaviour {
+    public GameObject bat;
+    public Transform batSpawn;
     [SerializeField]
     private GameObject myCharacter;
     private float counterDelay = 1.2f;
     private float timer = 0.0f;
+    private GameObject throwBat;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +36,10 @@ public class CounterHit : MonoBehaviour {
             Debug.Log("baseball entered");
             if (Input.GetKeyDown(KeyCode.Mouse1) && timer > counterDelay)
             {
-                Debug.Log("MMM BABY");
+                throwBat = (GameObject)Instantiate(
+                            bat,
+                            batSpawn.position,
+                            batSpawn.rotation);
                 myCharacter.GetComponent<CharacterMovement>().Fire();
                 Destroy(other.gameObject);
                 timer = 0;
