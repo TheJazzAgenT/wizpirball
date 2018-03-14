@@ -35,6 +35,7 @@ public class CounterHit : MonoBehaviour {
             {
                 Debug.Log("MMM BABY");
                 myCharacter.GetComponent<CharacterMovement>().Fire();
+                Destroy(other.gameObject);
                 timer = 0;
             }
         }
