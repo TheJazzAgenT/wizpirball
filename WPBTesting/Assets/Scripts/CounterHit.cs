@@ -5,6 +5,7 @@ using UnityEngine;
 public class CounterHit : MonoBehaviour {
     [SerializeField]
     private GameObject myCharacter;
+    private float counterDelay = 1.2f;
     private float timer = 0.0f;
 
 	// Use this for initialization
@@ -14,7 +15,7 @@ public class CounterHit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        timer += Time.deltaTime;
 	}
 
     /*void OnTriggerEnter(Collider other)
@@ -30,10 +31,11 @@ public class CounterHit : MonoBehaviour {
         if (other.tag == "Bullet")
         {
             Debug.Log("baseball entered");
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1) && timer > counterDelay)
             {
                 Debug.Log("MMM BABY");
                 myCharacter.GetComponent<CharacterMovement>().Fire();
+                timer = 0;
             }
         }
     }
