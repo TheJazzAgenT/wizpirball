@@ -10,6 +10,8 @@ public class LightningBallTrigger : MonoBehaviour {
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 3;
     public float oSpeed;// originally speed of the ship
+    public GameObject impact;
+    private GameObject enemyShip;
 
     private bool delied = false;
 
@@ -19,7 +21,7 @@ public class LightningBallTrigger : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
     }
 
     // Update is called once per frame
@@ -45,6 +47,11 @@ public class LightningBallTrigger : MonoBehaviour {
                 IEnumerator Coroutine = CastDamage(target);
                 StartCoroutine(Coroutine);
             }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.GetComponent<ParticleSystem>().Play();
 
             Destory(5.0f);
             //destroy the projectile that just caused the trigger collision

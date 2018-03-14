@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  impact: {fileID: 1436184521003846, guid: cbb4f2f26b1dc134cbb18c98500077a8, type: 2}
+  enemyShip: {fileID: 0}
 --- !u!135 &135833053535583510
 SphereCollider:
   m_ObjectHideFlags: 1

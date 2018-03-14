@@ -11,6 +11,8 @@ public class IceBallTrigger : MonoBehaviour {
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 10;
     public float oSpeed;
+    public GameObject impact;
+    private GameObject enemyShip;
 
     private bool delied = false;
 
@@ -20,7 +22,7 @@ public class IceBallTrigger : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
     }
 
     // Update is called once per frame
@@ -48,6 +50,10 @@ public class IceBallTrigger : MonoBehaviour {
                 target.secondsForOneLength = oSpeed;
             }
 
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.GetComponent<ParticleSystem>().Play();
 
             Destory(5.0f);
             //destroy the projectile that just caused the trigger collision

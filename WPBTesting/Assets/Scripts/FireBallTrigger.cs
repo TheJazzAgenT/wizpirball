@@ -7,6 +7,8 @@ public class FireBallTrigger : MonoBehaviour
 
     public int intialDamage = 10;
     public int tickDamage = 5;
+    public GameObject impact;
+    private GameObject enemyShip;
 
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
@@ -18,7 +20,7 @@ public class FireBallTrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
     }
 
     // Update is called once per frame
@@ -43,6 +45,11 @@ public class FireBallTrigger : MonoBehaviour
                 IEnumerator Coroutine = CastDamage(curhealth);
                 StartCoroutine(Coroutine);
             }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.GetComponent<ParticleSystem>().Play();
 
             Destory(5.0f);
             //destroy the projectile that just caused the trigger collision

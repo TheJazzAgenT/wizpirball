@@ -18,7 +18,7 @@ public class FlashIndicator : MonoBehaviour {
     //public Vector3 position = new Vector3(10, 5, 0);
 
     private bool oscillate;
-    private float oscSpeed = .01f;
+    private float oscSpeed = .05f;
     private Vector3 init;
     private Vector3 scaleTransf;
 
@@ -36,7 +36,7 @@ public class FlashIndicator : MonoBehaviour {
         colorField = Flash.GetComponent<SpriteRenderer>().color;
         //coroutine = Blink(1);
         //target = Player;
-        target = GameObject.FindGameObjectWithTag("MainCamera");//getCom  <EnemyCharController>().playerShip;
+        target = GameObject.FindGameObjectWithTag("PlayerShip");//getCom  <EnemyCharController>().playerShip;
     }
 	
 	// Update is called once per frame
@@ -71,7 +71,7 @@ public class FlashIndicator : MonoBehaviour {
             transform.LookAt(target.GetComponent<Transform>().position);
         }
         scaleTransf.x = DistTransform(start, target);
-        Debug.Log(scaleTransf.x);
+        //Debug.Log(scaleTransf.x);
         scaleTransf.y = DistTransform(start, target);
         transform.localScale = scaleTransf;
         //transform.localScale = (DistTransform(start, target));
