@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intialDamage: 10
   tickDamage: 5
+  impact: {fileID: 1436184521003846, guid: cbb4f2f26b1dc134cbb18c98500077a8, type: 2}
   ignoreCaster: 1
   delayBeforeCasting: 0
   applyEveryNSeconds: 1
