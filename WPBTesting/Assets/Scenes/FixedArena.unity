@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1706,8 +1706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 662.5, y: 267.5}
-  m_SizeDelta: {x: 1325, y: 535}
+  m_AnchoredPosition: {x: 574.125, y: 267.5}
+  m_SizeDelta: {x: 1148.3, y: 535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &544905222
 GameObject:
@@ -3146,7 +3146,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3467,7 +3467,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4342,6 +4342,21 @@ MonoBehaviour:
   rotationSpeed: 0.7
   secondsForOneLength: 15
   bar: {fileID: 107607615}
+--- !u!114 &1249634869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249634867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ad1c90f8ce07c4e8672dee81f9edb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  alive: 0
+  COM: {x: 0, y: 0, z: 0}
+  crashSound: {fileID: 0}
 --- !u!82 &1249634870
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5817,7 +5832,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6470,8 +6485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 662.5, y: 267.5}
-  m_SizeDelta: {x: 1325, y: 535}
+  m_AnchoredPosition: {x: 574.1375, y: 267.5}
+  m_SizeDelta: {x: 1148.3, y: 535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1606609200
 GameObject:
@@ -7926,8 +7941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 662.5, y: 267.5}
-  m_SizeDelta: {x: 1325, y: 535}
+  m_AnchoredPosition: {x: 574, y: 267.5}
+  m_SizeDelta: {x: 1148, y: 535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1764442996
 GameObject:
