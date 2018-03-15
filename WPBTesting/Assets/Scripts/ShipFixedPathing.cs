@@ -9,7 +9,7 @@ public class ShipFixedPathing : MonoBehaviour {
     private int curWaypoint;
     private Transform from;
     private Transform to;
-    private Transform future;//console thinks this is not used, it is.
+    //private Transform future;//console thinks this is not used, it is.
     private bool needsRotationStorage;
     private Quaternion rotationStore;
     private float timer = 0.0f;
@@ -33,7 +33,7 @@ public class ShipFixedPathing : MonoBehaviour {
 		curWaypoint = 0;
         from = waypoints[curWaypoint];
         to = waypoints[(curWaypoint + 1) % waypoints.Length];
-        future = waypoints[(curWaypoint + 2) % waypoints.Length];
+        //future = waypoints[(curWaypoint + 2) % waypoints.Length];
         transform.position = from.position;
         transform.LookAt(to);
         needsRotationStorage = true;
@@ -51,7 +51,7 @@ public class ShipFixedPathing : MonoBehaviour {
             curWaypoint = (curWaypoint + 1) % waypoints.Length;
             from = waypoints[curWaypoint];
             to = waypoints[(curWaypoint + 1) % waypoints.Length];
-            future = waypoints[(curWaypoint + 2) % waypoints.Length];
+            //future = waypoints[(curWaypoint + 2) % waypoints.Length];
             transform.LookAt(to);
             needsRotationStorage = true;
         }
