@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour {
         {
             if (Time.timeScale == 1 && shipController.alive == true)
             {
+                Debug.Log("pausing?");
                 Time.timeScale = 0;
                 ShowPaused();
             }
@@ -115,6 +116,7 @@ public class UIManager : MonoBehaviour {
     {
         foreach (GameObject g in pauseObjects)
         {
+            //Debug.Log("displaying pauseobject");
             g.SetActive(true);
         }
         Cursor.visible = true;
@@ -126,6 +128,7 @@ public class UIManager : MonoBehaviour {
         {
             g.SetActive(false);
         }
+        Debug.Log("hiding cursor");
         Cursor.visible = false;
     }
     public void HideDeath()

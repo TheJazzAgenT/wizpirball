@@ -47,7 +47,7 @@ public class ShipFixedPathing : MonoBehaviour {
 	void FixedUpdate () {
 		if (transform.position.x == to.position.x && transform.position.z == to.position.z)
         {
-            Debug.Log("=========hit waypoint==========");
+            //Debug.Log("=========hit waypoint==========");
             curWaypoint = (curWaypoint + 1) % waypoints.Length;
             from = waypoints[curWaypoint];
             to = waypoints[(curWaypoint + 1) % waypoints.Length];

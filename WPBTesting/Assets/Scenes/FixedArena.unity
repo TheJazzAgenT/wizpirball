@@ -2469,6 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
+  myShip: {fileID: 1249634867}
 --- !u!114 &850153290
 MonoBehaviour:
   m_ObjectHideFlags: 0

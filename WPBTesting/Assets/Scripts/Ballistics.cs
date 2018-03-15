@@ -7,16 +7,14 @@ public class Ballistics : MonoBehaviour
     //Drags
     public Transform targetObj;
     public Transform gunObj;
+    //public GameObject myShip;
 
-    //The bullet's initial speed in m/s
-    //Sniper rifle
-    //public static float bulletSpeed = 850f;
-    //Test
     public static float bulletSpeed = 50.0f;
 
     //The step size
     static float h;
     private LineRenderer lineRenderer;
+    private Vector3 shipVel;
 
     void Awake()
     {
@@ -43,6 +41,7 @@ public class Ballistics : MonoBehaviour
             // use the hitPoint to aim your cannon
             targetObj.position = hitPoint;
         }
+        //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
 
         RotateGun();
         DrawTrajectoryPath();
