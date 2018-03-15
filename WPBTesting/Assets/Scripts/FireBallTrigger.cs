@@ -78,7 +78,6 @@ public class FireBallTrigger : MonoBehaviour
                 appliedTimes++;
                 test = false;
             }
-
         }
     }
     private IEnumerator Destory(float Delay)

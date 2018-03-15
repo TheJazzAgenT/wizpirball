@@ -71,21 +71,16 @@ public class IceBallTrigger : MonoBehaviour {
 
     IEnumerator CastDamage(ShipFixedPathing damageable)
     {
-        if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
+        while (true)
         {
-            test = true;
-            if (!delied)
+            yield return new WaitForSeconds(applyEveryNSeconds);
+            if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
-                yield return new WaitForSeconds(delayBeforeCasting);
-                delied = true;
+                test = true;
+                //damageable.TakeDamage(tickDamage);
+                appliedTimes++;
+                test = false;
             }
-            else
-            {
-                yield return new WaitForSeconds(applyEveryNSeconds);
-                damageable.secondsForOneLength = slow;
-            }
-            appliedTimes++;
-            test = false;
         }
     }
     private IEnumerator Destory(float Delay)
