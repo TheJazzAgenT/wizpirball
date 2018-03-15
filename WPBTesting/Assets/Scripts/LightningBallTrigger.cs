@@ -73,6 +73,12 @@ public class LightningBallTrigger : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(applyEveryNSeconds);
+            if(appliedTimes >= applyDamageNTimes)
+            {
+                damageable.stunned = false;
+                Debug.Log("enemy able to fire again");
+                break;
+            }
             if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
                 test = true;

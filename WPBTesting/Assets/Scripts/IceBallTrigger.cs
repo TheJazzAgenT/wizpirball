@@ -9,7 +9,7 @@ public class IceBallTrigger : MonoBehaviour {
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
-    public int applyDamageNTimes = 10;
+    public int applyDamageNTimes = 9;
     public float oSpeed;
     public GameObject impact;
     private GameObject enemyShip;
@@ -55,7 +55,7 @@ public class IceBallTrigger : MonoBehaviour {
             explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
             explosion.GetComponent<ParticleSystem>().Play();
 
-            Destory(5.0f);
+            Destory(11.0f);
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
@@ -63,7 +63,7 @@ public class IceBallTrigger : MonoBehaviour {
         {
 
             Debug.Log("Ice Collide water");
-            coroutine = Destory(5.0f);
+            coroutine = Destory(20.0f);
             StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
@@ -74,10 +74,16 @@ public class IceBallTrigger : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(applyEveryNSeconds);
+            if(appliedTimes >= applyDamageNTimes)
+            {
+                damageable.secondsForOneLength = oSpeed;
+                Debug.Log("returning to normal speed");
+                break;
+            }
             if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
                 test = true;
-                //damageable.TakeDamage(tickDamage);
+                damageable.secondsForOneLength = slow;
                 appliedTimes++;
                 test = false;
             }
