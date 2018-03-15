@@ -58,14 +58,14 @@ public class UIManager : MonoBehaviour {
         }
         if(Time.timeScale == 1 && shipController.alive == false)
         {
-            Time.timeScale = 0;
-            ShowDeath();
+            //Time.timeScale = 0;
+            Invoke("ShowDeath", 3);
         }
         if (Time.timeScale == 1 && enemyController.alive == false)
         {
-            Time.timeScale = 0;
+            
             Debug.Log("should win");
-            ShowWin();
+            Invoke("ShowWin", 3);
         }
     }
     //to load or restart a scene use LoadSceneOnClick instead
@@ -141,6 +141,7 @@ public class UIManager : MonoBehaviour {
     }
     public void ShowDeath()
     {
+        Time.timeScale = 0;
         foreach (GameObject g in DeathObjects)
         {
             g.SetActive(true);
@@ -157,6 +158,7 @@ public class UIManager : MonoBehaviour {
     }
     public void ShowWin()
     {
+        Time.timeScale = 0;
         foreach (GameObject g in WinObjects)
         {
             g.SetActive(true);

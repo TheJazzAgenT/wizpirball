@@ -74,12 +74,6 @@ public class ShipFixedPathing : MonoBehaviour {
             timer = 0.0f;
         }
     }
-	//health and damage
-	public void TakeDamage(int amount)
-	{
-		curHealth -= amount;
-		bar.fillAmount = curHealth;
-	}
 
     public Vector3 getShipVelocity()
     {

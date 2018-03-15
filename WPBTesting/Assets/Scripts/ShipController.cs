@@ -40,7 +40,7 @@ public class ShipController : MonoBehaviour
         if (curHealth < 1)
         {
             //Destroy(gameObject);//breaks stuff if kept in
-            alive = false;
+            CommitSudoku();
         }
     }
 
@@ -56,5 +56,13 @@ public class ShipController : MonoBehaviour
         {
             audioSource.PlayOneShot(crashSound);
         }
+    }
+
+    private void CommitSudoku()
+    {
+        alive = false;
+        GetComponent<ShipFixedPathing>().enabled = false;
+        GetComponent<FloatObjectScript>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = true;
     }
 }

@@ -49,7 +49,7 @@ public class EnemyShipController : MonoBehaviour {
         if (curhealth < 1)
         {
             //Destroy(gameObject);
-            alive = false;
+            CommitSudoku();
         }
         //Debug.Log("ship health is " + curhealth);
     }
@@ -69,5 +69,13 @@ public class EnemyShipController : MonoBehaviour {
     {
         curhealth -= amount;
 		BarE.fillAmountE = curhealth;
+    }
+
+    private void CommitSudoku()
+    {
+        alive = false;
+        GetComponent<ShipFixedPathing>().enabled = false;
+        GetComponent<FloatObjectScript>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = true;
     }
 }
