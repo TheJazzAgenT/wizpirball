@@ -26,30 +26,5 @@ public class LegAnimation : MonoBehaviour {
 		}
 
 
-		/*if (Input.GetKeyDown ("w"))  
-		{
-			LegAnimator.Play ("Armature|FeetMove");
-
-			if(Input.GetKeyUp("w"))
-			{
-				LegAnimator.Play ("Armature|Empty");
-			}
-		}
-		if (Input.GetKeyDown ("s"))  
-		{
-			LegAnimator.Play ("Armature|FeetMove");
-
-			if(Input.GetKeyUp("s"))
-			{
-				LegAnimator.Play ("Armature|Empty");
-			}
-		}*/
-
-
-		//|| Input.GetKeyDown ("s") ||Input.GetKeyDown ("d") ||Input.GetKeyDown ("a"))
-		/*if (Input.GetKeyUp ("w") || Input.GetKeyUp ("s") ||Input.GetKeyUp ("d") ||Input.GetKeyUp ("a")) {
-			LegAnimator.Play ("Armature|Empty");
-		}*/
-
 	}
 }

@@ -37,7 +37,7 @@ public class CharacterMovement : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
-        legsAnim = GetComponentInChildren<Animator>();
+        //legsAnim = GetComponentInChildren<Animator>();
 		//anim.SetBool("Idle", true);
         anim.SetBool("Moving", false);
     }
@@ -47,10 +47,11 @@ public class CharacterMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= timestamp)
         {
             timestamp = Time.time + batDelay;
-            anim.SetBool("Moving", false);
+            /*anim.SetBool("Moving", false);
             anim.SetBool("Idle", false);
-            anim.SetBool("Hitting", true);
+            anim.SetBool("Hitting", true);*/
             Invoke("Fire", fireDelay);
+			anim.Play ("Armature|CharacterHittingOneHand");
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -75,7 +76,7 @@ public class CharacterMovement : MonoBehaviour {
         transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
         if (verticalInput != 0 || horizontalInput != 0)
         {
-            legsAnim.SetTrigger("Moving");
+            //legsAnim.SetTrigger("Moving");
             anim.SetBool("Moving", true);
             anim.SetBool("Idle", false);
 
@@ -83,7 +84,7 @@ public class CharacterMovement : MonoBehaviour {
         else
         {
             //legsAnim.SetTrigger("Stopping");
-            //anim.SetBool("Idle", true);
+            anim.SetBool("Idle", true);
             anim.SetBool("Moving", false);
         }
     }

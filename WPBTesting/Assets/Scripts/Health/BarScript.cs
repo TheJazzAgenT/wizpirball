@@ -11,12 +11,14 @@ public class BarScript : MonoBehaviour {
 	[SerializeField]
 	private Image content;
 
+	public Text HealthDisplay;
 
 	[SerializeField]
 	private 
 	// Use this for initialization
 	void Start () {
 		fillAmount = 100;
+		HealthDisplay.text = (fillAmount).ToString();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class BarScript : MonoBehaviour {
 	private void HandleBar()
 	{
 		content.fillAmount =Map(fillAmount, 0, 100, 0, 1);
+		HealthDisplay.text = (fillAmount).ToString ();
 	}
 
 	private float Map(float value, float inMin, float inMax, float outMin, float outMax)

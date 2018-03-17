@@ -11,11 +11,12 @@ public class BarScriptEnemy : MonoBehaviour {
 	[SerializeField]
 	private Image contentTwo;
 
-
+	public Text EnemyHealth;
 	[SerializeField]
 	// Use this for initialization
 	void Start () {
 		fillAmountE = 100;
+		EnemyHealth.text = (fillAmountE).ToString ();
 	}
 
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class BarScriptEnemy : MonoBehaviour {
 	private void HandleBarEnemy()
 	{
 		contentTwo.fillAmount =Map(fillAmountE, 0, 100, 0, 1);
+		EnemyHealth.text = (fillAmountE).ToString ();
 	}
 
 	private float Map(float value, float inMin, float inMax, float outMin, float outMax)
