@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 4784daf2d7c55b1469d8e83652927eed
+timeCreated: 1520278309
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Landscape_010
+    100002: Landscape_Mountain
+    100004: LandscapeSandBank_000
+    100006: LandscapeSandBank_001
+    100008: LandscapeSandBank_002
+    100010: LandscapeSandBank_003
+    100012: LandscapeSandBank_004
+    100014: LandscapeSandBank_005
+    100016: LandscapeSandBank_006
+    100018: LandscapeSandBank_007
+    100020: //RootNode
+    400000: Landscape_010
+    400002: Landscape_Mountain
+    400004: LandscapeSandBank_000
+    400006: LandscapeSandBank_001
+    400008: LandscapeSandBank_002
+    400010: LandscapeSandBank_003
+    400012: LandscapeSandBank_004
+    400014: LandscapeSandBank_005
+    400016: LandscapeSandBank_006
+    400018: LandscapeSandBank_007
+    400020: //RootNode
+    2100000: Material_009
+    2100002: Material_001
+    2100004: Material
+    2100006: Material_002
+    2100008: Material_003
+    2100010: Material_004
+    2100012: Material_008
+    2100014: Material_007
+    2100016: Material_006
+    2100018: Material_005
+    2300000: Landscape_010
+    2300002: Landscape_Mountain
+    2300004: LandscapeSandBank_000
+    2300006: LandscapeSandBank_001
+    2300008: LandscapeSandBank_002
+    2300010: LandscapeSandBank_003
+    2300012: LandscapeSandBank_004
+    2300014: LandscapeSandBank_005
+    2300016: LandscapeSandBank_006
+    2300018: LandscapeSandBank_007
+    3300000: Landscape_010
+    3300002: Landscape_Mountain
+    3300004: LandscapeSandBank_000
+    3300006: LandscapeSandBank_001
+    3300008: LandscapeSandBank_002
+    3300010: LandscapeSandBank_003
+    3300012: LandscapeSandBank_004
+    3300014: LandscapeSandBank_005
+    3300016: LandscapeSandBank_006
+    3300018: LandscapeSandBank_007
+    4300000: Landscape_010
+    4300002: LandscapeSandBank_002
+    4300004: Landscape_Mountain
+    4300006: LandscapeSandBank_001
+    4300008: LandscapeSandBank_000
+    4300010: LandscapeSandBank_003
+    4300012: LandscapeSandBank_007
+    4300014: LandscapeSandBank_006
+    4300016: LandscapeSandBank_005
+    4300018: LandscapeSandBank_004
+    6400000: Landscape_010
+    6400002: Landscape_Mountain
+    6400004: LandscapeSandBank_000
+    6400006: LandscapeSandBank_001
+    6400008: LandscapeSandBank_002
+    6400010: LandscapeSandBank_003
+    6400012: LandscapeSandBank_004
+    6400014: LandscapeSandBank_005
+    6400016: LandscapeSandBank_006
+    6400018: LandscapeSandBank_007
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

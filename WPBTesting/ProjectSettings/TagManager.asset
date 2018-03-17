@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WATER
+  - ShowOnPause
+  - Enemy
+  - Bullet
+  - PlayerShip
+  - ShowOnDeath
+  - ShowOnWin
   layers:
   - Default
   - TransparentFX

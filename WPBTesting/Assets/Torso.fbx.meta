@@ -1,0 +1,323 @@
+fileFormatVersion: 2
+guid: 0970add866956ab4fa817a16ab4025fc
+timeCreated: 1520293456
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm.IK.L
+    100002: Arm.IK.L_end
+    100004: Arm.IK.R
+    100006: Arm.IK.R_end
+    100008: Arm.Upper.L
+    100010: Arm.Upper.R
+    100012: Armature
+    100014: Chest
+    100016: Core
+    100018: Elbow.pole.L
+    100020: Elbow.pole.L_end
+    100022: Elbow.pole.R
+    100024: Elbow.pole.R_end
+    100026: Foot.L
+    100028: Foot.L_end
+    100030: Foot.R
+    100032: Foot.R_end
+    100034: Hand.L
+    100036: Hand.L_end
+    100038: Hand.R
+    100040: Hand.R_end
+    100042: Head
+    100044: Head_end
+    100046: Hip.L
+    100048: Hip.R
+    100050: Knee.pole.L
+    100052: Knee.pole.L_end
+    100054: Knee.pole.R
+    100056: Knee.pole.R_end
+    100058: Leg.IK.L
+    100060: Leg.IK.R
+    100062: Leg.Lower.L
+    100064: Leg.Lower.L_end
+    100066: Leg.Lower.R
+    100068: Leg.Lower.R_end
+    100070: Leg.Upper.L
+    100072: Leg.Upper.R
+    100074: Playable
+    100076: Shoulder.L
+    100078: Shoulder.R
+    100080: //RootNode
+    400000: Arm.IK.L
+    400002: Arm.IK.L_end
+    400004: Arm.IK.R
+    400006: Arm.IK.R_end
+    400008: Arm.Upper.L
+    400010: Arm.Upper.R
+    400012: Armature
+    400014: Chest
+    400016: Core
+    400018: Elbow.pole.L
+    400020: Elbow.pole.L_end
+    400022: Elbow.pole.R
+    400024: Elbow.pole.R_end
+    400026: Foot.L
+    400028: Foot.L_end
+    400030: Foot.R
+    400032: Foot.R_end
+    400034: Hand.L
+    400036: Hand.L_end
+    400038: Hand.R
+    400040: Hand.R_end
+    400042: Head
+    400044: Head_end
+    400046: Hip.L
+    400048: Hip.R
+    400050: Knee.pole.L
+    400052: Knee.pole.L_end
+    400054: Knee.pole.R
+    400056: Knee.pole.R_end
+    400058: Leg.IK.L
+    400060: Leg.IK.R
+    400062: Leg.Lower.L
+    400064: Leg.Lower.L_end
+    400066: Leg.Lower.R
+    400068: Leg.Lower.R_end
+    400070: Leg.Upper.L
+    400072: Leg.Upper.R
+    400074: Playable
+    400076: Shoulder.L
+    400078: Shoulder.R
+    400080: //RootNode
+    2100000: Textured
+    4300000: Playable
+    7400000: CharMoving2.001
+    7400002: Armature|Character Moving
+    7400004: Armature|CharacterHittingOneHand
+    7400006: Armature|CharMoving2
+    7400008: Armature|PoseLib
+    9500000: //RootNode
+    13700000: Playable
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Textured
+    second: {fileID: 2100000, guid: 7890095e01dea0a499da3014aca425fc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CharMoving2.001
+      takeName: CharMoving2.001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Character Moving
+      takeName: Armature|Character Moving
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|CharacterHittingOneHand
+      takeName: Armature|CharacterHittingOneHand
+      firstFrame: 0
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|CharMoving2
+      takeName: Armature|CharMoving2
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|PoseLib
+      takeName: Armature|PoseLib
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
