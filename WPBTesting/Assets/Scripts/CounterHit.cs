@@ -36,10 +36,7 @@ public class CounterHit : MonoBehaviour {
             //Debug.Log("baseball entered");
             if (Input.GetKeyDown(KeyCode.Mouse1) && timer > counterDelay)
             {
-                throwBat = (GameObject)Instantiate(
-                            bat,
-                            batSpawn.position,
-                            batSpawn.rotation);
+                //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
                 myCharacter.GetComponent<CharacterMovement>().Fire();
                 Destroy(other.gameObject);
                 timer = 0;
