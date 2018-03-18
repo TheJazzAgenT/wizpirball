@@ -14,8 +14,6 @@ public class IceBallTrigger : MonoBehaviour {
     public GameObject impact;
     private GameObject enemyShip;
 
-    private bool delied = false;
-
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
