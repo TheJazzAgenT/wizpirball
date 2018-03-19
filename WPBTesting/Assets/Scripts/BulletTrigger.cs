@@ -37,6 +37,7 @@ public class BulletTrigger : MonoBehaviour
             Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
             explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
             explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }

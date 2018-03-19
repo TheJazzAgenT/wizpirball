@@ -53,6 +53,7 @@ public class IceBallTrigger : MonoBehaviour {
             Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
             explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
             explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
 
             Destory(11.0f);
             //destroy the projectile that just caused the trigger collision
@@ -101,4 +102,3 @@ public class IceBallTrigger : MonoBehaviour {
         }
     }
 }
-
