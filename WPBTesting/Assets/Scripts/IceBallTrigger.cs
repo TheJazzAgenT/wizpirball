@@ -39,13 +39,14 @@ public class IceBallTrigger : MonoBehaviour {
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
             ShipFixedPathing target = col.GetComponent<ShipFixedPathing>();
+            target.Slow();
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                oSpeed = target.secondsForOneLength;
+                //oSpeed = target.secondsForOneLength;
                 StartCoroutine(CastDamage(target));
-                target.secondsForOneLength = oSpeed;
+                //target.secondsForOneLength = oSpeed;
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
@@ -74,14 +75,14 @@ public class IceBallTrigger : MonoBehaviour {
             yield return new WaitForSeconds(applyEveryNSeconds);
             if(appliedTimes >= applyDamageNTimes)
             {
-                damageable.secondsForOneLength = oSpeed;
+                //damageable.secondsForOneLength = oSpeed;
                 Debug.Log("returning to normal speed");
                 break;
             }
             if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
                 test = true;
-                damageable.secondsForOneLength = slow;
+                //damageable.secondsForOneLength = slow;
                 appliedTimes++;
                 test = false;
             }

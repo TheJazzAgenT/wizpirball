@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipFixedPathing : MonoBehaviour {
-    public Transform[] waypoints;
+    public List<Transform> waypoints;
     public float rotationSpeed;
     public float secondsForOneLength = 10f;
+
+    private bool slowed = false;
     private int curWaypoint;
     private Transform from;
     private Transform to;
@@ -32,14 +34,14 @@ public class ShipFixedPathing : MonoBehaviour {
         //end of health
 		curWaypoint = 0;
         from = waypoints[curWaypoint];
-        to = waypoints[(curWaypoint + 1) % waypoints.Length];
+        to = waypoints[(curWaypoint + 1) % waypoints.Count];
         //future = waypoints[(curWaypoint + 2) % waypoints.Length];
         transform.position = from.position;
         transform.LookAt(to);
         needsRotationStorage = true;
-        for (int i = 0; i < waypoints.Length; i++)
+        for (int i = 0; i < waypoints.Count; i++)
         {
-            waypoints[i].LookAt(waypoints[(i + 1) % waypoints.Length]);
+            waypoints[i].LookAt(waypoints[(i + 1) % waypoints.Count]);
         }
 	}
 	
@@ -47,10 +49,16 @@ public class ShipFixedPathing : MonoBehaviour {
 	void FixedUpdate () {
 		if (transform.position.x == to.position.x && transform.position.z == to.position.z)
         {
+            if (slowed)
+            {
+                waypoints.RemoveAt(curWaypoint);
+                curWaypoint -= 1;
+                slowed = false;
+            }
             //Debug.Log("=========hit waypoint==========");
-            curWaypoint = (curWaypoint + 1) % waypoints.Length;
+            curWaypoint = (curWaypoint + 1) % waypoints.Count;
             from = waypoints[curWaypoint];
-            to = waypoints[(curWaypoint + 1) % waypoints.Length];
+            to = waypoints[(curWaypoint + 1) % waypoints.Count];
             //future = waypoints[(curWaypoint + 2) % waypoints.Length];
             transform.LookAt(to);
             needsRotationStorage = true;
@@ -81,6 +89,21 @@ public class ShipFixedPathing : MonoBehaviour {
         float boatSpeed = dist / secondsForOneLength;
         Vector3 boatVel = (to.position - from.position).normalized * boatSpeed;
         return boatVel;
+    }
+
+    public void Slow()
+    {
+        if (!slowed)
+        {
+            // create an empty game object to make a new transform
+            GameObject slowWaypoint = new GameObject();
+            slowWaypoint.transform.position = transform.position;
+            waypoints.Insert(curWaypoint + 1, slowWaypoint.transform);
+            curWaypoint = (curWaypoint + 1) % waypoints.Count;
+            from = waypoints[curWaypoint];
+            timer = 0;
+            slowed = true;
+        }
     }
 
 	/*private void OnCollisionEnter(Collision collision)
