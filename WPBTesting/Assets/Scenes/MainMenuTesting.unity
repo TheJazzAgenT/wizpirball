@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2362,7 +2362,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 36
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2372,16 +2372,32 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'W,A,S,D to move
+    m_LineSpacing: 0.6
+  m_Text: 'W,A,S,D to move character
 
-    Q to switch to pirate mode
 
-    Spacebar while pirate to fire a ball
+    Use mouse to aim
 
-    Mouse to look around
 
-    P to pause game (may take a second press to activate on first use)'
+    Left click to fire
+
+
+    Right click deflect an enemy ball
+
+
+    1,2,3,4 changes the element
+
+    and effect of the ball
+
+
+    P for pause menu (first time
+
+    requires two presses)
+
+
+    *Sink enemy ship before it sinks you!
+
+'
 --- !u!222 &1147277203
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3141,8 +3157,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
-  m_LocalRotation: {x: 0.11555143, y: 0.0020837102, z: 0.00024244968, w: -0.9932993}
-  m_LocalPosition: {x: 679.64105, y: -495.55304, z: -913.5325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.053934, y: -27.020838, z: -83.29724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
