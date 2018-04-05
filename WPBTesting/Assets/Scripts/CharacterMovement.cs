@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour {
     //public float BulletSpeed = 6.0f;
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
+    //public GameObject shieldPrefab;
+    //public Transform[] shieldSpawns;
     public Transform bulletSpawn;
     public Transform batAimer;
     public AudioClip batSound;
@@ -94,6 +96,14 @@ public class CharacterMovement : MonoBehaviour {
         {
             canRespawn = false;
             Invoke("respawnPlayer", 4);
+        }
+    }
+    void OnTriggerStay(Collider col)
+    {
+        if (col.transform.tag == "ShieldActivator" && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("shield activate");
+            //var shield = (GameObject)Instantiate(shieldPrefab, col.transform.position, col.transform.rotation);
         }
     }
     void respawnPlayer()
