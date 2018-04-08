@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour {
     //public float BulletSpeed = 6.0f;
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
-    //public GameObject shieldPrefab;
+    public GameObject ShieldPrefab;//need editing
     //public Transform[] shieldSpawns;
     public Transform bulletSpawn;
     public Transform batAimer;
@@ -19,6 +19,11 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject[] Bullets;
     //TEMP
     //public Vector3 aimer;
+    public GameObject[] shields;//0,1-back, 2-left 3-right 4,5-front
+    GameObject LeftBarr;//left shield
+    GameObject RightBarr;
+    GameObject FrontBarr;
+    GameObject BackBarr;
 
     private float fireDelay = 0.8f;
     [SerializeField]
@@ -42,6 +47,10 @@ public class CharacterMovement : MonoBehaviour {
         //legsAnim = GetComponentInChildren<Animator>();
 		//anim.SetBool("Idle", true);
         anim.SetBool("Moving", false);
+        LeftBarr = GameObject.Find("ShieldActivatePoint1");
+        RightBarr = GameObject.Find("ShieldActivatePoint2");
+        FrontBarr = GameObject.Find("ShieldActivatePoint3");
+        BackBarr = GameObject.Find("ShieldActivatePoint4");
     }
     // Update is called once per frame
     private void Update()
@@ -103,7 +112,31 @@ public class CharacterMovement : MonoBehaviour {
         if (col.transform.tag == "ShieldActivator" && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("shield activate");
-            //var shield = (GameObject)Instantiate(shieldPrefab, col.transform.position, col.transform.rotation);
+            //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
+            if (col.gameObject == BackBarr)//1-left, 2-right, 3-front, 4-back
+            {
+                shields[0].GetComponent<ShieldController>().Blocks = 3;
+                shields[1].GetComponent<ShieldController>().Blocks = 3;
+                shields[0].SetActive(true);
+                shields[1].SetActive(true);
+            }
+            if (col.gameObject == LeftBarr)//1-left, 2-right, 3-front, 4-back
+            {
+                shields[2].GetComponent<ShieldController>().Blocks = 3;
+                shields[2].SetActive(true);
+            }
+            if (col.gameObject == RightBarr)//1-left, 2-right, 3-front, 4-back
+            {
+                shields[3].GetComponent<ShieldController>().Blocks = 3;
+                shields[3].SetActive(true);
+            }
+            if (col.gameObject == FrontBarr)//1-left, 2-right, 3-front, 4-back
+            {
+                shields[4].GetComponent<ShieldController>().Blocks = 3;
+                shields[5].GetComponent<ShieldController>().Blocks = 3;
+                shields[4].SetActive(true);
+                shields[5].SetActive(true);
+            }
         }
     }
     void respawnPlayer()

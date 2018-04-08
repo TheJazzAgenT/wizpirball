@@ -12,6 +12,7 @@ TagManager:
   - ShowOnDeath
   - ShowOnWin
   - ShieldActivator
+  - Shield
   layers:
   - Default
   - TransparentFX
