@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceBallTrigger : MonoBehaviour {
-
-    public int intialDamage = 5;
-    public float slow = 30.0f;
+public class IceBallTrigger : MonoBehaviour
+{
+    public int intialDamage = 13;
+    public float slow = 0.0f;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
-    public int applyDamageNTimes = 9;
-    public float oSpeed;
+    public int applyDamageNTimes = 3;
+    public float oSpeed;// originally speed of the ship
     public GameObject impact;
     private GameObject enemyShip;
 
@@ -38,15 +38,13 @@ public class IceBallTrigger : MonoBehaviour {
             //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
-            ShipFixedPathing target = col.GetComponent<ShipFixedPathing>();
-            target.Slow();
+            EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                //oSpeed = target.secondsForOneLength;
-                StartCoroutine(CastDamage(target));
-                //target.secondsForOneLength = oSpeed;
+                IEnumerator Coroutine = CastDamage(target);
+                StartCoroutine(Coroutine);
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
@@ -55,38 +53,40 @@ public class IceBallTrigger : MonoBehaviour {
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(11.0f);
+            Destory(5.0f);
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
 
-            Debug.Log("Ice Collide water");
-            coroutine = Destory(20.0f);
+            Debug.Log("Lightning Collide water");
+            coroutine = Destory(5.0f);
             StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
+        GetComponent<LightningBallTrigger>().enabled = false;
     }
 
-    IEnumerator CastDamage(ShipFixedPathing damageable)
+    IEnumerator CastDamage(EnemyCharController damageable)
     {
         while (true)
         {
             yield return new WaitForSeconds(applyEveryNSeconds);
-            if(appliedTimes >= applyDamageNTimes)
+            if (appliedTimes >= applyDamageNTimes)
             {
-                //damageable.secondsForOneLength = oSpeed;
-                Debug.Log("returning to normal speed");
+                damageable.stunned = false;
+                Debug.Log("enemy able to fire again");
                 break;
             }
             if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)
             {
                 test = true;
-                //damageable.secondsForOneLength = slow;
+                damageable.stunned = true;
                 appliedTimes++;
                 test = false;
             }
+
         }
     }
     private IEnumerator Destory(float Delay)
@@ -101,4 +101,5 @@ public class IceBallTrigger : MonoBehaviour {
             alphaBool = false;
         }
     }
+
 }

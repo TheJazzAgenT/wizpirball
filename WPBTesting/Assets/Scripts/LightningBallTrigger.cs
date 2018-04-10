@@ -19,7 +19,7 @@ public class LightningBallTrigger : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
+        enemyShip = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -38,6 +38,7 @@ public class LightningBallTrigger : MonoBehaviour {
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
             EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
+
             //if exists
             if (curhealth != null)
             {
@@ -45,6 +46,11 @@ public class LightningBallTrigger : MonoBehaviour {
                 IEnumerator Coroutine = CastDamage(target);
                 StartCoroutine(Coroutine);
             }
+
+            Rigidbody ballRB = GetComponent<Rigidbody>();
+            ballRB.velocity = Vector3.zero;
+            ballRB.useGravity = false;
+            transform.SetParent(enemyShip.transform);
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
             Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();

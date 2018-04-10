@@ -6,18 +6,33 @@ public class BulletTrigger : MonoBehaviour
 {
     public int damage = 20;
     public GameObject impact;
+
     private GameObject enemyShip;
+    private GameObject[] lightningBalls;
+    private Rigidbody rb;
+    private float magnetism = 500.0f;
+
+    void Awake()
+    {
+        lightningBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+    }
 
     // Use this for initialization
     void Start()
     {
         enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        foreach (GameObject lightningBall in lightningBalls)
+        {
+            Vector3 direction = (lightningBall.transform.position - transform.position).normalized;
+            Vector3 force = direction * (magnetism / Mathf.Pow(Vector3.Distance(lightningBall.transform.position, transform.position), 2));
+            rb.velocity += force;
+        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -33,11 +48,13 @@ public class BulletTrigger : MonoBehaviour
             {
                 curhealth.TakeDamage(damage);
             }
+
             var explosion = (GameObject)Instantiate(impact,transform.position,transform.rotation);
             Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
             explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
+
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }

@@ -13,6 +13,7 @@ TagManager:
   - ShowOnWin
   - ShieldActivator
   - Shield
+  - LightningBall
   layers:
   - Default
   - TransparentFX
