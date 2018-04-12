@@ -62,7 +62,7 @@ public class ShipController : MonoBehaviour
     {
         alive = false;
         GetComponent<ShipFixedPathing>().enabled = false;
-        GetComponent<FloatObjectScript>().enabled = false;
+        //GetComponent<FloatObjectScript>().enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
 }
