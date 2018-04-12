@@ -15,6 +15,8 @@ public class Ballistics : MonoBehaviour
     static float h;
     private LineRenderer lineRenderer;
     private Vector3 shipVel;
+    private Vector2 mousePos;
+    private float aimSensitivity = 5.0f;
 
     void Awake()
     {
@@ -24,14 +26,18 @@ public class Ballistics : MonoBehaviour
         h = Time.fixedDeltaTime * 1f;
         //gunObj.rotation = transform.rotation;
         lineRenderer = GetComponent<LineRenderer>();
+        mousePos = Vector2.zero;
     }
 
     void Update()
     {
+        mousePos += new Vector2(Input.GetAxis("RightStickX") * aimSensitivity, Input.GetAxis("RightStickY") * aimSensitivity);
+        mousePos = Clamp(ref mousePos);
+        Debug.Log(mousePos);
         // this creates a horizontal plane passing through this object's center
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
         // create a ray from the mousePosition
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
         // plane.Raycast returns the distance from the ray start to the hit point
         float distance = 0.0f;
         if (plane.Raycast(ray, out distance))
@@ -178,5 +184,12 @@ public class Ballistics : MonoBehaviour
         //Main algorithm
         newVelocity = currentVelocity + h * acceleartionFactor;
         newPosition = currentPosition + h * newVelocity;
+    }
+
+    public Vector2 Clamp(ref Vector2 value)
+    {
+        value.x = Mathf.Clamp(value.x, 0, Screen.width);
+        value.y = Mathf.Clamp(value.y, 0, Screen.height);
+        return value;
     }
 }
