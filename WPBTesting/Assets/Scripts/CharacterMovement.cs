@@ -25,6 +25,16 @@ public class CharacterMovement : MonoBehaviour {
     GameObject FrontBarr;
     GameObject BackBarr;
 
+    public int mana;//starts at 100
+    int manaCost;//this is cost for spells
+    //add costs in this script
+    //normal ball - no cost
+    //fire ball - 15
+    //ice ball - 25
+    //lightning ball - 40
+    //shields - 20
+    private IEnumerator manaRegen;
+
     private float fireDelay = 0.8f;
     [SerializeField]
     private GameObject myShip;
@@ -51,6 +61,9 @@ public class CharacterMovement : MonoBehaviour {
         RightBarr = GameObject.Find("ShieldActivatePoint2");
         FrontBarr = GameObject.Find("ShieldActivatePoint3");
         BackBarr = GameObject.Find("ShieldActivatePoint4");
+        manaCost = 0;
+        manaRegen = Regen();
+        StartCoroutine(manaRegen);
     }
     // Update is called once per frame
     private void Update()
@@ -66,19 +79,23 @@ public class CharacterMovement : MonoBehaviour {
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            bulletPrefab = Bullets[0];
+            bulletPrefab = Bullets[0];//normal
+            manaCost = 0;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            bulletPrefab = Bullets[1];
+            bulletPrefab = Bullets[1];//fire
+            manaCost = 15;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            bulletPrefab = Bullets[2];
+            bulletPrefab = Bullets[2];//ice
+            manaCost = 25;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            bulletPrefab = Bullets[3];
+            bulletPrefab = Bullets[3];//lightning
+            manaCost = 35;
         }
     }
     void FixedUpdate () {
@@ -97,6 +114,18 @@ public class CharacterMovement : MonoBehaviour {
             //legsAnim.SetTrigger("Stopping");
             anim.SetBool("Idle", true);
             anim.SetBool("Moving", false);
+        }
+
+    }
+    IEnumerator Regen()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            if (!(mana>=100))
+            {
+                mana += 1;
+            }
         }
     }
     void OnTriggerEnter(Collider col)
@@ -119,16 +148,19 @@ public class CharacterMovement : MonoBehaviour {
                 shields[1].GetComponent<ShieldController>().Blocks = 3;
                 shields[0].SetActive(true);
                 shields[1].SetActive(true);
+                mana -= 20;
             }
             if (col.gameObject == LeftBarr)//1-left, 2-right, 3-front, 4-back
             {
                 shields[2].GetComponent<ShieldController>().Blocks = 3;
                 shields[2].SetActive(true);
+                mana -= 20;
             }
             if (col.gameObject == RightBarr)//1-left, 2-right, 3-front, 4-back
             {
                 shields[3].GetComponent<ShieldController>().Blocks = 3;
                 shields[3].SetActive(true);
+                mana -= 20;
             }
             if (col.gameObject == FrontBarr)//1-left, 2-right, 3-front, 4-back
             {
@@ -136,6 +168,7 @@ public class CharacterMovement : MonoBehaviour {
                 shields[5].GetComponent<ShieldController>().Blocks = 3;
                 shields[4].SetActive(true);
                 shields[5].SetActive(true);
+                mana -= 20;
             }
         }
     }
@@ -147,20 +180,28 @@ public class CharacterMovement : MonoBehaviour {
     }
     public void Fire()
     {
-        audioSource.PlayOneShot(batSound, 1.0f);
-        // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
+        if (mana > manaCost)
+        {
+            audioSource.PlayOneShot(batSound, 1.0f);
+            // Create the Bullet from the Bullet Prefab
+            var bullet = (GameObject)Instantiate(
+                bulletPrefab,
+                bulletSpawn.position,
+                bulletSpawn.rotation);
+            mana -= manaCost;
 
-        // Add velocity to the bullet
-        Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-        bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
-        anim.SetBool("Hitting", false);
-        //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
-        // not destroying bullet yet, letting it go free
-        // Destroy the bullet after 2 seconds
-        // Destroy(bullet, 2.0f);
+            // Add velocity to the bullet
+            Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
+            anim.SetBool("Hitting", false);
+            //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
+            // not destroying bullet yet, letting it go free
+            // Destroy the bullet after 2 seconds
+            // Destroy(bullet, 2.0f);
+        }
+        else
+        {
+            Debug.Log("not enough mana");
+        }
     }
 }

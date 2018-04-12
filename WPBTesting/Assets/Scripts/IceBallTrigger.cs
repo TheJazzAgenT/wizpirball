@@ -17,6 +17,7 @@ public class IceBallTrigger : MonoBehaviour
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
+    public int manaCost;
     // Use this for initialization
     void Start()
     {
