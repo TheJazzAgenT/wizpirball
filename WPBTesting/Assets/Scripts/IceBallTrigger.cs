@@ -66,7 +66,7 @@ public class IceBallTrigger : MonoBehaviour
             StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
-        GetComponent<LightningBallTrigger>().enabled = false;
+        GetComponent<IceBallTrigger>().enabled = false;
     }
 
     IEnumerator CastDamage(EnemyCharController damageable)
