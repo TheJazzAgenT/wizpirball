@@ -7,6 +7,7 @@ public class Ballistics : MonoBehaviour
     //Drags
     public Transform targetObj;
     public Transform gunObj;
+    public bool useMouse;
     //public GameObject myShip;
 
     public static float bulletSpeed = 50.0f;
@@ -32,7 +33,7 @@ public class Ballistics : MonoBehaviour
     void Update()
     {
         mousePos += new Vector2(Input.GetAxis("RightStickX") * aimSensitivity, Input.GetAxis("RightStickY") * aimSensitivity);
-        mousePos = Clamp(ref mousePos);
+        mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
         Debug.Log(mousePos);
         // this creates a horizontal plane passing through this object's center
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
