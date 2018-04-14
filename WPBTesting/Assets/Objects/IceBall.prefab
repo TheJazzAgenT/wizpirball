@@ -180,9 +180,10 @@ MonoBehaviour:
   ignoreCaster: 1
   delayBeforeCasting: 0
   applyEveryNSeconds: 1
-  applyDamageNTimes: 10
+  applyDamageNTimes: 3
   oSpeed: 10
   impact: {fileID: 1129436313402618, guid: 110552b9fc27a9845a75be51702c00af, type: 2}
+  manaCost: 0
 --- !u!135 &135184928511470856
 SphereCollider:
   m_ObjectHideFlags: 1

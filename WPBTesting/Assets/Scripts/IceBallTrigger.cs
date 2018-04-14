@@ -9,7 +9,7 @@ public class IceBallTrigger : MonoBehaviour
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
-    public int applyDamageNTimes = 3;
+    public int applyDamageNTimes = 3;//means lasts 3 seconds
     public float oSpeed;// originally speed of the ship
     public GameObject impact;
     private GameObject enemyShip;
@@ -54,15 +54,15 @@ public class IceBallTrigger : MonoBehaviour
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(5.0f);
+            Destory(10.0f);//destroy after 5 seconds
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
 
-            Debug.Log("Lightning Collide water");
-            coroutine = Destory(5.0f);
+            Debug.Log("ice Collide water");
+            coroutine = Destory(10.0f);
             StartCoroutine(coroutine);
             //Destroy(gameObject);
         }
@@ -77,7 +77,6 @@ public class IceBallTrigger : MonoBehaviour
             if (appliedTimes >= applyDamageNTimes)
             {
                 damageable.stunned = false;
-                Debug.Log("enemy able to fire again");
                 break;
             }
             if (!test && appliedTimes <= applyDamageNTimes || !test && applyEveryNSeconds == 0)

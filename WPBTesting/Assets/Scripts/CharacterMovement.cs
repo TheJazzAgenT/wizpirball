@@ -46,6 +46,9 @@ public class CharacterMovement : MonoBehaviour {
     //Animator legsAnim;
     private AudioSource audioSource;
 
+    [SerializeField]
+    private BarScript bar;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -124,7 +127,8 @@ public class CharacterMovement : MonoBehaviour {
             yield return new WaitForSeconds(1);
             if (!(mana>=100))
             {
-                mana += 1;
+                mana += 2;
+                bar.fillAmount = mana;
             }
         }
     }
@@ -149,18 +153,21 @@ public class CharacterMovement : MonoBehaviour {
                 shields[0].SetActive(true);
                 shields[1].SetActive(true);
                 mana -= 20;
+                bar.fillAmount = mana;
             }
             if (col.gameObject == LeftBarr)//1-left, 2-right, 3-front, 4-back
             {
                 shields[2].GetComponent<ShieldController>().Blocks = 3;
                 shields[2].SetActive(true);
                 mana -= 20;
+                bar.fillAmount = mana;
             }
             if (col.gameObject == RightBarr)//1-left, 2-right, 3-front, 4-back
             {
                 shields[3].GetComponent<ShieldController>().Blocks = 3;
                 shields[3].SetActive(true);
                 mana -= 20;
+                bar.fillAmount = mana;
             }
             if (col.gameObject == FrontBarr)//1-left, 2-right, 3-front, 4-back
             {
@@ -169,6 +176,7 @@ public class CharacterMovement : MonoBehaviour {
                 shields[4].SetActive(true);
                 shields[5].SetActive(true);
                 mana -= 20;
+                bar.fillAmount = mana;
             }
         }
     }
@@ -189,6 +197,7 @@ public class CharacterMovement : MonoBehaviour {
                 bulletSpawn.position,
                 bulletSpawn.rotation);
             mana -= manaCost;
+            bar.fillAmount = mana;
 
             // Add velocity to the bullet
             Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
