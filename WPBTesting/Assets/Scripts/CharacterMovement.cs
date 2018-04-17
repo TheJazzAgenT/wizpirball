@@ -71,8 +71,9 @@ public class CharacterMovement : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= timestamp)
+        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis("RightTrigger") > 0) && Time.time >= timestamp)
         {
+            Debug.Log("TRIGGERED");
             timestamp = Time.time + batDelay;
             /*anim.SetBool("Moving", false);
             anim.SetBool("Idle", false);
@@ -80,22 +81,23 @@ public class CharacterMovement : MonoBehaviour {
             Invoke("Fire", fireDelay);
 			anim.Play ("Armature|CharacterHittingOneHand");
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("A"))
         {
+            //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAA");
             bulletPrefab = Bullets[0];//normal
             manaCost = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("B"))
         {
             bulletPrefab = Bullets[1];//fire
             manaCost = 15;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("X"))
         {
             bulletPrefab = Bullets[2];//ice
             manaCost = 25;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown("Y"))
         {
             bulletPrefab = Bullets[3];//lightning
             manaCost = 35;
@@ -142,9 +144,9 @@ public class CharacterMovement : MonoBehaviour {
     }
     void OnTriggerStay(Collider col)
     {
-        if (col.transform.tag == "ShieldActivator" && Input.GetKeyDown(KeyCode.Space))
+        if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("RightBumper")))
         {
-            Debug.Log("shield activate");
+            //Debug.Log("shield activate");
             //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
             if (col.gameObject == BackBarr)//1-left, 2-right, 3-front, 4-back
             {

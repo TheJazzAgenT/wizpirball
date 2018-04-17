@@ -2616,6 +2616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
+  useMouse: 0
 --- !u!114 &850153290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2650,6 +2651,7 @@ MonoBehaviour:
   - {fileID: 916202996}
   mana: 100
   myShip: {fileID: 1249634867}
+  bar: {fileID: 0}
 --- !u!114 &850153291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4388,7 +4390,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1109598748}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1109598750
 Behaviour:
   m_ObjectHideFlags: 0

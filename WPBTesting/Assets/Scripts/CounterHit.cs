@@ -34,7 +34,7 @@ public class CounterHit : MonoBehaviour {
         if (other.tag == "Bullet")
         {
             //Debug.Log("baseball entered");
-            if (Input.GetKeyDown(KeyCode.Mouse1) && timer > counterDelay)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || (Input.GetAxis("LeftTrigger") > 0)) && timer > counterDelay)
             {
                 //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
                 myCharacter.GetComponent<CharacterMovement>().Fire();

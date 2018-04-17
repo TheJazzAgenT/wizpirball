@@ -34,8 +34,7 @@ public class Ballistics : MonoBehaviour
     {
         mousePos += new Vector2(Input.GetAxis("RightStickX") * aimSensitivity, Input.GetAxis("RightStickY") * aimSensitivity);
         mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
-        Debug.Log(mousePos);
-        // this creates a horizontal plane passing through this object's center
+        // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
         // create a ray from the mousePosition
         Ray ray = Camera.main.ScreenPointToRay(mousePos);

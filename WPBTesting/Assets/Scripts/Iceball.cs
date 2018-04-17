@@ -18,19 +18,19 @@ public class Iceball : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Alpha1)) 
+		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetButtonDown("A")) 
 		{
 			On = false;
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha2))
+		if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("B"))
 		{
 			On = false;
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha3))
+		if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("X"))
 		{
 			On = true;
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha4))
+		if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown("Y"))
 		{
 			On = false;
 		}
