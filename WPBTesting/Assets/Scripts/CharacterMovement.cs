@@ -27,6 +27,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public int mana;//starts at 100
     int manaCost;//this is cost for spells
+    int shieldCost = 20;
     //add costs in this script
     //normal ball - no cost
     //fire ball - 15
@@ -150,35 +151,46 @@ public class CharacterMovement : MonoBehaviour {
             //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
             if (col.gameObject == BackBarr)//1-left, 2-right, 3-front, 4-back
             {
-                shields[0].GetComponent<ShieldController>().Blocks = 3;
-                shields[1].GetComponent<ShieldController>().Blocks = 3;
-                shields[0].SetActive(true);
-                shields[1].SetActive(true);
-                mana -= 20;
-                bar.fillAmount = mana;
+                if(mana > shieldCost)
+                {
+                    shields[0].GetComponent<ShieldController>().Blocks = 3;
+                    shields[1].GetComponent<ShieldController>().Blocks = 3;
+                    shields[0].SetActive(true);
+                    shields[1].SetActive(true);
+                    mana -= shieldCost;
+                    bar.fillAmount = mana;
+                }
             }
             if (col.gameObject == LeftBarr)//1-left, 2-right, 3-front, 4-back
             {
-                shields[2].GetComponent<ShieldController>().Blocks = 3;
-                shields[2].SetActive(true);
-                mana -= 20;
-                bar.fillAmount = mana;
+                if(mana > shieldCost){
+                    shields[2].GetComponent<ShieldController>().Blocks = 3;
+                    shields[2].SetActive(true);
+                    mana -= shieldCost;
+                    bar.fillAmount = mana;
+                }
             }
             if (col.gameObject == RightBarr)//1-left, 2-right, 3-front, 4-back
             {
-                shields[3].GetComponent<ShieldController>().Blocks = 3;
-                shields[3].SetActive(true);
-                mana -= 20;
-                bar.fillAmount = mana;
+                if (mana > shieldCost)
+                {
+                    shields[3].GetComponent<ShieldController>().Blocks = 3;
+                    shields[3].SetActive(true);
+                    mana -= shieldCost;
+                    bar.fillAmount = mana;
+                }
             }
             if (col.gameObject == FrontBarr)//1-left, 2-right, 3-front, 4-back
             {
-                shields[4].GetComponent<ShieldController>().Blocks = 3;
-                shields[5].GetComponent<ShieldController>().Blocks = 3;
-                shields[4].SetActive(true);
-                shields[5].SetActive(true);
-                mana -= 20;
-                bar.fillAmount = mana;
+                if (mana > shieldCost)
+                {
+                    shields[4].GetComponent<ShieldController>().Blocks = 3;
+                    shields[5].GetComponent<ShieldController>().Blocks = 3;
+                    shields[4].SetActive(true);
+                    shields[5].SetActive(true);
+                    mana -= shieldCost;
+                    bar.fillAmount = mana;
+                }
             }
         }
     }

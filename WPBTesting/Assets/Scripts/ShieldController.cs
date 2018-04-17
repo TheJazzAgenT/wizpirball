@@ -7,7 +7,7 @@ public class ShieldController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Blocks = 3;
 	}
 	
 	// Update is called once per frame
