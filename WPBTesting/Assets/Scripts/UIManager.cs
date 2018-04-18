@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour {
         HideDeath();
         HideWin();
 
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("FixedArena"))
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("FixedArena") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SplitScreen"))
         {
             shipController = GameObject.FindGameObjectWithTag("PlayerShip").GetComponent<ShipController>();
             enemyController = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyShipController>();
