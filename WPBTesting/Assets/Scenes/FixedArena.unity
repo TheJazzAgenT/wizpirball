@@ -11568,7 +11568,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
@@ -24701,7 +24701,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
@@ -24835,7 +24835,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
@@ -35932,7 +35932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
@@ -37491,6 +37491,10 @@ Prefab:
       propertyPath: m_TagString
       value: PlayerShip
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93943be719994894ca5c70ac98e965eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93943be719994894ca5c70ac98e965eb, type: 3}
   m_IsPrefabParent: 0
@@ -37845,7 +37849,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
@@ -54081,7 +54085,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64598580322381428, guid: 4627b29c864d6f84c87cd469e17699ce,
         type: 2}
