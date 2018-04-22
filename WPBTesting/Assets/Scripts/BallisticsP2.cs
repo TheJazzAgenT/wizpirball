@@ -15,6 +15,8 @@ public class BallisticsP2 : MonoBehaviour
     //The step size
     static float h;
     private LineRenderer lineRenderer;
+    [SerializeField]
+    private Camera camP2;
     private Vector3 shipVel;
     private Vector2 mousePos;
     private float aimSensitivity = 5.0f;
@@ -37,7 +39,7 @@ public class BallisticsP2 : MonoBehaviour
         // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
         // create a ray from the mousePosition
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        Ray ray = camP2.ScreenPointToRay(mousePos);
         // plane.Raycast returns the distance from the ray start to the hit point
         float distance = 0.0f;
         if (plane.Raycast(ray, out distance))
