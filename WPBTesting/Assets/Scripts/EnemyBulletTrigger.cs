@@ -19,7 +19,7 @@ public class EnemyBulletTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "PlayerShip")
+        if (col.gameObject.tag == "Ship_P1")
         {
 
             //Destroy(col.gameObject);
