@@ -26,7 +26,7 @@ public class Ballistics : MonoBehaviour
         //But lower is not always better because of rounding errors
         h = Time.fixedDeltaTime * 1f;
         //gunObj.rotation = transform.rotation;
-        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer = gunObj.GetComponent<LineRenderer>();
         mousePos = Vector2.zero;
     }
 
