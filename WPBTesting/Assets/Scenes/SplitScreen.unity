@@ -5728,7 +5728,7 @@ GameObject:
   - component: {fileID: 1251520966}
   - component: {fileID: 1251520970}
   - component: {fileID: 1251520969}
-  - component: {fileID: 1251520968}
+  - component: {fileID: 1251520967}
   m_Layer: 5
   m_Name: EnemyHealthBar
   m_TagString: Untagged
@@ -5757,7 +5757,7 @@ RectTransform:
   m_AnchoredPosition: {x: -112, y: 100}
   m_SizeDelta: {x: 425.6, y: 141.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1251520968
+--- !u!114 &1251520967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5765,12 +5765,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251520965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424f8996edd6685459894dc5ce217e0e, type: 3}
+  m_Script: {fileID: 11500000, guid: f5b48ba72a32c394da987aa145ebb7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmountE: 0
-  contentTwo: {fileID: 2007600387}
-  EnemyHealth: {fileID: 1839092269}
+  fillAmount: 0
+  content: {fileID: 2007600387}
+  Health: {fileID: 1839092269}
 --- !u!114 &1251520969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12026,11 +12026,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565169394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad0a201b9171ce499128c299f5a0c05, type: 3}
+  m_Script: {fileID: 11500000, guid: 99ad1c90f8ce07c4e8672dee81f9edb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alive: 1
-  BarE: {fileID: 1251520968}
+  alive: 0
+  bar: {fileID: 1251520967}
 --- !u!114 &1565169397
 MonoBehaviour:
   m_ObjectHideFlags: 0

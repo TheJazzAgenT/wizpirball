@@ -45,7 +45,7 @@ public class IceBallTrigger : MonoBehaviour
         if (col.gameObject.tag == "Ship_" + other)
         {
             //add an explosion or something
-            EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
+            ShipController curhealth = col.GetComponent<ShipController>();
             EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
             //if exists
             if (curhealth != null)

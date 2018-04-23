@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
     GameObject[] DeathObjects;
     GameObject[] WinObjects;
     ShipController shipController;
-    EnemyShipController enemyController;
+    ShipController enemyController;
 
     // Use this for initialization
     void Start()
@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour {
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("FixedArena") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SplitScreen"))
         {
             shipController = GameObject.FindGameObjectWithTag("Ship_P1").GetComponent<ShipController>();
-            enemyController = GameObject.FindGameObjectWithTag("Ship_P2").GetComponent<EnemyShipController>();
+            enemyController = GameObject.FindGameObjectWithTag("Ship_P2").GetComponent<ShipController>();
         }
         if(shipController == null)
         {

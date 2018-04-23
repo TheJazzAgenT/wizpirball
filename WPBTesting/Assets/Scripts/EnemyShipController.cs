@@ -9,7 +9,7 @@ public class EnemyShipController : MonoBehaviour {
     public bool alive;
 
 	[SerializeField]
-	private BarScriptEnemy BarE;
+	private BarScript Bar;
      
     void Start()
     {
@@ -27,7 +27,7 @@ public class EnemyShipController : MonoBehaviour {
     public void TakeDamage( int amount)
     {
         curhealth -= amount;
-		BarE.fillAmountE = curhealth;
+		Bar.fillAmount = curhealth;
     }
 
     private void CommitSudoku()

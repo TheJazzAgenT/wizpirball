@@ -43,7 +43,7 @@ public class FireBallTrigger : MonoBehaviour
             Debug.Log("fire Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
-            EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
+            ShipController curhealth = col.GetComponent<ShipController>();
             //if exists
             if (curhealth != null)
             {
@@ -73,7 +73,7 @@ public class FireBallTrigger : MonoBehaviour
         GetComponent<FireBallTrigger>().enabled = false;
     }
 
-    IEnumerator CastDamage(EnemyShipController damageable)
+    IEnumerator CastDamage(ShipController damageable)
     {
         while (true)
         {
