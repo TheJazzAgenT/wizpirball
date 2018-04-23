@@ -21,7 +21,7 @@ public class FireBallTrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_P1");
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class FireBallTrigger : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Ship_P2")
         {
             Debug.Log("fire Collide test");
             //Destroy(col.gameObject);

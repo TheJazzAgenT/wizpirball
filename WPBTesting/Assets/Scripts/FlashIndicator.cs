@@ -36,7 +36,7 @@ public class FlashIndicator : MonoBehaviour {
         colorField = Flash.GetComponent<SpriteRenderer>().color;
         //coroutine = Blink(1);
         //target = Player;
-        target = GameObject.FindGameObjectWithTag("PlayerShip");//getCom  <EnemyCharController>().playerShip;
+        target = GameObject.FindGameObjectWithTag("Ship_P1");//getCom  <EnemyCharController>().playerShip;
     }
 	
 	// Update is called once per frame

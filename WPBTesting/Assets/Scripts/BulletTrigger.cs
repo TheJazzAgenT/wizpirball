@@ -20,7 +20,7 @@ public class BulletTrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_P1");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -38,7 +38,7 @@ public class BulletTrigger : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Ship_P2")
         {
             //Destroy(col.gameObject);
             //add an explosion or something
@@ -58,7 +58,7 @@ public class BulletTrigger : MonoBehaviour
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }
-        if (col.gameObject.tag == "PlayerShip")
+        if (col.gameObject.tag == "Ship_P1")
         {
 
             //Destroy(col.gameObject);

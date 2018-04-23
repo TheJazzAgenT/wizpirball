@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour {
 
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("FixedArena") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SplitScreen"))
         {
-            shipController = GameObject.FindGameObjectWithTag("PlayerShip").GetComponent<ShipController>();
-            enemyController = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyShipController>();
+            shipController = GameObject.FindGameObjectWithTag("Ship_P1").GetComponent<ShipController>();
+            enemyController = GameObject.FindGameObjectWithTag("Ship_P2").GetComponent<EnemyShipController>();
         }
         if(shipController == null)
         {

@@ -12,31 +12,36 @@ public class IceBallTrigger : MonoBehaviour
     public int applyDamageNTimes = 3;//means lasts 3 seconds
     public float oSpeed;// originally speed of the ship
     public GameObject impact;
-    private GameObject enemyShip;
+    public int manaCost;
 
+    private int player;
+    private GameObject enemyShip;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
-    public int manaCost;
-    // Use this for initialization
+    private Dictionary<int, string> dict = new Dictionary<int, string>()
+                                                            {{1, "P1"},
+                                                             {2, "P2"},};
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("PlayerShip");
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_P2");
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
+    public void SetPlayer(int playerNum)
+    {
+        player = playerNum;
+    }
+
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Ship_P2")
         {
-            Debug.Log("Ice Collide test");
-            //Destroy(col.gameObject);
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();
             EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
@@ -60,11 +65,9 @@ public class IceBallTrigger : MonoBehaviour
         }
         if (col.gameObject.tag == "WATER")
         {
-
-            Debug.Log("ice Collide water");
+            //Debug.Log("ice Collide water");
             coroutine = Destory(10.0f);
             StartCoroutine(coroutine);
-            //Destroy(gameObject);
         }
         GetComponent<IceBallTrigger>().enabled = false;
     }
