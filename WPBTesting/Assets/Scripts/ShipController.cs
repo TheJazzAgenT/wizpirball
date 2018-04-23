@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-	[SerializeField]
-	private BarScript bar;
-
 	static public int maxHealth = 100;
 	[SerializeField]
     static public int curHealth = 100;
 
     public bool alive;
-    public Vector3 COM;
     public AudioClip crashSound;
 
-    private Rigidbody rb;
-    private Transform m_COM;
-    float movementFactor;
-    float steerFactor;
     private AudioSource audioSource;
+    [SerializeField]
+    private BarScript bar;
 
     private void Awake()
     {
@@ -28,18 +22,14 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        Debug.Log(rb);
         //Cursor.visible = true;
         curHealth = maxHealth;
         alive = true;
     }
     void Update()
     {
-
         if (curHealth < 1)
         {
-            //Destroy(gameObject);//breaks stuff if kept in
             CommitSudoku();
         }
     }
@@ -62,7 +52,6 @@ public class ShipController : MonoBehaviour
     {
         alive = false;
         GetComponent<ShipFixedPathing>().enabled = false;
-        //GetComponent<FloatObjectScript>().enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
 }
