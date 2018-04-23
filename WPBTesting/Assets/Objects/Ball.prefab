@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23821710675555604}
   - component: {fileID: 54148688161999152}
   - component: {fileID: 114599629220521672}
+  - component: {fileID: 114350050454053276}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Bullet
@@ -57,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d6fec45cca86c0e4a940a41a122b2e3c, type: 2}
   m_StaticBatchInfo:
@@ -100,6 +102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114350050454053276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518674168084194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427afebc0c21ad489981300a71c7132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 
 --- !u!114 &114599629220521672
 MonoBehaviour:
   m_ObjectHideFlags: 1

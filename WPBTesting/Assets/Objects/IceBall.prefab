@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114720768574448926}
   - component: {fileID: 199859213594505018}
   - component: {fileID: 198100804340499758}
+  - component: {fileID: 114931235842689136}
   m_Layer: 0
   m_Name: IceBall
   m_TagString: Bullet
@@ -185,6 +186,18 @@ MonoBehaviour:
   oSpeed: 10
   impact: {fileID: 1129436313402618, guid: 110552b9fc27a9845a75be51702c00af, type: 2}
   manaCost: 0
+--- !u!114 &114931235842689136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337738740849772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427afebc0c21ad489981300a71c7132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 
 --- !u!135 &135184928511470856
 SphereCollider:
   m_ObjectHideFlags: 1

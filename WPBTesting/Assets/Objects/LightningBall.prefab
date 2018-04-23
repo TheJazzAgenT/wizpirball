@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114588947211419724}
   - component: {fileID: 198675281925017190}
   - component: {fileID: 199769983558780842}
+  - component: {fileID: 114711681812729946}
   m_Layer: 0
   m_Name: LightningBall
   m_TagString: LightningBall
@@ -184,6 +185,19 @@ MonoBehaviour:
   applyDamageNTimes: 3
   oSpeed: 0
   impact: {fileID: 1364224121288672, guid: 14c98784fb1afbe46bc3b8b9477693d4, type: 2}
+  manaCost: 0
+--- !u!114 &114711681812729946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1748669849874712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427afebc0c21ad489981300a71c7132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 
 --- !u!135 &135786232351030366
 SphereCollider:
   m_ObjectHideFlags: 1

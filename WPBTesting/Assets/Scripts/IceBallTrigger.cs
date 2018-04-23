@@ -19,12 +19,14 @@ public class IceBallTrigger : MonoBehaviour
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
-    private Dictionary<int, string> dict = new Dictionary<int, string>()
-                                                            {{1, "P1"},
-                                                             {2, "P2"},};
+    private string self;
+    private string other;
+
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("Ship_P2");
+        self = GetComponent<PlayerSelector>().me;
+        other = GetComponent<PlayerSelector>().notMe;
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
     }
 
     void Update()
@@ -40,7 +42,7 @@ public class IceBallTrigger : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Ship_P2")
+        if (col.gameObject.tag == "Ship_" + other)
         {
             //add an explosion or something
             EnemyShipController curhealth = col.GetComponent<EnemyShipController>();

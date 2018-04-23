@@ -11,6 +11,8 @@ public class BulletTrigger : MonoBehaviour
     private GameObject[] lightningBalls;
     private Rigidbody rb;
     private float magnetism = 500.0f;
+    private string self;
+    private string other;
 
     void Awake()
     {
@@ -20,7 +22,9 @@ public class BulletTrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("Ship_P1");
+        self = GetComponent<PlayerSelector>().me;
+        other = GetComponent<PlayerSelector>().notMe;
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -38,7 +42,7 @@ public class BulletTrigger : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Ship_P2")
+        if (col.gameObject.tag == "Ship_" + other)
         {
             //Destroy(col.gameObject);
             //add an explosion or something
@@ -58,7 +62,7 @@ public class BulletTrigger : MonoBehaviour
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }
-        if (col.gameObject.tag == "Ship_P1")
+        if (col.gameObject.tag == "Ship_" + self)
         {
 
             //Destroy(col.gameObject);

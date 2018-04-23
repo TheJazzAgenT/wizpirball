@@ -17,10 +17,15 @@ public class LightningBallTrigger : MonoBehaviour {
     private IEnumerator coroutine;
     private bool test = false;
     public int manaCost;
+    private string self;
+    private string other;
+
     // Use this for initialization
     void Start()
     {
-        enemyShip = GameObject.FindGameObjectWithTag("Ship_P2");
+        self = GetComponent<PlayerSelector>().me;
+        other = GetComponent<PlayerSelector>().notMe;
+        enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
     }
 
     // Update is called once per frame
@@ -32,7 +37,7 @@ public class LightningBallTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Ship_P2")
+        if (col.gameObject.tag == "Ship_" + other)
         {
             Debug.Log("lightning Collide test");
             //Destroy(col.gameObject);
