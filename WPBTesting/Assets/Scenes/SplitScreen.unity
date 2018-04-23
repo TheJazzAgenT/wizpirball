@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   spawnPoint: {fileID: 1442762247}
-  bulletPrefab: {fileID: 1518674168084194, guid: abb88023fa9741840ab2753d81fa3073,
+  bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
   ShieldPrefab: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce,
     type: 2}
@@ -331,7 +331,11 @@ MonoBehaviour:
   batAimer: {fileID: 671001990}
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   batDelay: 2
-  Bullets: []
+  Bullets:
+  - {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541, type: 2}
+  - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
+  - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
+  - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
   shields: []
   mana: 100
   myShip: {fileID: 1565169394}
@@ -886,7 +890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1249634890}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170525692
 GameObject:
@@ -914,7 +918,7 @@ Transform:
   m_LocalScale: {x: 3.3333333, y: 3.333333, z: 3.3333333}
   m_Children: []
   m_Father: {fileID: 1249634890}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172943824
 GameObject:
@@ -4868,7 +4872,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400080, guid: 0970add866956ab4fa817a16ab4025fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -5264,7 +5268,7 @@ Transform:
   - {fileID: 1227300829}
   - {fileID: 1923944204}
   m_Father: {fileID: 1249634890}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227300828
 GameObject:
