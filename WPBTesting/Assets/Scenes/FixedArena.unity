@@ -46563,10 +46563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ad1c90f8ce07c4e8672dee81f9edb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: {fileID: 107607615}
   alive: 0
-  COM: {x: 0, y: 0, z: 0}
-  crashSound: {fileID: 0}
+  bar: {fileID: 107607615}
 --- !u!82 &1249634870
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48626,21 +48624,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1565169399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1565169394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea21b41bb6ee4c42bea46f37c6c09dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterLevel: 0
-  floatThreshold: 2
-  waterDensity: 0.125
-  downForce: 4
 --- !u!1 &1573967600
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,16 +9,9 @@ public class ShipController : MonoBehaviour
     static public int curHealth = 100;
 
     public bool alive;
-    public AudioClip crashSound;
 
-    private AudioSource audioSource;
     [SerializeField]
     private BarScript bar;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     void Start()
     {
@@ -38,14 +31,6 @@ public class ShipController : MonoBehaviour
     {
         curHealth -= amount;
 		bar.fillAmount = curHealth;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag != "WATER")
-        {
-            audioSource.PlayOneShot(crashSound);
-        }
     }
 
     private void CommitSudoku()

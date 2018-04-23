@@ -210,7 +210,7 @@ public class CharControlP2 : MonoBehaviour
             audioSource.PlayOneShot(batSound, 1.0f);
             // Create the Bullet from the Bullet Prefab
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            //bullet.GetComponent<IceBallTrigger>().SetPlayer(2);
+            bullet.GetComponent<PlayerSelector>().SetPlayer("P2", "P1");
             mana -= manaCost;
             bar.fillAmount = mana;
 
