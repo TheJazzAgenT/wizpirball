@@ -10,10 +10,11 @@ public class CounterHit : MonoBehaviour {
     private float counterDelay = 1.2f;
     private float timer = 0.0f;
     private GameObject throwBat;
+    private CharacterMovement controller;
 
-	// Use this for initialization
-	void Start () {
-
+    // Use this for initialization
+    void Start () {
+        controller = GetComponentInParent<CharacterMovement>();
     }
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class CounterHit : MonoBehaviour {
         if (other.tag == "Bullet")
         {
             //Debug.Log("baseball entered");
-            if ((Input.GetKeyDown(KeyCode.Mouse1) || (Input.GetAxis("LeftTrigger") > 0)) && timer > counterDelay)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || (Input.GetAxis(controller.playerInput[10]) > 0)) && timer > counterDelay)
             {
                 //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
                 myCharacter.GetComponent<CharacterMovement>().Fire();
