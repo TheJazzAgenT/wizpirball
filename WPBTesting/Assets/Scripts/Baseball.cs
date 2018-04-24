@@ -11,7 +11,6 @@ public class Baseball : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		On = true;
-
 	}
 	
 	// Update is called once per frame

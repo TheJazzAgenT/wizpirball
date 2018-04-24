@@ -84,10 +84,10 @@ public class CharacterMovement : MonoBehaviour {
         {
             playerInput = new Dictionary<int, string>()
             {
-                {0, "X" },
-                {1, "Y" },
-                {2, "A" },
-                {3, "B" },
+                {0, "X_1" },
+                {1, "Y_1" },
+                {2, "A_1" },
+                {3, "B_1" },
                 {4, "RightStickX" },
                 {5, "RightStickY" },
                 {6, "Horizontal" },
