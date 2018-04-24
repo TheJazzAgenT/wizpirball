@@ -17,6 +17,8 @@ public class CounterHit : MonoBehaviour {
     // Use this for initialization
     void Start () {
         controller = GetComponentInParent<CharacterMovement>();
+        transform.position = myCharacter.transform.position;
+        transform.rotation = myCharacter.transform.rotation;
     }
 	
 	// Update is called once per frame

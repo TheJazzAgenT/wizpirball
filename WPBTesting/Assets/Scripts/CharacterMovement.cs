@@ -64,6 +64,9 @@ public class CharacterMovement : MonoBehaviour {
 
     private void Start()
     {
+        this.transform.position = spawnPoint.transform.position;
+        this.transform.rotation = spawnPoint.transform.rotation;
+
         anim = GetComponent<Animator>();
         anim.SetBool("Moving", false);
 
