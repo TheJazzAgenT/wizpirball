@@ -18,6 +18,10 @@ public class Ballistics : MonoBehaviour
     private Vector3 shipVel;
     private Vector2 mousePos;
     private float aimSensitivity = 5.0f;
+    private CharacterMovement controller;
+
+    [SerializeField]
+    private Camera cam;
 
     void Awake()
     {
@@ -28,16 +32,17 @@ public class Ballistics : MonoBehaviour
         //gunObj.rotation = transform.rotation;
         lineRenderer = gunObj.GetComponent<LineRenderer>();
         mousePos = Vector2.zero;
+        controller = GetComponent<CharacterMovement>();
     }
 
     void Update()
     {
-        mousePos += new Vector2(Input.GetAxis("RightStickX") * aimSensitivity, Input.GetAxis("RightStickY") * aimSensitivity);
+        mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
         mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
         // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
         // create a ray from the mousePosition
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        Ray ray = cam.ScreenPointToRay(mousePos);
         // plane.Raycast returns the distance from the ray start to the hit point
         float distance = 0.0f;
         if (plane.Raycast(ray, out distance))

@@ -17,9 +17,9 @@ public class PlayerSelector : MonoBehaviour {
 		
 	}
 
-    public void SetPlayer(string self, string other)
+    public void SetPlayer(string self)
     {
         me = self;
-        notMe = other;
+        notMe = self == "P1" ? "P2" : "P1";
     }
 }

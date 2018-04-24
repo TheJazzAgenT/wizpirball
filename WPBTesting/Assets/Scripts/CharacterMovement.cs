@@ -4,41 +4,41 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
-    //public Camera PlayerCamera;
-    public float speed = 0.02f;
-    //public float BulletSpeed = 6.0f;
-    public GameObject spawnPoint;
-    public GameObject bulletPrefab;
+    public float speed = 0.02f; // Player movement speed
+    public GameObject spawnPoint; // Where player spawns if they fall off the ship
+    public int playerNum; // Player 1 is 1, Player 2 is 2
+    public bool stunned = false;
     public GameObject ShieldPrefab;//need editing
-    //public Transform[] shieldSpawns;
     public Transform bulletSpawn;
+    public GameObject bulletPrefab;
+    public GameObject[] Bullets; // Array of possible magic balls
+
     public Transform batAimer;
     public AudioClip batSound;
-    //public float turnSpeed = 50;
     public float batDelay = 2.0f;
-    public GameObject[] Bullets;
-    //TEMP
-    //public Vector3 aimer;
-    public GameObject[] shields;//0,1-back, 2-left 3-right 4,5-front
-    GameObject LeftBarr;//left shield
+
+    public int mana; // starts at 100
+
+    public Dictionary<int, string> playerInput;
+
+    public GameObject[] shields; // 0,1-back, 2-left 3-right 4,5-front
+    GameObject LeftBarr; // left shield
     GameObject RightBarr;
     GameObject FrontBarr;
     GameObject BackBarr;
 
-    public int mana;//starts at 100
-    int manaCost;//this is cost for spells
+    int manaCost; // This is cost for spells
     int shieldCost = 20;
-    //add costs in this script
-    //normal ball - no cost
-    //fire ball - 15
-    //ice ball - 25
-    //lightning ball - 40
-    //shields - 20
+    // add costs in this script
+    // normal ball - no cost
+    // fire ball - 15
+    // ice ball - 25
+    // lightning ball - 40
+    // shields - 20
     private IEnumerator manaRegen;
 
     private float fireDelay = 0.8f;
-    [SerializeField]
-    private GameObject myShip;
+
     float verticalInput;
     float horizontalInput;
     float timestamp;
@@ -47,6 +47,8 @@ public class CharacterMovement : MonoBehaviour {
     //Animator legsAnim;
     private AudioSource audioSource;
 
+    [SerializeField]
+    private GameObject myShip;
     [SerializeField]
     private BarScript bar;
 
@@ -58,55 +60,96 @@ public class CharacterMovement : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
-        //legsAnim = GetComponentInChildren<Animator>();
-		//anim.SetBool("Idle", true);
         anim.SetBool("Moving", false);
+
         LeftBarr = GameObject.Find("ShieldActivatePoint1");
         RightBarr = GameObject.Find("ShieldActivatePoint2");
         FrontBarr = GameObject.Find("ShieldActivatePoint3");
         BackBarr = GameObject.Find("ShieldActivatePoint4");
+
         manaCost = 0;
         manaRegen = Regen();
         StartCoroutine(manaRegen);
+
+        //Set input dictionary appropriate to player
+        if (playerNum == 1)
+        {
+            playerInput = new Dictionary<int, string>()
+            {
+                {0, "X" },
+                {1, "Y" },
+                {2, "A" },
+                {3, "B" },
+                {4, "RightStickX" },
+                {5, "RightStickY" },
+                {6, "Horizontal" },
+                {7, "Vertical" },
+                {8, "LeftBumper" },
+                {9, "RightBumper" },
+                {10, "LeftTrigger" },
+                {11, "RightTrigger" }
+            };
+        }
+        else if (playerNum == 2)
+        {
+            playerInput = new Dictionary<int, string>()
+            {
+                {0, "X_2" },
+                {1, "Y_2" },
+                {2, "A_2" },
+                {3, "B_2" },
+                {4, "RightStickX_2" },
+                {5, "RightStickY_2" },
+                {6, "Horizontal_2" },
+                {7, "Vertical_2" },
+                {8, "LeftBumper_2" },
+                {9, "RightBumper_2" },
+                {10, "LeftTrigger_2" },
+                {11, "RightTrigger_2" }
+            };
+        }
+        else
+        {
+            Debug.LogWarning("Player Number not set!");
+        }
     }
-    // Update is called once per frame
+
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis("RightTrigger") > 0) && Time.time >= timestamp)
+        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis(playerInput[11]) > 0) && Time.time >= timestamp)
         {
             Debug.Log("TRIGGERED");
             timestamp = Time.time + batDelay;
-            /*anim.SetBool("Moving", false);
-            anim.SetBool("Idle", false);
-            anim.SetBool("Hitting", true);*/
-            Invoke("Fire", fireDelay);
-			anim.Play ("Armature|CharacterHittingOneHand");
+            if (!stunned)
+            {
+                Invoke("Fire", fireDelay);
+                anim.Play("Armature|CharacterHittingOneHand");
+            }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("A"))
+        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown(playerInput[2]))
         {
-            //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAA");
-            bulletPrefab = Bullets[0];//normal
+            bulletPrefab = Bullets[0]; // normal
             manaCost = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("B"))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown(playerInput[3]))
         {
-            bulletPrefab = Bullets[1];//fire
+            bulletPrefab = Bullets[1]; // fire
             manaCost = 15;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("X"))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown(playerInput[0]))
         {
-            bulletPrefab = Bullets[2];//ice
+            bulletPrefab = Bullets[2]; // ice
             manaCost = 25;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown("Y"))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown(playerInput[1]))
         {
-            bulletPrefab = Bullets[3];//lightning
+            bulletPrefab = Bullets[3]; // lightning
             manaCost = 35;
         }
     }
     void FixedUpdate () {
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis(playerInput[7]);
+        horizontalInput = Input.GetAxis(playerInput[6]);
         transform.Translate(horizontalInput * speed, 0.0f, verticalInput * speed);
         if (verticalInput != 0 || horizontalInput != 0)
         {
@@ -145,11 +188,10 @@ public class CharacterMovement : MonoBehaviour {
     }
     void OnTriggerStay(Collider col)
     {
-        if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("RightBumper")))
+        if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown(playerInput[9])))
         {
-            //Debug.Log("shield activate");
             //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
-            if (col.gameObject == BackBarr)//1-left, 2-right, 3-front, 4-back
+            if (col.gameObject == BackBarr) // 1-left, 2-right, 3-front, 4-back
             {
                 if(mana > shieldCost)
                 {
@@ -161,7 +203,7 @@ public class CharacterMovement : MonoBehaviour {
                     bar.fillAmount = mana;
                 }
             }
-            if (col.gameObject == LeftBarr)//1-left, 2-right, 3-front, 4-back
+            if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
             {
                 if(mana > shieldCost){
                     shields[2].GetComponent<ShieldController>().Blocks = 3;
@@ -170,7 +212,7 @@ public class CharacterMovement : MonoBehaviour {
                     bar.fillAmount = mana;
                 }
             }
-            if (col.gameObject == RightBarr)//1-left, 2-right, 3-front, 4-back
+            if (col.gameObject == RightBarr) //1-left, 2-right, 3-front, 4-back
             {
                 if (mana > shieldCost)
                 {
@@ -180,7 +222,7 @@ public class CharacterMovement : MonoBehaviour {
                     bar.fillAmount = mana;
                 }
             }
-            if (col.gameObject == FrontBarr)//1-left, 2-right, 3-front, 4-back
+            if (col.gameObject == FrontBarr) //1-left, 2-right, 3-front, 4-back
             {
                 if (mana > shieldCost)
                 {
@@ -207,7 +249,7 @@ public class CharacterMovement : MonoBehaviour {
             audioSource.PlayOneShot(batSound, 1.0f);
             // Create the Bullet from the Bullet Prefab
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            bullet.GetComponent<PlayerSelector>().SetPlayer("P1", "P2");
+            bullet.GetComponent<PlayerSelector>().SetPlayer(playerNum == 1 ? "P1" : "P2");
             mana -= manaCost;
             bar.fillAmount = mana;
 
@@ -215,10 +257,6 @@ public class CharacterMovement : MonoBehaviour {
             Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
             bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
             anim.SetBool("Hitting", false);
-            //bullet.GetComponent<Rigidbody>().velocity = VelocityFinder.BallisticVel(transform.position, aimer, 45f);
-            // not destroying bullet yet, letting it go free
-            // Destroy the bullet after 2 seconds
-            // Destroy(bullet, 2.0f);
         }
         else
         {

@@ -43,14 +43,14 @@ public class LightningBallTrigger : MonoBehaviour {
             //Destroy(col.gameObject);
             //add an explosion or something
             ShipController curhealth = col.GetComponent<ShipController>();
-            EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
+            //EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
 
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                IEnumerator Coroutine = CastDamage(target);
-                StartCoroutine(Coroutine);
+                //IEnumerator Coroutine = CastDamage(target);
+                //StartCoroutine(Coroutine);
             }
 
             Rigidbody ballRB = GetComponent<Rigidbody>();

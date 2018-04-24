@@ -46,7 +46,7 @@ public class IceBallTrigger : MonoBehaviour
         {
             //add an explosion or something
             ShipController curhealth = col.GetComponent<ShipController>();
-            EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
+            CharacterMovement target = col.GetComponentInChildren<CharacterMovement>();
             //if exists
             if (curhealth != null)
             {
@@ -74,7 +74,7 @@ public class IceBallTrigger : MonoBehaviour
         GetComponent<IceBallTrigger>().enabled = false;
     }
 
-    IEnumerator CastDamage(EnemyCharController damageable)
+    IEnumerator CastDamage(CharacterMovement damageable)
     {
         while (true)
         {
