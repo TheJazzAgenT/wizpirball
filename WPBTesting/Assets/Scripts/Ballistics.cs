@@ -8,7 +8,6 @@ public class Ballistics : MonoBehaviour
     public Transform targetObj;
     public Transform gunObj;
     public bool useMouse;
-    //public GameObject myShip;
 
     public static float bulletSpeed = 50.0f;
 

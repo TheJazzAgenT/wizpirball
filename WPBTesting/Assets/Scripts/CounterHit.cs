@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CounterHit : MonoBehaviour {
-    public GameObject bat;
-    public Transform batSpawn;
+    public GameObject bat; // To be used for animation purposes.
+    public Transform batSpawn; // Where to spawn the bat, probably Hand.R
+
     [SerializeField]
-    private GameObject myCharacter;
+    private GameObject myCharacter; // Whichever character should be doing the counter hitting
+
     private float counterDelay = 1.2f;
     private float timer = 0.0f;
     private GameObject throwBat;
