@@ -21,11 +21,13 @@ public class VampBallTrigger : MonoBehaviour {
     private bool test = false;
     private string self;
     private string other;
+    private GameObject me; 
 
     void Start()
     {
         self = GetComponent<PlayerSelector>().me;
         other = GetComponent<PlayerSelector>().notMe;
+        me = GameObject.FindGameObjectWithTag("Ship_" + self);
         enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
     }
 
@@ -47,12 +49,12 @@ public class VampBallTrigger : MonoBehaviour {
             //add an explosion or something
             ShipController curhealth = col.GetComponent<ShipController>();
             CharacterMovement target = col.GetComponentInChildren<CharacterMovement>();
-            ShipController me = self.GetComponemt<ShipController>();
+            //ShipController myShip = me.GetComponemt<ShipController>();//dammit
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                me.TakeDamage(healDamage);
+                //me.TakeDamage(healDamage);
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
