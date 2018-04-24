@@ -30,10 +30,14 @@ public class CharacterMovement : MonoBehaviour {
     int manaCost; // This is cost for spells
     int shieldCost = 20;
     // add costs in this script
-    // normal ball - no cost
+    // normal ball - 0
     // fire ball - 15
     // ice ball - 25
     // lightning ball - 40
+    // poly ball - 25
+    // MIRV ball - 20
+    // Vamp Ball - 35
+    // Smoke Ball - 15
     // shields - 20
     private IEnumerator manaRegen;
 
@@ -145,6 +149,26 @@ public class CharacterMovement : MonoBehaviour {
         {
             bulletPrefab = Bullets[3]; // lightning
             manaCost = 35;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetButtonDown(playerInput[1]))
+        {
+            bulletPrefab = Bullets[4]; // poly
+            manaCost = 35;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetButtonDown(playerInput[1]))
+        {
+            bulletPrefab = Bullets[5]; // MIRV
+            manaCost = 20;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetButtonDown(playerInput[1]))
+        {
+            bulletPrefab = Bullets[6]; // Vamp
+            manaCost = 35;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetButtonDown(playerInput[1]))
+        {
+            bulletPrefab = Bullets[7]; // Smoke
+            manaCost = 15;
         }
     }
     void FixedUpdate () {
