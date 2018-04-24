@@ -151,7 +151,7 @@ public class CharacterMovement : MonoBehaviour {
             bulletPrefab = Bullets[3]; // lightning
             manaCost = 35;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetButtonDown(playerInput[1]))
+        /*if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetButtonDown(playerInput[1]))
         {
             bulletPrefab = Bullets[4]; // poly
             manaCost = 35;
@@ -170,7 +170,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             bulletPrefab = Bullets[7]; // Smoke
             manaCost = 15;
-        }
+        }*/
     }
     void FixedUpdate () {
         verticalInput = Input.GetAxis(playerInput[7]);
