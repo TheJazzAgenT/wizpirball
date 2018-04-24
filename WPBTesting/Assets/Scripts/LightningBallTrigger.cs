@@ -11,14 +11,14 @@ public class LightningBallTrigger : MonoBehaviour {
     public int applyDamageNTimes = 3;
     public float oSpeed;// originally speed of the ship
     public GameObject impact;
-    private GameObject enemyShip;
+    public int manaCost;
+    public string self;
+    public string other;
 
+    private GameObject enemyShip;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
-    public int manaCost;
-    private string self;
-    private string other;
 
     // Use this for initialization
     void Start()

@@ -8,7 +8,7 @@ public class BulletTrigger : MonoBehaviour
     public GameObject impact;
 
     private GameObject enemyShip;
-    private GameObject[] lightningBalls;
+    private List<GameObject> lightningBalls = new List<GameObject>();
     private Rigidbody rb;
     private float magnetism = 500.0f;
     private string self;
@@ -16,7 +16,14 @@ public class BulletTrigger : MonoBehaviour
 
     void Awake()
     {
-        lightningBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+        var meBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+        foreach (GameObject lBall in meBalls)
+        {
+            if (lBall.GetComponent<LightningBallTrigger>().self != self)
+            {
+                lightningBalls.Add(lBall);
+            }
+        }
     }
 
     // Use this for initialization

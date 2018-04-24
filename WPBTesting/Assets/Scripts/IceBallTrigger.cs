@@ -14,7 +14,6 @@ public class IceBallTrigger : MonoBehaviour
     public GameObject impact;
     public int manaCost;
 
-    private int player;
     private GameObject enemyShip;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
@@ -32,11 +31,6 @@ public class IceBallTrigger : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void SetPlayer(int playerNum)
-    {
-        player = playerNum;
     }
 
     void OnTriggerEnter(Collider col)
