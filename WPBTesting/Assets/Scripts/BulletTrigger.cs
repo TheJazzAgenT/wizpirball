@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class BulletTrigger : MonoBehaviour
 {
-    public int damage = 20;
-    public GameObject impact;
+    public int damage = 20; // Damage dealt by this ball
+    public GameObject impact; // Impact effect
 
     private GameObject enemyShip;
-    private GameObject[] lightningBalls;
+    private List<GameObject> lightningBalls = new List<GameObject>();
     private Rigidbody rb;
-    private float magnetism = 500.0f;
-    private string self;
+    private float magnetism = 500.0f; // How much is this ball effected by magnetic balls
+    private string self; // Which player fired me
     private string other;
 
     void Awake()
     {
-        lightningBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+        // Find all lightning balls currently in the scene, add only the ones fired by current player to the list
+        var meBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+        foreach (GameObject lBall in meBalls)
+        {
+            if (lBall.GetComponent<LightningBallTrigger>().self != self)
+            {
+                lightningBalls.Add(lBall);
+            }
+        }
     }
 
     // Use this for initialization
@@ -31,6 +39,8 @@ public class BulletTrigger : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // For each lightning ball stuck on enemy ship, find the magnetic force and add that to current ball.
+        // Force is based on distance exponentially
         foreach (GameObject lightningBall in lightningBalls)
         {
             Vector3 direction = (lightningBall.transform.position - transform.position).normalized;

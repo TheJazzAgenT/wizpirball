@@ -31,7 +31,7 @@ public class TransformFollower : MonoBehaviour
             return;
         }
 
-        // compute position
+        // Compute position
         if (offsetPositionSpace == Space.Self)
         {
             transform.position = lookTo.position + (((lookFrom.position - lookTo.position) + new Vector3(0, height, 0)).normalized * (Vector3.Distance(lookFrom.position, lookTo.position) + offset));
@@ -41,7 +41,7 @@ public class TransformFollower : MonoBehaviour
             //transform.position = lookFrom.position + offsetPosition;
         }
 
-        //compute rotation
+        // Compute rotation
         if (lookAt)
         {
             transform.LookAt(lookTo);

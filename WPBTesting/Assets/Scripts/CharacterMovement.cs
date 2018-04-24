@@ -8,9 +8,9 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject spawnPoint; // Where player spawns if they fall off the ship
     public int playerNum; // Player 1 is 1, Player 2 is 2
     public bool stunned = false;
-    public GameObject ShieldPrefab;//need editing
+    public GameObject ShieldPrefab;// need editing
     public Transform bulletSpawn;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab; // Gets overwritten once the player changes ball types
     public GameObject[] Bullets; // Array of possible magic balls
 
     public Transform batAimer;
@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public int mana; // starts at 100
 
+    // This dictionary maps a universal set of numbers to player specific inputs. It gets defined in Start().
     public Dictionary<int, string> playerInput;
 
     public GameObject[] shields; // 0,1-back, 2-left 3-right 4,5-front
