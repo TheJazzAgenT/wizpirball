@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class MIRVBallsTrigger : MonoBehaviour {
 
-    public int intialDamage = 10;
+    public int intialDamage = 8;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 3; // means lasts 3 seconds
     public GameObject impact;
+    public GameObject MirvBall;
+    public float splitDelay;
+    public Vector3 move = new Vector3(5, 0, 0); // offset for the balls, hopefully
+    public int splitNum = 0;
+    public int manaCost = 40;
+
     private int player;
     private GameObject enemyShip;
     private int appliedTimes = 0;
@@ -17,21 +23,21 @@ public class MIRVBallsTrigger : MonoBehaviour {
     private bool test = false;
     private string self;
     private string other;
-    public float ConeRadius = 10f;
-    public Vector3 move = new Vector3(10,0,0); // offset for the balls, hopefully
+    private Rigidbody ballRB;
 
     void Start()
     {
+        Debug.Log("MIRV BALL UP IN HERE");
+        ballRB = GetComponent<Rigidbody>();
         self = GetComponent<PlayerSelector>().me;
         other = GetComponent<PlayerSelector>().notMe;
         enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
+        Invoke("Split", splitDelay);
     }
 
     void Update()
     {
-        //Need to add somethign here so it MIRVs
-        IEnumerator Coroutine = CastDamage();
-        StartCoroutine(Coroutine);
+
     }
 
     public void SetPlayer(int playerNum)
@@ -46,7 +52,6 @@ public class MIRVBallsTrigger : MonoBehaviour {
         {
             //add an explosion or something
             ShipController curhealth = enemyShip.GetComponent<ShipController>();
-            CharacterMovement target = enemyShip.GetComponentInChildren<CharacterMovement>();
             //if exists
             if (curhealth != null)
             {
@@ -67,19 +72,29 @@ public class MIRVBallsTrigger : MonoBehaviour {
         {
             coroutine = Destory(5.0f);
             StartCoroutine(coroutine);
+
         }
-        GetComponent<MIRVBallsTrigger>().enabled = false;
+        //GetComponent<MIRVBallsTrigger>().enabled = false;
     }
-    IEnumerator CastDamage()
+    void Split()
     {
-        while (true)
+        if(splitNum < 2)
         {
-            //create 3 balls then delete existing ball, hope this works
-            yield return new WaitForSeconds(2);
-            var bulletA = Instantiate(gameObject, gameObject.transform.position + move, gameObject.transform.rotation);
-            var bulletB = Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);
-            var bulletC = Instantiate(gameObject, gameObject.transform.position - move, gameObject.transform.rotation);
-            Destroy(gameObject);
+            var ballA = (GameObject)Instantiate(MirvBall, transform.position, transform.rotation);
+            ballA.transform.Rotate(0, 25, 0);
+            ballA.GetComponent<Rigidbody>().velocity = ballRB.velocity.magnitude * ballA.transform.forward;
+            ballA.GetComponent<MIRVBallsTrigger>().splitNum++;
+
+            var ballB = (GameObject)Instantiate(MirvBall, transform.position, transform.rotation);
+            ballB.GetComponent<Rigidbody>().velocity = ballRB.velocity;
+            ballB.GetComponent<MIRVBallsTrigger>().splitNum++;
+
+            var ballC = (GameObject)Instantiate(MirvBall, transform.position, transform.rotation);
+            ballC.transform.Rotate(0, 15, 0);
+            ballC.GetComponent<Rigidbody>().velocity = ballRB.velocity.magnitude * ballC.transform.forward;
+            ballC.GetComponent<MIRVBallsTrigger>().splitNum++;
+
+            Destroy(this.gameObject);
         }
     }
     private IEnumerator Destory(float Delay)

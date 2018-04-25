@@ -23842,7 +23842,7 @@ MonoBehaviour:
     type: 2}
   Bullets:
   - {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541, type: 2}
-  - {fileID: 1518674168084194, guid: e943d092feee8bb478b35e3c8f04ac2b, type: 2}
+  - {fileID: 1518674168084194, guid: 78af3b1a8bbab6b4ba4734cc25ece38e, type: 2}
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
   batAimer: {fileID: 2058775952}
@@ -36178,7 +36178,6 @@ MonoBehaviour:
   - {fileID: 356162381}
   rotationSpeed: 0.7
   secondsForOneLength: 15
-  bar: {fileID: 107607615}
 --- !u!114 &1249634869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38212,7 +38211,6 @@ MonoBehaviour:
   - {fileID: 1079560928}
   rotationSpeed: 0.7
   secondsForOneLength: 15
-  bar: {fileID: 0}
 --- !u!54 &1565169398
 Rigidbody:
   m_ObjectHideFlags: 0

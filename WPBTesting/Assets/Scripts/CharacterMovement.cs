@@ -276,7 +276,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             audioSource.PlayOneShot(batSound, 1.0f);
             // Create the Bullet from the Bullet Prefab
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, batAimer.rotation);
             bullet.GetComponent<PlayerSelector>().SetPlayer(playerNum == 1 ? "P1" : "P2");
             mana -= manaCost;
             bar.fillAmount = mana;
