@@ -12,7 +12,6 @@ public class IceBallTrigger : MonoBehaviour
     public int applyDamageNTimes = 3;//means lasts 3 seconds
     public float oSpeed;// originally speed of the ship
     public GameObject impact;
-    public int manaCost;
 
     private GameObject enemyShip;
     private int appliedTimes = 0;

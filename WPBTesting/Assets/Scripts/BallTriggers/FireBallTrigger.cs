@@ -8,18 +8,18 @@ public class FireBallTrigger : MonoBehaviour
     public int intialDamage = 10;
     public int tickDamage = 5;
     public GameObject impact;
-    private GameObject enemyShip;
-
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
     public int applyDamageNTimes = 5;
+
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
-    public int manaCost;
     private string self;
     private string other;
+    private GameObject enemyShip;
+
 
     // Use this for initialization
     void Start()

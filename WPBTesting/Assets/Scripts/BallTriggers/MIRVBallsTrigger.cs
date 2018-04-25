@@ -14,7 +14,6 @@ public class MIRVBallsTrigger : MonoBehaviour {
     public float splitDelay;
     public Vector3 move = new Vector3(5, 0, 0); // offset for the balls, hopefully
     public int splitNum = 0;
-    public int manaCost = 40;
 
     private int player;
     private GameObject enemyShip;

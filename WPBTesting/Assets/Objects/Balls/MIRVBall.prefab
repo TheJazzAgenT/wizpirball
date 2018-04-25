@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 23821710675555604}
   - component: {fileID: 54148688161999152}
   - component: {fileID: 114350050454053276}
-  - component: {fileID: 114052462611631452}
+  - component: {fileID: 114892909809158570}
   m_Layer: 0
-  m_Name: PolyBall
+  m_Name: MIRVBall
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,26 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114052462611631452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1518674168084194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0edd0e862c8e49bb9d2cdf45149ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intialDamage: 1
-  slow: 0
-  ignoreCaster: 1
-  delayBeforeCasting: 0
-  applyEveryNSeconds: 1
-  applyDamageNTimes: 3
-  oSpeed: 0
-  impact: {fileID: 0}
-  manaCost: 0
 --- !u!114 &114350050454053276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +114,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: 
   notMe: 
+  manaCost: 40
+--- !u!114 &114892909809158570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518674168084194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127a2072ff7f0474f9efb6692229eedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intialDamage: 10
+  ignoreCaster: 1
+  delayBeforeCasting: 0
+  applyEveryNSeconds: 1
+  applyDamageNTimes: 3
+  impact: {fileID: 1364224121288672, guid: 14c98784fb1afbe46bc3b8b9477693d4, type: 2}
+  MirvBall: {fileID: 1518674168084194}
+  splitDelay: 0.3
+  move: {x: 10, y: 0, z: 0}
+  splitNum: 0
 --- !u!135 &135833053535583510
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class PlayerSelector : MonoBehaviour {
 
     public string me;
     public string notMe;
+    public int manaCost;
 
 	// Use this for initialization
 	void Start () {

@@ -137,22 +137,22 @@ public class CharacterMovement : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown(playerInput[2]))
         {
             bulletPrefab = Bullets[0]; // normal
-            manaCost = 0;
+            manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown(playerInput[3]))
         {
             bulletPrefab = Bullets[1]; // fire
-            manaCost = 15;
+            manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown(playerInput[0]))
         {
             bulletPrefab = Bullets[2]; // ice
-            manaCost = 25;
+            manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown(playerInput[1]))
         {
             bulletPrefab = Bullets[3]; // lightning
-            manaCost = 35;
+            manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         /*if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetButtonDown(playerInput[1]))
         {
