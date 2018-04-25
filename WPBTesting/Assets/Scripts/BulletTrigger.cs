@@ -56,7 +56,7 @@ public class BulletTrigger : MonoBehaviour
         {
             //Destroy(col.gameObject);
             //add an explosion or something
-            ShipController curhealth = col.GetComponent<ShipController>();
+            ShipController curhealth = enemyShip.GetComponent<ShipController>();
             //if exists
             if(curhealth != null)
             {

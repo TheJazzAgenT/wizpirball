@@ -119,7 +119,7 @@ MonoBehaviour:
   applyEveryNSeconds: 1
   applyDamageNTimes: 3
   oSpeed: 0
-  impact: {fileID: 0}
+  impact: {fileID: 1129436313402618, guid: 110552b9fc27a9845a75be51702c00af, type: 2}
   manaCost: 0
 --- !u!114 &114350050454053276
 MonoBehaviour:

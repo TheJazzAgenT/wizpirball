@@ -14,7 +14,6 @@ public class VampBallTrigger : MonoBehaviour {
     public GameObject impact;
     public int manaCost;
 
-    private int player;
     private GameObject enemyShip;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
@@ -30,17 +29,11 @@ public class VampBallTrigger : MonoBehaviour {
         other = GetComponent<PlayerSelector>().notMe;
         me = GameObject.FindGameObjectWithTag("Ship_" + self);
         enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
-        mine = me.GetComponent<Collider>();
     }
 
     void Update()
     {
 
-    }
-
-    public void SetPlayer(int playerNum)
-    {
-        player = playerNum;
     }
 
     void OnTriggerEnter(Collider col)
@@ -49,14 +42,12 @@ public class VampBallTrigger : MonoBehaviour {
         if (col.gameObject.tag == "Ship_" + other)
         {
             //add an explosion or something
-            ShipController curhealth = col.GetComponent<ShipController>();
-            CharacterMovement target = col.GetComponentInChildren<CharacterMovement>();
-            ShipController myShip = mine.GetComponent<ShipController>();//dammit
+            ShipController curhealth = enemyShip.GetComponent<ShipController>();
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                myShip.TakeDamage(healDamage);
+                me.GetComponent<ShipController>().TakeDamage(healDamage);
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
@@ -65,14 +56,14 @@ public class VampBallTrigger : MonoBehaviour {
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(10.0f);//destroy after 5 seconds
+            Destory(5.0f);//destroy after 5 seconds
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
             //Debug.Log("ice Collide water");
-            coroutine = Destory(10.0f);
+            coroutine = Destory(5.0f);
             StartCoroutine(coroutine);
         }
         GetComponent<VampBallTrigger>().enabled = false;

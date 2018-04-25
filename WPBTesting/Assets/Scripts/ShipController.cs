@@ -5,10 +5,9 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
 	static public int maxHealth = 100;
-	[SerializeField]
-    static public int curHealth = 100;
-
     public bool alive;
+
+    private int curHealth = 100;
 
     [SerializeField]
     private BarScript bar;
@@ -29,8 +28,10 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        Debug.Log("================== : " + curHealth);
         curHealth -= amount;
-		bar.fillAmount = curHealth;
+        Debug.Log(curHealth);
+        bar.fillAmount = curHealth;
     }
 
     private void CommitSudoku()

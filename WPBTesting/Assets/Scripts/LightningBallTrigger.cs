@@ -42,7 +42,7 @@ public class LightningBallTrigger : MonoBehaviour {
             Debug.Log("lightning Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
-            ShipController curhealth = col.GetComponent<ShipController>();
+            ShipController curhealth = enemyShip.GetComponent<ShipController>();
             //EnemyCharController target = col.GetComponentInChildren<EnemyCharController>();
 
             //if exists

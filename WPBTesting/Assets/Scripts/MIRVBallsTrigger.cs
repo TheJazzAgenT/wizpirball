@@ -45,8 +45,8 @@ public class MIRVBallsTrigger : MonoBehaviour {
         if (col.gameObject.tag == "Ship_" + other)
         {
             //add an explosion or something
-            ShipController curhealth = col.GetComponent<ShipController>();
-            CharacterMovement target = col.GetComponentInChildren<CharacterMovement>();
+            ShipController curhealth = enemyShip.GetComponent<ShipController>();
+            CharacterMovement target = enemyShip.GetComponentInChildren<CharacterMovement>();
             //if exists
             if (curhealth != null)
             {

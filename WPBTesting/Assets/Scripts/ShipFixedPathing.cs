@@ -16,22 +16,8 @@ public class ShipFixedPathing : MonoBehaviour {
     private Quaternion rotationStore;
     private float timer = 0.0f;
 
-	//health
-
-	[SerializeField]
-	private BarScript bar;
-
-	static public int maxHealth = 100;
-	[SerializeField]
-	static public int curHealth = 100;
-
-	//end of health
-
     // Use this for initialization
     void Start () {
-		//health
-		curHealth = maxHealth;
-        //end of health
 		curWaypoint = 0;
         from = waypoints[curWaypoint];
         to = waypoints[(curWaypoint + 1) % waypoints.Count];
