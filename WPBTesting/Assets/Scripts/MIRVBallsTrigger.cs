@@ -8,7 +8,7 @@ public class MIRVBallsTrigger : MonoBehaviour {
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
     public float applyEveryNSeconds = 1.0f;
-    public int applyDamageNTimes = 3;//means lasts 3 seconds
+    public int applyDamageNTimes = 3; // means lasts 3 seconds
     public GameObject impact;
     private int player;
     private GameObject enemyShip;
@@ -18,7 +18,7 @@ public class MIRVBallsTrigger : MonoBehaviour {
     private string self;
     private string other;
     public float ConeRadius = 10f;
-    public Vector3 move = [10,0,0];//offset for the balls, hopefully
+    public Vector3 move = new Vector3(10,0,0); // offset for the balls, hopefully
 
     void Start()
     {
