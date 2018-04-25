@@ -61,7 +61,7 @@ public class SmokeBallTrigger : MonoBehaviour {
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(10.0f);//destroy after 5 seconds
+            Destory(10.0f);//destroy after x seconds
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }

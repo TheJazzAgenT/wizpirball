@@ -21,7 +21,8 @@ public class VampBallTrigger : MonoBehaviour {
     private bool test = false;
     private string self;
     private string other;
-    private GameObject me; 
+    private GameObject me;
+    private Collider mine;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class VampBallTrigger : MonoBehaviour {
         other = GetComponent<PlayerSelector>().notMe;
         me = GameObject.FindGameObjectWithTag("Ship_" + self);
         enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
+        mine = me.GetComponent<Collider>();
     }
 
     void Update()
@@ -49,12 +51,12 @@ public class VampBallTrigger : MonoBehaviour {
             //add an explosion or something
             ShipController curhealth = col.GetComponent<ShipController>();
             CharacterMovement target = col.GetComponentInChildren<CharacterMovement>();
-            //ShipController myShip = me.GetComponemt<ShipController>();//dammit
+            ShipController myShip = mine.GetComponent<ShipController>();//dammit
             //if exists
             if (curhealth != null)
             {
                 curhealth.TakeDamage(intialDamage);
-                //me.TakeDamage(healDamage);
+                myShip.TakeDamage(healDamage);
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
