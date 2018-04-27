@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: 
   notMe: 
-  manaCost: 40
+  manaCost: 0
 --- !u!114 &114892909809158570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127a2072ff7f0474f9efb6692229eedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intialDamage: 10
+  intialDamage: 8
   ignoreCaster: 1
   delayBeforeCasting: 0
   applyEveryNSeconds: 1

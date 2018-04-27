@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuTesting.unity
     guid: 8e2b42d9ee54ba54ca713c021af95f2f
-  - enabled: 0
-    path: 
-    guid: 4a404dd57bc6b654aa3ec4b5f7a8cff6
   - enabled: 1
     path: Assets/Scenes/ArenaTesting.unity
     guid: b86ccba381e07974aa3e36b5e2eaab78
   - enabled: 1
     path: Assets/Scenes/FixedArena.unity
     guid: 7c8531a7f8938fe4f8a7ebc9fd5083ba
+  - enabled: 1
+    path: Assets/Scenes/SplitScreen.unity
+    guid: 2cb4eb61fb0c8aa449ce39543a4c14e5
+  - enabled: 1
+    path: Assets/Scenes/CanyonsOfDoom.unity
+    guid: 90eeae4e9c876ad41b36431994408175
