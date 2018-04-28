@@ -131,7 +131,7 @@ MonoBehaviour:
   delayBeforeCasting: 0
   applyEveryNSeconds: 1
   applyDamageNTimes: 3
-  impact: {fileID: 1364224121288672, guid: 14c98784fb1afbe46bc3b8b9477693d4, type: 2}
+  impact: {fileID: 1436184521003846, guid: cbb4f2f26b1dc134cbb18c98500077a8, type: 2}
   MirvBall: {fileID: 1518674168084194}
   splitDelay: 0.3
   move: {x: 10, y: 0, z: 0}
