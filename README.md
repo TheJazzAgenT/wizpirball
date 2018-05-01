@@ -1,3 +1,3 @@
 # wizpirball
 GOTY 2020
-We have cube boats.
+We have shiny balls
