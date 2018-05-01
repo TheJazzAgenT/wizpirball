@@ -28,18 +28,9 @@ public class CharacterMovement : MonoBehaviour {
     GameObject FrontBarr;
     GameObject BackBarr;
 
-    int manaCost; // This is cost for spells
+    int manaCost; // This is cost for spells. Costs are defined in PlayerSelecter component of each ball.
     int shieldCost = 20;
-    // add costs in this script
-    // normal ball - 0
-    // fire ball - 15
-    // ice ball - 25
-    // lightning ball - 40
-    // poly ball - 25
-    // MIRV ball - 20
-    // Vamp Ball - 35
-    // Smoke Ball - 15
-    // shields - 20
+
     private IEnumerator manaRegen;
 
     private float fireDelay = 0.8f;
@@ -70,10 +61,10 @@ public class CharacterMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         anim.SetBool("Moving", false);
 
-        LeftBarr = GameObject.Find("ShieldActivatePoint1");
-        RightBarr = GameObject.Find("ShieldActivatePoint2");
-        FrontBarr = GameObject.Find("ShieldActivatePoint3");
-        BackBarr = GameObject.Find("ShieldActivatePoint4");
+        LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
+        RightBarr = GameObject.Find("ShieldActivatePoint2P" + playerNum);
+        FrontBarr = GameObject.Find("ShieldActivatePoint3P" + playerNum);
+        BackBarr = GameObject.Find("ShieldActivatePoint4P" + playerNum);
 
         manaCost = 0;
         manaRegen = Regen();

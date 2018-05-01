@@ -23040,7 +23040,7 @@ GameObject:
   - component: {fileID: 365475921}
   - component: {fileID: 365475920}
   m_Layer: 0
-  m_Name: ShieldActivatePoint3
+  m_Name: ShieldActivatePoint3P1
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33854,7 +33854,7 @@ GameObject:
   - component: {fileID: 445326978}
   - component: {fileID: 445326977}
   m_Layer: 0
-  m_Name: ShieldActivatePoint2
+  m_Name: ShieldActivatePoint2P2
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37871,7 +37871,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -37895,7 +37895,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!65 &511180896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56772,7 +56772,7 @@ GameObject:
   - component: {fileID: 797759621}
   - component: {fileID: 797759620}
   m_Layer: 0
-  m_Name: ShieldActivatePoint4
+  m_Name: ShieldActivatePoint4P1
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56923,7 +56923,7 @@ GameObject:
   - component: {fileID: 804535188}
   - component: {fileID: 804535187}
   m_Layer: 0
-  m_Name: ShieldActivatePoint4
+  m_Name: ShieldActivatePoint4P2
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61101,7 +61101,7 @@ GameObject:
   - component: {fileID: 897896936}
   - component: {fileID: 897896935}
   m_Layer: 0
-  m_Name: ShieldActivatePoint3
+  m_Name: ShieldActivatePoint3P2
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61723,7 +61723,7 @@ GameObject:
   - component: {fileID: 975265785}
   - component: {fileID: 975265784}
   m_Layer: 0
-  m_Name: ShieldActivatePoint1
+  m_Name: ShieldActivatePoint1P2
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81904,7 +81904,7 @@ GameObject:
   - component: {fileID: 1395550715}
   - component: {fileID: 1395550714}
   m_Layer: 0
-  m_Name: ShieldActivatePoint1
+  m_Name: ShieldActivatePoint1P1
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92924,7 +92924,7 @@ GameObject:
   - component: {fileID: 1749123812}
   - component: {fileID: 1749123811}
   m_Layer: 0
-  m_Name: ShieldActivatePoint2
+  m_Name: ShieldActivatePoint2P1
   m_TagString: ShieldActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
