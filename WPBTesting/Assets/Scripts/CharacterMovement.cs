@@ -126,7 +126,7 @@ public class CharacterMovement : MonoBehaviour {
     {
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis(playerInput[11]) > 0) && Time.time >= timestamp)
         {
-            Debug.Log("TRIGGERED");
+            //Debug.Log("TRIGGERED");
             timestamp = Time.time + batDelay;
             if (!stunned)
             {
@@ -218,6 +218,7 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown(playerInput[9])))
         {
+            //Debug.Log("SHIELD ACTIVATE!!");
             //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
             if (col.gameObject == BackBarr) // 1-left, 2-right, 3-front, 4-back
             {

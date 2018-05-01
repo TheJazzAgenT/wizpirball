@@ -28,9 +28,7 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        Debug.Log("================== : " + curHealth);
         curHealth -= amount;
-        Debug.Log(curHealth);
         bar.fillAmount = curHealth;
     }
 
