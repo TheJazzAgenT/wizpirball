@@ -9,4 +9,8 @@ public class LoadSceneOnClick : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneIndex);
     }
+    public void LoadScrollSelector(int sceneIndex)
+    {
+        GameObject.FindGameObjectWithTag("ScrollSelectPanel").GetComponent<SpellSelector>().level = sceneIndex;
+    }
 }
