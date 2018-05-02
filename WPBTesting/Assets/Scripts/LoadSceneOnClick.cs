@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour {
+    public GameObject ScrollSelectPanel;
 
     public void LoadByIndex(int sceneIndex)
     {
@@ -11,6 +12,7 @@ public class LoadSceneOnClick : MonoBehaviour {
     }
     public void LoadScrollSelector(int sceneIndex)
     {
-        GameObject.FindGameObjectWithTag("ScrollSelectPanel").GetComponent<SpellSelector>().level = sceneIndex;
+
+       ScrollSelectPanel.GetComponent<SpellSelector>().level = sceneIndex;
     }
 }
