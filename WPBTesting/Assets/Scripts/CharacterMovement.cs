@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject ShieldPrefab;// need editing
     public Transform bulletSpawn;
     public GameObject bulletPrefab; // Gets overwritten once the player changes ball types
+    public GameObject DefaultBall; // Ordinary Baseball
     public GameObject[] Bullets; // Array of possible magic balls
 
     public Transform batAimer;
@@ -23,23 +24,24 @@ public class CharacterMovement : MonoBehaviour {
     public Dictionary<int, string> playerInput;
 
     public GameObject[] shields; // 0,1-back, 2-left 3-right 4,5-front
-    GameObject LeftBarr; // left shield
-    GameObject RightBarr;
-    GameObject FrontBarr;
-    GameObject BackBarr;
 
-    int manaCost; // This is cost for spells. Costs are defined in PlayerSelecter component of each ball.
-    int shieldCost = 20;
+    private GameObject LeftBarr; // left shield
+    private GameObject RightBarr;
+    private GameObject FrontBarr;
+    private GameObject BackBarr;
+
+    private int[] Loadout;
+
+    private int manaCost; // This is cost for spells. Costs are defined in PlayerSelecter component of each ball.
+    private int shieldCost = 20;
 
     private IEnumerator manaRegen;
-
     private float fireDelay = 0.8f;
-
-    float verticalInput;
-    float horizontalInput;
-    float timestamp;
-    bool canRespawn = true;
-    Animator anim;
+    private float verticalInput;
+    private float horizontalInput;
+    private float timestamp;
+    private bool canRespawn = true;
+    private Animator anim;
     //Animator legsAnim;
     private AudioSource audioSource;
 
@@ -65,6 +67,8 @@ public class CharacterMovement : MonoBehaviour {
         RightBarr = GameObject.Find("ShieldActivatePoint2P" + playerNum);
         FrontBarr = GameObject.Find("ShieldActivatePoint3P" + playerNum);
         BackBarr = GameObject.Find("ShieldActivatePoint4P" + playerNum);
+
+        Loadout = GameObject.Find("InfoStorage").GetComponent<InfoStore>().GetLoadout(playerNum);
 
         manaCost = 0;
         manaRegen = Regen();
@@ -127,44 +131,24 @@ public class CharacterMovement : MonoBehaviour {
         }
         if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown(playerInput[2]))
         {
-            bulletPrefab = Bullets[0]; // normal
+            bulletPrefab = DefaultBall; // normal
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown(playerInput[3]))
         {
-            bulletPrefab = Bullets[1]; // fire
+            bulletPrefab = Bullets[Loadout[0]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown(playerInput[0]))
         {
-            bulletPrefab = Bullets[2]; // ice
+            bulletPrefab = Bullets[Loadout[1]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown(playerInput[1]))
         {
-            bulletPrefab = Bullets[3]; // lightning
+            bulletPrefab = Bullets[Loadout[2]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
-        /*if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetButtonDown(playerInput[1]))
-        {
-            bulletPrefab = Bullets[4]; // poly
-            manaCost = 35;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetButtonDown(playerInput[1]))
-        {
-            bulletPrefab = Bullets[5]; // MIRV
-            manaCost = 20;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetButtonDown(playerInput[1]))
-        {
-            bulletPrefab = Bullets[6]; // Vamp
-            manaCost = 35;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetButtonDown(playerInput[1]))
-        {
-            bulletPrefab = Bullets[7]; // Smoke
-            manaCost = 15;
-        }*/
     }
     void FixedUpdate () {
         verticalInput = Input.GetAxis(playerInput[7]);

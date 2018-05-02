@@ -16,6 +16,7 @@ public class SpellSelector : MonoBehaviour {
     public GameObject SlotYP2;
     public GameObject SlotBP2;
 
+    private GameObject InfoTransfer;
     private Text descriptP1;
     private int ActiveSpellP1;
     private Text descriptP2;
@@ -29,6 +30,7 @@ public class SpellSelector : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        InfoTransfer = GameObject.Find("InfoStorage");
         descriptP1 = GameObject.Find("SpellDescriptionP1").GetComponent<Text>();
         descriptP1.text = " ";
         descriptP2 = GameObject.Find("SpellDescriptionP2").GetComponent<Text>();
@@ -97,6 +99,9 @@ public class SpellSelector : MonoBehaviour {
                 var setP2 = new HashSet<int> (FinalChoicesP2);
                 if (setP1.Count == FinalChoicesP1.Length && setP2.Count == FinalChoicesP2.Length)
                 {
+                    InfoTransfer.GetComponent<InfoStore>().ChoicesP1 = FinalChoicesP1;
+                    InfoTransfer.GetComponent<InfoStore>().ChoicesP2 = FinalChoicesP2;
+                    DontDestroyOnLoad(InfoTransfer);
                     SceneManager.LoadScene(level);
                 }
             }

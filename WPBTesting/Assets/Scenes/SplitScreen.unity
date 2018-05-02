@@ -37798,11 +37798,14 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1264581385}
   bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
+  DefaultBall: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
+    type: 2}
   Bullets:
-  - {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541, type: 2}
   - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
+  - {fileID: 1518674168084194, guid: e943d092feee8bb478b35e3c8f04ac2b, type: 2}
+  - {fileID: 1518674168084194, guid: 78af3b1a8bbab6b4ba4734cc25ece38e, type: 2}
   batAimer: {fileID: 277589674}
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   batDelay: 2
@@ -57307,11 +57310,14 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1917012299}
   bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
+  DefaultBall: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
+    type: 2}
   Bullets:
-  - {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541, type: 2}
   - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
+  - {fileID: 1518674168084194, guid: e943d092feee8bb478b35e3c8f04ac2b, type: 2}
+  - {fileID: 1518674168084194, guid: 78af3b1a8bbab6b4ba4734cc25ece38e, type: 2}
   batAimer: {fileID: 2058775952}
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   batDelay: 2
@@ -61223,6 +61229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &922913355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61845,6 +61852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &986691654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86782,6 +86790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &1522383298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87760,6 +87769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &1612152461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92550,6 +92560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &1719702435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101153,6 +101164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04be439abf85d7429078c291e4a5c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollSelectPanel: {fileID: 0}
 --- !u!114 &1919885912
 MonoBehaviour:
   m_ObjectHideFlags: 0
