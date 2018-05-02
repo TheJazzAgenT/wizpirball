@@ -74544,11 +74544,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac0872de9f511949b8635acd10789a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balls:
+  ballsContainer:
   - {fileID: 342355150}
   - {fileID: 1609978271}
   - {fileID: 1456063488}
   - {fileID: 2138173351}
+  Images:
+  - {fileID: 21300000, guid: a174815ffad84ca4b8b30de88cdd0c73, type: 3}
+  - {fileID: 21300000, guid: 3bccc03d6342f1b4ea342ac5c2752398, type: 3}
+  - {fileID: 21300000, guid: 161e1c333c887b648b42037c0d8914d5, type: 3}
+  - {fileID: 21300000, guid: e48cf69fa89ecba43b8270af14957da4, type: 3}
+  - {fileID: 21300000, guid: dd46fb6adf2a7104daaedaa57a8f4380, type: 3}
   player: 2
 --- !u!1 &1310530368
 GameObject:
@@ -91968,11 +91974,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac0872de9f511949b8635acd10789a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balls:
+  ballsContainer:
   - {fileID: 429672798}
   - {fileID: 1279830848}
   - {fileID: 2094886080}
   - {fileID: 211906560}
+  Images:
+  - {fileID: 21300000, guid: a174815ffad84ca4b8b30de88cdd0c73, type: 3}
+  - {fileID: 21300000, guid: 3bccc03d6342f1b4ea342ac5c2752398, type: 3}
+  - {fileID: 21300000, guid: 161e1c333c887b648b42037c0d8914d5, type: 3}
+  - {fileID: 21300000, guid: e48cf69fa89ecba43b8270af14957da4, type: 3}
+  - {fileID: 21300000, guid: dd46fb6adf2a7104daaedaa57a8f4380, type: 3}
   player: 1
 --- !u!1001 &1673422482
 Prefab:

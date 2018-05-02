@@ -68,7 +68,14 @@ public class CharacterMovement : MonoBehaviour {
         FrontBarr = GameObject.Find("ShieldActivatePoint3P" + playerNum);
         BackBarr = GameObject.Find("ShieldActivatePoint4P" + playerNum);
 
-        Loadout = GameObject.Find("InfoStorage").GetComponent<InfoStore>().GetLoadout(playerNum);
+        if (GameObject.Find("InfoStorage") != null)
+        {
+            Loadout = GameObject.Find("InfoStorage").GetComponent<InfoStore>().GetLoadout(playerNum);
+        }
+        else
+        {
+            Loadout = new int[] { 0, 1, 2 };
+        }
 
         manaCost = 0;
         manaRegen = Regen();
