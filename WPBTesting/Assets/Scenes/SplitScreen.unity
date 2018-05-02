@@ -61716,8 +61716,8 @@ MonoBehaviour:
   lookTo: {fileID: 644729079}
   offsetPositionSpace: 1
   lookAt: 1
-  height: 5
-  offset: 10
+  height: 1
+  offset: 3
 --- !u!1 &975265782
 GameObject:
   m_ObjectHideFlags: 0
@@ -66329,8 +66329,8 @@ MonoBehaviour:
   lookTo: {fileID: 1249634890}
   offsetPositionSpace: 1
   lookAt: 1
-  height: 5
-  offset: 10
+  height: 1
+  offset: 3
 --- !u!1 &1131888483 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce,
