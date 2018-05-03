@@ -37761,7 +37761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 491103553}
   gunObj: {fileID: 277589674}
-  useMouse: 0
+  useMouse: 1
   cam: {fileID: 1109598751}
 --- !u!114 &511180893
 MonoBehaviour:
@@ -57289,7 +57289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
-  useMouse: 0
+  useMouse: 1
   cam: {fileID: 963768991}
 --- !u!114 &850153290
 MonoBehaviour:
@@ -61716,8 +61716,8 @@ MonoBehaviour:
   lookTo: {fileID: 644729079}
   offsetPositionSpace: 1
   lookAt: 1
-  height: 1
-  offset: 3
+  height: 1.9
+  offset: 4.5
 --- !u!1 &975265782
 GameObject:
   m_ObjectHideFlags: 0
@@ -66329,8 +66329,8 @@ MonoBehaviour:
   lookTo: {fileID: 1249634890}
   offsetPositionSpace: 1
   lookAt: 1
-  height: 1
-  offset: 3
+  height: 1.9
+  offset: 4.5
 --- !u!1 &1131888483 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1176082072659862, guid: 4627b29c864d6f84c87cd469e17699ce,
