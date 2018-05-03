@@ -36,21 +36,25 @@ public class Ballistics : MonoBehaviour
 
     void Update()
     {
-        /*mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
-        mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
-        // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
-        Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
-        // create a ray from the mousePosition
-        Ray ray = cam.ScreenPointToRay(mousePos);
-        // plane.Raycast returns the distance from the ray start to the hit point
-        float distance = 0.0f;
-        if (plane.Raycast(ray, out distance))
+        if (useMouse)
         {
-            // some point of the plane was hit - get its coordinates
-            Vector3 hitPoint = ray.GetPoint(distance);
-            // use the hitPoint to aim your cannon
-            targetObj.position = hitPoint;
-        }*/
+            mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
+            mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
+            // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
+            Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
+            // create a ray from the mousePosition
+            Ray ray = cam.ScreenPointToRay(mousePos);
+            // plane.Raycast returns the distance from the ray start to the hit point
+            float range = 0.0f;
+            if (plane.Raycast(ray, out range))
+            {
+                // some point of the plane was hit - get its coordinates
+                Vector3 hitPoint = ray.GetPoint(range);
+                // use the hitPoint to aim your cannon
+                targetObj.position = hitPoint;
+            }
+        }
+        
         //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         Vector3 direction = (targetObj.position - gunObj.position).normalized;
         targetObj.position += direction * Input.GetAxis(controller.playerInput[5]) * aimSensitivity;

@@ -44878,7 +44878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
-  useMouse: 0
+  useMouse: 1
   cam: {fileID: 963768991}
 --- !u!114 &850153290
 MonoBehaviour:
