@@ -43,9 +43,12 @@ public class BulletTrigger : MonoBehaviour
         // Force is based on distance exponentially
         foreach (GameObject lightningBall in lightningBalls)
         {
-            Vector3 direction = (lightningBall.transform.position - transform.position).normalized;
-            Vector3 force = direction * (magnetism / Mathf.Pow(Vector3.Distance(lightningBall.transform.position, transform.position), 2));
-            rb.velocity += force;
+            if (lightningBall)
+            {
+                Vector3 direction = (lightningBall.transform.position - transform.position).normalized;
+                Vector3 force = direction * (magnetism / Mathf.Pow(Vector3.Distance(lightningBall.transform.position, transform.position), 2));
+                rb.velocity += force;
+            }
         }
     }
 

@@ -16,7 +16,7 @@ public class Ballistics : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3 shipVel;
     private Vector2 mousePos;
-    private float aimSensitivity = 5.0f;
+    private float aimSensitivity = 2.2f;
     private CharacterMovement controller;
 
     [SerializeField]
@@ -36,7 +36,7 @@ public class Ballistics : MonoBehaviour
 
     void Update()
     {
-        mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
+        /*mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
         mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
         // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
         Plane plane = new Plane(Vector3.up, transform.position - new Vector3(0.0f, 4.1f, 0.0f));
@@ -50,9 +50,27 @@ public class Ballistics : MonoBehaviour
             Vector3 hitPoint = ray.GetPoint(distance);
             // use the hitPoint to aim your cannon
             targetObj.position = hitPoint;
-        }
+        }*/
         //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-
+        Vector3 direction = (targetObj.position - gunObj.position).normalized;
+        targetObj.position += direction * Input.GetAxis(controller.playerInput[5]) * aimSensitivity;
+        targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
+        float distance = Vector3.Distance(targetObj.position, gunObj.position);
+        if (distance >= 250)
+        {
+            targetObj.position -= direction * aimSensitivity;
+            distance = Vector3.Distance(targetObj.position, gunObj.position);
+        }
+        if (distance <= 5)
+        {
+            targetObj.position += direction * aimSensitivity;
+            distance = Vector3.Distance(targetObj.position, gunObj.position);
+        }
+        /*Vector3 viewportPt = cam.WorldToViewportPoint(targetObj.position);
+        if (viewportPt.x <= 0 || viewportPt.x >= 1)
+        {
+            targetObj.position -= new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
+        }*/
         RotateGun();
         DrawTrajectoryPath();
     }
@@ -64,6 +82,10 @@ public class Ballistics : MonoBehaviour
         float? lowAngle = 0f;
 
         CalculateAngleToHitTarget(out highAngle, out lowAngle);
+        if (lowAngle == Mathf.Infinity)
+        {
+            Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
+        }
 
         //Artillery
         //float angle = (float)highAngle;
