@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BarScript : MonoBehaviour {
 
 	[SerializeField]
-	public float fillAmount;
+	public float fillAmount = 100;
 
 	[SerializeField]
 	private Image content;
@@ -15,7 +15,7 @@ public class BarScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		fillAmount = 100;
+		//fillAmount = 100;//this is causing some problems
 		Health.text = fillAmount.ToString ();
 	}
 	

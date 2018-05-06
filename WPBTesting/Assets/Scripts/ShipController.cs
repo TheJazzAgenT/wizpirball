@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-	static public int maxHealth = 100;
+	static public int maxHealth = 200;
     public bool alive;
 
-    private int curHealth = 100;
+    private int curHealth = 200;
 
     [SerializeField]
     private BarScript bar;
