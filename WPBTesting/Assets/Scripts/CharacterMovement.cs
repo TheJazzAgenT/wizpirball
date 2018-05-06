@@ -265,8 +265,8 @@ public class CharacterMovement : MonoBehaviour {
             bar.fillAmount = mana;
 
             // Add velocity to the bullet
-            Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
+            //Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed;// + boatVelocity;
             anim.SetBool("Hitting", false);
         }
         else

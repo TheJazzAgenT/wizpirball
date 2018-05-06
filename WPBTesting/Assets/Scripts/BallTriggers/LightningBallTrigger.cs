@@ -58,8 +58,9 @@ public class LightningBallTrigger : MonoBehaviour {
             transform.SetParent(enemyShip.transform);
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
-            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            //Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            //explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.transform.SetParent(enemyShip.transform);
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 

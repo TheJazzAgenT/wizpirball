@@ -53,9 +53,9 @@ public class EnemyCharController : MonoBehaviour
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+        //Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         Vector3 aimDirection = playerShip.transform.position - transform.position;
-        bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + Random.Range(batAngle, batAngle + 10.0f), aimDirection.z + Random.Range(-10.0f, 10.0f)) * BulletSpeed) + boatVelocity;
+        bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + Random.Range(batAngle, batAngle + 10.0f), aimDirection.z + Random.Range(-10.0f, 10.0f)) * BulletSpeed);// + boatVelocity;
         //bullet.GetComponent<Rigidbody>().velocity = (new Vector3(aimDirection.x, aimDirection.y + 15, aimDirection.z * BulletSpeed)) + boatVelocity;
         //bullet.GetComponent<Rigidbody>().velocity = playerShip.transform.position * BulletSpeed;
 

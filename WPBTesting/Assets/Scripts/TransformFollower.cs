@@ -17,7 +17,7 @@ public class TransformFollower : MonoBehaviour
     [SerializeField]
     private float offset;
 
-    private void FixedUpdate()
+    private void Update()
     {
         Refresh();
     }
