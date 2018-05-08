@@ -366,6 +366,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 28026542}
+  - component: {fileID: 28026543}
   m_Layer: 0
   m_Name: Targeting
   m_TagString: Untagged
@@ -380,13 +381,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 28026541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 411.19077, y: -2, z: -266.67853}
+  m_LocalPosition: {x: -182, y: -2, z: 61}
   m_LocalScale: {x: 3.333333, y: 3.333333, z: 3.333333}
   m_Children:
   - {fileID: 1315936112}
   m_Father: {fileID: 1249634890}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &28026543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 28026541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &34846745
 GameObject:
   m_ObjectHideFlags: 0
@@ -45612,7 +45625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
-  useMouse: 1
+  useMouse: 0
   cam: {fileID: 963768991}
 --- !u!114 &850153290
 MonoBehaviour:

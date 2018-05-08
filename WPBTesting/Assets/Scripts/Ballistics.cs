@@ -54,27 +54,40 @@ public class Ballistics : MonoBehaviour
                 targetObj.position = hitPoint;
             }
         }
-        
-        //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-        Vector3 direction = (targetObj.position - gunObj.position).normalized;
-        targetObj.position += direction * Input.GetAxis(controller.playerInput[5]) * aimSensitivity;
-        targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
-        float distance = Vector3.Distance(targetObj.position, gunObj.position);
-        if (distance >= 250)
+        else
         {
-            targetObj.position -= direction * aimSensitivity;
-            distance = Vector3.Distance(targetObj.position, gunObj.position);
+            //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            Vector3 direction = (targetObj.position - gunObj.position).normalized;
+            targetObj.position += direction * Input.GetAxis(controller.playerInput[5]) * aimSensitivity;
+            targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
+            float distance = Vector3.Distance(targetObj.position, gunObj.position);
+            while (distance >= 250)
+            {
+                targetObj.position -= direction * aimSensitivity;
+                distance = Vector3.Distance(targetObj.position, gunObj.position);
+            }
+            while (distance <= 5)
+            {
+                targetObj.position += direction * aimSensitivity;
+                distance = Vector3.Distance(targetObj.position, gunObj.position);
+            }
+
+            // Check if object is within camera counds
+            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
+            Vector3 directionL = targetObj.position - planes[0].ClosestPointOnPlane(targetObj.position);
+            Vector3 directionR = targetObj.position - planes[1].ClosestPointOnPlane(targetObj.position);
+            if (Vector3.Angle(directionL, planes[0].normal) < 90)
+            {
+                Debug.Log(Vector3.Angle(directionL, planes[0].normal));
+                targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * -1 *  aimSensitivity;
+            }
+            if (Vector3.Angle(directionR, planes[1].normal) < 90)
+            {
+                Debug.Log(Vector3.Angle(directionR, planes[1].normal));
+                targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * aimSensitivity;
+            }
         }
-        if (distance <= 5)
-        {
-            targetObj.position += direction * aimSensitivity;
-            distance = Vector3.Distance(targetObj.position, gunObj.position);
-        }
-        /*Vector3 viewportPt = cam.WorldToViewportPoint(targetObj.position);
-        if (viewportPt.x <= 0 || viewportPt.x >= 1)
-        {
-            targetObj.position -= new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
-        }*/
+
         RotateGun();
         DrawTrajectoryPath();
     }
@@ -88,7 +101,7 @@ public class Ballistics : MonoBehaviour
         CalculateAngleToHitTarget(out highAngle, out lowAngle);
         if (lowAngle == Mathf.Infinity)
         {
-            //Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
+            Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
         }
 
         //Artillery
