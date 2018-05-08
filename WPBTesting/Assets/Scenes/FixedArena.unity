@@ -30766,7 +30766,7 @@ MeshCollider:
   m_GameObject: {fileID: 676973692}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -45207,7 +45207,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1917012299}
   bulletPrefab: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
     type: 2}
-  DefaultBall: {fileID: 1518674168084194, guid: 12a4a67c9b7c7c94589f94ce4a2c8541,
+  DefaultBall: {fileID: 1464269331561204, guid: f1cc9b3370201114dac6ad54fba59639,
     type: 2}
   Bullets:
   - {fileID: 1877011838060590, guid: cecbb9874d23d6e449f1a7495ad0b8a7, type: 2}
@@ -45508,7 +45508,7 @@ MeshCollider:
   m_GameObject: {fileID: 905700103}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
