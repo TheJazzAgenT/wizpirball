@@ -57,31 +57,36 @@ public class CharacterMovement : MonoBehaviour {
 
     private void Start()
     {
+        // Set the position, and make the player start out looking at the enemy ship.
         this.transform.position = spawnPoint.transform.position;
-        this.transform.rotation = spawnPoint.transform.rotation;
+        this.transform.LookAt(GameObject.FindGameObjectWithTag("Ship_P2").transform);
 
         anim = GetComponent<Animator>();
         anim.SetBool("Moving", false);
 
+        // Find and set barriers
         LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
         RightBarr = GameObject.Find("ShieldActivatePoint2P" + playerNum);
         FrontBarr = GameObject.Find("ShieldActivatePoint3P" + playerNum);
         BackBarr = GameObject.Find("ShieldActivatePoint4P" + playerNum);
 
+        // If we came from the custom ball selector, find the settings and apply them.
         if (GameObject.Find("InfoStorage") != null)
         {
             Loadout = GameObject.Find("InfoStorage").GetComponent<InfoStore>().GetLoadout(playerNum);
         }
         else
         {
+            // If we didn't come from custom loadout selector, set a default loadout. Fire, Ice, and Lightning.
             Loadout = new int[] { 0, 1, 2 };
         }
 
+        // Startup mana regen
         manaCost = 0;
         manaRegen = Regen();
         StartCoroutine(manaRegen);
 
-        //Set input dictionary appropriate to player
+        // Set input dictionary appropriate to player
         if (playerNum == 1)
         {
             playerInput = new Dictionary<int, string>()
@@ -265,8 +270,8 @@ public class CharacterMovement : MonoBehaviour {
             bar.fillAmount = mana;
 
             // Add velocity to the bullet
-            //Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed;// + boatVelocity;
+            Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
+            bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
             anim.SetBool("Hitting", false);
         }
         else

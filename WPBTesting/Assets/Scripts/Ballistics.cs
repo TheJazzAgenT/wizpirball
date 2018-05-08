@@ -88,7 +88,7 @@ public class Ballistics : MonoBehaviour
         CalculateAngleToHitTarget(out highAngle, out lowAngle);
         if (lowAngle == Mathf.Infinity)
         {
-            Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
+            //Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
         }
 
         //Artillery
