@@ -4118,7 +4118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &111986384
 Transform:
   m_ObjectHideFlags: 0
@@ -4246,7 +4246,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2122476828
+  randomSeed: -1282170932
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19470,8 +19470,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 478900515}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 23.400002, z: 15.299962}
-  m_LocalScale: {x: 5, y: 3.3918393, z: 12.979039}
+  m_LocalPosition: {x: 0, y: 28.600004, z: 15.299962}
+  m_LocalScale: {x: 4.5, y: 3.442806, z: 12.979039}
   m_Children: []
   m_Father: {fileID: 1249634890}
   m_RootOrder: 8
@@ -19597,7 +19597,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1693680141
+  randomSeed: -1009423181
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20499,7 +20499,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 0.23921569}
+        key0: {r: 0, g: 0, b: 0, a: 0.0627451}
         key1: {r: 0, g: 0, b: 0, a: 0.23921569}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -45718,8 +45718,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 926271905}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 21.400002, z: -22.700039}
-  m_LocalScale: {x: 5, y: 3.3918393, z: 12.979039}
+  m_LocalPosition: {x: 0, y: 26.6, z: -22.700039}
+  m_LocalScale: {x: 4.5, y: 3.442806, z: 12.979039}
   m_Children: []
   m_Father: {fileID: 1249634890}
   m_RootOrder: 9
@@ -45845,7 +45845,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2105088284
+  randomSeed: -483477272
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -46747,7 +46747,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 0.23921569}
+        key0: {r: 0, g: 0, b: 0, a: 0.0627451}
         key1: {r: 0, g: 0, b: 0, a: 0.23921569}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -79907,8 +79907,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1362545186}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 28.4, z: -4.6}
-  m_LocalScale: {x: 7, y: 4.239799, z: 17.305386}
+  m_LocalPosition: {x: 0, y: 31.699999, z: -4.6}
+  m_LocalScale: {x: 7, y: 3.8674068, z: 17.305386}
   m_Children: []
   m_Father: {fileID: 1249634890}
   m_RootOrder: 7
@@ -80034,7 +80034,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1382588218
+  randomSeed: -148125891
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -80936,7 +80936,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 0.23921569}
+        key0: {r: 0, g: 0, b: 0, a: 0.0627451}
         key1: {r: 0, g: 0, b: 0, a: 0.23921569}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
