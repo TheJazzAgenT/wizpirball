@@ -6,6 +6,7 @@ public class ShipController : MonoBehaviour
 {
 	static public int maxHealth = 200;
     public bool alive;
+    public bool isHit;
 
     private int curHealth = 200;
 
@@ -17,6 +18,7 @@ public class ShipController : MonoBehaviour
         //Cursor.visible = true;
         curHealth = maxHealth;
         alive = true;
+        isHit = false;
     }
     void Update()
     {
@@ -28,8 +30,12 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        curHealth -= amount;
-        bar.fillAmount = curHealth;
+        if(isHit == true)
+        {
+            curHealth -= amount;
+            bar.fillAmount = curHealth;
+            Debug.Log("ship hit");
+        }
     }
 
     private void CommitSudoku()

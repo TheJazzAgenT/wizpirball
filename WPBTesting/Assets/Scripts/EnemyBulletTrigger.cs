@@ -21,16 +21,12 @@ public class EnemyBulletTrigger : MonoBehaviour {
     {
         if (col.gameObject.tag == "Ship_P1")
         {
-
-            //Destroy(col.gameObject);
-            //add an explosion or something
             ShipController playerDamaged = col.GetComponent<ShipController>();
             //if exists
             if (playerDamaged != null)
             {
                 playerDamaged.TakeDamage(damage);
             }
-
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }

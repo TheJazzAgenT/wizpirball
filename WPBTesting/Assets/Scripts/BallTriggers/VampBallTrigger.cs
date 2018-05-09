@@ -69,12 +69,10 @@ public class VampBallTrigger : MonoBehaviour {
     }
     private IEnumerator Destory(float Delay)
     {
-        Debug.Log("entered Destory");
         bool alphaBool = true;
         while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
-            Debug.Log("Waited for " + Delay + " seconds");
             Destroy(gameObject);
             alphaBool = false;
         }
