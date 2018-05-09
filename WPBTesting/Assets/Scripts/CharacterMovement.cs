@@ -186,7 +186,7 @@ public class CharacterMovement : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (!(mana>=100))
+            if (!(mana>=100) && Time.time >= batDelay + 0.1)
             {
                 mana += 2;
                 bar.fillAmount = mana;
