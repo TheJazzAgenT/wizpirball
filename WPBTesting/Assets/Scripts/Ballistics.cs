@@ -101,10 +101,10 @@ public class Ballistics : MonoBehaviour
         float? lowAngle = 0f;
 
         CalculateAngleToHitTarget(out highAngle, out lowAngle);
-        if (lowAngle == Mathf.Infinity)
+        /*if (lowAngle == Mathf.Infinity)
         {
             Debug.Log(Vector3.Distance(gunObj.position, targetObj.position));
-        }
+        }*/
 
         //Artillery
         //float angle = (float)highAngle;
