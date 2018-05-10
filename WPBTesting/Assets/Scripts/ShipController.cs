@@ -6,8 +6,10 @@ public class ShipController : MonoBehaviour
 {
 	static public int maxHealth = 200;
     public bool alive;
+    public bool isHit;
 
     private int curHealth = 200;
+    private float delay = 1.0f;
 
     [SerializeField]
     private BarScript bar;
@@ -17,6 +19,7 @@ public class ShipController : MonoBehaviour
         //Cursor.visible = true;
         curHealth = maxHealth;
         alive = true;
+        isHit = false;
     }
     void Update()
     {
@@ -28,8 +31,14 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        curHealth -= amount;
-        bar.fillAmount = curHealth;
+        if(isHit == false)
+        {
+            isHit = true;
+            curHealth -= amount;
+            bar.fillAmount = curHealth;
+            Debug.Log("ship hit");
+            Invoke("ResetHit", delay);
+        }
     }
 
     private void CommitSudoku()
@@ -37,5 +46,9 @@ public class ShipController : MonoBehaviour
         alive = false;
         GetComponent<ShipFixedPathing>().enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
+    }
+    private void ResetHit()
+    {
+        isHit = false;
     }
 }

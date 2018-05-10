@@ -75,21 +75,6 @@ public class BulletTrigger : MonoBehaviour
             //destroy the projectile that just caused the trigger collision
             Destroy(gameObject);
         }
-        if (col.gameObject.tag == "Ship_" + self)
-        {
-
-            //Destroy(col.gameObject);
-            //add an explosion or something
-            ShipController playerDamaged = col.GetComponent<ShipController>();
-            //if exists
-            if (playerDamaged != null)
-            {
-                playerDamaged.TakeDamage(damage);
-            }
-
-            //destroy the projectile that just caused the trigger collision
-            //Destroy(gameObject);
-        }
         if (col.gameObject.tag == "WATER")
         {
             Destroy(gameObject);

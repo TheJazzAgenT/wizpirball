@@ -40,7 +40,6 @@ public class FireBallTrigger : MonoBehaviour
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Ship_" + other)
         {
-            Debug.Log("fire Collide test");
             //Destroy(col.gameObject);
             //add an explosion or something
             ShipController curhealth = enemyShip.GetComponent<ShipController>();
@@ -64,8 +63,6 @@ public class FireBallTrigger : MonoBehaviour
         }
         if (col.gameObject.tag == "WATER")
         {
-
-            Debug.Log("fire Collide water");
             coroutine = Destory(5.0f);
             StartCoroutine(coroutine);
             //Destroy(gameObject);
@@ -89,12 +86,10 @@ public class FireBallTrigger : MonoBehaviour
     }
     private IEnumerator Destory(float Delay)
     {
-        Debug.Log("entered Destory");
         bool alphaBool = true;
         while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
-            Debug.Log("Waited for " + Delay + " seconds");
             Destroy(gameObject);
             alphaBool = false;
         }

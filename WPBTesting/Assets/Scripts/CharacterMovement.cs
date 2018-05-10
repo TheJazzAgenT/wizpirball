@@ -272,6 +272,7 @@ public class CharacterMovement : MonoBehaviour {
             // Add velocity to the bullet
             Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
             bullet.GetComponent<Rigidbody>().velocity = batAimer.forward * Ballistics.bulletSpeed + boatVelocity;
+            bullet.transform.rotation = Quaternion.LookRotation(bullet.GetComponent<Rigidbody>().velocity, Vector3.up);
             anim.SetBool("Hitting", false);
         }
         else
