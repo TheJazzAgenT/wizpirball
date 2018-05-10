@@ -9,6 +9,7 @@ public class ShipController : MonoBehaviour
     public bool isHit;
 
     private int curHealth = 200;
+    private float delay = 1.0f;
 
     [SerializeField]
     private BarScript bar;
@@ -30,11 +31,13 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if(isHit == true)
+        if(isHit == false)
         {
+            isHit = true;
             curHealth -= amount;
             bar.fillAmount = curHealth;
             Debug.Log("ship hit");
+            Invoke("ResetHit", delay);
         }
     }
 
@@ -43,5 +46,9 @@ public class ShipController : MonoBehaviour
         alive = false;
         GetComponent<ShipFixedPathing>().enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
+    }
+    private void ResetHit()
+    {
+        isHit = false;
     }
 }

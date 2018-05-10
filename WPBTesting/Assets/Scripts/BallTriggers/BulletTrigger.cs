@@ -63,7 +63,6 @@ public class BulletTrigger : MonoBehaviour
             //if exists
             if(curhealth != null)
             {
-                curhealth.isHit = true;
                 curhealth.TakeDamage(damage);
             }
 
