@@ -45653,7 +45653,7 @@ MonoBehaviour:
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
   - {fileID: 1518674168084194, guid: e943d092feee8bb478b35e3c8f04ac2b, type: 2}
-  - {fileID: 1518674168084194, guid: 78af3b1a8bbab6b4ba4734cc25ece38e, type: 2}
+  - {fileID: 0}
   batAimer: {fileID: 2058775952}
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   batDelay: 2
@@ -45696,7 +45696,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!82 &850153294
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65513,6 +65513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 0
+  isHit: 0
   bar: {fileID: 107607615}
 --- !u!82 &1249634870
 AudioSource:
@@ -80817,7 +80818,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -804194278
+  randomSeed: 359412116
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -92510,6 +92511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 0
+  isHit: 0
   bar: {fileID: 1251520967}
 --- !u!114 &1565169397
 MonoBehaviour:
