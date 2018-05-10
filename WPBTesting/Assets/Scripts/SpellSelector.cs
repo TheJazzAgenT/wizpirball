@@ -95,15 +95,10 @@ public class SpellSelector : MonoBehaviour {
         {
             if (!FinalChoicesP1.Contains(-1) || !FinalChoicesP2.Contains(-1))
             {
-                var setP1 = new HashSet<int>(FinalChoicesP1);
-                var setP2 = new HashSet<int> (FinalChoicesP2);
-                if (setP1.Count == FinalChoicesP1.Length && setP2.Count == FinalChoicesP2.Length)
-                {
-                    InfoTransfer.GetComponent<InfoStore>().ChoicesP1 = FinalChoicesP1;
-                    InfoTransfer.GetComponent<InfoStore>().ChoicesP2 = FinalChoicesP2;
-                    DontDestroyOnLoad(InfoTransfer);
-                    SceneManager.LoadScene(level);
-                }
+                InfoTransfer.GetComponent<InfoStore>().ChoicesP1 = FinalChoicesP1;
+                InfoTransfer.GetComponent<InfoStore>().ChoicesP2 = FinalChoicesP2;
+                DontDestroyOnLoad(InfoTransfer);
+                SceneManager.LoadScene(level);
             }
         }
     }
