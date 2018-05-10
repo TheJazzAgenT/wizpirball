@@ -80,7 +80,7 @@ public class MIRVBallsTrigger : MonoBehaviour {
         if(splitNum < 2)
         {
             var ballA = (GameObject)Instantiate(MirvBall, transform.position, transform.rotation);
-            ballA.transform.Rotate(0, 25, 0);
+            ballA.transform.Rotate(0, 10, 0);
             ballA.GetComponent<Rigidbody>().velocity = ballRB.velocity.magnitude * ballA.transform.forward;
             ballA.GetComponent<MIRVBallsTrigger>().splitNum++;
 
@@ -89,7 +89,7 @@ public class MIRVBallsTrigger : MonoBehaviour {
             ballB.GetComponent<MIRVBallsTrigger>().splitNum++;
 
             var ballC = (GameObject)Instantiate(MirvBall, transform.position, transform.rotation);
-            ballC.transform.Rotate(0, 15, 0);
+            ballC.transform.Rotate(0, -10, 0);
             ballC.GetComponent<Rigidbody>().velocity = ballRB.velocity.magnitude * ballC.transform.forward;
             ballC.GetComponent<MIRVBallsTrigger>().splitNum++;
 
