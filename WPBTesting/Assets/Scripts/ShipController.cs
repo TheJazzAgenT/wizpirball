@@ -9,7 +9,7 @@ public class ShipController : MonoBehaviour
     public bool isHit;
 
     private int curHealth = 200;
-    private float delay = 1.0f;
+    private float delay = 0.001f;
 
     [SerializeField]
     private BarScript bar;
