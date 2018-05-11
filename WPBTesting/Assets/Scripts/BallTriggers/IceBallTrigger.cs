@@ -49,20 +49,17 @@ public class IceBallTrigger : MonoBehaviour
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
-            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.transform.SetParent(enemyShip.transform);
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(10.0f);//destroy after 5 seconds
-            //destroy the projectile that just caused the trigger collision
-            //Destroy(gameObject);
+            StartCoroutine(DestoryAfterDelay(10.0f, gameObject)); // Destroy after x seconds
+            StartCoroutine(DestoryAfterDelay(3.0f, explosion)); // Destroy explosion too
         }
         if (col.gameObject.tag == "WATER")
         {
             //Debug.Log("ice Collide water");
-            coroutine = Destory(10.0f);
-            StartCoroutine(coroutine);
+            StartCoroutine(DestoryAfterDelay(10.0f, gameObject));
         }
         GetComponent<IceBallTrigger>().enabled = false;
     }
@@ -87,13 +84,15 @@ public class IceBallTrigger : MonoBehaviour
 
         }
     }
-    private IEnumerator Destory(float Delay)
+    private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
     {
+        Debug.Log("entered Destory");
         bool alphaBool = true;
         while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
-            Destroy(gameObject);
+            Debug.Log("Waited for " + Delay + " seconds");
+            Destroy(destroyable);
             alphaBool = false;
         }
     }

@@ -16,6 +16,7 @@ public class LightningBallTrigger : MonoBehaviour {
 
     private GameObject enemyShip;
     private int appliedTimes = 0;
+    private float stayAliveDuration = 7.5f;
     private IEnumerator coroutine;
     private bool test = false;
 
@@ -64,17 +65,14 @@ public class LightningBallTrigger : MonoBehaviour {
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(5.0f);
+            StartCoroutine(DestoryAfterDelay(stayAliveDuration, gameObject));
+            StartCoroutine(DestoryAfterDelay(3.0f, explosion));
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
-
-            Debug.Log("Lightning Collide water");
-            coroutine = Destory(5.0f);
-            StartCoroutine(coroutine);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     GetComponent<LightningBallTrigger>().enabled = false;
     }
@@ -100,7 +98,7 @@ public class LightningBallTrigger : MonoBehaviour {
 
         }
     }
-    private IEnumerator Destory(float Delay)
+    private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
     {
         Debug.Log("entered Destory");
         bool alphaBool = true;
@@ -108,7 +106,7 @@ public class LightningBallTrigger : MonoBehaviour {
         {
             yield return new WaitForSeconds(Delay);
             Debug.Log("Waited for " + Delay + " seconds");
-            Destroy(gameObject);
+            Destroy(destroyable);
             alphaBool = false;
         }
     }
