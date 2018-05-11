@@ -52,20 +52,18 @@ public class FireBallTrigger : MonoBehaviour
             }
 
             var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
-            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.transform.SetParent(enemyShip.transform);
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
-            Destory(5.0f);
+            StartCoroutine(DestoryAfterDelay(5.0f, gameObject));
+            StartCoroutine(DestoryAfterDelay(3.0f, explosion));
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
         if (col.gameObject.tag == "WATER")
         {
-            coroutine = Destory(5.0f);
-            StartCoroutine(coroutine);
-            //Destroy(gameObject);
+            StartCoroutine(DestoryAfterDelay(5.0f, gameObject));
         }
         GetComponent<FireBallTrigger>().enabled = false;
     }
@@ -84,13 +82,15 @@ public class FireBallTrigger : MonoBehaviour
             }
         }
     }
-    private IEnumerator Destory(float Delay)
+    private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
     {
+        Debug.Log("entered Destory");
         bool alphaBool = true;
         while (alphaBool)
         {
             yield return new WaitForSeconds(Delay);
-            Destroy(gameObject);
+            Debug.Log("Waited for " + Delay + " seconds");
+            Destroy(destroyable);
             alphaBool = false;
         }
     }

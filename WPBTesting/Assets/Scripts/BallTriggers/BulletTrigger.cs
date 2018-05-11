@@ -71,17 +71,30 @@ public class BulletTrigger : MonoBehaviour
             }
 
             var explosion = (GameObject)Instantiate(impact,transform.position,transform.rotation);
-            Vector3 boatVelocity = enemyShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            explosion.GetComponent<Rigidbody>().velocity = boatVelocity;
+            explosion.transform.SetParent(enemyShip.transform);
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponent<AudioSource>().Play();
 
             //destroy the projectile that just caused the trigger collision
-            Destroy(gameObject);
+            StartCoroutine(DestoryAfterDelay(2.8f, explosion));
         }
         if (col.gameObject.tag == "WATER")
         {
-            Destroy(gameObject);
+            StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
+        }
+    }
+
+    private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
+    {
+        Debug.Log("entered Destory");
+        bool alphaBool = true;
+        while (alphaBool)
+        {
+            Debug.Log("chillin...");
+            yield return new WaitForSeconds(Delay);
+            Debug.Log("Waited for " + Delay + " seconds");
+            Destroy(destroyable);
+            alphaBool = false;
         }
     }
 }
