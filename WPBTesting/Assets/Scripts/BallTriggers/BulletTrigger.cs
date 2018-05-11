@@ -16,15 +16,7 @@ public class BulletTrigger : MonoBehaviour
 
     void Awake()
     {
-        // Find all lightning balls currently in the scene, add only the ones fired by current player to the list
-        var meBalls = GameObject.FindGameObjectsWithTag("LightningBall");
-        foreach (GameObject lBall in meBalls)
-        {
-            if (lBall.GetComponent<LightningBallTrigger>().self != self)
-            {
-                lightningBalls.Add(lBall);
-            }
-        }
+        
     }
 
     // Use this for initialization
@@ -34,6 +26,18 @@ public class BulletTrigger : MonoBehaviour
         other = GetComponent<PlayerSelector>().notMe;
         enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
         rb = GetComponent<Rigidbody>();
+        // Find all lightning balls currently in the scene, add only the ones fired by current player to the list
+        var meBalls = GameObject.FindGameObjectsWithTag("LightningBall");
+        foreach (GameObject lBall in meBalls)
+        {
+            //Debug.Log("lball: " + lBall.GetComponent<LightningBallTrigger>().self + " me: " + self);
+            if (lBall.GetComponent<LightningBallTrigger>().self == self)
+            {
+                lightningBalls.Add(lBall);
+            }
+        }
+        //Debug.Log("fired bball");
+        //Debug.Log(lightningBalls.Count);
     }
 
     // Update is called once per frame

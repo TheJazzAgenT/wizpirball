@@ -57,7 +57,8 @@ public class Ballistics : MonoBehaviour
         else
         {
             //shipVel = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
-            Vector3 direction = (targetObj.position - gunObj.position).normalized;
+            Vector3 direction = Vector3.Scale((targetObj.position - gunObj.position).normalized, new Vector3(1, 0, 1));
+            //direction.y = targetObj.position.y;
             targetObj.position += direction * Input.GetAxis(controller.playerInput[5]) * aimSensitivity;
             targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * Input.GetAxis(controller.playerInput[4]) * aimSensitivity;
             float distance = Vector3.Distance(targetObj.position, gunObj.position);
