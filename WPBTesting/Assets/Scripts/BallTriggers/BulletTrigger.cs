@@ -86,13 +86,12 @@ public class BulletTrigger : MonoBehaviour
 
     private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
     {
-        Debug.Log("entered Destory");
+        //Debug.Log("entered Destory");
         bool alphaBool = true;
         while (alphaBool)
         {
-            Debug.Log("chillin...");
             yield return new WaitForSeconds(Delay);
-            Debug.Log("Waited for " + Delay + " seconds");
+            //Debug.Log("Waited for " + Delay + " seconds");
             Destroy(destroyable);
             alphaBool = false;
         }
