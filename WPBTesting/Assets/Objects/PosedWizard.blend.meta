@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 0d138cc1ee9ec0a43b49c47c415a3a06
+timeCreated: 1526069063
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Chest
+    100004: Foot_L
+    100006: Foot_R_001
+    100008: Hand_L
+    100010: Hand_R_001
+    100012: Head
+    100014: LowerArm_L
+    100016: LowerArm_R_001
+    100018: LowerLeg_L
+    100020: LowerLeg_R_001
+    100022: Neck
+    100024: Origin
+    100026: //RootNode
+    100028: Shoulders
+    100030: Sphere
+    100032: UpperArm_L
+    100034: UpperArm_R_001
+    100036: UpperLeg_L
+    100038: UpperLeg_R_001
+    400000: Armature
+    400002: Chest
+    400004: Foot_L
+    400006: Foot_R_001
+    400008: Hand_L
+    400010: Hand_R_001
+    400012: Head
+    400014: LowerArm_L
+    400016: LowerArm_R_001
+    400018: LowerLeg_L
+    400020: LowerLeg_R_001
+    400022: Neck
+    400024: Origin
+    400026: //RootNode
+    400028: Shoulders
+    400030: Sphere
+    400032: UpperArm_L
+    400034: UpperArm_R_001
+    400036: UpperLeg_L
+    400038: UpperLeg_R_001
+    2100000: Wood
+    2100002: Robe
+    2100004: GoldPin
+    2100006: BeltBuckle
+    2100008: Sleeve
+    2100010: Legs
+    2100012: Skin
+    2100014: WizHat
+    2100016: Lips
+    2100018: Eye
+    2100020: InnerEye
+    2100022: Irus
+    2100024: Eye_001
+    2100026: InnerEye_001
+    2100028: Irus_001
+    2300000: Sphere
+    3300000: Sphere
+    4300000: Sphere
+    4300002: Shoulders
+    7400000: Default Take
+    7400002: ArmatureAction
+    7400004: Hitting_NoBat
+    7400006: Running
+    7400008: Walking
+    9500000: //RootNode
+    13700000: Shoulders
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

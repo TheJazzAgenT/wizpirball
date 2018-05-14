@@ -423,7 +423,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 4784daf2d7c55b1469d8e83652927eed, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4784daf2d7c55b1469d8e83652927eed, type: 3}
@@ -1116,7 +1116,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 61eea7fb70262114492b2c583c87b4be, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.09
-  m_Pitch: 1.31
+  m_Pitch: 0.25
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -1548,7 +1548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4, y: -6.75}
+  m_AnchoredPosition: {x: 0.39999998, y: -6.75}
   m_SizeDelta: {x: 228.91, y: 41.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005397178
@@ -1716,7 +1716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.65, y: 33.76}
+  m_AnchoredPosition: {x: -33.649998, y: 33.76}
   m_SizeDelta: {x: 78.21, y: 21.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070190103
