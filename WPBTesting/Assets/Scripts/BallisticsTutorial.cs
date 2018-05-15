@@ -72,7 +72,7 @@ public class BallisticsTutorial : MonoBehaviour
                 targetObj.position += direction * aimSensitivity;
                 distance = Vector3.Distance(targetObj.position, gunObj.position);
             }
-
+            /*
             // Check if object is within camera counds
             Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
             // Get a ray from targetObj to Left and Right planes of the camera view.
@@ -88,7 +88,7 @@ public class BallisticsTutorial : MonoBehaviour
             {
                 //Debug.Log(Vector3.Angle(directionR, planes[1].normal));
                 targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * aimSensitivity;
-            }
+            }*/
         }
 
         RotateGun();

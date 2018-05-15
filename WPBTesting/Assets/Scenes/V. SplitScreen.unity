@@ -42433,6 +42433,10 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 875467125}
+    - target: {fileID: 4812574233796212, guid: 9f7715b91a9ff7f4db52d356d793a102, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f7715b91a9ff7f4db52d356d793a102, type: 2}
   m_IsPrefabParent: 0
@@ -46056,6 +46060,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 0
   isHit: 0
+  isDummy: 0
+  dummyHit: 0
   bar: {fileID: 1251520967}
 --- !u!114 &644729065
 MonoBehaviour:
@@ -66851,6 +66857,15 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 451187923}
+    - target: {fileID: 114506028753675182, guid: f1005bed2da3bbf4e91ee9f956382c8e,
+        type: 2}
+      propertyPath: useMouse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010544967850724, guid: f1005bed2da3bbf4e91ee9f956382c8e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1005bed2da3bbf4e91ee9f956382c8e, type: 2}
   m_IsPrefabParent: 0
@@ -74684,6 +74699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 0
   isHit: 0
+  isDummy: 0
+  dummyHit: 0
   bar: {fileID: 107607615}
 --- !u!82 &1249634870
 AudioSource:
@@ -83245,7 +83262,7 @@ Prefab:
     - target: {fileID: 81100594136525850, guid: ee8c2b9b8f45dce4a9b0f5a4640ee018,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee8c2b9b8f45dce4a9b0f5a4640ee018, type: 2}

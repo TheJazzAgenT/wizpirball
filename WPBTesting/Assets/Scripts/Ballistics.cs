@@ -72,7 +72,7 @@ public class Ballistics : MonoBehaviour
                 targetObj.position += direction * aimSensitivity;
                 distance = Vector3.Distance(targetObj.position, gunObj.position);
             }
-
+            
             // Check if object is within camera counds
             Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
             // Get a ray from targetObj to Left and Right planes of the camera view.
@@ -81,13 +81,15 @@ public class Ballistics : MonoBehaviour
             // Check the angle between each ray and its plane. If the angle is less than 90 degrees that means its on the wrong side of the plane.
             if (Vector3.Angle(directionL, planes[0].normal) < 90)
             {
-                //Debug.Log(Vector3.Angle(directionL, planes[0].normal));
+                Debug.Log(Vector3.Angle(directionL, planes[0].normal));
                 targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * -1 *  aimSensitivity;
+                //targetObj.position += directionL * aimSensitivity;
             }
             if (Vector3.Angle(directionR, planes[1].normal) < 90)
             {
-                //Debug.Log(Vector3.Angle(directionR, planes[1].normal));
+                Debug.Log(Vector3.Angle(directionR, planes[1].normal));
                 targetObj.position += new Vector3(direction.z, direction.y, -direction.x) * aimSensitivity;
+                //targetObj.position += directionR * aimSensitivity;
             }
         }
 
