@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipController : MonoBehaviour
+public class DummyController : MonoBehaviour
 {
-	static public int maxHealth = 200;
-    public bool alive;
     public bool isHit;
-    public bool isDummy;
-    public bool dummyHit = false;
 
     private int curHealth = 200;
     private float delay = 0.001f;
@@ -33,11 +29,7 @@ public class ShipController : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (!dummyHit)
-        {
-            dummyHit = true;
-        }
-        if(isHit == false && !isDummy)
+        if (isHit == false)
         {
             isHit = true;
             curHealth -= amount;
@@ -49,12 +41,9 @@ public class ShipController : MonoBehaviour
 
     private void CommitSudoku()
     {
-        if (!isDummy)
-        {
-            alive = false;
-            GetComponent<ShipFixedPathing>().enabled = false;
-            GetComponent<Rigidbody>().useGravity = true;
-        }
+        alive = false;
+        GetComponent<ShipFixedPathing>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = true;
     }
     private void ResetHit()
     {
