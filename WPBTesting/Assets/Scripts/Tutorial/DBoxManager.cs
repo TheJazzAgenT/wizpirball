@@ -16,7 +16,7 @@ public class DBoxManager : MonoBehaviour {
 
     private bool isActive = false;
     private bool cancelTyping = false;
-    private float textScrollSpeed = 0.05f;
+    private float textScrollSpeed = 0.02f;
 
     private string title = "Coach Z: ";
     private string[] dialogues;
@@ -38,7 +38,7 @@ public class DBoxManager : MonoBehaviour {
             text = reader.ReadLine();
             dialogues[i] = text;
             //Console.WriteLine(text);
-            Debug.Log(text);
+            //Debug.Log(text);
         }
         ShowNextDialogue();
 	}
