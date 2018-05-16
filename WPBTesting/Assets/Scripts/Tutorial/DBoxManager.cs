@@ -68,9 +68,9 @@ public class DBoxManager : MonoBehaviour {
             ShowNextDialogue();
         }
         Debug.Log("current: " + curDialogue + " : " + dialogues.Length);
-        if (curDialogue == dialogues.Length - 1)
+        if (curDialogue == dialogues.Length)
         {
-            StartCoroutine(LoadSceneOnDelay(20.0f));
+            StartCoroutine(LoadSceneOnDelay(10.0f));
         }
     }
 
