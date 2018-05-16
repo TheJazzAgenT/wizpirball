@@ -20,9 +20,9 @@ public class DBoxManager : MonoBehaviour {
 
     private string title = "Coach Z: ";
     private string[] dialogues;
-    private bool[] dialogueStatusP1 = new bool[] { true, false, false, false, false, false, false };
-    private bool[] dialogueStatusP2 = new bool[] { true, false, false, false, false, false, false };
-    private bool[] dialogueDisplayed = new bool[] { false, false, false, false, false, false, false };
+    private bool[] dialogueStatusP1;
+    private bool[] dialogueStatusP2;
+    private bool[] dialogueDisplayed;
     private int curDialogue = 0;
 
     // Use this for initialization
@@ -32,13 +32,22 @@ public class DBoxManager : MonoBehaviour {
         reader = theSourceFile.OpenText();
         string text = " "; // assigned to allow first line to be read below
         text = reader.ReadLine();
-        dialogues = new string[int.Parse(text)];
-        for(int i = 0; i < dialogues.Length;i++)
+        int numLines = int.Parse(text);
+        dialogues = new string[numLines];
+        dialogueStatusP1 = new bool[numLines];
+        dialogueStatusP2 = new bool[numLines];
+        dialogueDisplayed = new bool[numLines];
+        string[] splits;
+        for (int i = 0; i < dialogues.Length;i++)
         {
             text = reader.ReadLine();
-            dialogues[i] = text;
+            splits = text.Split(new char[] { ' ' }, 2);
+            dialogues[i] = splits[1];
+            dialogueStatusP1[i] = splits[0] == "true";
+            dialogueStatusP2[i] = splits[0] == "true";
+            dialogueDisplayed[i] = false;
             //Console.WriteLine(text);
-            //Debug.Log(text);
+            Debug.Log(text);
         }
         ShowNextDialogue();
 	}
