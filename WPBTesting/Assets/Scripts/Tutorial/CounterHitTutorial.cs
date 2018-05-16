@@ -46,6 +46,7 @@ public class CounterHitTutorial : MonoBehaviour
             {
                 //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
                 myCharacter.GetComponent<CharacterMovementTutorial>().Fire();
+                myCharacter.GetComponent<CharacterMovementTutorial>().counterHits += 1;
                 Destroy(other.gameObject);
                 timer = 0;
             }

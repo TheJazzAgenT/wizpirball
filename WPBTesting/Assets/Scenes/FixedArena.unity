@@ -55297,6 +55297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 0
   isHit: 0
+  isDummy: 0
+  dummyHit: 0
   bar: {fileID: 107607615}
 --- !u!82 &1249634870
 AudioSource:
@@ -75419,6 +75421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 0
   isHit: 0
+  isDummy: 0
+  dummyHit: 0
   bar: {fileID: 1251520967}
 --- !u!114 &1565169397
 MonoBehaviour:

@@ -18,6 +18,8 @@ public class CharacterMovementTutorial : MonoBehaviour
     public Transform batAimer;
     public AudioClip batSound;
     public float batDelay = 2.0f;
+    public int tHits = 0;
+    public int counterHits = 0;
 
     public int mana; // starts at 100
 
@@ -43,10 +45,15 @@ public class CharacterMovementTutorial : MonoBehaviour
     private float timestamp;
     private bool canRespawn = true;
     private bool[] spellsUsed = new bool[] { false, false, false };
-    private bool trackSpells;
+    private bool trackSpells = false;
+    private bool trackCounterHits = false;
+    private bool trackshields = false;
+    private int currentBall = -1;
     private Animator anim;
     //Animator legsAnim;
     private AudioSource audioSource;
+    private DBoxManager dBoxMan;
+
 
     [SerializeField]
     private BarScript bar;
@@ -67,6 +74,7 @@ public class CharacterMovementTutorial : MonoBehaviour
 
         // Find and set barriers
         LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
+        dBoxMan = GameObject.Find("DialogueManager").GetComponent<DBoxManager>();
 
         // If we came from the custom ball selector, find the settings and apply them.
         if (GameObject.Find("InfoStorage") != null)
@@ -147,29 +155,36 @@ public class CharacterMovementTutorial : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown(playerInput[3]))
         {
             bulletPrefab = Bullets[Loadout[0]];
-            if (trackSpells)
-            {
-                spellsUsed[0] = true;
-            }
+            currentBall = 0;
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown(playerInput[0]))
         {
+            currentBall = 1;
             bulletPrefab = Bullets[Loadout[1]];
-            if (trackSpells)
-            {
-                spellsUsed[1] = true;
-            }
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButtonDown(playerInput[1]))
         {
+            currentBall = 2;
             bulletPrefab = Bullets[Loadout[2]];
-            if (trackSpells)
-            {
-                spellsUsed[2] = true;
-            }
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
+        }
+        if(tHits >= 3)
+        {
+            dBoxMan.ReadyDialogue(2, playerNum);
+            trackSpells = true;
+        }
+        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])
+        {
+            dBoxMan.ReadyDialogue(3, playerNum);
+            trackCounterHits = true;
+        }
+
+        if (trackCounterHits && counterHits >= 2)
+        {
+            dBoxMan.ReadyDialogue(4, playerNum);
+            trackshields = true;
         }
     }
     void FixedUpdate()
@@ -211,19 +226,27 @@ public class CharacterMovementTutorial : MonoBehaviour
             canRespawn = false;
             Invoke("respawnPlayer", 4);
         }
+        if (col.transform.tag == "TutorialBox")
+        {
+            dBoxMan.ReadyDialogue(1, playerNum);
+        }
     }
     void OnTriggerStay(Collider col)
     {
-        if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown(playerInput[9])))
+        if (trackshields)
         {
-            if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
+            if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown(playerInput[9])))
             {
-                if (mana > shieldCost)
+                if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
                 {
-                    shields[2].GetComponent<ShieldController>().Blocks = 3;
-                    shields[2].SetActive(true);
-                    mana -= shieldCost;
-                    bar.fillAmount = mana;
+                    if (mana > shieldCost)
+                    {
+                        shields[0].GetComponent<ShieldController>().Blocks = 3;
+                        shields[0].SetActive(true);
+                        mana -= shieldCost;
+                        bar.fillAmount = mana;
+                        dBoxMan.ReadyDialogue(5, playerNum);
+                    }
                 }
             }
         }
@@ -234,10 +257,16 @@ public class CharacterMovementTutorial : MonoBehaviour
         this.transform.rotation = spawnPoint.transform.rotation;
         canRespawn = true;
     }
+
+
     public void Fire()
     {
         if (mana > manaCost)
         {
+            if (trackSpells && currentBall >= 0)
+            {
+                spellsUsed[currentBall] = true;
+            }
             audioSource.PlayOneShot(batSound, 1.0f);
             // Create the Bullet from the Bullet Prefab
             var bullet = Instantiate(bulletPrefab, bulletSpawn.position, batAimer.rotation);

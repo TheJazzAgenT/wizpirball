@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTrigger : MonoBehaviour
+public class BallTriggerTutorial : MonoBehaviour
 {
     public int damage = 20; // Damage dealt by this ball
     public GameObject impact; // Impact effect
 
     private GameObject enemyShip;
+    private CharacterMovementTutorial myChar;
     private List<GameObject> lightningBalls = new List<GameObject>();
     private Rigidbody rb;
     private float magnetism = 500.0f; // How much is this ball effected by magnetic balls
@@ -16,7 +17,7 @@ public class BulletTrigger : MonoBehaviour
 
     void Awake()
     {
-        
+
     }
 
     // Use this for initialization
@@ -24,7 +25,7 @@ public class BulletTrigger : MonoBehaviour
     {
         self = GetComponent<PlayerSelector>().me;
         other = GetComponent<PlayerSelector>().notMe;
-        enemyShip = GameObject.FindGameObjectWithTag("Ship_" + other);
+        myChar = GameObject.Find("Player" + self[1]).GetComponent<CharacterMovementTutorial>();
         rb = GetComponent<Rigidbody>();
         // Find all lightning balls currently in the scene, add only the ones fired by current player to the list
         var meBalls = GameObject.FindGameObjectsWithTag("LightningBall");
@@ -59,32 +60,14 @@ public class BulletTrigger : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Ship_" + other)
-        {
-            //Destroy(col.gameObject);
-            //add an explosion or something
-            ShipController curhealth = enemyShip.GetComponent<ShipController>();
-            //if exists
-            if(curhealth != null)
-            {
-                curhealth.TakeDamage(damage);
-            }
-
-            var explosion = (GameObject)Instantiate(impact,transform.position,transform.rotation);
-            explosion.transform.SetParent(enemyShip.transform);
-            explosion.GetComponent<ParticleSystem>().Play();
-            explosion.GetComponent<AudioSource>().Play();
-
-            //destroy the projectile that just caused the trigger collision
-            StartCoroutine(DestoryAfterDelay(2.8f, explosion));
-        }
+        
         if (col.gameObject.tag == "WATER")
         {
             StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
         }
         if (col.gameObject.tag == "TutorialTarget")
         {
-
+            myChar.tHits += 1;
             StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
         }
     }
