@@ -38,6 +38,7 @@ public class Ballistics : MonoBehaviour
     {
         if (useMouse)
         {
+            //Debug.Log("??????????");
             mousePos += new Vector2(Input.GetAxis(controller.playerInput[4]) * aimSensitivity, Input.GetAxis(controller.playerInput[5]) * aimSensitivity);
             mousePos = useMouse ? (Vector2)Input.mousePosition : Clamp(ref mousePos);
             // this creates a horizontal plane passing through this object's center adjusted downwards so its on the waters surface
@@ -92,7 +93,6 @@ public class Ballistics : MonoBehaviour
                 //targetObj.position += directionR * aimSensitivity;
             }
         }
-
         RotateGun();
         DrawTrajectoryPath();
     }
