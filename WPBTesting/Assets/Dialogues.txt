@@ -1,7 +1,10 @@
-6
-true Right you scurvy dogs! This is the Molluka Pirate Training Island! Whatever you did to get here, forget it! Only thing that matters now is what you do here. Now get over here!
-false Right, see those targets out there? Aim your bat-staffs and fire a ball at them. This might be a little tricker on a ship, but that is for later.
-false Getting there, now let's see what magic you can do, launch a fire ball, ice ball, and a lightning ball at a target.
-false Not bad, lad. might make a fine pirate yet. You can throw those balls, but can you defend against them? Deflect a ball, you land-lubber!
-false You got some defense there lad, but you think you can deflect every ball that comes after you? I think not! You're going to have to learn how to use a shield! Activate that one over there.
-false Shiver me timbers! You can learn! Just remember shields can only block some many balls, and that includes your own. Let's see how good you two are against each other!
+9
+true Right you scurvy dogs! This is the Molluka Pirate Training Island! Prove you can captain a ship! Get over here!
+false Now that you are here, Let's go over the basics. Look at stuff at the top left/right of the screen. The top on is your mana, used in everything that is magical.
+false Below that is your health, if it while you are on a ship and run out of health your ship sinks and you die.
+false Finally below that is your selected ball type. You always have a rock ball, but your other magic balls can be switched out.
+false Right, see those targets out there? Use your aiming arc and aim your bat-staffs and fire 3 rock balls at them. This might be a little tricker on a ship, but that is for later.
+false Getting there, now let's see what magic you can do, launch a fire ball, ice ball, and a lightning ball at a target. Just remember, every ball beside your rock ball costs mana. 
+false You can throw those balls, but can you defend against them? Deflect 3 balls, you land-lubber!
+false You got some defense there lad, but you can't deflect ever ball? You're going to have to learn how to use a shield! Activate that one over there.
+false Shiver me timbers! You can learn! Just remember shields cost mana to cast and block all balls, including your own. Time for the final test! Let's see how good you two are against each other!

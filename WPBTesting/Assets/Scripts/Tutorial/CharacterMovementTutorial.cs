@@ -44,10 +44,18 @@ public class CharacterMovementTutorial : MonoBehaviour
     private float horizontalInput;
     private float timestamp;
     private bool canRespawn = true;
+    private IEnumerator mCall;
+    private IEnumerator hCall;
+    private IEnumerator bCall;
+
+    private bool Xmana = false;
+    private bool Xhealth = false;
+    private bool Xballs = false;
     private bool[] spellsUsed = new bool[] { false, false, false };
     private bool trackSpells = false;
     private bool trackCounterHits = false;
     private bool trackshields = false;
+
     private int currentBall = -1;
     private Animator anim;
     //Animator legsAnim;
@@ -91,6 +99,9 @@ public class CharacterMovementTutorial : MonoBehaviour
         manaCost = 0;
         manaRegen = Regen();
         StartCoroutine(manaRegen);
+        mCall = manaCall();
+        hCall = healthCall();
+        bCall = ballCall();
 
         // Set input dictionary appropriate to player
         if (playerNum == 1)
@@ -170,21 +181,33 @@ public class CharacterMovementTutorial : MonoBehaviour
             bulletPrefab = Bullets[Loadout[2]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
-        if(tHits >= 3)
+        if (Xmana)
         {
-            dBoxMan.ReadyDialogue(2, playerNum);
+            StartCoroutine(manaCall());
+        }
+        if (Xhealth)
+        {
+            StartCoroutine(healthCall());
+        }
+        if (Xballs)
+        {
+            StartCoroutine(ballCall());
+        }
+        if (tHits >= 3)
+        {
+            dBoxMan.ReadyDialogue(5, playerNum);
             trackSpells = true;
         }
         if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])
         {
-            dBoxMan.ReadyDialogue(3, playerNum);
+            dBoxMan.ReadyDialogue(6, playerNum);
             Enemy.SetActive(true);
             trackCounterHits = true;
         }
 
         if (trackCounterHits && counterHits >= 2)
         {
-            dBoxMan.ReadyDialogue(4, playerNum);
+            dBoxMan.ReadyDialogue(7, playerNum);
             trackshields = true;
         }
     }
@@ -230,6 +253,7 @@ public class CharacterMovementTutorial : MonoBehaviour
         if (col.transform.tag == "TutorialBox")
         {
             dBoxMan.ReadyDialogue(1, playerNum);
+            Xmana = true;
         }
     }
     void OnTriggerStay(Collider col)
@@ -246,7 +270,7 @@ public class CharacterMovementTutorial : MonoBehaviour
                         shields[0].SetActive(true);
                         mana -= shieldCost;
                         bar.fillAmount = mana;
-                        dBoxMan.ReadyDialogue(5, playerNum);
+                        dBoxMan.ReadyDialogue(8, playerNum);
                     }
                 }
             }
@@ -284,5 +308,25 @@ public class CharacterMovementTutorial : MonoBehaviour
         {
             Debug.Log("not enough mana");
         }
+    }
+    IEnumerator manaCall()
+    {
+        yield return new WaitForSeconds(10.0f);
+        dBoxMan.ReadyDialogue(2, playerNum);
+        Xmana = false;
+        Xhealth = true;
+    }
+    IEnumerator healthCall()
+    {
+        yield return new WaitForSeconds(10.0f);
+        dBoxMan.ReadyDialogue(3, playerNum);
+        Xhealth = false;
+        Xballs = true;
+    }
+    IEnumerator ballCall()
+    {
+        yield return new WaitForSeconds(10.0f);
+        dBoxMan.ReadyDialogue(4, playerNum);
+        Xballs = false;
     }
 }
