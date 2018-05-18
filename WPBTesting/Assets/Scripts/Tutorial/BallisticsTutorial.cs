@@ -187,6 +187,8 @@ public class BallisticsTutorial : MonoBehaviour
             currentPosition = newPosition;
             currentVelocity = newVelocity;
         }
+        var distance = Vector3.Distance(gunObj.transform.position, targetObj.transform.position);
+        lineRenderer.materials[0].mainTextureScale = new Vector3(distance, 1, 1);
     }
 
     //How long did it take to reach the target (splash in artillery terms)?
