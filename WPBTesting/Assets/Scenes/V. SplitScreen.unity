@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55129,7 +55129,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714089131}
-  m_LocalRotation: {x: 0.66317147, y: 0.2557092, z: -0.26240522, w: 0.652656}
+  m_LocalRotation: {x: 0.6631715, y: 0.25570923, z: -0.26240525, w: 0.6526561}
   m_LocalPosition: {x: 3.05, y: 4.75, z: 37.8}
   m_LocalScale: {x: 0.4256003, y: 1.0252997, z: 0.8003827}
   m_Children: []
@@ -55696,7 +55696,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 758733924}
-  m_LocalRotation: {x: 0.66317147, y: 0.2557092, z: -0.26240522, w: 0.652656}
+  m_LocalRotation: {x: 0.6631715, y: 0.25570923, z: -0.26240525, w: 0.6526561}
   m_LocalPosition: {x: 3.05, y: 4.75, z: 37.8}
   m_LocalScale: {x: 0.4256003, y: 1.0252997, z: 0.8003827}
   m_Children: []
@@ -86647,6 +86647,7 @@ GameObject:
   - component: {fileID: 1437910917}
   - component: {fileID: 1437910916}
   - component: {fileID: 1437910915}
+  - component: {fileID: 1437910918}
   m_Layer: 0
   m_Name: DeadPanel
   m_TagString: ShowOnDeath
@@ -86730,6 +86731,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1437910913}
+--- !u!114 &1437910918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437910913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f1744d71abfd0429ae49820acfa2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1916275048}
+  selectedObject: {fileID: 1522383295}
 --- !u!1 &1438537065
 GameObject:
   m_ObjectHideFlags: 0
@@ -107401,6 +107415,7 @@ GameObject:
   - component: {fileID: 1969746558}
   - component: {fileID: 1969746557}
   - component: {fileID: 1969746556}
+  - component: {fileID: 1969746559}
   m_Layer: 0
   m_Name: PausePanel
   m_TagString: ShowOnPause
@@ -107485,6 +107500,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969746554}
+--- !u!114 &1969746559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969746554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f1744d71abfd0429ae49820acfa2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1916275048}
+  selectedObject: {fileID: 2036122865}
 --- !u!1 &1978562856
 GameObject:
   m_ObjectHideFlags: 0
@@ -111621,6 +111649,7 @@ GameObject:
   - component: {fileID: 2046644365}
   - component: {fileID: 2046644364}
   - component: {fileID: 2046644363}
+  - component: {fileID: 2046644366}
   m_Layer: 0
   m_Name: WinPanel
   m_TagString: ShowOnWin
@@ -111704,6 +111733,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046644361}
+--- !u!114 &2046644366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046644361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f1744d71abfd0429ae49820acfa2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1916275048}
+  selectedObject: {fileID: 922913352}
 --- !u!1 &2052929342
 GameObject:
   m_ObjectHideFlags: 0
