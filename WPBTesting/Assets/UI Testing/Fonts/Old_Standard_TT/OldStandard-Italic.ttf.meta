@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: f48b20ff8e186ff4cadb5a1c3dc9380e
+timeCreated: 1526945252
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Old Standard TT
+  fontNames:
+  - Old Standard TT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3560183264a79504ca893ed2d5f9e559, type: 3}
+  - {fileID: 12800000, guid: 8b572eebba281e64d916fd4cb6af1a93, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
