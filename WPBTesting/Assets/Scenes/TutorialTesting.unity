@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 61166490}
   - component: {fileID: 61166492}
   - component: {fileID: 61166491}
+  - component: {fileID: 61166493}
   m_Layer: 5
   m_Name: 'L. Stick '
   m_TagString: Untagged
@@ -447,6 +448,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61166489}
+--- !u!114 &61166493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61166489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &66074074
 GameObject:
   m_ObjectHideFlags: 0
@@ -18306,6 +18318,7 @@ GameObject:
   - component: {fileID: 713754260}
   - component: {fileID: 713754262}
   - component: {fileID: 713754261}
+  - component: {fileID: 713754263}
   m_Layer: 5
   m_Name: R. Bumper
   m_TagString: Untagged
@@ -18363,6 +18376,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713754259}
+--- !u!114 &713754263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713754259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &745514716
 Prefab:
   m_ObjectHideFlags: 0
@@ -26486,6 +26510,7 @@ GameObject:
   - component: {fileID: 1456752445}
   - component: {fileID: 1456752447}
   - component: {fileID: 1456752446}
+  - component: {fileID: 1456752448}
   m_Layer: 5
   m_Name: R. Trigger
   m_TagString: Untagged
@@ -26543,6 +26568,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456752444}
+--- !u!114 &1456752448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1456752444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1493163845
 GameObject:
   m_ObjectHideFlags: 0
@@ -35810,6 +35846,7 @@ GameObject:
   - component: {fileID: 1911055073}
   - component: {fileID: 1911055075}
   - component: {fileID: 1911055074}
+  - component: {fileID: 1911055076}
   m_Layer: 5
   m_Name: R. Stick
   m_TagString: Untagged
@@ -35867,6 +35904,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911055072}
+--- !u!114 &1911055076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911055072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1911438943 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4409021964724462, guid: 2a098203f40e1a841a5536d10474002a,
@@ -35969,6 +36017,7 @@ GameObject:
   - component: {fileID: 1923175922}
   - component: {fileID: 1923175924}
   - component: {fileID: 1923175923}
+  - component: {fileID: 1923175925}
   m_Layer: 5
   m_Name: L. Trigger
   m_TagString: Untagged
@@ -36026,6 +36075,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1923175921}
+--- !u!114 &1923175925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923175921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940343166
 GameObject:
   m_ObjectHideFlags: 0
@@ -36704,6 +36764,7 @@ GameObject:
   - component: {fileID: 2018710899}
   - component: {fileID: 2018710901}
   - component: {fileID: 2018710900}
+  - component: {fileID: 2018710902}
   m_Layer: 5
   m_Name: ABXY
   m_TagString: Untagged
@@ -36761,6 +36822,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018710898}
+--- !u!114 &2018710902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018710898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60791c76f864e5a4d8ee2ef4e6aafdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2019570414
 GameObject:
   m_ObjectHideFlags: 0
