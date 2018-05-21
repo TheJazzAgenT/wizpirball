@@ -10,6 +10,7 @@ public class DBoxManager : MonoBehaviour {
     public GameObject dBox;
     public Text body;
     public Text boxTitle;
+    public RawImage[] buttonImgs;
 
     protected FileInfo theSourceFile = null;
     protected StreamReader reader = null;
@@ -23,7 +24,9 @@ public class DBoxManager : MonoBehaviour {
     private bool[] dialogueStatusP1;
     private bool[] dialogueStatusP2;
     private bool[] dialogueDisplayed;
+    private bool[] buttonDisplay;
     private int curDialogue = 0;
+    private int curButton = -1;
 
     // Use this for initialization
     void Start () {
@@ -37,18 +40,26 @@ public class DBoxManager : MonoBehaviour {
         dialogueStatusP1 = new bool[numLines];
         dialogueStatusP2 = new bool[numLines];
         dialogueDisplayed = new bool[numLines];
+        buttonDisplay = new bool[numLines];
         string[] splits;
         for (int i = 0; i < dialogues.Length;i++)
         {
             text = reader.ReadLine();
-            splits = text.Split(new char[] { ' ' }, 2);
-            dialogues[i] = splits[1];
+            splits = text.Split(new char[] { ' ' }, 3);
+            dialogues[i] = splits[2];
             dialogueStatusP1[i] = splits[0] == "true";
             dialogueStatusP2[i] = splits[0] == "true";
             dialogueDisplayed[i] = false;
+            buttonDisplay[i] = splits[1] == "true";
+            Debug.Log(buttonDisplay[i]);
             //Console.WriteLine(text);
-            Debug.Log(text);
+            //Debug.Log(text);
         }
+
+        /*foreach (RawImage img in buttonImgs)
+        {
+            img.gameObject.SetActive(true);
+        }*/
         ShowNextDialogue();
 	}
 	
@@ -62,16 +73,17 @@ public class DBoxManager : MonoBehaviour {
             isActive = false;
         }
 
-        //Debug.Log(curDialogue + " : " + dialogueDisplayed[curDialogue - 1] + " : " + dialogueStatus[curDialogue]);
-        if (dialogueDisplayed[curDialogue - 1] && dialogueStatusP1[curDialogue] && dialogueStatusP2[curDialogue])
-        {
-            ShowNextDialogue();
-        }
-        Debug.Log("current: " + curDialogue + " : " + dialogues.Length);
         if (curDialogue == dialogues.Length)
         {
             StartCoroutine(LoadSceneOnDelay(10.0f));
         }
+        //Debug.Log(curDialogue + " : " + dialogueDisplayed[curDialogue - 1] + " : " + dialogueStatus[curDialogue]);
+        else if (dialogueDisplayed[curDialogue - 1] && dialogueStatusP1[curDialogue] && dialogueStatusP2[curDialogue])
+        {
+            ShowNextDialogue();
+        }
+        //Debug.Log("current: " + curDialogue + " : " + dialogues.Length);
+        
     }
 
     public void ReadyDialogue(int dialogueNum, int player)
@@ -95,6 +107,30 @@ public class DBoxManager : MonoBehaviour {
         StopCoroutine("ScrollText");
         StartCoroutine(ScrollText(dialogues[curDialogue]));
         boxTitle.text = title;
+
+        if (buttonDisplay[curDialogue])
+        {
+            curButton++;
+            buttonImgs[curButton].gameObject.SetActive(true);
+            if (curButton > 0)
+            {
+                buttonImgs[curButton - 1].gameObject.SetActive(false);
+            }
+            if (curButton == 1)
+            {
+                curButton++;
+                buttonImgs[curButton].gameObject.SetActive(true);
+            }
+            if (curButton == 3)
+            {
+                buttonImgs[curButton - 2].gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            buttonImgs[curButton].gameObject.SetActive(false);
+        }
+
         dialogueDisplayed[curDialogue] = true;
         curDialogue++;
     }
