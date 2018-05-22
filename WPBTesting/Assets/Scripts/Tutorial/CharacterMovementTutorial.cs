@@ -62,7 +62,6 @@ public class CharacterMovementTutorial : MonoBehaviour
     private AudioSource audioSource;
     private DBoxManager dBoxMan;
 
-
     [SerializeField]
     private BarScript bar;
 

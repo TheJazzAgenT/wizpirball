@@ -27,9 +27,12 @@ public class DBoxManager : MonoBehaviour {
     private bool[] buttonDisplay;
     private int curDialogue = 0;
     private int curButton = -1;
+    private Fade fader;
 
     // Use this for initialization
     void Start () {
+        fader = GameObject.Find("BlackScreen").GetComponent<Fade>();
+        //fader.DoFade();
         //ShowDialogue("Ayy Lmao", "I got 99 problems but dialogue boxes aint one");
         theSourceFile = new FileInfo("Assets/Dialogues.txt");
         reader = theSourceFile.OpenText();
@@ -76,6 +79,7 @@ public class DBoxManager : MonoBehaviour {
         if (curDialogue == dialogues.Length)
         {
             StartCoroutine(LoadSceneOnDelay(10.0f));
+            StartCoroutine(FadeOnDelay(7.0f));
         }
         //Debug.Log(curDialogue + " : " + dialogueDisplayed[curDialogue - 1] + " : " + dialogueStatus[curDialogue]);
         else if (dialogueDisplayed[curDialogue - 1] && dialogueStatusP1[curDialogue] && dialogueStatusP2[curDialogue])
@@ -152,5 +156,10 @@ public class DBoxManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         GetComponent<LoadSceneOnClick>().LoadByIndex(3);
+    }
+    private IEnumerator FadeOnDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        fader.DoFade();
     }
 }
