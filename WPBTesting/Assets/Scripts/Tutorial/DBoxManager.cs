@@ -160,6 +160,6 @@ public class DBoxManager : MonoBehaviour {
     private IEnumerator FadeOnDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        fader.DoFade();
+        fader.DoFade(3.0f, false);
     }
 }

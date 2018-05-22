@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Fade : MonoBehaviour {
+    public bool doSceneStartFade = false;
+
     private Image mask;
     private Color white;
     private Color black;
@@ -15,6 +17,11 @@ public class Fade : MonoBehaviour {
         mask = GetComponent<Image>();
         white = mask.color;
         black = new Color(white.r, white.g, white.b, 1);
+
+        if (doSceneStartFade)
+        {
+            DoFade(2.0f, true);
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,17 +29,17 @@ public class Fade : MonoBehaviour {
 		
 	}
 
-    public void DoFade()
+    public void DoFade(float speed, bool isFadeIn)
     {
-        StartCoroutine(FadeOut());
+        StartCoroutine(StartFade(speed, isFadeIn));
     }
 
-    private IEnumerator FadeOut()
+    private IEnumerator StartFade(float speed, bool direction)
     {
         Debug.Log("fading");
-        while (timer <= duration)
+        while (timer <= speed)
         {
-            mask.color = Color.Lerp(white, black, timer / duration);
+            mask.color = Color.Lerp(direction ? black : white, direction ? white : black, timer / speed);
             timer += Time.deltaTime;
             yield return null;
         }
