@@ -9119,8 +9119,9 @@ GameObject:
   - component: {fileID: 286416750}
   - component: {fileID: 286416752}
   - component: {fileID: 286416751}
+  - component: {fileID: 286416753}
   m_Layer: 5
-  m_Name: Content
+  m_Name: HealthContentP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9181,6 +9182,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286416749}
+--- !u!114 &286416753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286416749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0.9321084, g: 0.9411765, b: 0.283737, a: 0}
 --- !u!1 &288528531
 GameObject:
   m_ObjectHideFlags: 0
@@ -17200,6 +17213,12 @@ MonoBehaviour:
   - {fileID: 2018710900}
   - {fileID: 1923175923}
   - {fileID: 713754261}
+  healthBars:
+  - {fileID: 286416749}
+  - {fileID: 1446035566}
+  manaBars:
+  - {fileID: 968593880}
+  - {fileID: 1319337855}
 --- !u!114 &513880364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23019,8 +23038,9 @@ GameObject:
   - component: {fileID: 968593881}
   - component: {fileID: 968593883}
   - component: {fileID: 968593882}
+  - component: {fileID: 968593884}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ManaContentP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23081,6 +23101,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968593880}
+--- !u!114 &968593884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968593880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0.9321084, g: 0.9411765, b: 0.283737, a: 0}
 --- !u!1 &974100856
 GameObject:
   m_ObjectHideFlags: 0
@@ -25218,7 +25250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25, g: 0.049632356, b: 0.049632356, a: 1}
+  m_Color: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -25794,8 +25826,9 @@ GameObject:
   - component: {fileID: 1319337856}
   - component: {fileID: 1319337858}
   - component: {fileID: 1319337857}
+  - component: {fileID: 1319337859}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ManaContentP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25856,6 +25889,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1319337855}
+--- !u!114 &1319337859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1319337855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0.9321084, g: 0.9411765, b: 0.283737, a: 0}
 --- !u!1 &1320165566
 GameObject:
   m_ObjectHideFlags: 0
@@ -26479,8 +26524,9 @@ GameObject:
   - component: {fileID: 1446035567}
   - component: {fileID: 1446035569}
   - component: {fileID: 1446035568}
+  - component: {fileID: 1446035570}
   m_Layer: 5
-  m_Name: ContentE
+  m_Name: HealthContentP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26541,6 +26587,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446035566}
+--- !u!114 &1446035570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446035566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0.9321084, g: 0.9411765, b: 0.283737, a: 0}
 --- !u!1 &1451926424
 GameObject:
   m_ObjectHideFlags: 0
@@ -35934,6 +35992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b574be1e21271a4ca7d9d2d987d7291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doSceneStartFade: 0
 --- !u!1 &1897641372
 GameObject:
   m_ObjectHideFlags: 0

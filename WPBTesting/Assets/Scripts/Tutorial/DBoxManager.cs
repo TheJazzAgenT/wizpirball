@@ -11,6 +11,8 @@ public class DBoxManager : MonoBehaviour {
     public Text body;
     public Text boxTitle;
     public RawImage[] buttonImgs;
+    public GameObject[] healthBars;
+    public GameObject[] manaBars;
 
     protected FileInfo theSourceFile = null;
     protected StreamReader reader = null;
@@ -133,6 +135,31 @@ public class DBoxManager : MonoBehaviour {
         else
         {
             buttonImgs[curButton].gameObject.SetActive(false);
+        }
+        if (curDialogue == 1)
+        {
+            foreach (GameObject manaBar in manaBars)
+            {
+                manaBar.GetComponent<PulseImage>().StartPulse();
+            }
+        }
+        if (curDialogue == 2)
+        {
+            foreach (GameObject manaBar in manaBars)
+            {
+                manaBar.GetComponent<PulseImage>().StopPulse();
+            }
+            foreach (GameObject healthBar in healthBars)
+            {
+                healthBar.GetComponent<PulseImage>().StartPulse();
+            }
+        }
+        if (curDialogue == 3)
+        {
+            foreach (GameObject healthBar in healthBars)
+            {
+                healthBar.GetComponent<PulseImage>().StopPulse();
+            }
         }
 
         dialogueDisplayed[curDialogue] = true;
