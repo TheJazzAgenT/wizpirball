@@ -161,6 +161,19 @@ public class CharacterMovementTutorial : MonoBehaviour
         {
             bulletPrefab = DefaultBall; // normal
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
+            //if a button going to trigger next dialogue trigger here
+            if (Xmana)
+            {
+                StartCoroutine(manaCall());
+            }
+            if (Xhealth)
+            {
+                StartCoroutine(healthCall());
+            }
+            if (Xballs)
+            {
+                StartCoroutine(ballCall());
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown(playerInput[3]))
         {
@@ -180,18 +193,7 @@ public class CharacterMovementTutorial : MonoBehaviour
             bulletPrefab = Bullets[Loadout[2]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
-        if (Xmana)
-        {
-            StartCoroutine(manaCall());
-        }
-        if (Xhealth)
-        {
-            StartCoroutine(healthCall());
-        }
-        if (Xballs)
-        {
-            StartCoroutine(ballCall());
-        }
+        
         if (tHits >= 3)
         {
             dBoxMan.ReadyDialogue(5, playerNum);
@@ -313,21 +315,21 @@ public class CharacterMovementTutorial : MonoBehaviour
     }
     IEnumerator manaCall()
     {
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(1.0f);
         dBoxMan.ReadyDialogue(2, playerNum);
         Xmana = false;
         Xhealth = true;
     }
     IEnumerator healthCall()
     {
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(1.0f);
         dBoxMan.ReadyDialogue(3, playerNum);
         Xhealth = false;
         Xballs = true;
     }
     IEnumerator ballCall()
     {
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(1.0f);
         dBoxMan.ReadyDialogue(4, playerNum);
         Xballs = false;
     }
