@@ -263,14 +263,17 @@ public class CharacterMovementTutorial : MonoBehaviour
             {
                 if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
                 {
-                    if (mana > shieldCost)
+                    if (shields[0].activeSelf)
                     {
-                        shields[0].GetComponent<ShieldController>().Blocks = 3;
-                        shields[0].SetActive(true);
-                        mana -= shieldCost;
-                        bar.fillAmount = mana;
-                        dBoxMan.ReadyDialogue(8, playerNum);
-                    }
+                        shields[0].SetActive(false);
+                    } else if (mana > shieldCost)
+                        {
+                            shields[0].GetComponent<ShieldController>().Blocks = 3;
+                            shields[0].SetActive(true);
+                            mana -= shieldCost;
+                            bar.fillAmount = mana;
+                            dBoxMan.ReadyDialogue(8, playerNum);
+                        }
                 }
             }
         }

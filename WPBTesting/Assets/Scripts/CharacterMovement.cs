@@ -209,19 +209,28 @@ public class CharacterMovement : MonoBehaviour {
             //var shield = (GameObject)Instantiate(ShieldPrefab, col.transform.position, col.transform.rotation);//needs editing
             if (col.gameObject == BackBarr) // 1-left, 2-right, 3-front, 4-back
             {
-                if(mana > shieldCost)
+                if (shields[0].activeSelf || shields[1].activeSelf)
                 {
-                    shields[0].GetComponent<ShieldController>().Blocks = 3;
-                    shields[1].GetComponent<ShieldController>().Blocks = 3;
-                    shields[0].SetActive(true);
-                    shields[1].SetActive(true);
-                    mana -= shieldCost;
-                    bar.fillAmount = mana;
+                    shields[0].SetActive(false);
+                    shields[1].SetActive(false);
                 }
+                else if (mana > shieldCost)
+                    {
+                        shields[0].GetComponent<ShieldController>().Blocks = 3;
+                        shields[1].GetComponent<ShieldController>().Blocks = 3;
+                        shields[0].SetActive(true);
+                        shields[1].SetActive(true);
+                        mana -= shieldCost;
+                        bar.fillAmount = mana;
+                    }
             }
             if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
             {
-                if(mana > shieldCost){
+                if (shields[2].activeSelf)
+                {
+                    shields[2].SetActive(false);
+                }
+                else if (mana > shieldCost){
                     shields[2].GetComponent<ShieldController>().Blocks = 3;
                     shields[2].SetActive(true);
                     mana -= shieldCost;
@@ -230,7 +239,11 @@ public class CharacterMovement : MonoBehaviour {
             }
             if (col.gameObject == RightBarr) //1-left, 2-right, 3-front, 4-back
             {
-                if (mana > shieldCost)
+                if (shields[3].activeSelf)
+                {
+                    shields[3].SetActive(false);
+                }
+                else if (mana > shieldCost)
                 {
                     shields[3].GetComponent<ShieldController>().Blocks = 3;
                     shields[3].SetActive(true);
@@ -240,7 +253,12 @@ public class CharacterMovement : MonoBehaviour {
             }
             if (col.gameObject == FrontBarr) //1-left, 2-right, 3-front, 4-back
             {
-                if (mana > shieldCost)
+                if (shields[4].activeSelf || shields[5].activeSelf)
+                {
+                    shields[4].SetActive(false);
+                    shields[5].SetActive(false);
+                }
+                else if (mana > shieldCost)
                 {
                     shields[4].GetComponent<ShieldController>().Blocks = 3;
                     shields[5].GetComponent<ShieldController>().Blocks = 3;
