@@ -17,6 +17,10 @@ TagManager:
   - ScrollSelectPanel
   - TutorialBox
   - TutorialTarget
+  - Marker1
+  - Marker2
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
