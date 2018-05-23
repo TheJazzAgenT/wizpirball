@@ -56,6 +56,15 @@ public class IceBallTrigger : MonoBehaviour
             StartCoroutine(DestoryAfterDelay(10.0f, gameObject)); // Destroy after x seconds
             StartCoroutine(DestoryAfterDelay(3.0f, explosion)); // Destroy explosion too
         }
+
+        if (col.gameObject.tag == "TutorialTarget")
+        {
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+            Destroy(gameObject);
+        }
+
         if (col.gameObject.tag == "WATER")
         {
             //Debug.Log("ice Collide water");

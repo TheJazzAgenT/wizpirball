@@ -70,7 +70,15 @@ public class LightningBallTrigger : MonoBehaviour {
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
         }
-        if (col.gameObject.tag == "WATER")
+
+        if (col.gameObject.tag == "TutorialTarget")
+        {
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+            Destroy(gameObject);
+        }
+            if (col.gameObject.tag == "WATER")
         {
             Destroy(gameObject);
         }

@@ -68,7 +68,10 @@ public class BallTriggerTutorial : MonoBehaviour
         if (col.gameObject.tag == "TutorialTarget")
         {
             myChar.tHits += 1;
-            StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+            Destroy(gameObject);
         }
     }
 
