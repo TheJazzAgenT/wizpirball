@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour {
     void Update()
     {
         //uses the p button to pause and unpause the game
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Start") || Input.GetButtonDown("Start_2"))
         {
             if (Time.timeScale == 1 && shipController.alive == true)
             {
