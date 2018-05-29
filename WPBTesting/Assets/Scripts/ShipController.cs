@@ -9,6 +9,8 @@ public class ShipController : MonoBehaviour
     public bool isHit;
     public bool isDummy;
     public bool dummyHit = false;
+    public GameObject camHolder;
+    public GameObject DamageFlash;
 
     private int curHealth = 200;
     private float delay = 0.001f;
@@ -42,6 +44,8 @@ public class ShipController : MonoBehaviour
             isHit = true;
             curHealth -= amount;
             bar.fillAmount = curHealth;
+            camHolder.GetComponent<CameraShake>().ShakeCamera(0.04f, 0.02f);
+            DamageFlash.GetComponent<Fade>().DoFade(1f, true);
             Debug.Log("ship hit");
             Invoke("ResetHit", delay);
         }

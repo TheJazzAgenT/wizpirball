@@ -7,16 +7,16 @@ public class Fade : MonoBehaviour {
     public bool doSceneStartFade = false;
 
     private Image mask;
-    private Color white;
-    private Color black;
+    private Color clear;
+    private Color opaque;
     private float duration = 3.0f;
     private float timer = 0.0f;
 
 	// Use this for initialization
 	void Start () {
         mask = GetComponent<Image>();
-        white = mask.color;
-        black = new Color(white.r, white.g, white.b, 1);
+        clear = mask.color;
+        opaque = new Color(clear.r, clear.g, clear.b, 1);
 
         if (doSceneStartFade)
         {
@@ -39,9 +39,10 @@ public class Fade : MonoBehaviour {
         Debug.Log("fading");
         while (timer <= speed)
         {
-            mask.color = Color.Lerp(direction ? black : white, direction ? white : black, timer / speed);
+            mask.color = Color.Lerp(direction ? opaque : clear, direction ? clear : opaque, timer / speed);
             timer += Time.deltaTime;
             yield return null;
         }
+        timer = 0;
     }
 }
