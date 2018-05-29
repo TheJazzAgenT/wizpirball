@@ -23,6 +23,8 @@ public class CharacterMovementTutorial : MonoBehaviour
 
     public int mana; // starts at 100
 
+    private GameObject mark;
+
     // This dictionary maps a universal set of numbers to player specific inputs. It gets defined in Start().
     public Dictionary<int, string> playerInput;
 
@@ -259,6 +261,11 @@ public class CharacterMovementTutorial : MonoBehaviour
     }
     void OnTriggerStay(Collider col)
     {
+        if(col.transform.tag == "Marker1" || col.transform.tag == "Marker2")
+        {
+            mark = col.gameObject;
+            mark.SetActive(false);
+        }
         if (trackshields)
         {
             if (col.transform.tag == "ShieldActivator" && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown(playerInput[9])))
