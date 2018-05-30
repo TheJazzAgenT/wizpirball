@@ -39001,7 +39001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 28026542}
   gunObj: {fileID: 2058775952}
-  useMouse: 1
+  useMouse: 0
   cam: {fileID: 963768991}
 --- !u!114 &850153290
 MonoBehaviour:
@@ -114915,7 +114915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

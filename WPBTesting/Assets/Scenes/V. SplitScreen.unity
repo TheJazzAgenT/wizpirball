@@ -24456,7 +24456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 1466077394}
   gunObj: {fileID: 1060321313}
-  useMouse: 1
+  useMouse: 0
   cam: {fileID: 963768991}
 --- !u!65 &367758213
 BoxCollider:
@@ -31830,7 +31830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -39638,7 +39638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485522738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1049.3573, y: 6.5, z: 340.2}
+  m_LocalPosition: {x: -1049.3573, y: 0, z: 340.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420472725}
@@ -87998,8 +87998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -91556,7 +91556,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466077393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1133.0573, y: 7.2, z: 191.30356}
+  m_LocalPosition: {x: -1133.0573, y: 0, z: 191.30356}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 144729914}
