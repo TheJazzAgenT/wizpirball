@@ -42,7 +42,8 @@ public class CounterHit : MonoBehaviour {
             if ((Input.GetKeyDown(KeyCode.Mouse1) || (Input.GetAxis(controller.playerInput[10]) > 0)) && timer > counterDelay)
             {
                 //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
-                myCharacter.GetComponent<CharacterMovement>().Fire();
+                controller.Fire();
+                controller.mana -= 10;
                 Destroy(other.gameObject);
                 timer = 0;
             }
