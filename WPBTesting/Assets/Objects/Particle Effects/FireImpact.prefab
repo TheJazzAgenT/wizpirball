@@ -291,7 +291,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1970029007
+  randomSeed: -1106377362
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -443,7 +443,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3697,7 +3697,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 553676259
+  randomSeed: 1568757022
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3849,7 +3849,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.95
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7103,7 +7103,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2017411667
+  randomSeed: -1582941907
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7255,7 +7255,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.95
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10515,7 +10515,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1680612494
+  randomSeed: 317482736
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10667,7 +10667,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.95
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14005,7 +14005,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -14018,7 +14018,7 @@ ParticleSystemRenderer:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
