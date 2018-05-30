@@ -12,7 +12,7 @@ public class IgnoreRotation : MonoBehaviour {
         prevPos = ship.transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 displacement = ship.transform.position - prevPos;
 
