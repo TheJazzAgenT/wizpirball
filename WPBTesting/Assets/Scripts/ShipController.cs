@@ -13,7 +13,7 @@ public class ShipController : MonoBehaviour
     public GameObject DamageFlash;
 
     private int curHealth = 200;
-    private float delay = 0.001f;
+    private float delay = 0.4f;//0.4 seems to stop bug, and seems to be the limit
 
     [SerializeField]
     private BarScript bar;

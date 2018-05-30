@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: 
   notMe: 
-  manaCost: 0
+  manaCost: 35
 --- !u!114 &114897563603556898
 MonoBehaviour:
   m_ObjectHideFlags: 1

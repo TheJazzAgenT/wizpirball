@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -48143,20 +48143,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.119307, y: 6.3500357, z: 15.830994}
-  m_Center: {x: 0.4713869, y: 4.1052365, z: -46.94341}
---- !u!65 &644729067
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 644729063}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.822476, y: 4.6774797, z: 3.1590142}
-  m_Center: {x: -0.07398188, y: 3.5162544, z: -33.04482}
+  m_Size: {x: 18.57069, y: 6.3500357, z: 23.327942}
+  m_Center: {x: 0.1970768, y: 4.1052365, z: -43.194935}
 --- !u!65 &644729069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48167,8 +48155,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6552436, y: 8.757217, z: 20.98592}
-  m_Center: {x: 0.17202973, y: 5.481549, z: 51.90806}
+  m_Size: {x: 2.5581868, y: 8.757217, z: 20.98592}
+  m_Center: {x: 0.17191568, y: 5.481549, z: 51.90806}
 --- !u!65 &644729071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55653,7 +55641,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714089131}
-  m_LocalRotation: {x: 0.6631715, y: 0.25570923, z: -0.26240525, w: 0.6526561}
+  m_LocalRotation: {x: 0.66317147, y: 0.2557092, z: -0.26240522, w: 0.652656}
   m_LocalPosition: {x: 3.05, y: 4.75, z: 37.8}
   m_LocalScale: {x: 0.4256003, y: 1.0252997, z: 0.8003827}
   m_Children: []
@@ -56162,7 +56150,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 758733924}
-  m_LocalRotation: {x: 0.6631715, y: 0.25570923, z: -0.26240525, w: 0.6526561}
+  m_LocalRotation: {x: 0.66317147, y: 0.2557092, z: -0.26240522, w: 0.652656}
   m_LocalPosition: {x: 3.05, y: 4.75, z: 37.8}
   m_LocalScale: {x: 0.4256003, y: 1.0252997, z: 0.8003827}
   m_Children: []
@@ -78770,8 +78758,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 31.63871, y: 24.896221, z: 96.997536}
-  m_Center: {x: 0.09533246, y: -9.883314, z: -7.0482063}
+  m_Size: {x: 31.63871, y: 24.896221, z: 96.36374}
+  m_Center: {x: 0.09533246, y: -9.883314, z: -6.731305}
 --- !u!65 &1249634872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78808,18 +78796,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.570426, y: 52.217438, z: 2.2399974}
   m_Center: {x: -0.25528672, y: 26.732397, z: -6.5563464}
---- !u!65 &1249634875
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1249634867}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 31.63871, y: 24.896221, z: 96.997536}
-  m_Center: {x: 0.09533246, y: -9.883314, z: -7.0482063}
 --- !u!65 &1249634880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78830,20 +78806,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6552436, y: 10.286922, z: 20.797373}
-  m_Center: {x: 0.17202973, y: 5.9205117, z: 52.00234}
---- !u!65 &1249634882
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1249634867}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.822476, y: 3.1406083, z: 3.0587132}
-  m_Center: {x: -0.07398188, y: 4.28469, z: -32.99467}
+  m_Size: {x: 2.5988772, y: 10.286922, z: 20.797373}
+  m_Center: {x: 0.06612152, y: 5.9205117, z: 52.00234}
 --- !u!65 &1249634883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78854,8 +78818,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.119307, y: 4.5443234, z: 11.416893}
-  m_Center: {x: 0.4713872, y: 5.0080924, z: -50.05322}
+  m_Size: {x: 18.274057, y: 4.544323, z: 23.036852}
+  m_Center: {x: 0.04876216, y: 5.0080924, z: -43.186874}
 --- !u!54 &1249634887
 Rigidbody:
   m_ObjectHideFlags: 0

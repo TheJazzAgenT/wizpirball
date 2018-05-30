@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SpellSelector : MonoBehaviour {
 
-    public int level;
+    public int level;//going to set this to V splitscreen
     public Sprite[] SpellImages;
     public GameObject SlotXP1;
     public GameObject SlotYP1;
@@ -51,11 +51,11 @@ public class SpellSelector : MonoBehaviour {
                 {"VampireP2", 3},
                 {"MIRVP2", 4}
             };
-        descriptions[0] = "Shits on fire, yo";
-        descriptions[1] = "Ice, Ice, Baby";
-        descriptions[2] = "Magnetizes your baseballs";
-        descriptions[3] = "Steal life from your opponent";
-        descriptions[4] = "Splits and splits and splits and splits";
+        descriptions[0] = "Mana Cost: 10 \n Deals 10 on impact, then 5 damage every second for 5 seconds.";
+        descriptions[1] = "Mana Cost: 15 \n Freezes the enemy, stopping them from firing for 3 seconds.";
+        descriptions[2] = "Mana Cost: 30 \n Magnetizes the enemy ship, making your rock balls homing for 3 seconds.";
+        descriptions[3] = "Mana Cost: 20 \n Deals 20 damage and heals you for 15.";
+        descriptions[4] = "Mana Cost: 35 \n Splits into multiple balls as it flys. Each ball does 8 damage.";
     }
 
     // Update is called once per frame
