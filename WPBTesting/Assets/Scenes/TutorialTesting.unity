@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 18054857}
   - component: {fileID: 18054856}
   - component: {fileID: 18054855}
+  - component: {fileID: 18054858}
   m_Layer: 5
   m_Name: ManaBar
   m_TagString: Untagged
@@ -288,6 +289,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 18054853}
+--- !u!114 &18054858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18054853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &20581244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8373,10 +8386,10 @@ RectTransform:
   m_Father: {fileID: 1999494807}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -804.898}
-  m_SizeDelta: {x: 1475.4, y: 262.45374}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1475.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139526841
 MonoBehaviour:
@@ -13540,10 +13553,10 @@ RectTransform:
   m_Father: {fileID: 1999494807}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -277.99054}
-  m_SizeDelta: {x: 1510.7, y: 262.45374}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1510.7, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418356214
 MonoBehaviour:
@@ -17698,11 +17711,11 @@ MonoBehaviour:
   - {fileID: 1923175923}
   - {fileID: 713754261}
   healthBars:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1694345411}
+  - {fileID: 860523556}
   manaBars:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 18054853}
+  - {fileID: 1818854022}
 --- !u!114 &513880364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19742,10 +19755,10 @@ RectTransform:
   m_Father: {fileID: 1999494807}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -102.881836}
-  m_SizeDelta: {x: 1799.9999, y: 85.76368}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1799.9999, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784558484
 MonoBehaviour:
@@ -20072,6 +20085,7 @@ GameObject:
   - component: {fileID: 860523560}
   - component: {fileID: 860523559}
   - component: {fileID: 860523558}
+  - component: {fileID: 860523561}
   m_Layer: 5
   m_Name: HealthBarP2
   m_TagString: Untagged
@@ -20148,6 +20162,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860523556}
+--- !u!114 &860523561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860523556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &879217567
 GameObject:
   m_ObjectHideFlags: 0
@@ -27645,10 +27671,10 @@ RectTransform:
   m_Father: {fileID: 1999494807}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -541.4443}
-  m_SizeDelta: {x: 1488.2, y: 262.45374}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1488.2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937286987
 MonoBehaviour:
@@ -29649,7 +29675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 2
+  m_Text: PLAYER 2
 --- !u!222 &1239349689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31271,7 +31297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1457009165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43106,6 +43132,7 @@ GameObject:
   - component: {fileID: 1694345415}
   - component: {fileID: 1694345414}
   - component: {fileID: 1694345413}
+  - component: {fileID: 1694345416}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -43183,6 +43210,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694345411}
+--- !u!114 &1694345416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694345411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1698284805
 GameObject:
   m_ObjectHideFlags: 0
@@ -43668,8 +43707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 265}
-  m_SizeDelta: {x: 173.7, y: 500}
+  m_AnchoredPosition: {x: 16, y: 295.48352}
+  m_SizeDelta: {x: 175, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772300662
 MonoBehaviour:
@@ -43871,6 +43910,7 @@ GameObject:
   - component: {fileID: 1818854026}
   - component: {fileID: 1818854025}
   - component: {fileID: 1818854024}
+  - component: {fileID: 1818854027}
   m_Layer: 5
   m_Name: ManaBarP2
   m_TagString: Untagged
@@ -43948,6 +43988,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1818854022}
+--- !u!114 &1818854027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818854022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e269af83ed9eb459fed510a791d75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1827960343
 GameObject:
   m_ObjectHideFlags: 0
@@ -45196,7 +45248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.69, y: -5.0000496}
+  m_AnchoredPosition: {x: 1.69, y: -22}
   m_SizeDelta: {x: 367.75, y: 275.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005397178
@@ -45681,7 +45733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.8, y: 191}
+  m_AnchoredPosition: {x: -34.8, y: 178}
   m_SizeDelta: {x: 198.86, y: 21.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070190103
