@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: a96ab46809f3f024088761e49e829953
+timeCreated: 1528058135
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: Chest
+    100006: Foot.L
+    100008: Foot.L_end
+    100010: Foot.R.001
+    100012: Foot.R.001_end
+    100014: Hand.L
+    100016: Hand.L_end
+    100018: Hand.R.001
+    100020: Hand.R.001_end
+    100022: Head
+    100024: Head_end
+    100026: LowerArm.L
+    100028: LowerArm.R.001
+    100030: LowerLeg.L
+    100032: LowerLeg.R.001
+    100034: Neck
+    100036: Origin
+    100038: Shoulders
+    100040: UpperArm.L
+    100042: UpperArm.R.001
+    100044: UpperLeg.L
+    100046: UpperLeg.R.001
+    400000: Armature
+    400002: //RootNode
+    400004: Chest
+    400006: Foot.L
+    400008: Foot.L_end
+    400010: Foot.R.001
+    400012: Foot.R.001_end
+    400014: Hand.L
+    400016: Hand.L_end
+    400018: Hand.R.001
+    400020: Hand.R.001_end
+    400022: Head
+    400024: Head_end
+    400026: LowerArm.L
+    400028: LowerArm.R.001
+    400030: LowerLeg.L
+    400032: LowerLeg.R.001
+    400034: Neck
+    400036: Origin
+    400038: Shoulders
+    400040: UpperArm.L
+    400042: UpperArm.R.001
+    400044: UpperLeg.L
+    400046: UpperLeg.R.001
+    2100000: Robe
+    2100002: GoldPin
+    2100004: BeltBuckle
+    2100006: Sleeve
+    2100008: Legs
+    2100010: Skin
+    2100012: WizHat
+    2100014: Lips
+    2100016: Eye
+    2100018: InnerEye
+    2100020: Irus
+    2100022: Eye.001
+    2100024: InnerEye.001
+    2100026: Wood
+    4300000: Shoulders
+    7400000: Armature|Hitting_NoBat
+    7400002: Armature|Running
+    7400004: Armature|Walking
+    9500000: //RootNode
+    13700000: Shoulders
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

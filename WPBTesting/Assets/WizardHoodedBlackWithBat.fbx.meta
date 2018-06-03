@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 2f093d8049569df478941481788d8c18
+timeCreated: 1528058134
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Chest
+    100006: Chest.001
+    100008: Chest.002
+    100010: Chest.003
+    100012: Chest.004
+    100014: Chest.004_end
+    100016: Diaphram
+    100018: Foot.L
+    100020: Foot.L_end
+    100022: Hand.L
+    100024: Hand.L.001
+    100026: Hand.L.001_end
+    100028: Head
+    100030: Head_end
+    100032: Hip.L
+    100034: Hip.R
+    100036: LowerArm.L
+    100038: LowerLeg.L
+    100040: Neck
+    100042: PegLeg.R
+    100044: PegLeg.R_end
+    100046: Shoulder.L
+    100048: ULeg.L
+    100050: ULeg.R
+    100052: UpperArm.L
+    100054: Wizard
+    100056: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Chest
+    400006: Chest.001
+    400008: Chest.002
+    400010: Chest.003
+    400012: Chest.004
+    400014: Chest.004_end
+    400016: Diaphram
+    400018: Foot.L
+    400020: Foot.L_end
+    400022: Hand.L
+    400024: Hand.L.001
+    400026: Hand.L.001_end
+    400028: Head
+    400030: Head_end
+    400032: Hip.L
+    400034: Hip.R
+    400036: LowerArm.L
+    400038: LowerLeg.L
+    400040: Neck
+    400042: PegLeg.R
+    400044: PegLeg.R_end
+    400046: Shoulder.L
+    400048: ULeg.L
+    400050: ULeg.R
+    400052: UpperArm.L
+    400054: Wizard
+    400056: //RootNode
+    2100000: Gold
+    2100002: Material
+    2100004: fleshy
+    2100006: Sleeve
+    2100008: TrimSleeve
+    2100010: Legs
+    2100012: GoldTrim
+    2100014: Foot
+    2100016: Peg
+    2100018: Robe
+    2100020: Beard
+    2100022: EyePatch
+    2100024: Hood
+    2100026: EyeWhite
+    2100028: EyeColor
+    2100030: EyeInner
+    2100032: Material.001
+    2100034: Scar
+    2100036: Eyebrow
+    2100038: GloveLeather
+    2100040: Band
+    2100042: FingerLeather
+    2100044: Wood
+    4300000: Wizard
+    7400000: Armature|Hitting
+    7400002: Armature|Running
+    7400004: Armature|Walking
+    9500000: //RootNode
+    13700000: Wizard
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
