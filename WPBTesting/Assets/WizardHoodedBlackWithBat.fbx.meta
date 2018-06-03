@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2f093d8049569df478941481788d8c18
 timeCreated: 1528058134
 licenseType: Free
+=======
+guid: 4864fc706b67b25439750f67746f8a6f
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -92,6 +96,10 @@ ModelImporter:
     7400004: Armature|Walking
     9500000: //RootNode
     13700000: Wizard
+<<<<<<< HEAD
+=======
+    2186277476908879412: ImportLogs
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -111,6 +119,10 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+<<<<<<< HEAD
+=======
+    importConstraints: 0
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

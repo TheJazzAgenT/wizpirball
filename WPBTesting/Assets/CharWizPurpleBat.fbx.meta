@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a61af329982bfe64187a29acb8bd28d1
 timeCreated: 1528058135
 licenseType: Free
+=======
+guid: 7fa1079660151d249a0bf624a2ece52a
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -74,6 +78,10 @@ ModelImporter:
     7400004: Armature|Walking
     9500000: //RootNode
     13700000: Shoulders
+<<<<<<< HEAD
+=======
+    2186277476908879412: ImportLogs
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,6 +101,10 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+<<<<<<< HEAD
+=======
+    importConstraints: 0
+>>>>>>> b985a940e18dd93c79d7af14980ac698c1ada6fb
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
