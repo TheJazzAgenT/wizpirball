@@ -5506,7 +5506,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e251455fe6fd90546be150044c9463cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d57735a7dcf85974da9fdbf6f15f6fd8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8067,7 +8067,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
   m_LocalRotation: {x: 0.006839588, y: 0.98897684, z: 0.1397732, w: -0.048389535}
-  m_LocalPosition: {x: -1088.7181, y: -8.308814, z: 341.60858}
+  m_LocalPosition: {x: 3.1621935, y: -3.931327, z: -1.4714422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10582,7 +10582,7 @@ MonoBehaviour:
   SpellImages:
   - {fileID: 21300000, guid: 4caff061619c3ee499c546ab4c3b049c, type: 3}
   - {fileID: 21300000, guid: 429ff81215c4fd44295bbd66b05f293a, type: 3}
-  - {fileID: 21300000, guid: c43c5181a0456de40b56938e83ffce9b, type: 3}
+  - {fileID: 21300000, guid: 45fcd668620527345a268b1d97c80acb, type: 3}
   - {fileID: 21300000, guid: e48cf69fa89ecba43b8270af14957da4, type: 3}
   - {fileID: 21300000, guid: dd46fb6adf2a7104daaedaa57a8f4380, type: 3}
   SlotXP1: {fileID: 1635285104}
