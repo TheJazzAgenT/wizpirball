@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436184521003846}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1234.86, y: 6.85, z: 306.14}
+  m_LocalPosition: {x: -1090.35, y: 6.6, z: 329.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4135441020440228}
@@ -291,7 +291,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1106377362
+  randomSeed: -195240533
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -443,7 +443,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.9
+      scalar: 0.88
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3697,7 +3697,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1568757022
+  randomSeed: 1295219018
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3849,7 +3849,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.95
+      scalar: 0.49
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7103,7 +7103,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1582941907
+  randomSeed: 2048469309
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7255,7 +7255,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.95
+      scalar: 0.49
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10515,7 +10515,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 317482736
+  randomSeed: -1266215428
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10667,7 +10667,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.95
+      scalar: 0.49
       minScalar: 1
       maxCurve:
         serializedVersion: 2
