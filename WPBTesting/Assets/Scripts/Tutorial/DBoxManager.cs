@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 
-public class DBoxManager : MonoBehaviour {
+public class DBoxManager : MonoBehaviour
+{
 
     public GameObject dBox;
     public Text body;
@@ -19,6 +20,7 @@ public class DBoxManager : MonoBehaviour {
 
     private bool isActive = false;
     private bool cancelTyping = false;
+    private bool nextSceneTriggered = false;
     private float textScrollSpeed = 0.02f;
 
     private string title = "Coach Z: ";
@@ -30,9 +32,11 @@ public class DBoxManager : MonoBehaviour {
     private int curDialogue = 0;
     private int curButton = -1;
     private Fade fader;
+    private GameObject Continue;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         fader = GameObject.Find("BlackScreen").GetComponent<Fade>();
         //fader.DoFade();
         //ShowDialogue("Ayy Lmao", "I got 99 problems but dialogue boxes aint one");
@@ -47,7 +51,9 @@ public class DBoxManager : MonoBehaviour {
         dialogueDisplayed = new bool[numLines];
         buttonDisplay = new bool[numLines];
         string[] splits;
-        for (int i = 0; i < dialogues.Length;i++)
+        Continue = GameObject.FindGameObjectWithTag("continueButton");
+        Continue.SetActive(false);
+        for (int i = 0; i < dialogues.Length; i++)
         {
             text = reader.ReadLine();
             splits = text.Split(new char[] { ' ' }, 3);
@@ -66,11 +72,12 @@ public class DBoxManager : MonoBehaviour {
             img.gameObject.SetActive(true);
         }*/
         ShowNextDialogue();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (isActive && (Input.GetButtonDown("A_1") || Input.GetButtonDown("A_2") || Input.GetKeyDown(KeyCode.Space)))
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isActive && (Input.GetButtonDown("A_1") || Input.GetButtonDown("A_2") || Input.GetKeyDown(KeyCode.Space)))
         {
             //Debug.Log("sudoku");
             dBox.SetActive(false);
@@ -78,18 +85,19 @@ public class DBoxManager : MonoBehaviour {
             isActive = false;
         }
 
-        if (curDialogue == dialogues.Length)
+        if (curDialogue == dialogues.Length && !nextSceneTriggered)
         {
             StartCoroutine(LoadSceneOnDelay(10.0f));
             StartCoroutine(FadeOnDelay(7.0f));
+            nextSceneTriggered = true;
         }
         //Debug.Log(curDialogue + " : " + dialogueDisplayed[curDialogue - 1] + " : " + dialogueStatus[curDialogue]);
-        else if (dialogueDisplayed[curDialogue - 1] && dialogueStatusP1[curDialogue] && dialogueStatusP2[curDialogue])
+        else if (!nextSceneTriggered && dialogueDisplayed[curDialogue - 1] && dialogueStatusP1[curDialogue] && dialogueStatusP2[curDialogue])
         {
             ShowNextDialogue();
         }
         //Debug.Log("current: " + curDialogue + " : " + dialogues.Length);
-        
+
     }
 
     public void ReadyDialogue(int dialogueNum, int player)
@@ -136,8 +144,10 @@ public class DBoxManager : MonoBehaviour {
         {
             buttonImgs[curButton].gameObject.SetActive(false);
         }
+        Continue.SetActive(false);
         if (curDialogue == 1)
         {
+            Continue.SetActive(true);
             foreach (GameObject manaBar in manaBars)
             {
                 manaBar.GetComponent<PulseImage>().StartPulse();
@@ -153,6 +163,7 @@ public class DBoxManager : MonoBehaviour {
             {
                 healthBar.GetComponent<PulseImage>().StartPulse();
             }
+            Continue.SetActive(true);
         }
         if (curDialogue == 3)
         {
@@ -160,6 +171,7 @@ public class DBoxManager : MonoBehaviour {
             {
                 healthBar.GetComponent<PulseImage>().StopPulse();
             }
+            Continue.SetActive(true);
         }
 
         dialogueDisplayed[curDialogue] = true;
@@ -169,7 +181,7 @@ public class DBoxManager : MonoBehaviour {
     private IEnumerator ScrollText(string theText)
     {
         int index = 0;
-        while(!cancelTyping && theText.Length > index)
+        while (!cancelTyping && theText.Length > index)
         {
             body.text = theText.Remove(index);
             index++;

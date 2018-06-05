@@ -21,6 +21,7 @@ TagManager:
   - Marker2
   - Player1
   - Player2
+  - continueButton
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,36 @@
+35
+true true Right you scurvy dogs!
+false false Welcome to Molluka Pirate Island!
+false false Let's see what you're made of.
+false false Step forth to begin your training!
+false false Right then, here be the basics. 
+false false The staff you hold channels your mana [top right/left of screen].
+false false Use your mana to cast spells, but remember that it needs time to recharge.
+false false I suppose I don't have to remind you to keep an eye on your health [top right/left of screen], take too much damage and you'll surely perish!
+false false Now, let's go over combat. 
+false false Your means of attack is hitting baseballs at your enemies.
+false true See those targets out there?
+false true Fire 3 baseballs at them.
+false true Remember that this is just practice.
+false true In real combat you'll have to adjust for enemy movement.
+false true Great!
+false true Now let's use magic.
+false true Choose a spell and simply aim and fire.
+false true Spells use mana to make more devastating attacks!
+false true Each spell has its own unique effects but you can only have 3 at time.
+false true Now, fire each spell you have at the target.
+false true Alright!
+false true Now you need to learn some defense.
+false true If an enemy fires a ball, you can hit it back to them if you catch it at the right moment.
+false true Deflect 3 balls, you land-lubber!
+false true You got some defense there lad, but you can't deflect every ball.
+false true You're going to have to learn how to use a shield!
+false true Activate that one over there.
+false true It's that floating white square.
+false true Walk over to it and get the shield up.
+false false Shiver me timbers!
+false false You can learn!
+false false These shields block all baseballs, even your own for 3 hits.
+false false So deactivate them when you don't need'em.
+false false Time for the final test!
+false false Let's see the two of you go at it!

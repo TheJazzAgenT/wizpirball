@@ -1,10 +1,10 @@
 9
 true true Right you scurvy dogs! Welcome to Molluka Pirate Island! Let's see what you're made of. Step forth to begin your training!
-false false Right then, here be the basics. The staff you hold channels your mana [top right/left of screen]. Use your mana to cast spells, but remember that it needs time to recharge.
-false false I suppose I don't have to remind you to keep an eye on your health [top right/left of screen], take too much damage and you'll surely perish!
+false false Right then, here be the basics. The staff you hold channels your mana [Blue bar at top right/left of screen]. Use your mana to cast spells, but remember that it needs time to recharge.
+false false I suppose I don't have to remind you to keep an eye on your health [Grey Bar at top right/left of screen], take too much damage and you'll surely perish!
 false false Now, let's go over combat. Your means of attack is hitting baseballs at your enemies.
 false true See those targets out there? Fire 3 baseballs at them. Remember that this is just practice. In real combat you'll have to adjust for enemy movement.
-false true Great! Now let's use magic. Choose a spell and simply aim and fire. Spells use mana to make more devastating attacks! Each spell has its own unique effects but you can only have 3 at time. Now, fire each spell you have at the target.
+false true Great! Now let's use magic. Choose a spell and simply aim and fire. Each spell has its own unique effects but you can only have 3 at time. Now, fire each spell you have at the target.
 false true Alright! Now you need to learn some defense. If an enemy fires a ball, you can hit it back to them if you catch it at the right moment. Deflect 3 balls, you land-lubber!
-false true You got some defense there lad, but you can't deflect every ball. You're going to have to learn how to use a shield! Activate that one over there. It's that floating white square. These shields block all baseballs even your own.
-false false Shiver me timbers! You can learn! These shields block all baseballs, even your own for 3 hits. And remember they slowly drain your mana when they're active, so deactivate them when you don't need'em. Time for the final test! Let's see the two of you go at it!
+false true You got some defense there lad, but you can't deflect every ball. You're going to have to learn how to use a shield! Activate that one over there. It's that floating white square. Walk over to it.
+false false Shiver me timbers! You can learn! Shields block all baseballs, even your own for 3 hits. Deactivate them when you don't need'em. Time for the final test! Let's see the two of you go at it!
