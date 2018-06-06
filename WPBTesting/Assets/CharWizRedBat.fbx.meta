@@ -27,6 +27,8 @@ ModelImporter:
     100042: UpperArm.R.001
     100044: UpperLeg.L
     100046: UpperLeg.R.001
+    100048: Camera
+    100050: Lamp
     400000: Armature
     400002: //RootNode
     400004: Chest
@@ -51,6 +53,9 @@ ModelImporter:
     400042: UpperArm.R.001
     400044: UpperLeg.L
     400046: UpperLeg.R.001
+    400048: Camera
+    400050: Lamp
+    2000000: Camera
     2100000: Robe
     2100002: GoldPin
     2100004: BeltBuckle
@@ -69,7 +74,10 @@ ModelImporter:
     7400000: Armature|Hitting_NoBat
     7400002: Armature|Running
     7400004: Armature|Walking
+    7400006: Armature|Action
+    7400008: Armature|Idle
     9500000: //RootNode
+    10800000: Lamp
     13700000: Shoulders
   externalObjects: {}
   materials:
