@@ -4480,7 +4480,7 @@ MonoBehaviour:
   Images:
   - {fileID: 21300000, guid: 4caff061619c3ee499c546ab4c3b049c, type: 3}
   - {fileID: 21300000, guid: 429ff81215c4fd44295bbd66b05f293a, type: 3}
-  - {fileID: 21300000, guid: 45fcd668620527345a268b1d97c80acb, type: 3}
+  - {fileID: 21300000, guid: c43c5181a0456de40b56938e83ffce9b, type: 3}
   - {fileID: 21300000, guid: e48cf69fa89ecba43b8270af14957da4, type: 3}
   - {fileID: 21300000, guid: dd46fb6adf2a7104daaedaa57a8f4380, type: 3}
   player: 1
@@ -17588,8 +17588,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
-        minScalar: 30
+        scalar: 0
+        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -17607,7 +17607,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
         minCurve:
           serializedVersion: 2
           m_Curve:
@@ -17625,7 +17625,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -43887,7 +43887,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1047262124}
-  m_LocalRotation: {x: -0.000000050291387, y: 0.68578404, z: -0.00000008940692, w: 0.7278051}
+  m_LocalRotation: {x: -0.000000050291394, y: 0.6857841, z: -0.000000089406925, w: 0.72780514}
   m_LocalPosition: {x: -0.02229, y: 0.00008, z: -0.00045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -44654,8 +44654,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
-        minScalar: 30
+        scalar: 0
+        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -44673,7 +44673,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
         minCurve:
           serializedVersion: 2
           m_Curve:
@@ -44691,7 +44691,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -113985,8 +113985,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
-        minScalar: 30
+        scalar: 0
+        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -114004,7 +114004,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
         minCurve:
           serializedVersion: 2
           m_Curve:
@@ -114022,7 +114022,7 @@ ParticleSystem:
             tangentMode: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_RotationOrder: 0
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -121050,7 +121050,7 @@ MonoBehaviour:
   - {fileID: 1337738740849772, guid: e4fe2a0e937d0664c981863783527dbb, type: 2}
   - {fileID: 1748669849874712, guid: c0cfe80f23578e84390244af3e59c451, type: 2}
   - {fileID: 1518674168084194, guid: e943d092feee8bb478b35e3c8f04ac2b, type: 2}
-  - {fileID: 1464269331561204, guid: f1cc9b3370201114dac6ad54fba59639, type: 2}
+  - {fileID: 0}
   batAimer: {fileID: 2058775952}
   batSound: {fileID: 8300000, guid: 804b44e4b89b3ed48b98c05accc7f8fa, type: 3}
   batDelay: 2
@@ -121186,29 +121186,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 2
---- !u!114 &1975853486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1975853477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d539967420d9f554fa5038af5389ffeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 0.5
---- !u!114 &1975853487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1975853477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce52308d4620f09479834011837bc5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1988042803
 GameObject:
   m_ObjectHideFlags: 0
