@@ -44,6 +44,7 @@ public class CharacterMovement : MonoBehaviour {
     private Animator anim;
     //Animator legsAnim;
     private AudioSource audioSource;
+    private Hv_wind_AudioLib HeavyWindScript;
 
     [SerializeField]
     private GameObject myShip;
@@ -63,6 +64,8 @@ public class CharacterMovement : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         anim.SetBool("Moving", false);
+
+        HeavyWindScript = GetComponent<Hv_wind_AudioLib>();
 
         // Find and set barriers
         LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
@@ -133,6 +136,8 @@ public class CharacterMovement : MonoBehaviour {
     {
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis(playerInput[11]) > 0) && Time.time >= timestamp)
         {
+            //float volume = HeavyWindScript.GetFloatParameter(Hv_wind_AudioLib.Parameter.Volume);
+            //HeavyWindScript.SetFloatParameter(Hv_wind_AudioLib.Parameter.Volume, volume + 0.2f);
             //Debug.Log("TRIGGERED");
             timestamp = Time.time + batDelay;
             if (!stunned)
