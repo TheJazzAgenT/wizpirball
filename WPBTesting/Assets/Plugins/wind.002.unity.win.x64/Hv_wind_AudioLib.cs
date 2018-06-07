@@ -78,6 +78,15 @@ public class Hv_wind_Editor : Editor {
       _dsp.SetFloatParameter(Hv_wind_AudioLib.Parameter.Volume, newVolume);
     }
     GUILayout.EndHorizontal();
+    
+    // windSpeed
+    GUILayout.BeginHorizontal();
+    float windSpeed = _dsp.GetFloatParameter(Hv_wind_AudioLib.Parameter.Windspeed);
+    float newWindspeed = EditorGUILayout.Slider("windSpeed", windSpeed, 100.0f, 800.0f);
+    if (windSpeed != newWindspeed) {
+      _dsp.SetFloatParameter(Hv_wind_AudioLib.Parameter.Windspeed, newWindspeed);
+    }
+    GUILayout.EndHorizontal();
     EditorGUI.indentLevel--;
   }
 }
@@ -98,6 +107,7 @@ public class Hv_wind_AudioLib : MonoBehaviour {
   */
   public enum Parameter : uint {
     Volume = 0xB1642755,
+    Windspeed = 0xE7795095,
   }
   
   // Delegate method for receiving float messages from the patch context (thread-safe).
@@ -124,7 +134,8 @@ public class Hv_wind_AudioLib : MonoBehaviour {
   }
   public delegate void FloatMessageReceived(FloatMessage message);
   public FloatMessageReceived FloatReceivedCallback;
-  public float volume = 0.5f;
+  public float volume = 0.7f;
+  public float windSpeed = 238.0f;
 
   // internal state
   private Hv_wind_Context _context;
@@ -141,6 +152,7 @@ public class Hv_wind_AudioLib : MonoBehaviour {
   public float GetFloatParameter(Hv_wind_AudioLib.Parameter param) {
     switch (param) {
       case Parameter.Volume: return volume;
+      case Parameter.Windspeed: return windSpeed;
       default: return 0.0f;
     }
   }
@@ -150,6 +162,11 @@ public class Hv_wind_AudioLib : MonoBehaviour {
       case Parameter.Volume: {
         x = Mathf.Clamp(x, 0.0f, 1.0f);
         volume = x;
+        break;
+      }
+      case Parameter.Windspeed: {
+        x = Mathf.Clamp(x, 100.0f, 800.0f);
+        windSpeed = x;
         break;
       }
       default: return;
@@ -178,6 +195,7 @@ public class Hv_wind_AudioLib : MonoBehaviour {
   
   private void Start() {
     _context.SendFloatToReceiver((uint) Parameter.Volume, volume);
+    _context.SendFloatToReceiver((uint) Parameter.Windspeed, windSpeed);
   }
   
   private void Update() {
