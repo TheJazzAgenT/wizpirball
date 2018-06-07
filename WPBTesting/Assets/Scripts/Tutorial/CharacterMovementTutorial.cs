@@ -156,7 +156,7 @@ public class CharacterMovementTutorial : MonoBehaviour
             if (!stunned)
             {
                 Invoke("Fire", fireDelay);
-                anim.Play("Armature|CharacterHittingOneHand");
+                anim.Play("Armature|Hitting");
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown(playerInput[2]))
@@ -195,7 +195,7 @@ public class CharacterMovementTutorial : MonoBehaviour
             bulletPrefab = Bullets[Loadout[2]];
             manaCost = bulletPrefab.GetComponent<PlayerSelector>().manaCost;
         }
-        
+
         if (tHits >= 3)
         {
             dBoxMan.ReadyDialogue(5, playerNum);
