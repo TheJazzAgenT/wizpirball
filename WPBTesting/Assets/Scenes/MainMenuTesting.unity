@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &107788872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6692,8 +6692,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480.00006, y: -451}
-  m_SizeDelta: {x: 780, y: 655.1}
+  m_AnchoredPosition: {x: 480, y: -436.00638}
+  m_SizeDelta: {x: 585.6, y: 528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147277202
 MonoBehaviour:
@@ -6721,34 +6721,33 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.6
-  m_Text: 'W,A,S,D to move character
+  m_Text: '                        Controller
 
+    Left Stick                                            Move
 
-    Use mouse to aim
+    Right Stick                                           Aim
 
+    Right Trigger                                       fire
 
-    Left click to fire
+    Left Trigger                          Counter Hit
 
+    Right Bumber                Activate Shields
 
-    Right click deflect an enemy ball
+    X                                    Switch to Ice Ball
 
+    Y                       Switch to Lightning Ball
 
-    1,2,3,4 changes the element
+    B                                  Switch to Fire Ball
 
+    A                               Switch to Rock Ball
 
-    and effect of the ball
-
-
-    P for pause menu (first time
-
-
-    requires two presses)
+    Start                                         Pause Menu
 
 '
 --- !u!222 &1147277203
@@ -8066,8 +8065,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
-  m_LocalRotation: {x: 0.006839588, y: 0.98897684, z: 0.1397732, w: -0.048389535}
-  m_LocalPosition: {x: 3.1621935, y: -3.931327, z: -1.4714422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 731.5361, y: -312.49646, z: -929.3338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
