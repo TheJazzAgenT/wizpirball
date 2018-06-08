@@ -5,7 +5,7 @@ using UnityEngine;
 public class CounterHit : MonoBehaviour {
     //public GameObject bat; // To be used for animation purposes.
     public Transform batSpawn; // Where to spawn the bat, probably Hand.R
-    public Transform enemyShip;
+    //public Transform enemyShip;
     public Transform target;
 
     [SerializeField]
