@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &107788872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5626,8 +5626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -76.9}
-  m_SizeDelta: {x: 780, y: 655.1}
+  m_AnchoredPosition: {x: 48.93, y: -51.27}
+  m_SizeDelta: {x: 615.53, y: 550.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071551663
 MonoBehaviour:
@@ -5670,7 +5670,10 @@ MonoBehaviour:
     Lead Artist - Frank Leyva
 
 
-    Lead Game Design - Benjamin Hallsted'
+    Lead Game Design - Benjamin Hallsted
+
+
+    Main Menu Music- Dramatic Music by 4barrelcarb'
 --- !u!222 &1071551664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5938,7 +5941,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e251455fe6fd90546be150044c9463cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d57735a7dcf85974da9fdbf6f15f6fd8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6692,8 +6695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480.00006, y: -451}
-  m_SizeDelta: {x: 780, y: 655.1}
+  m_AnchoredPosition: {x: 480, y: -436.00638}
+  m_SizeDelta: {x: 585.6, y: 528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147277202
 MonoBehaviour:
@@ -6721,34 +6724,33 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.6
-  m_Text: 'W,A,S,D to move character
+  m_Text: '                        Controller
 
+    Left Stick                                            Move
 
-    Use mouse to aim
+    Right Stick                                           Aim
 
+    Right Trigger                                       fire
 
-    Left click to fire
+    Left Trigger                          Counter Hit
 
+    Right Bumber                Activate Shields
 
-    Right click deflect an enemy ball
+    X                                    Switch to Ice Ball
 
+    Y                       Switch to Lightning Ball
 
-    1,2,3,4 changes the element
+    B                                  Switch to Fire Ball
 
+    A                               Switch to Rock Ball
 
-    and effect of the ball
-
-
-    P for pause menu (first time
-
-
-    requires two presses)
+    Start                                         Pause Menu
 
 '
 --- !u!222 &1147277203
@@ -7484,7 +7486,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332240810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 347.00903, y: -158.83589, z: -441.18546}
+  m_LocalPosition: {x: 731.5361, y: -312.49646, z: -929.3338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7515,7 +7517,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 34509945a0e56f24eb75d629a723d15c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d9974016d798eb64587319ec909eedbc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8066,8 +8068,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
-  m_LocalRotation: {x: 0.006839588, y: 0.98897684, z: 0.1397732, w: -0.048389535}
-  m_LocalPosition: {x: 3.1621935, y: -3.931327, z: -1.4714422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 731.5361, y: -312.49646, z: -929.3338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
