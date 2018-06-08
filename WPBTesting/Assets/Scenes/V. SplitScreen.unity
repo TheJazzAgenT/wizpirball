@@ -67585,6 +67585,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114321169454599092, guid: 7b535ce5a42dc964694625b3e6b1f43c,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 485522739}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
   m_IsPrefabParent: 0
@@ -99451,6 +99456,11 @@ Prefab:
       propertyPath: myCharacter
       value: 
       objectReference: {fileID: 1371159081}
+    - target: {fileID: 114940398448461650, guid: c1307c9723dd94947a653902b1d8d58a,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1466077394}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
   m_IsPrefabParent: 0
