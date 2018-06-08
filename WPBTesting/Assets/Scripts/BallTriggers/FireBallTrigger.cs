@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBallTrigger : MonoBehaviour
 {
 
-    public int intialDamage = 10;
+    public int initialDamage = 10;
     public int tickDamage = 5;
     public GameObject impact;
     public bool ignoreCaster = true;
@@ -19,6 +19,7 @@ public class FireBallTrigger : MonoBehaviour
     private string self;
     private string other;
     private GameObject enemyShip;
+    private GameObject myShip;
 
 
     // Use this for initialization
@@ -46,7 +47,7 @@ public class FireBallTrigger : MonoBehaviour
             //if exists
             if (curhealth != null)
             {
-                curhealth.TakeDamage(intialDamage);
+                curhealth.TakeDamage(initialDamage);
                 IEnumerator Coroutine = CastDamage(curhealth);
                 StartCoroutine(Coroutine);
             }
@@ -60,6 +61,30 @@ public class FireBallTrigger : MonoBehaviour
             StartCoroutine(DestoryAfterDelay(3.0f, explosion));
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
+        }
+
+        else if (col.gameObject.tag == "Ship_" + self)
+        {
+            myShip = GameObject.FindGameObjectWithTag("Ship_" + self);
+            //Destroy(col.gameObject);
+            //add an explosion or something
+            ShipController curhealth = myShip.GetComponent<ShipController>();
+            //if exists
+            if (curhealth != null)
+            {
+                curhealth.TakeDamage(initialDamage);
+                IEnumerator Coroutine = CastDamage(curhealth);
+                StartCoroutine(Coroutine);
+            }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.transform.SetParent(myShip.transform);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+
+            //destroy the projectile that just caused the trigger collision
+            StartCoroutine(DestoryAfterDelay(5.0f, gameObject));
+            StartCoroutine(DestoryAfterDelay(3.0f, explosion));
         }
 
         if (col.gameObject.tag == "TutorialTarget")

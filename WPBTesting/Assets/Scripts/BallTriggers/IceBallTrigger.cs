@@ -79,6 +79,7 @@ public class IceBallTrigger : MonoBehaviour
             explosion.GetComponent<AudioSource>().Play();
 
             //destroy the projectile that just caused the trigger collision
+            StartCoroutine(DestoryAfterDelay(10.0f, gameObject)); // Destroy after x seconds
             StartCoroutine(DestoryAfterDelay(2.8f, explosion));
         }
 

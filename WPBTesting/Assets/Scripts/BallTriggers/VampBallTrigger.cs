@@ -78,6 +78,7 @@ public class VampBallTrigger : MonoBehaviour {
 
             //destroy the projectile that just caused the trigger collision
             StartCoroutine(DestoryAfterDelay(2.8f, explosion));
+            StartCoroutine(DestoryAfterDelay(5.0f, gameObject)); // Destroy after 5 seconds
         }
         if (col.gameObject.tag == "WATER")
         {
