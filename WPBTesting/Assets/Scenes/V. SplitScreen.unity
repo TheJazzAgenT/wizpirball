@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -46876,6 +46876,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.57069, y: 6.3500357, z: 23.327942}
   m_Center: {x: 0.1970768, y: 4.1052365, z: -43.194935}
+--- !u!114 &644729067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644729063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f29db3e93d1c744a1e60a8878f76f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &644729068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644729063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cca91373381784ab41814aede67561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.471
+  windSpeed: 238
 --- !u!65 &644729069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75913,6 +75937,22 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1241886826}
+--- !u!1 &1242721746 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1891699435554624, guid: 7b535ce5a42dc964694625b3e6b1f43c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1055455235}
+--- !u!114 &1242721754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242721746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52308d4620f09479834011837bc5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1249634867 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 93943be719994894ca5c70ac98e965eb, type: 3}
@@ -76089,6 +76129,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.570426, y: 52.217438, z: 2.2399974}
   m_Center: {x: -0.25528672, y: 26.732397, z: -6.5563464}
+--- !u!114 &1249634875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249634867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f29db3e93d1c744a1e60a8878f76f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1249634876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249634867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cca91373381784ab41814aede67561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.469
+  windSpeed: 238
 --- !u!65 &1249634880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80834,6 +80898,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77133bc2ae711e34d8ab3ad13f4b2625, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1371159081 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1982061369504334, guid: c1307c9723dd94947a653902b1d8d58a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1841789667}
+--- !u!114 &1371159089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371159081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52308d4620f09479834011837bc5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392004420
 GameObject:
   m_ObjectHideFlags: 0
@@ -99366,6 +99446,11 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114940398448461650, guid: c1307c9723dd94947a653902b1d8d58a,
+        type: 2}
+      propertyPath: myCharacter
+      value: 
+      objectReference: {fileID: 1371159081}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
   m_IsPrefabParent: 0
