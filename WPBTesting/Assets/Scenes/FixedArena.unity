@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 7898283}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc077f981decf94a958ffff2b77708b, type: 3}
   m_Name: 
@@ -506,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 60095955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1634.7465, y: 4.300002, z: 293.5728}
-  m_LocalScale: {x: 10.500001, y: 10.500001, z: 10.500001}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children: []
   m_Father: {fileID: 1975853478}
   m_RootOrder: 3
@@ -517,7 +517,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60095955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -590,8 +590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88efb2aec5459c64fafc058cf756d456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bat: {fileID: 1114174277448816, guid: 7298abff98e7ed74cbff49a315af48b2, type: 2}
   batSpawn: {fileID: 1263274969}
+  enemyShip: {fileID: 940737400}
+  target: {fileID: 28026542}
   myCharacter: {fileID: 1975853477}
 --- !u!1 &78956654
 GameObject:
