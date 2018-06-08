@@ -8,6 +8,7 @@ public class BulletTrigger : MonoBehaviour
     public GameObject impact; // Impact effect
 
     private GameObject enemyShip;
+    private GameObject myShip;
     private List<GameObject> lightningBalls = new List<GameObject>();
     private Rigidbody rb;
     private float magnetism = 500.0f; // How much is this ball effected by magnetic balls
@@ -78,13 +79,32 @@ public class BulletTrigger : MonoBehaviour
             //destroy the projectile that just caused the trigger collision
             StartCoroutine(DestoryAfterDelay(2.8f, explosion));
         }
-        if (col.gameObject.tag == "WATER")
+        else if (col.gameObject.tag == "Ship_" + self)
+        {
+            myShip = GameObject.FindGameObjectWithTag("Ship_" + self);
+            //Destroy(col.gameObject);
+            //add an explosion or something
+            ShipController curhealth = myShip.GetComponent<ShipController>();
+            //if exists
+            if (curhealth != null)
+            {
+                curhealth.TakeDamage(damage);
+            }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.transform.SetParent(myShip.transform);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+
+            //destroy the projectile that just caused the trigger collision
+            StartCoroutine(DestoryAfterDelay(2.8f, explosion));
+        }
+        else if (col.gameObject.tag == "WATER")
         {
             StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
         }
-        if (col.gameObject.tag == "TutorialTarget")
+        else if (col.gameObject.tag == "TutorialTarget")
         {
-
             StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
         }
     }

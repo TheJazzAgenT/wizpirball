@@ -47,11 +47,8 @@ public class EnemyCharController : MonoBehaviour
     void Fire()
     {
         // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-
+        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        bullet.GetComponent<PlayerSelector>().SetPlayer("P2");
         // Add velocity to the bullet
         Vector3 boatVelocity = myShip.GetComponent<ShipFixedPathing>().getShipVelocity();
         Vector3 aimDirection = playerShip.transform.position - transform.position;

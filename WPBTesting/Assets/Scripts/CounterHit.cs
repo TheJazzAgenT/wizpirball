@@ -43,7 +43,7 @@ public class CounterHit : MonoBehaviour {
             //Debug.Log("baseball entered");
             if ((Input.GetKeyDown(KeyCode.Mouse1) || (Input.GetAxis(controller.playerInput[10]) > 0)) && timer > counterDelay)
             {
-                Debug.Log("CounterHit!-----");
+                //Debug.Log("CounterHit!-----");
                 Vector3 vel = other.GetComponent<Rigidbody>().velocity;
                 //other.GetComponent<Rigidbody>().velocity = (-other.GetComponent<Rigidbody>().velocity + 1.5f * (enemyShip.position - other.transform.position));
                 other.GetComponent<Rigidbody>().velocity = 1 * vel.magnitude * ((target.position - other.transform.position).normalized + new Vector3(0, 0.5f, 0));
