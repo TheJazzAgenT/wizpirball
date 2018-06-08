@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VampBallTrigger : MonoBehaviour {
 
-    public int intialDamage = 20;
+    public int initialDamage = 20;
     public int healDamage = -15;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
@@ -14,12 +14,12 @@ public class VampBallTrigger : MonoBehaviour {
     public GameObject impact;
 
     private GameObject enemyShip;
+    private GameObject me;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
     private string self;
     private string other;
-    private GameObject me;
     private Collider mine;
 
     void Start()
@@ -45,7 +45,7 @@ public class VampBallTrigger : MonoBehaviour {
             //if exists
             if (curhealth != null)
             {
-                curhealth.TakeDamage(intialDamage);
+                curhealth.TakeDamage(initialDamage);
                 me.GetComponent<ShipController>().TakeDamage(healDamage);
             }
 
@@ -58,6 +58,26 @@ public class VampBallTrigger : MonoBehaviour {
             StartCoroutine(DestoryAfterDelay(3.0f, explosion));
             //destroy the projectile that just caused the trigger collision
             //Destroy(gameObject);
+        }
+        else if (col.gameObject.tag == "Ship_" + self)
+        {
+            //Destroy(col.gameObject);
+            //add an explosion or something
+            ShipController curhealth = me.GetComponent<ShipController>();
+            //if exists
+            if (curhealth != null)
+            {
+                curhealth.TakeDamage(initialDamage);
+                curhealth.TakeDamage(healDamage);
+            }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.transform.SetParent(me.transform);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+
+            //destroy the projectile that just caused the trigger collision
+            StartCoroutine(DestoryAfterDelay(2.8f, explosion));
         }
         if (col.gameObject.tag == "WATER")
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IceBallTrigger : MonoBehaviour
 {
-    public int intialDamage = 13;
+    public int initialDamage = 13;
     public float slow = 0.0f;
     public bool ignoreCaster = true;
     public float delayBeforeCasting = 0.0f;
@@ -14,6 +14,7 @@ public class IceBallTrigger : MonoBehaviour
     public GameObject impact;
 
     private GameObject enemyShip;
+    private GameObject myShip;
     private int appliedTimes = 0;
     private IEnumerator coroutine;
     private bool test = false;
@@ -43,7 +44,7 @@ public class IceBallTrigger : MonoBehaviour
             //if exists
             if (curhealth != null)
             {
-                curhealth.TakeDamage(intialDamage);
+                curhealth.TakeDamage(initialDamage);
                 IEnumerator Coroutine = CastDamage(target);
                 StartCoroutine(Coroutine);
             }
@@ -55,6 +56,30 @@ public class IceBallTrigger : MonoBehaviour
 
             StartCoroutine(DestoryAfterDelay(10.0f, gameObject)); // Destroy after x seconds
             StartCoroutine(DestoryAfterDelay(3.0f, explosion)); // Destroy explosion too
+        }
+
+        else if (col.gameObject.tag == "Ship_" + self)
+        {
+            myShip = GameObject.FindGameObjectWithTag("Ship_" + self);
+            //Destroy(col.gameObject);
+            //add an explosion or something
+            ShipController curhealth = myShip.GetComponent<ShipController>();
+            CharacterMovement target = myShip.GetComponentInChildren<CharacterMovement>();
+            //if exists
+            if (curhealth != null)
+            {
+                curhealth.TakeDamage(initialDamage);
+                IEnumerator Coroutine = CastDamage(target);
+                StartCoroutine(Coroutine);
+            }
+
+            var explosion = (GameObject)Instantiate(impact, transform.position, transform.rotation);
+            explosion.transform.SetParent(myShip.transform);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponent<AudioSource>().Play();
+
+            //destroy the projectile that just caused the trigger collision
+            StartCoroutine(DestoryAfterDelay(2.8f, explosion));
         }
 
         if (col.gameObject.tag == "TutorialTarget")
