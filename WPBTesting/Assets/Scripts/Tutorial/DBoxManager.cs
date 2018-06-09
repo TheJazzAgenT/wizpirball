@@ -16,8 +16,8 @@ public class DBoxManager : MonoBehaviour
     public GameObject[] manaBars;
     public GameObject Enemy;
 
-    protected FileInfo theSourceFile = null;
-    protected StreamReader reader = null;
+    protected TextAsset theSourceFile = null;
+    protected StringReader reader = null;
 
     private bool isActive = false;
     private bool cancelTyping = false;
@@ -41,8 +41,9 @@ public class DBoxManager : MonoBehaviour
         fader = GameObject.Find("BlackScreen").GetComponent<Fade>();
         //fader.DoFade();
         //ShowDialogue("Ayy Lmao", "I got 99 problems but dialogue boxes aint one");
-        theSourceFile = new FileInfo("Assets/Dialogues.txt");
-        reader = theSourceFile.OpenText();
+        //theSourceFile = new FileInfo("Assets/Dialogues.txt");
+        theSourceFile = (TextAsset)Resources.Load("Dialogues", typeof(TextAsset));
+        reader = new StringReader(theSourceFile.text);
         string text = " "; // assigned to allow first line to be read below
         text = reader.ReadLine();
         int numLines = int.Parse(text);
