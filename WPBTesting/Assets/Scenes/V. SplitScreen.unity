@@ -67714,6 +67714,18 @@ Prefab:
       propertyPath: bulletSpawn
       value: 
       objectReference: {fileID: 976912180}
+    - target: {fileID: 4909682231870904, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909682231870904, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909682231870904, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
   m_IsPrefabParent: 0
@@ -72073,7 +72085,7 @@ MonoBehaviour:
   offsetPositionSpace: 1
   lookAt: 1
   height: 2
-  offset: 5
+  offset: 6.5
 --- !u!81 &1186817613
 AudioListener:
   m_ObjectHideFlags: 0
@@ -84742,7 +84754,7 @@ Prefab:
     - target: {fileID: 114037307073637460, guid: ee8c2b9b8f45dce4a9b0f5a4640ee018,
         type: 2}
       propertyPath: offset
-      value: 5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee8c2b9b8f45dce4a9b0f5a4640ee018, type: 2}
@@ -99605,6 +99617,18 @@ Prefab:
       propertyPath: bulletSpawn
       value: 
       objectReference: {fileID: 1221492464}
+    - target: {fileID: 4215946936235570, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215946936235570, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215946936235570, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
   m_IsPrefabParent: 0
