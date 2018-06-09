@@ -46,7 +46,7 @@ public class CharacterMovement : MonoBehaviour {
     private AudioSource audioSource;
     private Hv_footsteps_AudioLib FootstepsScript;
     private float footstepTimer = 0;
-    private float footstepDelay = 0.5f;
+    private float footstepDelay = 0.4f;
 
     [SerializeField]
     private GameObject myShip;
