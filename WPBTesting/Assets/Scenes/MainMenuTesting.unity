@@ -5673,7 +5673,12 @@ MonoBehaviour:
     Lead Game Design - Benjamin Hallsted
 
 
-    Main Menu Music- Dramatic Music by 4barrelcarb'
+    Battle Music- Dramatic Music by 4barrelcarb
+
+
+    Main Menu Music - On the Sea Loop by ShadyDave
+
+'
 --- !u!222 &1071551664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8069,7 +8074,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 731.5361, y: -312.49646, z: -929.3338}
+  m_LocalPosition: {x: 731.5361, y: -312.49646, z: -1146.4403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
