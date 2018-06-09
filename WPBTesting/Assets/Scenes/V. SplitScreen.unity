@@ -67707,7 +67707,7 @@ Prefab:
     - target: {fileID: 114403213549640636, guid: 7b535ce5a42dc964694625b3e6b1f43c,
         type: 2}
       propertyPath: useMouse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114944375025279548, guid: 7b535ce5a42dc964694625b3e6b1f43c,
         type: 2}
@@ -99640,7 +99640,7 @@ Prefab:
     - target: {fileID: 114869155641784956, guid: c1307c9723dd94947a653902b1d8d58a,
         type: 2}
       propertyPath: useMouse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114863613603901474, guid: c1307c9723dd94947a653902b1d8d58a,
         type: 2}
