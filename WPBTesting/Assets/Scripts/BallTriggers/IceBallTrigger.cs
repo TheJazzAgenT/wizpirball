@@ -96,6 +96,10 @@ public class IceBallTrigger : MonoBehaviour
             //Debug.Log("ice Collide water");
             StartCoroutine(DestoryAfterDelay(10.0f, gameObject));
         }
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
         GetComponent<IceBallTrigger>().enabled = false;
     }
 

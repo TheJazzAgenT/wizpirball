@@ -82,7 +82,11 @@ public class LightningBallTrigger : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-    GetComponent<LightningBallTrigger>().enabled = false;
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
+        GetComponent<LightningBallTrigger>().enabled = false;
     }
 
     IEnumerator CastDamage(EnemyCharController damageable)

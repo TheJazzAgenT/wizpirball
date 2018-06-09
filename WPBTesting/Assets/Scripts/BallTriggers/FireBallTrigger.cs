@@ -99,6 +99,10 @@ public class FireBallTrigger : MonoBehaviour
         {
             StartCoroutine(DestoryAfterDelay(5.0f, gameObject));
         }
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
         GetComponent<FireBallTrigger>().enabled = false;
     }
 

@@ -69,6 +69,10 @@ public class MIRVBallsTrigger : MonoBehaviour {
         {
             StartCoroutine(DestoryAfterDelay(4.0f, gameObject));
         }
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
         //GetComponent<MIRVBallsTrigger>().enabled = false;
     }
     void Split()
