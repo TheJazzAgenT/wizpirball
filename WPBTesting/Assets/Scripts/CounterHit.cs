@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CounterHit : MonoBehaviour {
     //public GameObject bat; // To be used for animation purposes.
-    public Transform batSpawn; // Where to spawn the bat, probably Hand.R
+    //public Transform batSpawn; // Where to spawn the bat, probably Hand.R
     //public Transform enemyShip;
+    public GameObject BatPrefab;
     public Transform target;
 
     [SerializeField]
@@ -47,6 +48,15 @@ public class CounterHit : MonoBehaviour {
                 Vector3 vel = other.GetComponent<Rigidbody>().velocity;
                 //other.GetComponent<Rigidbody>().velocity = (-other.GetComponent<Rigidbody>().velocity + 1.5f * (enemyShip.position - other.transform.position));
                 other.GetComponent<Rigidbody>().velocity = 1 * vel.magnitude * ((target.position - other.transform.position).normalized + new Vector3(0, 0.5f, 0));
+                var bat = (GameObject)Instantiate(BatPrefab, other.transform.position, other.transform.rotation);
+                var batHolder = new GameObject();
+                bat.transform.SetParent(batHolder.transform);
+                batHolder.transform.position = other.transform.position;
+                batHolder.transform.LookAt(other.transform);
+                batHolder.transform.localScale = Vector3.Scale(batHolder.transform.localScale, new Vector3(0.1f, 0.1f, 0.1f));
+                //bat.transform.position = new Vector3(100, 500, 800);
+                bat.GetComponent<Animation>().Play();
+                Destroy(batHolder.gameObject, bat.GetComponent<Animation>().clip.length);
                 //throwBat = (GameObject)Instantiate(bat, batSpawn.position, batSpawn.rotation);
                 //controller.Fire();
                 controller.mana -= 10;

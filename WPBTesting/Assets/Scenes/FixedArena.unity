@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88efb2aec5459c64fafc058cf756d456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batSpawn: {fileID: 1263274969}
+  BatPrefab: {fileID: 1064981454030924, guid: a1a960b1813f34046b63bb6b3de51157, type: 2}
   target: {fileID: 28026542}
   myCharacter: {fileID: 1975853477}
 --- !u!1 &78956654
