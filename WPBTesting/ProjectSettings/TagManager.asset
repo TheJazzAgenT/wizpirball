@@ -22,6 +22,7 @@ TagManager:
   - Player1
   - Player2
   - continueButton
+  - Rock
   layers:
   - Default
   - TransparentFX
