@@ -193,14 +193,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4805197c5575de24e92177c5e79d24a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intialDamage: 20
+  initialDamage: 20
   healDamage: -15
   ignoreCaster: 1
   delayBeforeCasting: 0
   applyEveryNSeconds: 1
   applyDamageNTimes: 3
   oSpeed: 0
-  impact: {fileID: 1129436313402618, guid: 110552b9fc27a9845a75be51702c00af, type: 2}
+  impact: {fileID: 1376832828962084, guid: c35e9d30ea026e94e8e6f890910d86e0, type: 2}
 --- !u!114 &114350050454053276
 MonoBehaviour:
   m_ObjectHideFlags: 1
