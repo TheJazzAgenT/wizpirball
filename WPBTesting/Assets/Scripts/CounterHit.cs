@@ -47,7 +47,7 @@ public class CounterHit : MonoBehaviour {
                 //Debug.Log("CounterHit!-----");
                 Vector3 vel = other.GetComponent<Rigidbody>().velocity;
                 //other.GetComponent<Rigidbody>().velocity = (-other.GetComponent<Rigidbody>().velocity + 1.5f * (enemyShip.position - other.transform.position));
-                other.GetComponent<Rigidbody>().velocity = 1 * vel.magnitude * ((target.position - other.transform.position).normalized + new Vector3(0, 0.5f, 0));
+                other.GetComponent<Rigidbody>().velocity = 1 * vel.magnitude * ((target.position - other.transform.position).normalized + new Vector3(0, 0.3f, 0));
                 var bat = (GameObject)Instantiate(BatPrefab, other.transform.position, other.transform.rotation);
                 var batHolder = new GameObject();
                 bat.transform.SetParent(batHolder.transform);
