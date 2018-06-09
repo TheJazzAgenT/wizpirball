@@ -14,7 +14,6 @@ public class CharacterMovementTutorial : MonoBehaviour
     public GameObject bulletPrefab; // Gets overwritten once the player changes ball types
     public GameObject DefaultBall; // Ordinary Baseball
     public GameObject[] Bullets; // Array of all possible magic balls
-    public GameObject Enemy;
     public Transform batAimer;
     public AudioClip batSound;
     public float batDelay = 2.0f;
@@ -204,7 +203,6 @@ public class CharacterMovementTutorial : MonoBehaviour
         if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])
         {
             dBoxMan.ReadyDialogue(6, playerNum);
-            Enemy.SetActive(true);
             trackCounterHits = true;
         }
 

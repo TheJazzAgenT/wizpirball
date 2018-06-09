@@ -16265,6 +16265,7 @@ MonoBehaviour:
   manaBars:
   - {fileID: 1623498866}
   - {fileID: 753832020}
+  Enemy: {fileID: 1290640719}
 --- !u!114 &513880364
 MonoBehaviour:
   m_ObjectHideFlags: 0

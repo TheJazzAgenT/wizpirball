@@ -14,6 +14,7 @@ public class DBoxManager : MonoBehaviour
     public RawImage[] buttonImgs;
     public GameObject[] healthBars;
     public GameObject[] manaBars;
+    public GameObject Enemy;
 
     protected FileInfo theSourceFile = null;
     protected StreamReader reader = null;
@@ -172,6 +173,10 @@ public class DBoxManager : MonoBehaviour
                 healthBar.GetComponent<PulseImage>().StopPulse();
             }
             Continue.SetActive(true);
+        }
+        if (curDialogue == 6)
+        {
+            Enemy.SetActive(true);
         }
 
         dialogueDisplayed[curDialogue] = true;
