@@ -143,7 +143,7 @@ public class CharacterMovement : MonoBehaviour {
             if (!stunned)
             {
                 Invoke("Fire", fireDelay);
-                anim.Play("Armature|CharacterHittingOneHand");
+                anim.Play("Armature|Hitting");
             }
         }
         if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown(playerInput[2]))
