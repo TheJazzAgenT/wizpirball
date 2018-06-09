@@ -67776,6 +67776,12 @@ Prefab:
       propertyPath: shields.Array.data[5]
       value: 
       objectReference: {fileID: 2113583769}
+    - target: {fileID: 114321169454599092, guid: 7b535ce5a42dc964694625b3e6b1f43c,
+        type: 2}
+      propertyPath: BatPrefab
+      value: 
+      objectReference: {fileID: 1064981454030924, guid: a1a960b1813f34046b63bb6b3de51157,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b535ce5a42dc964694625b3e6b1f43c, type: 2}
   m_IsPrefabParent: 0
@@ -99729,6 +99735,12 @@ Prefab:
       propertyPath: shields.Array.data[5]
       value: 
       objectReference: {fileID: 729400556}
+    - target: {fileID: 114940398448461650, guid: c1307c9723dd94947a653902b1d8d58a,
+        type: 2}
+      propertyPath: BatPrefab
+      value: 
+      objectReference: {fileID: 1064981454030924, guid: a1a960b1813f34046b63bb6b3de51157,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1307c9723dd94947a653902b1d8d58a, type: 2}
   m_IsPrefabParent: 0
