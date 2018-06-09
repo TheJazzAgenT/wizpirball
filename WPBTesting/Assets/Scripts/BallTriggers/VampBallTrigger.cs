@@ -84,6 +84,10 @@ public class VampBallTrigger : MonoBehaviour {
         {
             StartCoroutine(DestoryAfterDelay(5.0f, gameObject));
         }
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
         GetComponent<VampBallTrigger>().enabled = false;
     }
     private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)

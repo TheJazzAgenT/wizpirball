@@ -107,6 +107,10 @@ public class BulletTrigger : MonoBehaviour
         {
             StartCoroutine(DestoryAfterDelay(3.0f, gameObject));
         }
+        else if (col.gameObject.tag == "Rock")
+        {
+            StartCoroutine(DestoryAfterDelay(1.0f, gameObject));
+        }
     }
 
     private IEnumerator DestoryAfterDelay(float Delay, GameObject destroyable)
