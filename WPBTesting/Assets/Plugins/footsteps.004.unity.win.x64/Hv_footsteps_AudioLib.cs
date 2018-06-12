@@ -86,6 +86,17 @@ public class Hv_footsteps_Editor : Editor {
     GUI.enabled = true;
     GUILayout.BeginVertical();
     EditorGUILayout.Space();
+    EditorGUI.indentLevel++;
+    
+    // volume
+    GUILayout.BeginHorizontal();
+    float volume = _dsp.GetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume);
+    float newVolume = EditorGUILayout.Slider("volume", volume, 0.0f, 15.0f);
+    if (volume != newVolume) {
+      _dsp.SetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume, newVolume);
+    }
+    GUILayout.EndHorizontal();
+    EditorGUI.indentLevel--;
   }
 }
 #endif // UNITY_EDITOR
@@ -105,6 +116,20 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
     Bangfast = 0x9ADED219,
     Bangmed = 0x2C49D80A,
     Bangslow = 0x9BC686A1,
+  }
+  
+  // Parameters are used to send float messages into the patch context (thread-safe).
+  // Example usage:
+  /*
+    void Start () {
+        Hv_footsteps_AudioLib script = GetComponent<Hv_footsteps_AudioLib>();
+        // Get and set a parameter
+        float volume = script.GetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume);
+        script.SetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume, volume + 0.1f);
+    }
+  */
+  public enum Parameter : uint {
+    Volume = 0xB1642755,
   }
   
   // Delegate method for receiving float messages from the patch context (thread-safe).
@@ -131,6 +156,7 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   }
   public delegate void FloatMessageReceived(FloatMessage message);
   public FloatMessageReceived FloatReceivedCallback;
+  public float volume = 15.0f;
 
   // internal state
   private Hv_footsteps_Context _context;
@@ -146,6 +172,26 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   // see Hv_footsteps_AudioLib.Event for definitions
   public void SendEvent(Hv_footsteps_AudioLib.Event e) {
     if (IsInstantiated()) _context.SendBangToReceiver((uint) e);
+  }
+  
+  // see Hv_footsteps_AudioLib.Parameter for definitions
+  public float GetFloatParameter(Hv_footsteps_AudioLib.Parameter param) {
+    switch (param) {
+      case Parameter.Volume: return volume;
+      default: return 0.0f;
+    }
+  }
+
+  public void SetFloatParameter(Hv_footsteps_AudioLib.Parameter param, float x) {
+    switch (param) {
+      case Parameter.Volume: {
+        x = Mathf.Clamp(x, 0.0f, 15.0f);
+        volume = x;
+        break;
+      }
+      default: return;
+    }
+    if (IsInstantiated()) _context.SendFloatToReceiver((uint) param, x);
   }
   
   public void FillTableWithMonoAudioClip(string tableName, AudioClip clip) {
@@ -165,6 +211,10 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
 
   private void Awake() {
     _context = new Hv_footsteps_Context((double) AudioSettings.outputSampleRate);
+  }
+  
+  private void Start() {
+    _context.SendFloatToReceiver((uint) Parameter.Volume, volume);
   }
   
   private void Update() {
