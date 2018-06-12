@@ -273,7 +273,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 7898283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc077f981decf94a958ffff2b77708b, type: 3}
   m_Name: 
@@ -24138,7 +24138,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 600615762}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d9974016d798eb64587319ec909eedbc, type: 3}
@@ -52031,6 +52031,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f29db3e93d1c744a1e60a8878f76f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1249634877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249634867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4b291e607f6084c9d5abb402fb0965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 50
+  wavespeed: 10
 --- !u!65 &1249634880
 BoxCollider:
   m_ObjectHideFlags: 0
