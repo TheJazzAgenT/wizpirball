@@ -247,6 +247,10 @@ public class CharacterMovement : MonoBehaviour {
                         mana -= shieldCost;
                         bar.fillAmount = mana;
                     }
+                else
+                {
+                    StartCoroutine(OOMCall());
+                }
             }
             if (col.gameObject == LeftBarr) //1-left, 2-right, 3-front, 4-back
             {
@@ -261,6 +265,10 @@ public class CharacterMovement : MonoBehaviour {
                     shields[2].SetActive(true);
                     mana -= shieldCost;
                     bar.fillAmount = mana;
+                }
+                else
+                {
+                    StartCoroutine(OOMCall());
                 }
             }
             if (col.gameObject == RightBarr) //1-left, 2-right, 3-front, 4-back
@@ -277,6 +285,10 @@ public class CharacterMovement : MonoBehaviour {
                     shields[3].SetActive(true);
                     mana -= shieldCost;
                     bar.fillAmount = mana;
+                }
+                else
+                {
+                    StartCoroutine(OOMCall());
                 }
             }
             if (col.gameObject == FrontBarr) //1-left, 2-right, 3-front, 4-back
@@ -296,6 +308,10 @@ public class CharacterMovement : MonoBehaviour {
                     shields[5].SetActive(true);
                     mana -= shieldCost;
                     bar.fillAmount = mana;
+                }
+                else
+                {
+                    StartCoroutine(OOMCall());
                 }
             }
         }
@@ -325,7 +341,6 @@ public class CharacterMovement : MonoBehaviour {
         }
         else
         {
-            Debug.Log("not enough mana");
             StartCoroutine(OOMCall());
         }
     }

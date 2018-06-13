@@ -290,6 +290,11 @@ public class CharacterMovementTutorial : MonoBehaviour
                             bar.fillAmount = mana;
                             dBoxMan.ReadyDialogue(8, playerNum);
                         }
+                    else
+                    {
+                        StartCoroutine(OOMCall());
+                    }
+                    
                 }
             }
         }
@@ -324,7 +329,6 @@ public class CharacterMovementTutorial : MonoBehaviour
         }
         else
         {
-            Debug.Log("not enough mana");
             StartCoroutine(OOMCall());
         }
     }
