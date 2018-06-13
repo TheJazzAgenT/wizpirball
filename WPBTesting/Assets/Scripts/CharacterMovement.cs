@@ -44,7 +44,7 @@ public class CharacterMovement : MonoBehaviour {
     private Animator anim;
     //Animator legsAnim;
     private AudioSource audioSource;
-    private Hv_footsteps_AudioLib FootstepsScript;
+    Hv_shields_AudioLib shieldScript;
     private float footstepTimer = 0;
     private float footstepDelay = 0.4f;
 
@@ -67,7 +67,7 @@ public class CharacterMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         anim.SetBool("Moving", false);
 
-        FootstepsScript = GetComponent<Hv_footsteps_AudioLib>();
+        shieldScript = GetComponent<Hv_shields_AudioLib>();
 
         // Find and set barriers
         LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
@@ -171,7 +171,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             if (footstepTimer > footstepDelay)
             {
-                FootstepsScript.SendEvent(Hv_footsteps_AudioLib.Event.Bangfast);
+                shieldScript.SendEvent(Hv_shields_AudioLib.Event.Bangfast);
                 footstepTimer = 0;
             }
             footstepTimer += Time.deltaTime;
@@ -226,12 +226,14 @@ public class CharacterMovement : MonoBehaviour {
             {
                 if (shields[0].activeSelf || shields[1].activeSelf)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerdown);
                     shields[0].SetActive(false);
                     shields[1].SetActive(false);
                 }
                 else if (mana > shieldCost)
                     {
-                        shields[0].GetComponent<ShieldController>().Blocks = 3;
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerup);
+                    shields[0].GetComponent<ShieldController>().Blocks = 3;
                         shields[1].GetComponent<ShieldController>().Blocks = 3;
                         shields[0].SetActive(true);
                         shields[1].SetActive(true);
@@ -243,9 +245,11 @@ public class CharacterMovement : MonoBehaviour {
             {
                 if (shields[2].activeSelf)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerdown);
                     shields[2].SetActive(false);
                 }
                 else if (mana > shieldCost){
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerup);
                     shields[2].GetComponent<ShieldController>().Blocks = 3;
                     shields[2].SetActive(true);
                     mana -= shieldCost;
@@ -256,10 +260,12 @@ public class CharacterMovement : MonoBehaviour {
             {
                 if (shields[3].activeSelf)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerdown);
                     shields[3].SetActive(false);
                 }
                 else if (mana > shieldCost)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerup);
                     shields[3].GetComponent<ShieldController>().Blocks = 3;
                     shields[3].SetActive(true);
                     mana -= shieldCost;
@@ -270,11 +276,13 @@ public class CharacterMovement : MonoBehaviour {
             {
                 if (shields[4].activeSelf || shields[5].activeSelf)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerdown);
                     shields[4].SetActive(false);
                     shields[5].SetActive(false);
                 }
                 else if (mana > shieldCost)
                 {
+                    shieldScript.SendEvent(Hv_shields_AudioLib.Event.Powerup);
                     shields[4].GetComponent<ShieldController>().Blocks = 3;
                     shields[5].GetComponent<ShieldController>().Blocks = 3;
                     shields[4].SetActive(true);

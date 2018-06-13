@@ -40,21 +40,21 @@ using AOT;
 #if UNITY_EDITOR
 using UnityEditor;
 
-[CustomEditor(typeof(Hv_footsteps_AudioLib))]
-public class Hv_footsteps_Editor : Editor {
+[CustomEditor(typeof(Hv_shields_AudioLib))]
+public class Hv_shields_Editor : Editor {
 
-  [MenuItem("Heavy/footsteps")]
-  static void CreateHv_footsteps() {
+  [MenuItem("Heavy/shields")]
+  static void CreateHv_shields() {
     GameObject target = Selection.activeGameObject;
     if (target != null) {
-      target.AddComponent<Hv_footsteps_AudioLib>();
+      target.AddComponent<Hv_shields_AudioLib>();
     }
   }
   
-  private Hv_footsteps_AudioLib _dsp;
+  private Hv_shields_AudioLib _dsp;
 
   private void OnEnable() {
-    _dsp = target as Hv_footsteps_AudioLib;
+    _dsp = target as Hv_shields_AudioLib;
   }
 
   public override void OnInspectorGUI() {
@@ -67,17 +67,27 @@ public class Hv_footsteps_Editor : Editor {
     EditorGUILayout.Space();
     // bangFast
     if (GUILayout.Button("bangFast")) {
-      _dsp.SendEvent(Hv_footsteps_AudioLib.Event.Bangfast);
+      _dsp.SendEvent(Hv_shields_AudioLib.Event.Bangfast);
     }
     
     // bangMed
     if (GUILayout.Button("bangMed")) {
-      _dsp.SendEvent(Hv_footsteps_AudioLib.Event.Bangmed);
+      _dsp.SendEvent(Hv_shields_AudioLib.Event.Bangmed);
     }
     
     // bangSlow
     if (GUILayout.Button("bangSlow")) {
-      _dsp.SendEvent(Hv_footsteps_AudioLib.Event.Bangslow);
+      _dsp.SendEvent(Hv_shields_AudioLib.Event.Bangslow);
+    }
+    
+    // powerdown
+    if (GUILayout.Button("powerdown")) {
+      _dsp.SendEvent(Hv_shields_AudioLib.Event.Powerdown);
+    }
+    
+    // powerup
+    if (GUILayout.Button("powerup")) {
+      _dsp.SendEvent(Hv_shields_AudioLib.Event.Powerup);
     }
     
     GUILayout.EndVertical();
@@ -90,10 +100,10 @@ public class Hv_footsteps_Editor : Editor {
     
     // volume
     GUILayout.BeginHorizontal();
-    float volume = _dsp.GetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume);
+    float volume = _dsp.GetFloatParameter(Hv_shields_AudioLib.Parameter.Volume);
     float newVolume = EditorGUILayout.Slider("volume", volume, 0.0f, 15.0f);
     if (volume != newVolume) {
-      _dsp.SetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume, newVolume);
+      _dsp.SetFloatParameter(Hv_shields_AudioLib.Parameter.Volume, newVolume);
     }
     GUILayout.EndHorizontal();
     EditorGUI.indentLevel--;
@@ -102,30 +112,32 @@ public class Hv_footsteps_Editor : Editor {
 #endif // UNITY_EDITOR
 
 [RequireComponent (typeof (AudioSource))]
-public class Hv_footsteps_AudioLib : MonoBehaviour {
+public class Hv_shields_AudioLib : MonoBehaviour {
   
   // Events are used to trigger bangs in the patch context (thread-safe).
   // Example usage:
   /*
     void Start () {
-        Hv_footsteps_AudioLib script = GetComponent<Hv_footsteps_AudioLib>();
-        script.SendEvent(Hv_footsteps_AudioLib.Event.Bangfast);
+        Hv_shields_AudioLib script = GetComponent<Hv_shields_AudioLib>();
+        script.SendEvent(Hv_shields_AudioLib.Event.Bangfast);
     }
   */
   public enum Event : uint {
     Bangfast = 0x9ADED219,
     Bangmed = 0x2C49D80A,
     Bangslow = 0x9BC686A1,
+    Powerdown = 0x250199FF,
+    Powerup = 0xCF072DC3,
   }
   
   // Parameters are used to send float messages into the patch context (thread-safe).
   // Example usage:
   /*
     void Start () {
-        Hv_footsteps_AudioLib script = GetComponent<Hv_footsteps_AudioLib>();
+        Hv_shields_AudioLib script = GetComponent<Hv_shields_AudioLib>();
         // Get and set a parameter
-        float volume = script.GetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume);
-        script.SetFloatParameter(Hv_footsteps_AudioLib.Parameter.Volume, volume + 0.1f);
+        float volume = script.GetFloatParameter(Hv_shields_AudioLib.Parameter.Volume);
+        script.SetFloatParameter(Hv_shields_AudioLib.Parameter.Volume, volume + 0.1f);
     }
   */
   public enum Parameter : uint {
@@ -136,12 +148,12 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   // Example usage:
   /*
     void Start () {
-        Hv_footsteps_AudioLib script = GetComponent<Hv_footsteps_AudioLib>();
+        Hv_shields_AudioLib script = GetComponent<Hv_shields_AudioLib>();
         script.RegisterSendHook();
         script.FloatReceivedCallback += OnFloatMessage;
     }
 
-    void OnFloatMessage(Hv_footsteps_AudioLib.FloatMessage message) {
+    void OnFloatMessage(Hv_shields_AudioLib.FloatMessage message) {
         Debug.Log(message.receiverName + ": " + message.value);
     }
   */
@@ -159,7 +171,7 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   public float volume = 15.0f;
 
   // internal state
-  private Hv_footsteps_Context _context;
+  private Hv_shields_Context _context;
 
   public bool IsInstantiated() {
     return (_context != null);
@@ -169,20 +181,20 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
     _context.RegisterSendHook();
   }
   
-  // see Hv_footsteps_AudioLib.Event for definitions
-  public void SendEvent(Hv_footsteps_AudioLib.Event e) {
+  // see Hv_shields_AudioLib.Event for definitions
+  public void SendEvent(Hv_shields_AudioLib.Event e) {
     if (IsInstantiated()) _context.SendBangToReceiver((uint) e);
   }
   
-  // see Hv_footsteps_AudioLib.Parameter for definitions
-  public float GetFloatParameter(Hv_footsteps_AudioLib.Parameter param) {
+  // see Hv_shields_AudioLib.Parameter for definitions
+  public float GetFloatParameter(Hv_shields_AudioLib.Parameter param) {
     switch (param) {
       case Parameter.Volume: return volume;
       default: return 0.0f;
     }
   }
 
-  public void SetFloatParameter(Hv_footsteps_AudioLib.Parameter param, float x) {
+  public void SetFloatParameter(Hv_shields_AudioLib.Parameter param, float x) {
     switch (param) {
       case Parameter.Volume: {
         x = Mathf.Clamp(x, 0.0f, 15.0f);
@@ -196,7 +208,7 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   
   public void FillTableWithMonoAudioClip(string tableName, AudioClip clip) {
     if (clip.channels > 1) {
-      Debug.LogWarning("Hv_footsteps_AudioLib: Only loading first channel of '" +
+      Debug.LogWarning("Hv_shields_AudioLib: Only loading first channel of '" +
           clip.name + "' into table '" +
           tableName + "'. Multi-channel files are not supported.");
     }
@@ -210,7 +222,7 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   }
 
   private void Awake() {
-    _context = new Hv_footsteps_Context((double) AudioSettings.outputSampleRate);
+    _context = new Hv_shields_Context((double) AudioSettings.outputSampleRate);
   }
   
   private void Start() {
@@ -220,7 +232,7 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   private void Update() {
     // retreive sent messages
     if (_context.IsSendHookRegistered()) {
-      Hv_footsteps_AudioLib.FloatMessage tempMessage;
+      Hv_shields_AudioLib.FloatMessage tempMessage;
       while ((tempMessage = _context.msgQueue.GetNextMessage()) != null) {
         FloatReceivedCallback(tempMessage);
       }
@@ -233,27 +245,27 @@ public class Hv_footsteps_AudioLib : MonoBehaviour {
   }
 }
 
-class Hv_footsteps_Context {
+class Hv_shields_Context {
 
 #if UNITY_IOS && !UNITY_EDITOR
   private const string _dllName = "__Internal";
 #else
-  private const string _dllName = "Hv_footsteps_AudioLib";
+  private const string _dllName = "Hv_shields_AudioLib";
 #endif
 
   // Thread-safe message queue
   public class SendMessageQueue {
     private readonly object _msgQueueSync = new object();
-    private readonly Queue<Hv_footsteps_AudioLib.FloatMessage> _msgQueue = new Queue<Hv_footsteps_AudioLib.FloatMessage>();
+    private readonly Queue<Hv_shields_AudioLib.FloatMessage> _msgQueue = new Queue<Hv_shields_AudioLib.FloatMessage>();
 
-    public Hv_footsteps_AudioLib.FloatMessage GetNextMessage() {
+    public Hv_shields_AudioLib.FloatMessage GetNextMessage() {
       lock (_msgQueueSync) {
         return (_msgQueue.Count != 0) ? _msgQueue.Dequeue() : null;
       }
     }
 
     public void AddMessage(string receiverName, float value) {
-      Hv_footsteps_AudioLib.FloatMessage msg = new Hv_footsteps_AudioLib.FloatMessage(receiverName, value);
+      Hv_shields_AudioLib.FloatMessage msg = new Hv_shields_AudioLib.FloatMessage(receiverName, value);
       lock (_msgQueueSync) {
         _msgQueue.Enqueue(msg);
       }
@@ -266,7 +278,7 @@ class Hv_footsteps_Context {
   private SendHook _sendHook = null;
 
   [DllImport (_dllName)]
-  private static extern IntPtr hv_footsteps_new_with_options(double sampleRate, int poolKb, int inQueueKb, int outQueueKb);
+  private static extern IntPtr hv_shields_new_with_options(double sampleRate, int poolKb, int inQueueKb, int outQueueKb);
 
   [DllImport (_dllName)]
   private static extern int hv_processInlineInterleaved(IntPtr ctx,
@@ -327,14 +339,14 @@ class Hv_footsteps_Context {
 
   private delegate void SendHook(IntPtr context, string sendName, uint sendHash, IntPtr message);
 
-  public Hv_footsteps_Context(double sampleRate, int poolKb=10, int inQueueKb=2, int outQueueKb=2) {
+  public Hv_shields_Context(double sampleRate, int poolKb=10, int inQueueKb=2, int outQueueKb=2) {
     gch = GCHandle.Alloc(msgQueue);
-    _context = hv_footsteps_new_with_options(sampleRate, poolKb, inQueueKb, outQueueKb);
+    _context = hv_shields_new_with_options(sampleRate, poolKb, inQueueKb, outQueueKb);
     hv_setPrintHook(_context, new PrintHook(OnPrint));
     hv_setUserData(_context, GCHandle.ToIntPtr(gch));
   }
 
-  ~Hv_footsteps_Context() {
+  ~Hv_shields_Context() {
     hv_delete(_context);
     GC.KeepAlive(_context);
     GC.KeepAlive(_sendHook);
