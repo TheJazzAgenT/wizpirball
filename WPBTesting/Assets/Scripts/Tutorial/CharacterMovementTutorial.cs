@@ -63,6 +63,9 @@ public class CharacterMovementTutorial : MonoBehaviour
     private AudioSource audioSource;
     private DBoxManager dBoxMan;
 
+    private GameObject OOM;
+    private IEnumerator OOMCaller;
+
     [SerializeField]
     private BarScript bar;
 
@@ -84,6 +87,9 @@ public class CharacterMovementTutorial : MonoBehaviour
         LeftBarr = GameObject.Find("ShieldActivatePoint1P" + playerNum);
         dBoxMan = GameObject.Find("DialogueManager").GetComponent<DBoxManager>();
 
+        OOM = GameObject.Find("OOMTextP" + playerNum);
+        OOM.SetActive(false);
+
         // If we came from the custom ball selector, find the settings and apply them.
         if (GameObject.Find("InfoStorage") != null)
         {
@@ -102,6 +108,7 @@ public class CharacterMovementTutorial : MonoBehaviour
         mCall = manaCall();
         hCall = healthCall();
         bCall = ballCall();
+        OOMCaller = OOMCall();
 
         // Set input dictionary appropriate to player
         if (playerNum == 1)
@@ -144,6 +151,8 @@ public class CharacterMovementTutorial : MonoBehaviour
         {
             Debug.LogWarning("Player Number not set!");
         }
+
+
     }
 
     private void Update()
@@ -316,26 +325,33 @@ public class CharacterMovementTutorial : MonoBehaviour
         else
         {
             Debug.Log("not enough mana");
+            StartCoroutine(OOMCall());
         }
     }
     IEnumerator manaCall()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
         dBoxMan.ReadyDialogue(2, playerNum);
         Xmana = false;
         Xhealth = true;
     }
     IEnumerator healthCall()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
         dBoxMan.ReadyDialogue(3, playerNum);
         Xhealth = false;
         Xballs = true;
     }
     IEnumerator ballCall()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
         dBoxMan.ReadyDialogue(4, playerNum);
         Xballs = false;
+    }
+    IEnumerator OOMCall()
+    {
+        OOM.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        OOM.SetActive(false);
     }
 }

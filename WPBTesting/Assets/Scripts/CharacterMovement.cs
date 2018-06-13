@@ -53,6 +53,9 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField]
     private BarScript bar;
 
+    private GameObject OOM;
+    private IEnumerator OOMCaller;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -75,6 +78,9 @@ public class CharacterMovement : MonoBehaviour {
         FrontBarr = GameObject.Find("ShieldActivatePoint3P" + playerNum);
         BackBarr = GameObject.Find("ShieldActivatePoint4P" + playerNum);
 
+        OOM = GameObject.Find("OOMTextP" + playerNum);
+        OOM.SetActive(false);
+
         // If we came from the custom ball selector, find the settings and apply them.
         if (GameObject.Find("InfoStorage") != null)
         {
@@ -90,6 +96,7 @@ public class CharacterMovement : MonoBehaviour {
         manaCost = 0;
         manaRegen = Regen();
         StartCoroutine(manaRegen);
+        OOMCaller = OOMCall();
 
         // Set input dictionary appropriate to player
         if (playerNum == 1)
@@ -319,6 +326,13 @@ public class CharacterMovement : MonoBehaviour {
         else
         {
             Debug.Log("not enough mana");
+            StartCoroutine(OOMCall());
         }
+    }
+    IEnumerator OOMCall()
+    {
+        OOM.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        OOM.SetActive(false);
     }
 }
