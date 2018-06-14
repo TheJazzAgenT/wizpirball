@@ -52,7 +52,7 @@ public class CharacterMovementTutorial : MonoBehaviour
     private bool Xmana = false;
     private bool Xhealth = false;
     private bool Xballs = false;
-    private bool[] spellsUsed = new bool[] { false, false, false };//fire, ice, lightning?
+    private bool[] spellsUsed = new bool[] { false, false, false };//fire, ice, lightning
     private bool trackSpells = false;
     private bool trackCounterHits = false;
     private bool trackshields = false;
@@ -206,25 +206,26 @@ public class CharacterMovementTutorial : MonoBehaviour
         {
             dBoxMan.ReadyDialogue(6, playerNum);//go to ice
         }
-        if (trackSpells && spellsUsed[0] && spellsUsed[1])//ice ball
+        if (trackSpells && spellsUsed[1])//ice ball
         {
             dBoxMan.ReadyDialogue(7, playerNum);//go to lightning
         }
-        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])//lightning
+        if (trackSpells && spellsUsed[2])//lightning
         {
-            dBoxMan.ReadyDialogue(8, playerNum);//3rd to last
-        }
-        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])//go to counter hitting
-        {
-            dBoxMan.ReadyDialogue(9, playerNum);//3rd to last
+            dBoxMan.ReadyDialogue(8, playerNum);//goes to...
             trackCounterHits = true;
         }
+        if (trackCounterHits && counterHits > 2)//go to counter hitting
+        {
+            dBoxMan.ReadyDialogue(9, playerNum);//3rd to last
+            trackshields = true;
+        }
 
-        if (trackCounterHits && counterHits > 2)
+        /*if (trackCounterHits && counterHits > 2)
         {
             dBoxMan.ReadyDialogue(10, playerNum);//2nd to last
             trackshields = true;
-        }
+        }*/
     }
     void FixedUpdate()
     {
@@ -293,7 +294,7 @@ public class CharacterMovementTutorial : MonoBehaviour
                             shields[0].SetActive(true);
                             mana -= shieldCost;
                             bar.fillAmount = mana;
-                            dBoxMan.ReadyDialogue(11, playerNum);//end
+                            dBoxMan.ReadyDialogue(10, playerNum);//end
                         }
                     else
                     {

@@ -16,7 +16,7 @@ public class FloatObjectScript : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Debug.Log(rb);
+        //Debug.Log(rb);
     }
 
     // Update is called once per frame

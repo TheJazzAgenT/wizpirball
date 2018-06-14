@@ -2,7 +2,7 @@
 true true Right you scurvy dogs! Welcome to Molluka Pirate Island! Let's see what you're made of. Step forth to begin your training!
 false false Right then, here be the basics. The staff you hold channels your mana [Blue bar at top right/left of screen]. Use your mana to cast spells, but remember that it needs time to recharge.
 false false I suppose I don't have to remind you to keep an eye on your health [Grey Bar at top right/left of screen], take too much damage and you'll surely perish!
-false false Now, let's go over combat. Your means of attack is hitting baseballs at your enemies.
+false false Now, let's go over combat. Your means of attack is hitting baseballs at your enemies. Your baseball is the only one that does not use mana.
 false true See those targets out there? Fire 3 baseballs at them. Remember that this is just practice. In real combat you'll have to adjust for enemy movement.
 false true Great! Now let's use magic. Choose the Fire spell. It deals damage over time to your enemy's ship. Good if you think you cant hit them for a time.
 false false Now switch to the Ice spell. It freezes the enemy and stops them from attacking you for a time. Very handy if you need to try and survive for a bit longer.

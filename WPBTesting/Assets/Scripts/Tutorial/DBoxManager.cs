@@ -68,7 +68,9 @@ public class DBoxManager : MonoBehaviour
             //Console.WriteLine(text);
             //Debug.Log(text);
         }
-
+        //Debug.Log(dialogues.Length);
+        //Debug.Log(dialogues[0]);
+        //Debug.Log(dialogues[10]);
         /*foreach (RawImage img in buttonImgs)
         {
             img.gameObject.SetActive(true);
@@ -107,10 +109,12 @@ public class DBoxManager : MonoBehaviour
         if (player == 1)
         {
             dialogueStatusP1[dialogueNum] = true;
+            Debug.Log("Player 1 ready for " + dialogueNum);
         }
         else if (player == 2)
         {
             dialogueStatusP2[dialogueNum] = true;
+            Debug.Log("Player 2 ready for " + dialogueNum);
         }
         else
         {
@@ -175,7 +179,7 @@ public class DBoxManager : MonoBehaviour
             }
             Continue.SetActive(true);
         }
-        if (curDialogue == 9)//activate enemy
+        if (curDialogue == 8)//activate enemy
         {
             Enemy.SetActive(true);
         }

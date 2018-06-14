@@ -36,7 +36,7 @@ public class Fade : MonoBehaviour {
 
     private IEnumerator StartFade(float speed, bool direction)
     {
-        Debug.Log("fading");
+        //Debug.Log("fading");
         while (timer <= speed)
         {
             mask.color = Color.Lerp(direction ? opaque : clear, direction ? clear : opaque, timer / speed);

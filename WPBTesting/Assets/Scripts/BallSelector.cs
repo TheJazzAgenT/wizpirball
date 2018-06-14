@@ -43,7 +43,7 @@ public class BallSelector : MonoBehaviour
     {
         if (Input.GetButtonDown("A_" + player))
         {
-            Debug.Log("Player number: " + player);
+            //Debug.Log("Player number: " + player);
         }
             if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("A_" + player))
         {
