@@ -64,7 +64,7 @@ public class DBoxManager : MonoBehaviour
             dialogueStatusP2[i] = splits[0] == "true";
             dialogueDisplayed[i] = false;
             buttonDisplay[i] = splits[1] == "true";
-            Debug.Log(buttonDisplay[i]);
+            //Debug.Log(buttonDisplay[i]);
             //Console.WriteLine(text);
             //Debug.Log(text);
         }
@@ -123,17 +123,10 @@ public class DBoxManager : MonoBehaviour
         StopCoroutine("ScrollText");
         StartCoroutine(ScrollText(dialogues[curDialogue]));
         boxTitle.text = title;
-
-        if (buttonDisplay[curDialogue])// Button Imgs 0-Lstick,1-Rstick,2-Rtrig,3-ABXY,4-Ltrig,5-RBump
+        //text parts 1-walk forward, 2-mana, 3-health, 4-baseball, 5-hitTags, 6-fireball, 7-iceball, 8-lightingball, 9-counter, 10-shields, 11-game
+        if (buttonDisplay[curDialogue])// Button Imgs 0-Lstick, 1-Rstick, 2-Rtrig, 3-ABXY, 4-Ltrig, 5-RBump
         {
-            if (curDialogue >= buttonImgs.Length)
-            {
-                curButton = 5;
-            }
-            else
-            {
-                curButton++;
-            }
+            curButton++;
             buttonImgs[curButton].gameObject.SetActive(true);
             if (curButton > 0)
             {

@@ -220,7 +220,7 @@ public class CharacterMovementTutorial : MonoBehaviour
             trackCounterHits = true;
         }
 
-        if (trackCounterHits && counterHits >= 2)
+        if (trackCounterHits && counterHits > 2)
         {
             dBoxMan.ReadyDialogue(10, playerNum);//2nd to last
             trackshields = true;
