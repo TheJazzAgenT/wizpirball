@@ -52,7 +52,7 @@ public class CharacterMovementTutorial : MonoBehaviour
     private bool Xmana = false;
     private bool Xhealth = false;
     private bool Xballs = false;
-    private bool[] spellsUsed = new bool[] { false, false, false };
+    private bool[] spellsUsed = new bool[] { false, false, false };//fire, ice, lightning?
     private bool trackSpells = false;
     private bool trackCounterHits = false;
     private bool trackshields = false;
@@ -90,16 +90,9 @@ public class CharacterMovementTutorial : MonoBehaviour
         OOM = GameObject.Find("OOMTextP" + playerNum);
         OOM.SetActive(false);
 
-        // If we came from the custom ball selector, find the settings and apply them.
-        if (GameObject.Find("InfoStorage") != null)
-        {
-            Loadout = GameObject.Find("InfoStorage").GetComponent<InfoStore>().GetLoadout(playerNum);
-        }
-        else
-        {
-            // If we didn't come from custom loadout selector, set a default loadout. Fire, Ice, and Lightning.
-            Loadout = new int[] { 0, 1, 2 };
-        }
+
+        // If we didn't come from custom loadout selector, set a default loadout. Fire, Ice, and Lightning.
+        Loadout = new int[] { 0, 1, 2 };
 
         // Startup mana regen
         manaCost = 0;
@@ -206,18 +199,30 @@ public class CharacterMovementTutorial : MonoBehaviour
 
         if (tHits >= 3)
         {
-            dBoxMan.ReadyDialogue(5, playerNum);
+            dBoxMan.ReadyDialogue(5, playerNum);//lead into explaining magic balls
             trackSpells = true;
         }
-        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])
+        if (trackSpells && spellsUsed[0])//explain fire ball
         {
-            dBoxMan.ReadyDialogue(6, playerNum);
+            dBoxMan.ReadyDialogue(6, playerNum);//go to ice
+        }
+        if (trackSpells && spellsUsed[0] && spellsUsed[1])//ice ball
+        {
+            dBoxMan.ReadyDialogue(7, playerNum);//go to lightning
+        }
+        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])//lightning
+        {
+            dBoxMan.ReadyDialogue(8, playerNum);//3rd to last
+        }
+        if (trackSpells && spellsUsed[0] && spellsUsed[1] && spellsUsed[2])//go to counter hitting
+        {
+            dBoxMan.ReadyDialogue(9, playerNum);//3rd to last
             trackCounterHits = true;
         }
 
         if (trackCounterHits && counterHits >= 2)
         {
-            dBoxMan.ReadyDialogue(7, playerNum);
+            dBoxMan.ReadyDialogue(10, playerNum);//2nd to last
             trackshields = true;
         }
     }
@@ -288,7 +293,7 @@ public class CharacterMovementTutorial : MonoBehaviour
                             shields[0].SetActive(true);
                             mana -= shieldCost;
                             bar.fillAmount = mana;
-                            dBoxMan.ReadyDialogue(8, playerNum);
+                            dBoxMan.ReadyDialogue(11, playerNum);//end
                         }
                     else
                     {
@@ -311,7 +316,7 @@ public class CharacterMovementTutorial : MonoBehaviour
     {
         if (mana > manaCost)
         {
-            if (trackSpells && currentBall >= 0)
+            if (trackSpells && currentBall >= 0)// 0-fire, 1-ice, 2-lightning
             {
                 spellsUsed[currentBall] = true;
             }

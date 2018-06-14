@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2369,7 +2369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &503259181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5786,25 +5786,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.6
-  m_Text: 'Lead Producer - Micheal Harrold
-
-
-    Lead Programmer - Evan Thomson
-
-
-    Lead Artist - Frank Leyva
-
-
-    Lead Game Design - Benjamin Hallsted
-
-
-    Battle Music- Dramatic Music by 4barrelcarb
-
-
-    Main Menu Music - On the Sea Loop by ShadyDave
-
-
-    Tutorial Music - Mystical Music by opspotty'
+  m_Text: "Lead Producer - Micheal Harrold\n\nLead Programmer - Evan Thomson\n\nLead
+    Artist - Frank Leyva\n\nLead Game Design - Benjamin Hallsted\n\nMusic\n\nBattle
+    Music- Dramatic Music by 4barrelcarb\n\nMain Menu Music - On the Sea Loop by ShadyDave\n\nTutorial
+    Music - Mystical Music by opspotty\n\nSounds\n\nhttps://freesound.org/people/Fantozzi/sounds/213854/\r\nhttps://freesound.org/people/LittleRobotSoundFactory/sounds/321018/\r\nhttps://freesound.org/people/x235/sounds/388216/\r\nhttps://freesound.org/people/ShadyDave/sounds/325407/\r\nhttps://freesound.org/people/HerbertBoland/sounds/114592/\r\nhttp://soundbible.com/2193-Flock-Seagulls.html\r\nhttp://soundbible.com/1122-Wood-Hull-On-Boat-Creaking.html\r\nhttp://soundbible.com/1297-Rowing-A-Boat.html\r\nhttp://soundbible.com/1936-Crisp-Ocean-Waves.html\r\nhttp://soundbible.com/1724-Large-Stadium.html\r\n\nArt\n\nFire
+    by Darrin Loeliger from the Noun Project\r\n\r\nFire by Aaron K. Kim from the
+    Noun Project\r\n\r\nIce by Landan Lloyd from the Noun Project\r\n\r\nthunder by
+    Atif Arshad from the Noun Project\r\n\r\nrock by Ilaria Bernareggi from the Noun
+    Project\r\n\r\nviral by H Alberto Gongora from the Noun Project\r\n\r\nLightning
+    Bolt by Arthur Shlain from the Noun Project\r\n\r\nHealth by Ramesha from the
+    Noun Project\n\nSFX\nSound effects obtained from https://www.zapsplat.com/"
 --- !u!222 &1071551664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8330,7 +8321,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485226985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 711, y: -376.7769, z: -1348.7294}
+  m_LocalPosition: {x: 616.44745, y: -321.55148, z: -4430.3516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -124,9 +124,16 @@ public class DBoxManager : MonoBehaviour
         StartCoroutine(ScrollText(dialogues[curDialogue]));
         boxTitle.text = title;
 
-        if (buttonDisplay[curDialogue])
+        if (buttonDisplay[curDialogue])// Button Imgs 0-Lstick,1-Rstick,2-Rtrig,3-ABXY,4-Ltrig,5-RBump
         {
-            curButton++;
+            if (curDialogue >= buttonImgs.Length)
+            {
+                curButton = 5;
+            }
+            else
+            {
+                curButton++;
+            }
             buttonImgs[curButton].gameObject.SetActive(true);
             if (curButton > 0)
             {
@@ -147,7 +154,7 @@ public class DBoxManager : MonoBehaviour
             buttonImgs[curButton].gameObject.SetActive(false);
         }
         Continue.SetActive(false);
-        if (curDialogue == 1)
+        if (curDialogue == 1)//mana flashing
         {
             Continue.SetActive(true);
             foreach (GameObject manaBar in manaBars)
@@ -155,7 +162,7 @@ public class DBoxManager : MonoBehaviour
                 manaBar.GetComponent<PulseImage>().StartPulse();
             }
         }
-        if (curDialogue == 2)
+        if (curDialogue == 2)//stop mana, start health flashing
         {
             foreach (GameObject manaBar in manaBars)
             {
@@ -167,7 +174,7 @@ public class DBoxManager : MonoBehaviour
             }
             Continue.SetActive(true);
         }
-        if (curDialogue == 3)
+        if (curDialogue == 3)//stop health flashing
         {
             foreach (GameObject healthBar in healthBars)
             {
@@ -175,7 +182,7 @@ public class DBoxManager : MonoBehaviour
             }
             Continue.SetActive(true);
         }
-        if (curDialogue == 6)
+        if (curDialogue == 9)//activate enemy
         {
             Enemy.SetActive(true);
         }
@@ -196,7 +203,6 @@ public class DBoxManager : MonoBehaviour
         body.text = theText;
         cancelTyping = false;
     }
-
     private IEnumerator LoadSceneOnDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
